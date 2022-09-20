@@ -1,0 +1,24 @@
+{
+  "name": "webstore-component-library",
+  "version": "1.0.0",
+  "description": "A React component library intended for use with WebStore applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/notch8/webstore-component-library.git"
+  },
+  "keywords": [
+    "webstore",
+    "component",
+    "library"
+  ],
+  "author": "Alisha Evans",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/notch8/webstore-component-library/issues"
+  },
+  "homepage": "https://gitlab.com/notch8/webstore-component-library#readme",
+}
