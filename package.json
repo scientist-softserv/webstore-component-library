@@ -21,4 +21,8 @@
     "url": "https://gitlab.com/notch8/webstore-component-library/issues"
   },
   "homepage": "https://gitlab.com/notch8/webstore-component-library#readme",
+  "devDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }
