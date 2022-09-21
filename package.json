@@ -25,6 +25,7 @@
   "homepage": "https://gitlab.com/notch8/webstore-component-library#readme",
   "devDependencies": {
     "@babel/core": "^7.19.1",
+    "@mdx-js/react": "^1.6.22",
     "@storybook/addon-actions": "^6.5.12",
     "@storybook/addon-essentials": "^6.5.12",
     "@storybook/addon-interactions": "^6.5.12",
@@ -41,5 +42,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "dependencies": {}
+  "overrides": {
+    "@mdx-js/react": {
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0"
+    }
+  }
 }
