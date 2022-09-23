@@ -37,7 +37,7 @@ const Page = () => {
 						Assemble data in the page component from your services. You can mock these services out
 						using Storybook.
 					</li>
-        </ul>
+				</ul>
 				<p>
 					Get a guided tutorial on component-driven development at{' '}
 					<a href='https://storybook.js.org/tutorials/' target='_blank' rel='noopener noreferrer'>
@@ -49,7 +49,7 @@ const Page = () => {
 					</a>
 					.
 				</p>
-				<div className="tip-wrapper">
+				<div className='tip-wrapper'>
 					<span className='tip'>Tip</span> Adjust the width of the canvas with the{' '}
 					<svg width='10' height='10' viewBox='0 0 12 12' xmlns='http://www.w3.org/2000/svg'>
 						<g fill='none' fillRule='evenodd'>

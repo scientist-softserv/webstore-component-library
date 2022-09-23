@@ -4,9 +4,9 @@
 		"es2021": true
 	},
 	"extends": [
-		"plugin:react/recommended",
+		"airbnb",
 		"eslint:recommended",
-		"airbnb"
+		"plugin:react/recommended"
 	],
 	"overrides": [],
 	"parserOptions": {
@@ -17,17 +17,26 @@
 		"react"
 	],
 	"rules": {
-		"semi": ["error", "never"],
-		"quotes": ["error", "single"],
-		"no-tabs": ["error", { "allowIndentationTabs": true }],
 		"indent": ["error", "tab"],
+		"jsx-quotes": ["error", "prefer-single"],
+		"no-tabs": ["error", { "allowIndentationTabs": true }],
+		"object-curly-newline": ["error", {
+			"ImportDeclaration": { "multiline": true, "minProperties": 4 },
+			"ExportDeclaration": { "multiline": true, "minProperties": 4 }
+		}],
+		"react/jsx-indent": ["error", "tab"],
+		"react/jsx-indent-props": ["error", "tab"],
+		"react/jsx-one-expression-per-line": "off",
+		"react/no-unescaped-entities": "off",
 		"react/jsx-props-no-spreading": "off",
+		"react/prop-types": "warn",
 		"react/function-component-definition": [
-			2,
+			"error",
 			{
 				"namedComponents": "arrow-function",
 				"unnamedComponents": "arrow-function"
 			}
-		]
+		],
+		"semi": ["error", "never"]
 	}
 }
