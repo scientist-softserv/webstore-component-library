@@ -1,7 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Button from '../Button'
-import './header.css'
+import Button from '../../components/Button'
+import './index.css'
+
+// receives a logo to be left aligned
+// receives an array of objects that will be mapped over to create the nav links (right aligned)
+// background color
 
 const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
 	<header>

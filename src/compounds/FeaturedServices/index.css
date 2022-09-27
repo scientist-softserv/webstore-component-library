@@ -1,0 +1,12 @@
+.featured-service {
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 200;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: text;
+  display: inline-block;
+  line-height: 25px;
+  padding: 10px;
+  margin: 10px;
+  color: grey;
+}
