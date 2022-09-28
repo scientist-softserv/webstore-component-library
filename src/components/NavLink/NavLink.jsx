@@ -2,33 +2,23 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './nav-link.css'
 
+// WIP
 
-const NavLink = ({ href, label, ...props }) => {
+const NavLink = ({ href, label, ...props }) => (
+	<a
+		href={href}
+		className='nav-link'
+		{...props}
+	>
+		{label}
+	</a>
+)
 
-	return (
-		<a
-			href={href}
-			className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-			{...props}
-		>
-			{label}
-		</a>
-	)
+NavLink.propTypes = {
+	href: PropTypes.string.isRequired,
+	label: PropTypes.string.isRequired,
 }
 
-// NavLink.propTypes = {
-// 	primary: PropTypes.bool,
-// 	backgroundColor: PropTypes.string,
-// 	size: PropTypes.oneOf(['small', 'medium', 'large']),
-// 	label: PropTypes.string.isRequired,
-// 	onClick: PropTypes.func,
-// }
-
-// NavLink.defaultProps = {
-// 	backgroundColor: null,
-// 	primary: false,
-// 	size: 'medium',
-// 	onClick: undefined,
-// }
+NavLink.defaultProps = {}
 
 export default NavLink
