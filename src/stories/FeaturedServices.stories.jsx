@@ -1,5 +1,6 @@
 import React from 'react'
 import { FeaturedServices } from '../compounds'
+import featuredService from '../assets/img/featured-service.jpg'
 
 export default {
 	title: 'Compounds/FeaturedServices',
@@ -11,13 +12,39 @@ export default {
 }
 
 export const Default = (args) => <FeaturedServices {...args} />
-
-// export const LoggedIn = Template.bind({})
-// LoggedIn.args = {
-// 	user: {
-// 		name: 'Aaliyah Haughton',
-// 	},
-// }
-
-// export const LoggedOut = Template.bind({})
-// LoggedOut.args = {}
+Default.args = {
+	services: [
+		{
+			description: 'This is the the first service.',
+			imgProps: {
+				src: featuredService,
+				alt: 'Several rows of test tubes with a liquid being put into one.'
+			},
+			name: 'Service One'
+		},
+		{
+			description: 'This is the the second service.',
+			imgProps: {
+				src: featuredService,
+				alt: 'Several rows of test tubes with a liquid being put into one.'
+			},
+			name: 'Service Two'
+		},
+		{
+			description: 'This is the the third service.',
+			imgProps: {
+				src: featuredService,
+				alt: 'Several rows of test tubes with a liquid being put into one.'
+			},
+			name: 'Service Three'
+		},
+		{
+			description: 'This is the the fourth service.',
+			imgProps: {
+				src: featuredService,
+				alt: 'Several rows of test tubes with a liquid being put into one.'
+			},
+			name: 'Service Four'
+		},
+	],
+}

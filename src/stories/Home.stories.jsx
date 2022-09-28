@@ -1,6 +1,6 @@
 import React from 'react'
 import { within, userEvent } from '@storybook/testing-library'
-import Home from '../pages/Home'
+import { Home } from '../pages'
 
 export default {
 	title: 'Pages/Home',
@@ -11,11 +11,11 @@ export default {
 	},
 }
 
-const Template = (args) => <Home {...args} />
+export const Default = (args) => <Home {...args} />
 
 // More on interaction testing: https://storybook.js.org/docs/react/writing-tests/interaction-testing
-export const LoggedOut = Template.bind({})
-export const LoggedIn = Template.bind({})
+// export const LoggedOut = Template.bind({})
+// export const LoggedIn = Template.bind({})
 
 // LoggedIn.play = async ({ canvasElement }) => {
 // 	const canvas = within(canvasElement)

@@ -1,5 +1,5 @@
 import React from 'react'
-import Title from '../components/Title'
+import { Title } from '../components'
 
 export default {
 	title: 'Components/Title',
@@ -13,7 +13,5 @@ Default.args = {
 	label: 'This is a title with a custom styles property.',
 	styles: {
 		color : '#AB8290',
-		fontSize : '30px',
-		fontFamily : 'Times',
 		},
 }
