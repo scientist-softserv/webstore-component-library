@@ -1,0 +1,18 @@
+.title {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.title--small {
+  font-size: 18px;
+}
+
+.title--medium {
+  font-size: 32px;
+}
+
+.title--large {
+  font-size: 40px;
+  font-weight: 700;
+}
