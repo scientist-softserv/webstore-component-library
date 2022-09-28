@@ -12,6 +12,6 @@ export const Default = Template.bind({})
 Default.args = {
 	label: 'This is a title with a custom styles property.',
 	styles: {
-		color : '#AB8290',
-		},
+		color: '#AB8290',
+	},
 }
