@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Button from '../../components/Button'
-import './index.css'
+import { Button } from '../../components'
+import './header.css'
 
 // receives a logo to be left aligned
 // receives an array of objects that will be mapped over to create the nav links (right aligned)
@@ -32,15 +32,15 @@ const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
 			<div>
 				{user ? (
 					<>
-						<span className='welcome'>
+						{/* <span className='welcome'>
 							Welcome, <b>{user.name}</b>!
-						</span>
+						</span> */}
 						<Button size='small' onClick={onLogout} label='Log out' />
 					</>
 				) : (
 					<>
 						<Button size='small' onClick={onLogin} label='Log in' />
-						<Button primary size='small' onClick={onCreateAccount} label='Sign up' />
+						{/* <Button primary size='small' onClick={onCreateAccount} label='Sign up' /> */}
 					</>
 				)}
 			</div>
@@ -52,7 +52,7 @@ Header.propTypes = {
 	user: PropTypes.shape({}),
 	onLogin: PropTypes.func.isRequired,
 	onLogout: PropTypes.func.isRequired,
-	onCreateAccount: PropTypes.func.isRequired,
+	// onCreateAccount: PropTypes.func.isRequired,
 }
 
 Header.defaultProps = {

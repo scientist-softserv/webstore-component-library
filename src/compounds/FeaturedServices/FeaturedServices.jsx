@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { FeaturedService, Title } from '../../components'
-import featuredService from '../../assets/featured-service.jpg'
-import './index.css'
+import featuredService from '../../assets/img/featured-service.jpg'
+import './featured-services.css'
 
 const FeaturedServices = ({ services }) => (
-	<section>
-		{/* <Title /> */}
-		<div>
+	<section className='featured-services'>
+		<Title size='medium' label='Featured Services' />
+		<div className='services-wrapper'>
 			{services.map((service) => <FeaturedService { ...service } />)}
 		</div>
 	</section>
@@ -48,7 +48,6 @@ FeaturedServices.defaultProps = {
 			},
 			name: 'Service Three'
 		},
-
 	],
 }
 

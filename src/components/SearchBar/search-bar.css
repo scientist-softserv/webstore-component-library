@@ -1,6 +1,6 @@
 .search-bar {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 200;
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
   border: 1px solid #000;
   border-radius: 5px;
   cursor: text;
@@ -11,8 +11,10 @@
   color: grey;
 }
 .search-bar--primary {
-  width: 90%;
+  max-width: 700px;
+  width: 60%;
 }
 .search-bar--secondary {
-  width: 40%;
+  max-width: 400px;
+  width: 30%;
 }
