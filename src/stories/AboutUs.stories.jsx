@@ -10,5 +10,5 @@ const Template = (args) => <AboutUs {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-	company_description: 'Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us.',
+	companyDescription: 'Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us.',
 }

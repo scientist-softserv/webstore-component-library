@@ -2,3 +2,4 @@
 *.json
 *.md
 *.mdx
+src/assets/img/**

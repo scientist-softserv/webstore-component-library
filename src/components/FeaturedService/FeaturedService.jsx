@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import featuredService from '../../assets/img/featured-service.jpg'
 import './featured-service.css'
 
-const FeaturedService = ({ description, imgProps, name, styles }) => {
+const FeaturedService = ({ description, img, imgProps, name, styles }) => {
+	const { alt, src } = img
 
 	return (
 		<div
 			className='featured-service-wrapper'
-			styles={{ styles }}
+			styles={styles}
 		>
-			<img className='featured-service-image' { ...imgProps } />
+			<img className='featured-service-image' src={src} alt={alt} {...imgProps} />
 			<div className='featured-service'>
 				<p className='featured-service-name'>{name}</p>
 				<p className='featured-service-description'>{description}</p>
@@ -21,18 +21,16 @@ const FeaturedService = ({ description, imgProps, name, styles }) => {
 
 FeaturedService.propTypes = {
 	description: PropTypes.string.isRequired,
-	imgProps: PropTypes.object.isRequired,
+	img: PropTypes.shape({
+		src: PropTypes.string.isRequired,
+		alt: PropTypes.string.isRequired,
+	}).isRequired,
+	imgProps: PropTypes.shape({}),
 	name: PropTypes.string.isRequired,
-	styles: PropTypes.object,
+	styles: PropTypes.shape({}),
 }
 
 FeaturedService.defaultProps = {
-	description: 'This is the description of this product or service.',
-	imgProps: {
-		src: featuredService,
-		alt: 'Several rows of test tubes with a liquid being put into one.'
-	},
-	name: 'Product/Service',
 	styles: {},
 }
 

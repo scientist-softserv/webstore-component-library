@@ -7,7 +7,7 @@ import './header.css'
 // receives an array of objects that will be mapped over to create the nav links (right aligned)
 // background color
 
-const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
+const Header = ({ user, onLogin, onLogout }) => (
 	<header>
 		<div className='wrapper'>
 			<div>
@@ -31,17 +31,9 @@ const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
 			</div>
 			<div>
 				{user ? (
-					<>
-						{/* <span className='welcome'>
-							Welcome, <b>{user.name}</b>!
-						</span> */}
-						<Button size='small' onClick={onLogout} label='Log out' />
-					</>
+					<Button size='small' onClick={onLogout} label='Log out' />
 				) : (
-					<>
-						<Button size='small' onClick={onLogin} label='Log in' />
-						{/* <Button primary size='small' onClick={onCreateAccount} label='Sign up' /> */}
-					</>
+					<Button size='small' onClick={onLogin} label='Log in' />
 				)}
 			</div>
 		</div>
@@ -49,10 +41,9 @@ const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
 )
 
 Header.propTypes = {
-	user: PropTypes.shape({}),
 	onLogin: PropTypes.func.isRequired,
 	onLogout: PropTypes.func.isRequired,
-	// onCreateAccount: PropTypes.func.isRequired,
+	user: PropTypes.shape({}),
 }
 
 Header.defaultProps = {

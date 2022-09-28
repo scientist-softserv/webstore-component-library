@@ -12,9 +12,9 @@ const Template = (args) => <FeaturedService {...args} />
 export const Default = Template.bind({})
 Default.args = {
 	description: 'This is the description of this product or service.',
-	imgProps: {
+	img: {
 		src: featuredService,
-		alt: 'Several rows of test tubes with a liquid being put into one.'
+		alt: 'Several rows of test tubes with a liquid being put into one.',
 	},
 	name: 'Product/Service',
 	styles: {},

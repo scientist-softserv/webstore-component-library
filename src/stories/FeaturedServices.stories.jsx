@@ -1,6 +1,7 @@
 import React from 'react'
 import { FeaturedServices } from '../compounds'
 import featuredService from '../assets/img/featured-service.jpg'
+import { services } from '../resources/args'
 
 export default {
 	title: 'Compounds/FeaturedServices',
@@ -10,41 +11,8 @@ export default {
 	// 	layout: 'fullscreen',
 	// },
 }
-
+console.log({services})
 export const Default = (args) => <FeaturedServices {...args} />
 Default.args = {
-	services: [
-		{
-			description: 'This is the the first service.',
-			imgProps: {
-				src: featuredService,
-				alt: 'Several rows of test tubes with a liquid being put into one.'
-			},
-			name: 'Service One'
-		},
-		{
-			description: 'This is the the second service.',
-			imgProps: {
-				src: featuredService,
-				alt: 'Several rows of test tubes with a liquid being put into one.'
-			},
-			name: 'Service Two'
-		},
-		{
-			description: 'This is the the third service.',
-			imgProps: {
-				src: featuredService,
-				alt: 'Several rows of test tubes with a liquid being put into one.'
-			},
-			name: 'Service Three'
-		},
-		{
-			description: 'This is the the fourth service.',
-			imgProps: {
-				src: featuredService,
-				alt: 'Several rows of test tubes with a liquid being put into one.'
-			},
-			name: 'Service Four'
-		},
-	],
+	services,
 }

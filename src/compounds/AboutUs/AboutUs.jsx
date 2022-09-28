@@ -3,21 +3,17 @@ import PropTypes from 'prop-types'
 import { Title } from '../../components'
 import './about-us.css'
 
-const AboutUs = ({ company_description }) => (
+const AboutUs = ({ companyDescription }) => (
 	<section className='about-us'>
 		<Title size='medium' label='About Us' />
 		<div>
-			{company_description}
+			{companyDescription}
 		</div>
 	</section>
 )
 
 AboutUs.propTypes = {
-		company_description: PropTypes.string.isRequired,
-}
-
-AboutUs.defaultProps = {
-	company_description: 'Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us.',
+	companyDescription: PropTypes.string.isRequired,
 }
 
 export default AboutUs
