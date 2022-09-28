@@ -1,23 +1,22 @@
-import React from 'react'
-import { SearchBar, Title } from '../../components'
+import React, { useState } from 'react'
+import { SearchBar } from '../../components'
 import { AboutUs, FeaturedServices, Header } from '../../compounds'
+import { companyDescription, onChange, services } from '../../resources/args'
 import './home.css'
 
 const Home = () => {
-	const [user, setUser] = React.useState()
+	const [user, setUser] = useState()
 
 	return (
 		<main>
-			{/* <Header
+			<Header
 				user={user}
 				onLogin={() => setUser({ name: 'Jane Doe' })}
 				onLogout={() => setUser(undefined)}
-				onCreateAccount={() => setUser({ name: 'Jane Doe' })}
-			/> */}
-
-			<SearchBar />
-			<AboutUs />
-			<FeaturedServices />
+			/>
+			<SearchBar onChange={onChange}/>
+			<AboutUs companyDescription={companyDescription} />
+			<FeaturedServices services={services} />
 		</main>
 	)
 }
