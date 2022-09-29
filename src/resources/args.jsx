@@ -2,8 +2,6 @@ import featuredService from '../assets/img/featured-service.jpg'
 
 export const onChange = ({ value }) => console.log({ value })
 
-export const companyDescription = 'Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us.'
-
 export const services = [
 	{
 		id: 1,
@@ -43,3 +41,4 @@ export const services = [
 	},
 ]
 
+export const text = 'Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us.'

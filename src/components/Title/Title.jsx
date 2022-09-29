@@ -2,18 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './title.css'
 
-const Title = ({ size, label, styles, ...props }) => (
+const Title = ({ size, title, styles, ...props }) => (
 	<p
 		className={`title title--${size}`}
 		style={{ ...styles }}
 		{...props}
 	>
-		{label}
+		{title}
 	</p>
 )
 
 Title.propTypes = {
-	label: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired,
 	size: PropTypes.oneOf(['small', 'medium', 'large']),
 	styles: PropTypes.shape({}),
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { SearchBar } from '../../components'
-import { AboutUs, FeaturedServices, Header } from '../../compounds'
-import { companyDescription, onChange, services } from '../../resources/args'
+import { TitledTextBox, FeaturedServices, Header } from '../../compounds'
+import { text, onChange, services } from '../../resources/args'
 import './home.css'
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
 				onLogout={() => setUser(undefined)}
 			/>
 			<SearchBar onChange={onChange}/>
-			<AboutUs companyDescription={companyDescription} />
+			<TitledTextBox text={text} />
 			<FeaturedServices services={services} />
 		</main>
 	)
