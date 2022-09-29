@@ -10,7 +10,7 @@ const Template = (args) => <SearchBar {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-	onChange: ({ value }) => console.log({ value }),
+	onChange: ({ value }) => console.log(`You just typed: ${value}`),
 	placeholder: 'Search for a service',
 	primary: true,
 	styles: {},

@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { FeaturedService, Title } from '../../components'
-import featuredService from '../../assets/img/featured-service.jpg'
 import './featured-services.css'
 
 const FeaturedServices = ({ services }) => (

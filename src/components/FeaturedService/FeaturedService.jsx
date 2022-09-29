@@ -8,12 +8,16 @@ const FeaturedService = ({ description, img, imgProps, name, styles }) => {
 	return (
 		<div
 			className='featured-service-wrapper'
-			styles={styles}
+			style={{ ...styles }}
 		>
 			<img className='featured-service-image' src={src} alt={alt} {...imgProps} />
 			<div className='featured-service'>
-				<p className='featured-service-name'>{name}</p>
-				<p className='featured-service-description'>{description}</p>
+				<p className='featured-service-name'>
+					{name}
+				</p>
+				<p className='featured-service-description'>
+					{description}
+				</p>
 			</div>
 		</div>
 	)

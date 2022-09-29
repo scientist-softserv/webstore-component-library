@@ -1,6 +1,5 @@
 import React from 'react'
 import { FeaturedServices } from '../compounds'
-import featuredService from '../assets/img/featured-service.jpg'
 import { services } from '../resources/args'
 
 export default {
@@ -11,7 +10,7 @@ export default {
 	// 	layout: 'fullscreen',
 	// },
 }
-console.log({services})
+
 export const Default = (args) => <FeaturedServices {...args} />
 Default.args = {
 	services,
