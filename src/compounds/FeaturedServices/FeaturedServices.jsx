@@ -5,7 +5,7 @@ import './featured-services.css'
 
 const FeaturedServices = ({ services }) => (
 	<section className='featured-services'>
-		<Title size='medium' label='Featured Services' />
+		<Title size='medium' title='Featured Services' />
 		<div className='services-wrapper'>
 			{services.map((service) => <FeaturedService key={service.id} {...service} />)}
 		</div>

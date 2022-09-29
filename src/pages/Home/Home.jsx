@@ -15,7 +15,7 @@ const Home = () => {
 				onLogout={() => setUser(undefined)}
 			/>
 			<SearchBar onChange={onChange}/>
-			<TitledTextBox text={text} />
+			<TitledTextBox size={'medium'} text={text} title={'About Us'} />
 			<FeaturedServices services={services} />
 		</main>
 	)

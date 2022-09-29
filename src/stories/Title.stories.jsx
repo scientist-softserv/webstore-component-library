@@ -10,7 +10,7 @@ const Template = (args) => <Title {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-	label: 'This is a title with a custom styles property.',
+	title: 'This is a title with a custom styles property.',
 	size: 'large',
 	styles: {
 		color: '#AB8290',
