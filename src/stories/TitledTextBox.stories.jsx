@@ -1,6 +1,6 @@
 import React from 'react'
 import { TitledTextBox } from '../compounds'
-import { text } from '../resources/args'
+import { paragraph_four } from '../resources/args'
 
 export default {
 	title: 'Components/TitledTextBox',
@@ -9,15 +9,28 @@ export default {
 
 const Template = (args) => <TitledTextBox {...args} />
 
-export const One = Template.bind({})
-One.args = {
-	size: 'medium',
-	text,
-	title: 'I am Company A'
+export const Default = Template.bind({})
+Default.args = {
+	text: paragraph_four,
+	text_alignment: 'left',
+	text_size: 'small',
+	text_style: {},
+	title: 'I am Company A',
+	title_alignment: 'left',
+	title_size: 'large',
+	title_style: {},
 }
 
-export const Two = Template.bind({})
-Two.args = {
-	text: 'We are small, yet efficient.',
-	title: 'I am Company B'
+export const Alternate = Template.bind({})
+Alternate.args = {
+	text: 'Champion DNA.',
+	text_alignment: 'center',
+	text_size: 'medium',
+	text_style: {},
+	title: 'We are Company B',
+	title_alignment: 'center',
+	title_size: 'large',
+	title_style: {
+		color: '#ABED12'
+	},
 }
