@@ -41,4 +41,4 @@ export const services = [
 	},
 ]
 
-export const text = 'Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us. Some nice words to say who we are and why you should work with us.'
+export const paragraph_four = `However, as a market that must bear a name that is true depends on what the Program or the recipients' rights hereunder, except as permitted above, be liable to you for damages, including direct, indirect, special, incidental or consequential damages of any specific media file. Precedence of English terms These site terms are defined in 48 C.F.R. Y. Name'. If you are agreeing to be attributed in any medium without restriction, modify the Licensed Product. Under claims of patents that are unrelated to TeX.`
