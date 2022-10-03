@@ -4,15 +4,27 @@
   display: inline-block;
 }
 
-.title--small {
-  font-size: 18px;
+.title--center {
+  text-align: center;
 }
 
-.title--medium {
-  font-size: 32px;
+.title--right {
+  text-align: right;
 }
 
 .title--large {
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 700;
+}
+
+.title--left {
+  text-align: left;
+}
+
+.title--medium {
+  font-size: 24px;
+}
+
+.title--small {
+  font-size: 18px;
 }

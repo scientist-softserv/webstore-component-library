@@ -10,6 +10,7 @@ const Template = (args) => <Title {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
+	alignment: 'left',
 	title: 'This is a title with a custom styles property.',
 	size: 'large',
 	styles: {
