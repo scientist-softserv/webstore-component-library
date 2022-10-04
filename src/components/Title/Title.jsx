@@ -4,12 +4,12 @@ import './title.css'
 
 const Title = ({ alignment, size, style, title }) => (
 	<div className={`title--${alignment}`}>
-		<p
+		<h1
 			className={`title title--${size}`}
 			style={{ ...style }}
 		>
 			{title}
-		</p>
+		</h1>
 	</div>
 )
 

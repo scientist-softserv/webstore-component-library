@@ -2,19 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './featured-service.css'
 
-const FeaturedService = ({ description, img, imgProps, name, styles }) => {
+const FeaturedService = ({ description, img, imgProps, name, style }) => {
 	const { alt, src } = img
 
 	return (
 		<div
 			className='featured-service-wrapper'
-			style={{ ...styles }}
+			style={{ ...style }}
 		>
 			<img className='featured-service-image' src={src} alt={alt} {...imgProps} />
 			<div className='featured-service'>
-				<p className='featured-service-name'>
+				<h3 className='featured-service-name'>
 					{name}
-				</p>
+				</h3>
 				<p className='featured-service-description'>
 					{description}
 				</p>
@@ -31,11 +31,11 @@ FeaturedService.propTypes = {
 	}).isRequired,
 	imgProps: PropTypes.shape({}),
 	name: PropTypes.string.isRequired,
-	styles: PropTypes.shape({}),
+	style: PropTypes.shape({}),
 }
 
 FeaturedService.defaultProps = {
-	styles: {},
+	style: {},
 }
 
 export default FeaturedService

@@ -2,7 +2,11 @@
   font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   cursor: pointer;
   display: inline-block;
-  margin-bottom: 0;
+}
+
+/* alignment */
+.title--left {
+  text-align: left;
 }
 
 .title--center {
@@ -13,19 +17,16 @@
   text-align: right;
 }
 
-.title--large {
-  font-size: 32px;
-  font-weight: 700;
-}
-
-.title--left {
-  text-align: left;
+/* size */
+.title--small {
+  font-size: 18px;
 }
 
 .title--medium {
   font-size: 24px;
 }
 
-.title--small {
-  font-size: 18px;
+.title--large {
+  font-size: 32px;
+  font-weight: 700;
 }

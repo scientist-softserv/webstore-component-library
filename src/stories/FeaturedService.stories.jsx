@@ -17,7 +17,7 @@ Default.args = {
 		alt: 'Several rows of test tubes with a liquid being put into one.',
 	},
 	name: 'Product/Service',
-	styles: {
+	style: {
 		width: 300,
 	},
 }

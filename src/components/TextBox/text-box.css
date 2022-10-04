@@ -1,7 +1,8 @@
 .text-box {
   font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   display: inline-block;
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
+  /* margin: 5px 0; */
 }
 
 /* alignment */
