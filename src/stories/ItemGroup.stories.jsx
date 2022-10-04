@@ -2,8 +2,8 @@ import React from 'react'
 import { ItemGroup } from '../compounds'
 import { items } from '../resources/args'
 
-const four_items = items
-const three_items = items.filter((_s, index) => index < 3 )
+const five_items = items.filter((_s, index) => index < 5 )
+const six_items = items
 
 export default {
 	title: 'Compounds/ItemGroup',
@@ -14,19 +14,16 @@ export default {
 	// },
 }
 
-console.log('three_items', three_items )
-console.log('four_items', four_items )
-
 const Template = (args) => <ItemGroup {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
 	group_by: 3,
-	items: three_items,
+	items: five_items,
 }
 
 export const Alternate = (args) => <ItemGroup {...args} />
 Alternate.args = {
 	group_by: 4,
-	items: four_items,
+	items: six_items,
 }

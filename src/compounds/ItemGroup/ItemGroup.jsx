@@ -4,11 +4,16 @@ import { Item, Title } from '../../components'
 import './item-group.css'
 
 const ItemGroup = ({ group_by, items }) => {
+	const margin = {
+		marginBottom: 15,
+		marginRight: 15,
+	}
+
 	return (
 		<section className='item-group'>
 			<Title size='medium' title='Featured Services' />
 			<div className={`group-wrapper--${group_by}`}>
-				{items.map((item) => <Item key={item.id} {...item} />)}
+				{items.map((item) => <Item key={item.id} {...item} style={margin} />)}
 			</div>
 		</section>
 	)

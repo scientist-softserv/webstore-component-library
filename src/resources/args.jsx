@@ -2,42 +2,46 @@ import item from '../assets/img/item.jpg'
 
 export const onChange = ({ value }) => console.log({ value })
 
+const img = {
+	src: item,
+	alt: 'Several rows of test tubes with a liquid being put into one.',
+}
 export const items = [
 	{
 		id: 1,
 		description: 'This is the the first service.',
-		img: {
-			src: item,
-			alt: 'Several rows of test tubes with a liquid being put into one.',
-		},
+		img,
 		name: 'Service One',
 	},
 	{
 		id: 2,
 		description: 'This is the the second service.',
-		img: {
-			src: item,
-			alt: 'Several rows of test tubes with a liquid being put into one.',
-		},
+		img,
 		name: 'Service Two',
 	},
 	{
 		id: 3,
 		description: 'This is the the third service.',
-		img: {
-			src: item,
-			alt: 'Several rows of test tubes with a liquid being put into one.',
-		},
+		img,
 		name: 'Service Three',
 	},
 	{
 		id: 4,
 		description: 'This is the the fourth service.',
-		img: {
-			src: item,
-			alt: 'Several rows of test tubes with a liquid being put into one.',
-		},
+		img,
 		name: 'Service Four',
+	},
+	{
+		id: 5,
+		description: 'This is the the fifth service.',
+		img,
+		name: 'Service Five',
+	},
+	{
+		id: 6,
+		description: 'This is the the sixth service.',
+		img,
+		name: 'Service Six',
 	},
 ]
 
