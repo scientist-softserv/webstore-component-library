@@ -1,21 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './featured-service.css'
+import './item.css'
 
-const FeaturedService = ({ description, img, imgProps, name, style }) => {
+const Item = ({ description, img, imgProps, name, style }) => {
 	const { alt, src } = img
 
 	return (
 		<div
-			className='featured-service-wrapper'
+			className='item-wrapper'
 			style={{ ...style }}
 		>
-			<img className='featured-service-image' src={src} alt={alt} {...imgProps} />
-			<div className='featured-service'>
-				<h3 className='featured-service-name'>
+			<img className='item-image' src={src} alt={alt} {...imgProps} />
+			<div className='item'>
+				<h3 className='item-name'>
 					{name}
 				</h3>
-				<p className='featured-service-description'>
+				<p className='item-description'>
 					{description}
 				</p>
 			</div>
@@ -23,7 +23,7 @@ const FeaturedService = ({ description, img, imgProps, name, style }) => {
 	)
 }
 
-FeaturedService.propTypes = {
+Item.propTypes = {
 	description: PropTypes.string.isRequired,
 	img: PropTypes.shape({
 		src: PropTypes.string.isRequired,
@@ -34,8 +34,8 @@ FeaturedService.propTypes = {
 	style: PropTypes.shape({}),
 }
 
-FeaturedService.defaultProps = {
+Item.defaultProps = {
 	style: {},
 }
 
-export default FeaturedService
+export default Item

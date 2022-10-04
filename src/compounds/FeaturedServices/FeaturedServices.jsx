@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FeaturedService, Title } from '../../components'
+import { Item, Title } from '../../components'
 import './featured-services.css'
 
 const FeaturedServices = ({ group_by, services }) => {
@@ -9,7 +9,7 @@ const FeaturedServices = ({ group_by, services }) => {
 		<section className='featured-services'>
 			<Title size='medium' title='Featured Services' />
 			<div className={`services-wrapper--${group_by}`}>
-				{services.map((service) => <FeaturedService key={service.id} {...service} />)}
+				{services.map((service) => <Item key={service.id} {...service} />)}
 			</div>
 		</section>
 	)

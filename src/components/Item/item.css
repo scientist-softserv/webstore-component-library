@@ -1,26 +1,25 @@
-.featured-service {
+.item {
   font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 10px;
 }
 
-.featured-service-description {
+.item-description {
   font-size: 16px;
   font-weight: 300;
 }
 
-.featured-service-name {
+.item-name {
   font-size: 20px;
   font-weight: 500;
 }
 
-.featured-service-image {
+.item-image {
   width: 100%;
 }
 
-.featured-service-wrapper {
+.item-wrapper {
   border: 1px solid grey;
   border-radius: 5px;
   display: inline-block;
-  max-width: 300px;
-  /* margin: 0.5rem; */
+  width: 300px;
 }

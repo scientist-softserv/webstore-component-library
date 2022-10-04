@@ -1,4 +1,4 @@
-import featuredService from '../assets/img/featured-service.jpg'
+import featuredService from '../assets/img/item.jpg'
 
 export const onChange = ({ value }) => console.log({ value })
 

@@ -1,5 +1,5 @@
 import Button from './Button/Button'
-import FeaturedService from './FeaturedService/FeaturedService'
+import Item from './Item/Item'
 import NavLink from './NavLink/NavLink'
 import SearchBar from './SearchBar/SearchBar'
 import TextBox from './TextBox/TextBox'
@@ -7,7 +7,7 @@ import Title from './Title/Title'
 
 export {
 	Button,
-	FeaturedService,
+	Item,
 	NavLink,
 	SearchBar,
 	TextBox,
