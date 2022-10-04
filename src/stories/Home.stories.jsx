@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { SearchBar } from '../components'
 import { TitledTextBox, FeaturedServices, Header } from '../compounds'
-import { paragraph_four, onChange, four_services } from '../resources/args'
+import { paragraph_four, onChange, services } from '../resources/args'
 // import { within, userEvent } from '@storybook/testing-library'
 
 const Home = () => {
