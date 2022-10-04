@@ -1,13 +1,13 @@
-import featuredService from '../assets/img/item.jpg'
+import item from '../assets/img/item.jpg'
 
 export const onChange = ({ value }) => console.log({ value })
 
-export const services = [
+export const items = [
 	{
 		id: 1,
 		description: 'This is the the first service.',
 		img: {
-			src: featuredService,
+			src: item,
 			alt: 'Several rows of test tubes with a liquid being put into one.',
 		},
 		name: 'Service One',
@@ -16,7 +16,7 @@ export const services = [
 		id: 2,
 		description: 'This is the the second service.',
 		img: {
-			src: featuredService,
+			src: item,
 			alt: 'Several rows of test tubes with a liquid being put into one.',
 		},
 		name: 'Service Two',
@@ -25,7 +25,7 @@ export const services = [
 		id: 3,
 		description: 'This is the the third service.',
 		img: {
-			src: featuredService,
+			src: item,
 			alt: 'Several rows of test tubes with a liquid being put into one.',
 		},
 		name: 'Service Three',
@@ -34,7 +34,7 @@ export const services = [
 		id: 4,
 		description: 'This is the the fourth service.',
 		img: {
-			src: featuredService,
+			src: item,
 			alt: 'Several rows of test tubes with a liquid being put into one.',
 		},
 		name: 'Service Four',

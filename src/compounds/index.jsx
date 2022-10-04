@@ -1,9 +1,9 @@
-import FeaturedServices from './FeaturedServices/FeaturedServices'
+import ItemGroup from './ItemGroup/ItemGroup'
 import Header from './Header/Header'
 import TitledTextBox from './TitledTextBox/TitledTextBox'
 
 export {
-	FeaturedServices,
+	ItemGroup,
 	Header,
 	TitledTextBox,
 }

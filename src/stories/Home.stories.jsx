@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { SearchBar } from '../components'
-import { TitledTextBox, FeaturedServices, Header } from '../compounds'
+import { TitledTextBox, ItemGroup, Header } from '../compounds'
 import { paragraph_four, onChange, services } from '../resources/args'
 // import { within, userEvent } from '@storybook/testing-library'
 
@@ -16,7 +16,7 @@ const Home = () => {
 			/>
 			<SearchBar onChange={onChange}/>
 			<TitledTextBox size={'medium'} text={paragraph_four} title={'About Us'} />
-			<FeaturedServices services={services} />
+			<ItemGroup services={services} />
 		</main>
 	)
 }
