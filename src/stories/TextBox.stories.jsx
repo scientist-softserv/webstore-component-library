@@ -1,6 +1,6 @@
 import React from 'react'
 import { TextBox } from '../components'
-import { paragraph_four } from '../resources/args'
+import { multiple_paragraphs, single_paragraph } from '../resources/args'
 
 export default {
 	title: 'Components/TextBox',
@@ -12,6 +12,13 @@ const Template = (args) => <TextBox {...args} />
 export const Default = Template.bind({})
 Default.args = {
 	alignment: 'left',
-	text: paragraph_four,
+	text: single_paragraph,
 	size: 'small',
+}
+
+export const Alternate = Template.bind({})
+Alternate.args = {
+	alignment: 'left',
+	text: multiple_paragraphs,
+	size: 'medium',
 }

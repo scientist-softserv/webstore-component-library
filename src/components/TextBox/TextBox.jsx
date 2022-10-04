@@ -2,21 +2,23 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './text-box.css'
 
-/*
-	Paragraph elements ignore new line characters and backticks.
-	TextBox will only render a single paragraph; if multiple paragraphs are desired, multiple TextBox
-	components must be used.
- */
 const TextBox = ({ alignment, size, style, text }) => {
+	// account for Unix and Windows devices
+	const paragraphs = text.split(/\n+\t?\r?/)
+
 	return (
-		<div className={`text-box--${alignment}`}>
-			<p
-				className={`text-box text-box--${size}`}
-				style={{ ...style }}
-			>
-				{text}
-			</p>
-		</div>
+		<>
+			{paragraphs.map(par =>
+				<div className={`text-box--${alignment}`}>
+					<p
+						className={`text-box text-box--${size}`}
+						style={{ ...style }}
+					>
+						{par}
+					</p>
+				</div>
+			)}
+		</>
 	)
 }
 
