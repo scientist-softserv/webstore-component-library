@@ -2,7 +2,7 @@ import React from 'react'
 import { ItemGroup } from '../compounds'
 import { items } from '../resources/args'
 
-const five_items = items.filter((_s, index) => index < 5 )
+const five_items = items.filter((_s, index) => index < 5)
 const six_items = items
 
 export default {

@@ -15,7 +15,7 @@ const Home = () => {
 				onLogout={() => setUser(undefined)}
 			/>
 			<SearchBar onSubmit={onSubmit} />
-			<TitledTextBox size={'medium'} text={single_paragraph} title={'About Us'} />
+			<TitledTextBox size='medium' text={single_paragraph} title='About Us' />
 			<ItemGroup items={items} />
 		</main>
 	)

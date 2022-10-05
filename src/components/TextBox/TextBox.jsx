@@ -8,7 +8,7 @@ const TextBox = ({ alignment, size, style, text }) => {
 
 	return (
 		<>
-			{paragraphs.map(par =>
+			{paragraphs.map((par) => (
 				<div className={`text-box--${alignment}`}>
 					<p
 						className={`text-box text-box--${size}`}
@@ -17,7 +17,7 @@ const TextBox = ({ alignment, size, style, text }) => {
 						{par}
 					</p>
 				</div>
-			)}
+			))}
 		</>
 	)
 }

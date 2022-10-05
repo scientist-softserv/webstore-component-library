@@ -31,6 +31,6 @@ Alternate.args = {
 	title_alignment: 'center',
 	title_size: 'large',
 	title_style: {
-		color: '#ABED12'
+		color: '#ABED12',
 	},
 }

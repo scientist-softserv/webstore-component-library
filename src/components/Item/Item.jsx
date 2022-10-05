@@ -15,7 +15,7 @@ const Item = ({ buttonProps, description, img, imgProps, onClick, orientation, n
 			<img className={`item-image item-image-${orientation}`} src={src} alt={alt} {...imgProps} />
 			<div className={`item-options-${orientation}`}>
 				<div className='item-details'>
-					<h3 className={`item-name ${!withButton && `item-name-button`}`} onClick={withButton ? undefined : onClick}>
+					<h3 className={`item-name ${!withButton && 'item-name-button'}`} onClick={withButton ? undefined : onClick}>
 						{name}
 					</h3>
 					{description && (
@@ -58,7 +58,7 @@ Item.propTypes = {
 	orientation: PropTypes.oneOf(['horizontal', 'vertical']),
 	name: PropTypes.string.isRequired,
 	style: PropTypes.shape({}),
-	withButton: PropTypes.bool
+	withButton: PropTypes.bool,
 }
 
 Item.defaultProps = {

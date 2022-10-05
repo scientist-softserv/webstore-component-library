@@ -18,7 +18,7 @@ Default.args = {
 		alt: 'Several rows of test tubes with a liquid being put into one.',
 	},
 	imgProps: {},
-	onClick: () => console.log(`You clicked the ITEM!`),
+	onClick: () => console.log('You clicked the ITEM!'),
 	orientation: 'vertical',
 	name: 'Test Tubes',
 	style: {},
@@ -27,7 +27,7 @@ Default.args = {
 
 export const Alternate = Template.bind({})
 Alternate.args = {
-	buttonProps:{
+	buttonProps: {
 		backgroundColor: 'grey',
 		label: 'Request this item',
 		primary: true,
@@ -38,7 +38,7 @@ Alternate.args = {
 		alt: 'Several rows of test tubes with a liquid being put into one.',
 	},
 	imgProps: {},
-	onClick: () => console.log(`You clicked the BUTTON!`),
+	onClick: () => console.log('You clicked the BUTTON!'),
 	orientation: 'horizontal',
 	name: 'Microbiological Sterility Testing',
 	style: {},
