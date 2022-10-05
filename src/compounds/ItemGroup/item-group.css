@@ -4,13 +4,13 @@
   margin: auto;
 }
 
-.group-wrapper--3 {
+.group-container--3 {
   display: flex;
   flex-wrap: wrap;
   max-width: 780px;
 }
 
-.group-wrapper--4 {
+.group-container--4 {
   display: flex;
   flex-wrap: wrap;
   max-width: 1040px;
