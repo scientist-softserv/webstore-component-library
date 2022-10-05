@@ -1,4 +1,11 @@
-.item {
+.item-container {
+  border: 1px solid grey;
+  border-radius: 5px;
+  display: inline-block;
+  width: 240px;
+}
+
+.item-details {
   font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 10px;
 }
@@ -17,11 +24,14 @@
   width: 100%;
 }
 
-.item-wrapper {
-  border: 1px solid grey;
-  border-radius: 5px;
-  display: inline-block;
-  width: 240px;
+.item-name-button {
+  cursor: pointer;
+}
+
+.item-button-vertical {
+  margin: 15px;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .item-horizontal {
@@ -32,4 +42,15 @@
 
 .item-image-horizontal {
   width: auto;
+}
+
+.item-button-horizontal {
+  margin-right: 10px;
+  margin-top: 32px;
+}
+
+.item-options-horizontal {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
