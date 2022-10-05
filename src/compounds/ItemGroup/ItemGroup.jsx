@@ -9,9 +9,8 @@ const ItemGroup = ({ group_by, items }) => {
 		<section className='item-group'>
 			<Title size='medium' title='Featured Services' />
 			<div className={`group-container--${group_by}`}>
-				{items.map((item, index) => {
-					const margin = ((index + 1) % group_by) == 0 ? { marginBottom: 35 } : {marginBottom: 35, marginRight: 35 }
-					return <Item key={item.id} {...item} style={margin} />
+				{items.map((item) => {
+					return <Item key={item.id} {...item} style={{marginBottom: 35, marginRight: 35 }} />
 				})}
 			</div>
 		</section>
