@@ -18,3 +18,14 @@ Default.args = {
 	},
 	name: 'Test Tubes',
 }
+
+export const Alternate = Template.bind({})
+Alternate.args = {
+	description: 'Test the presence of viable microorganisms.',
+	img: {
+		src: featuredService,
+		alt: 'Several rows of test tubes with a liquid being put into one.',
+	},
+	orientation: 'horizontal',
+	name: 'Microbiological Sterility Testing',
+}

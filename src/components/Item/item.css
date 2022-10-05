@@ -23,3 +23,13 @@
   display: inline-block;
   width: 240px;
 }
+
+.item-horizontal {
+  display: flex;
+  width: auto;
+  height: 100px;
+}
+
+.item-image-horizontal {
+  width: auto;
+}
