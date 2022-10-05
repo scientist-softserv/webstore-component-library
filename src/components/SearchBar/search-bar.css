@@ -4,17 +4,29 @@
   border: 1px solid #000;
   border-radius: 5px;
   cursor: text;
-  display: inline-block;
   line-height: 25px;
   padding: 10px;
   margin: 10px;
   color: grey;
+  width: 75%;
 }
-.search-bar--primary {
-  max-width: 700px;
-  width: 60%;
+
+.search-button {
+  padding: 10px;
+  line-height: 24px;
+  height: 47px;
+  background-color: transparent;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
 }
-.search-bar--secondary {
-  max-width: 400px;
-  width: 30%;
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }

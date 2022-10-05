@@ -1,6 +1,6 @@
 import item from '../assets/img/item.jpg'
 
-export const onChange = ({ value }) => console.log({ value })
+export const onSubmit = ({ value }) => console.log({ value })
 
 const img = {
 	src: item,

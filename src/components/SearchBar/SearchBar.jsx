@@ -1,40 +1,50 @@
-import React from 'react'
+import { useState } from 'react'
 import PropTypes from 'prop-types'
+import Search from '../../assets/svg/Search'
 import './search-bar.css'
 
-// TODO(alishaevn): make this an onSubmit instead of onChange
-const SearchBar = ({ onChange, placeholder, primary, ref, style, ...props }) => {
-	const mode = primary ? 'search-bar--primary' : 'search-bar--secondary'
+const SearchBar = ({ onSubmit, placeholder, primary, ref, style, ...props }) => {
+	const [searchInput, setSearchInput] = useState('')
 
-	const handleOnChange = (event) => {
-		const { value } = event.target
-		onChange({ value, event })
+	const handleChange = (event) => {
+		event.preventDefault()
+		setSearchInput(event.target.value)
+	}
+
+	const handleSubmit = (event) => {
+		event.preventDefault()
+		onSubmit ? onSubmit({ value: searchInput }) : alert('You must pass an onSubmit function to this component.')
 	}
 
 	return (
-		<div>
+		<form action='/' method='get' onSubmit={handleSubmit}>
+			<label htmlFor='header-search'>
+				<span className='visually-hidden'>Search all services</span>
+			</label>
 			<input
-				className={`search-bar ${mode}`}
+				className='search-bar'
 				style={style}
 				ref={ref}
-				onChange={handleOnChange}
+				onChange={handleChange}
 				placeholder={placeholder}
+				value={searchInput}
 				{...props}
 			/>
-		</div>
+			<button type='submit' className='search-button'>
+				<Search />
+			</button>
+		</form>
 	)
 }
 
 SearchBar.propTypes = {
-	onChange: PropTypes.func.isRequired,
+	onSubmit: PropTypes.func.isRequired,
 	placeholder: PropTypes.string,
-	primary: PropTypes.bool,
 	style: PropTypes.shape({}),
 }
 
 SearchBar.defaultProps = {
 	placeholder: 'Search for a service',
-	primary: true,
 	style: {},
 }
 
