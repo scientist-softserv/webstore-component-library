@@ -10,7 +10,7 @@ const ItemGroup = ({ group_by, items }) => {
 			<Title size='medium' title='Featured Services' />
 			<div className={`group-container--${group_by}`}>
 				{items.map((item) => {
-					return <Item key={item.id} {...item} style={{marginBottom: 35, marginRight: 35 }} />
+					return <Item key={item.id} {...item} style={{marginBottom: 35, marginRight: 35, height: 300 }} />
 				})}
 			</div>
 		</section>

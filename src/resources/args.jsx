@@ -33,7 +33,7 @@ export const items = [
 	},
 	{
 		id: 5,
-		description: 'This is the the fifth service.',
+		description: 'This is the the fifth service. This is the the fifth service. This is the the fifth service.',
 		img,
 		name: 'Service Five',
 	},
