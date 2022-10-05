@@ -15,9 +15,11 @@ const Item = ({ description, img, imgProps, name, style }) => {
 				<h3 className='item-name'>
 					{name}
 				</h3>
-				<p className='item-description'>
-					{description}
-				</p>
+				{description && (
+					<p className='item-description'>
+						{description}
+					</p>
+				)}
 			</div>
 		</div>
 	)
@@ -35,6 +37,7 @@ Item.propTypes = {
 }
 
 Item.defaultProps = {
+	description: '',
 	style: {},
 }
 
