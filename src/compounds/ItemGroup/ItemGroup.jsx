@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import { Item, Title } from '../../components'
 import './item-group.css'
 
-const ItemGroup = ({ groupBy, items }) => (
+const ItemGroup = ({ columns, items }) => (
 	<section className='item-group'>
 		<Title size='medium' title='Featured Services' />
-		<div className={`group-container--${groupBy}`}>
+		<div className={`group-container--${columns}`}>
 			{items.map((item) => {
 				const margin = { marginBottom: 35, marginRight: 35, height: 300 }
 				return <Item key={item.id} {...item} style={margin} />
@@ -16,7 +16,7 @@ const ItemGroup = ({ groupBy, items }) => (
 )
 
 ItemGroup.propTypes = {
-	groupBy: PropTypes.oneOf([3, 4]),
+	columns: PropTypes.oneOf([3, 4]),
 	items: PropTypes.arrayOf(PropTypes.shape({
 		description: PropTypes.string.isRequired,
 		img: PropTypes.shape({}).isRequired,
@@ -27,7 +27,7 @@ ItemGroup.propTypes = {
 }
 
 ItemGroup.defaultProps = {
-	groupBy: 3,
+	columns: 3,
 }
 
 export default ItemGroup

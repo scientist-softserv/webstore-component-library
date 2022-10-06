@@ -14,12 +14,12 @@ const Template = (args) => <ItemGroup {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-	groupBy: 3,
+	columns: 3,
 	items: fiveItems,
 }
 
 export const Alternate = (args) => <ItemGroup {...args} />
 Alternate.args = {
-	groupBy: 4,
+	columns: 4,
 	items: sixItems,
 }
