@@ -1,5 +1,6 @@
 import React from 'react'
 import { Image } from '../components'
+import hero from '../assets/img/hero.jpg'
 import item from '../assets/img/item.jpg'
 
 export default {
@@ -19,8 +20,11 @@ Default.args = {
 
 export const Alternate = Template.bind({})
 Alternate.args = {
-	alt: 'test tubes',
-	src: item,
-	height: 200,
-	width: 0,
+	alt: 'DNA chain',
+	src: hero,
+	height: 400,
+	width: '100%',
+	style: {
+		objectFit: 'cover',
+	}
 }
