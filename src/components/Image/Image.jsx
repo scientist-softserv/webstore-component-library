@@ -13,9 +13,15 @@ const Image = ({ alt, height, src, width, ...props}) => (
 
 Image.propTypes = {
 	alt: PropTypes.string.isRequired,
-	height: PropTypes.number,
+	height: PropTypes.oneOfType([
+		PropTypes.string, // allows percentages
+		PropTypes.number, // uses pixels
+	]),
 	src: PropTypes.string.isRequired,
-	width: PropTypes.number,
+	width: PropTypes.oneOfType([
+		PropTypes.string, // allows percentages
+		PropTypes.number, // uses pixels
+	]),
 }
 
 Image.defaultProps = {
