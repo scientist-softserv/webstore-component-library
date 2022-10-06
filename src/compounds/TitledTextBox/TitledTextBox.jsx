@@ -3,22 +3,31 @@ import PropTypes from 'prop-types'
 import { TextBox, Title } from '../../components'
 import './titled-text-box.css'
 
-const TitledTextBox = ({ text, text_alignment, text_size, text_style, title, title_alignment, title_size, title_style }) => (
+const TitledTextBox = ({ text, textAlignment, textSize, textStyle, title, titleAlignment, titleSize, titleStyle }) => (
 	<section className='titled-text-box'>
-		<Title alignment={title_alignment} size={title_size} style={title_style} title={title} />
-		<TextBox alignment={text_alignment} size={text_size} style={text_style} text={text} />
+		<Title alignment={titleAlignment} size={titleSize} style={titleStyle} title={title} />
+		<TextBox alignment={textAlignment} size={textSize} style={textStyle} text={text} />
 	</section>
 )
 
 TitledTextBox.propTypes = {
 	text: PropTypes.string.isRequired,
-	text_alignment: PropTypes.oneOf(['left', 'center', 'right']),
-	text_size: PropTypes.oneOf(['small', 'medium', 'large']),
-	text_style: PropTypes.shape({}),
+	textAlignment: PropTypes.oneOf(['left', 'center', 'right']),
+	textSize: PropTypes.oneOf(['small', 'medium', 'large']),
+	textStyle: PropTypes.shape({}),
 	title: PropTypes.string.isRequired,
-	title_alignment: PropTypes.oneOf(['left', 'center', 'right']),
-	title_size: PropTypes.oneOf(['small', 'medium', 'large']),
-	title_style: PropTypes.shape({}),
+	titleAlignment: PropTypes.oneOf(['left', 'center', 'right']),
+	titleSize: PropTypes.oneOf(['small', 'medium', 'large']),
+	titleStyle: PropTypes.shape({}),
+}
+
+TitledTextBox.defaultProps = {
+	textAlignment: 'left',
+	textSize: 'medium',
+	textStyle: PropTypes.shape({}),
+	titleAlignment: 'left',
+	titleSize: 'large',
+	titleStyle: PropTypes.shape({}),
 }
 
 export default TitledTextBox

@@ -1,3 +1,4 @@
+/* eslint jsx-a11y/label-has-associated-control: 1 */
 import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import Search from '../../assets/svg/Search'
@@ -11,17 +12,18 @@ const SearchBar = ({ onSubmit, placeholder }) => {
 		onSubmit({ value: inputRef.current.value })
 	}
 
+	// TODO(alishaevn): figure out the action below once connected to the api
 	return (
 		<form action='/' method='get' onSubmit={handleSubmit}>
-			<label htmlFor='header-search'>
+			<label>
 				<span className='visually-hidden'>Search all services</span>
+				<input
+					className='search-bar'
+					ref={inputRef}
+					placeholder={placeholder}
+					type='text'
+				/>
 			</label>
-			<input
-				className='search-bar'
-				ref={inputRef}
-				placeholder={placeholder}
-				type='text'
-			/>
 			<button type='submit' className='search-button'>
 				<Search />
 			</button>

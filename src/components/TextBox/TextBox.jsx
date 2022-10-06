@@ -1,3 +1,4 @@
+/* eslint react/no-array-index-key: 0 */
 import React from 'react'
 import PropTypes from 'prop-types'
 import './text-box.css'
@@ -8,8 +9,8 @@ const TextBox = ({ alignment, size, style, text }) => {
 
 	return (
 		<>
-			{paragraphs.map((par) => (
-				<div className={`text-box--${alignment}`}>
+			{paragraphs.map((par, index) => (
+				<div className={`text-box--${alignment}`} key={index}>
 					<p
 						className={`text-box text-box--${size}`}
 						style={{ ...style }}

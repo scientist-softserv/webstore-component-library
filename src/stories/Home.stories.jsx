@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { SearchBar } from '../components'
 import { TitledTextBox, ItemGroup, Header } from '../compounds'
-import { single_paragraph, onSubmit, items } from '../resources/args'
+import { singleParagraph, onSubmit, items } from '../resources/args'
 // import { within, userEvent } from '@storybook/testing-library'
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
 				onLogout={() => setUser(undefined)}
 			/>
 			<SearchBar onSubmit={onSubmit} />
-			<TitledTextBox size='medium' text={single_paragraph} title='About Us' />
+			<TitledTextBox size='medium' text={singleParagraph} title='About Us' />
 			<ItemGroup items={items} />
 		</main>
 	)
