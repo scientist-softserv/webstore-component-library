@@ -4,15 +4,31 @@
   display: inline-block;
 }
 
+/* alignment */
+.title--left {
+  text-align: left;
+}
+
+.title--center {
+  text-align: center;
+}
+
+.title--right {
+  text-align: right;
+}
+
+/* size */
 .title--small {
   font-size: 18px;
+  font-weight: 500;
 }
 
 .title--medium {
-  font-size: 32px;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .title--large {
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 700;
 }
