@@ -1,19 +1,14 @@
-import { useState } from 'react'
+import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import Search from '../../assets/svg/Search'
 import './search-bar.css'
 
-const SearchBar = ({ onSubmit, placeholder, primary, ref, style, ...props }) => {
-	const [searchInput, setSearchInput] = useState('')
-
-	const handleChange = (event) => {
-		event.preventDefault()
-		setSearchInput(event.target.value)
-	}
+const SearchBar = ({ onSubmit, placeholder }) => {
+	const inputRef = useRef(null)
 
 	const handleSubmit = (event) => {
 		event.preventDefault()
-		onSubmit ? onSubmit({ value: searchInput }) : alert('You must pass an onSubmit function to this component.')
+		onSubmit({ value: inputRef.current.value })
 	}
 
 	return (
@@ -23,12 +18,9 @@ const SearchBar = ({ onSubmit, placeholder, primary, ref, style, ...props }) => 
 			</label>
 			<input
 				className='search-bar'
-				style={style}
-				ref={ref}
-				onChange={handleChange}
+				ref={inputRef}
 				placeholder={placeholder}
-				value={searchInput}
-				{...props}
+				type='text'
 			/>
 			<button type='submit' className='search-button'>
 				<Search />
@@ -40,12 +32,10 @@ const SearchBar = ({ onSubmit, placeholder, primary, ref, style, ...props }) => 
 SearchBar.propTypes = {
 	onSubmit: PropTypes.func.isRequired,
 	placeholder: PropTypes.string,
-	style: PropTypes.shape({}),
 }
 
 SearchBar.defaultProps = {
 	placeholder: 'Search for a service',
-	style: {},
 }
 
 export default SearchBar

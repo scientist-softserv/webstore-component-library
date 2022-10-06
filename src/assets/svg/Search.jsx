@@ -1,3 +1,5 @@
+import React from 'react'
+
 const Search = (props) => (
 	<svg
 		width={27}
