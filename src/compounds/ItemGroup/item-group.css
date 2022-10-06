@@ -1,0 +1,17 @@
+.item-group {
+  padding: 25px 20px;
+  width: fit-content;
+  margin: auto;
+}
+
+.group-container--3 {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 831px;
+}
+
+.group-container--4 {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1108px;
+}
