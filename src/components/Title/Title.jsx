@@ -2,25 +2,28 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './title.css'
 
-const Title = ({ size, label, styles, ...props }) => (
-	<p
-		className={`title title--${size}`}
-		style={{ ...styles }}
-		{...props}
-	>
-		{label}
-	</p>
+const Title = ({ alignment, size, style, title }) => (
+	<div className={`title--${alignment}`}>
+		<h1
+			className={`title title--${size}`}
+			style={{ ...style }}
+		>
+			{title}
+		</h1>
+	</div>
 )
 
 Title.propTypes = {
+	alignment: PropTypes.oneOf(['left', 'center', 'right']),
 	size: PropTypes.oneOf(['small', 'medium', 'large']),
-	label: PropTypes.string.isRequired,
-	styles: PropTypes.shape({}),
+	style: PropTypes.shape({}),
+	title: PropTypes.string.isRequired,
 }
 
 Title.defaultProps = {
+	alignment: 'left',
 	size: 'large',
-	styles: {},
+	style: {},
 }
 
 export default Title
