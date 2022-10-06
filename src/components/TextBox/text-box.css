@@ -1,0 +1,30 @@
+.text-box {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  display: inline-block;
+}
+
+/* alignment */
+.text-box--left {
+  text-align: left;
+}
+
+.text-box--center {
+  text-align: center;
+}
+
+.text-box--right {
+  text-align: right;
+}
+
+/* size */
+.text-box--small {
+  font-size: 13px;
+}
+
+.text-box--medium {
+  font-size: 15px;
+}
+
+.text-box--large {
+  font-size: 18px;
+}
