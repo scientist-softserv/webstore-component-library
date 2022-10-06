@@ -26,5 +26,5 @@ Alternate.args = {
 	width: '100%',
 	style: {
 		objectFit: 'cover',
-	}
+	},
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Image = ({ alt, height, src, width, ...props}) => (
+const Image = ({ alt, height, src, width, ...props }) => (
 	<img
 		alt={alt}
 		src={src}
