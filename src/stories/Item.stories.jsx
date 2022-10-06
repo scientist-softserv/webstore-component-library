@@ -11,6 +11,7 @@ const Template = (args) => <Item {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
+	buttonLink: '',
 	buttonProps: {},
 	description: '',
 	img: {
@@ -18,17 +19,19 @@ Default.args = {
 		alt: 'Several rows of test tubes with a liquid being put into one.',
 	},
 	imgProps: {},
-	onClick: () => console.log('You clicked the ITEM!'),
+	titleLink: '',
 	orientation: 'vertical',
 	name: 'Test Tubes',
 	style: {},
-	withButton: false,
+	withButtonLink: false,
+	withTitleLink: false,
 }
 
-export const Alternate = Template.bind({})
-Alternate.args = {
+export const WithButtonLink = Template.bind({})
+WithButtonLink.args = {
+	buttonLink: '?path=/story/components-item--with-button-link',
 	buttonProps: {
-		backgroundColor: 'grey',
+		backgroundColor: '#A9A9A9',
 		label: 'Request this item',
 		primary: true,
 	},
@@ -38,9 +41,28 @@ Alternate.args = {
 		alt: 'Several rows of test tubes with a liquid being put into one.',
 	},
 	imgProps: {},
-	onClick: () => console.log('You clicked the BUTTON!'),
 	orientation: 'horizontal',
 	name: 'Microbiological Sterility Testing',
 	style: {},
-	withButton: true,
+	titleLink: '',
+	withButtonLink: true,
+	withTitleLink: false,
+}
+
+export const WithTitleLink = Template.bind({})
+WithTitleLink.args = {
+	buttonLink: '',
+	buttonProps: {},
+	description: 'Test the presence of viable microorganisms.',
+	img: {
+		src: featuredService,
+		alt: 'Several rows of test tubes with a liquid being put into one.',
+	},
+	imgProps: {},
+	orientation: 'vertical',
+	name: 'Microbiological Sterility Testing',
+	style: {},
+	titleLink: '?path=/story/components-item--with-title-link',
+	withButtonLink: false,
+	withTitleLink: true,
 }

@@ -5,3 +5,7 @@ h1, h3 {
 p {
 	margin: 5px 0 !important;
 }
+
+.pointer-cursor {
+	cursor: pointer;
+}

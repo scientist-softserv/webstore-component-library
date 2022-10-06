@@ -3,7 +3,11 @@ import PropTypes from 'prop-types'
 import Button from '../Button/Button'
 import './item.css'
 
-const Item = ({ buttonProps, description, img, imgProps, onClick, orientation, name, style, withButton }) => {
+const Item = (props) => {
+	const {
+		buttonProps, description, img, imgProps, buttonLink, orientation, name, style, withButtonLink,
+		withTitleLink, titleLink,
+	} = props
 	const { primary, backgroundColor, size, label } = buttonProps
 	const { alt, src } = img
 
@@ -15,26 +19,33 @@ const Item = ({ buttonProps, description, img, imgProps, onClick, orientation, n
 			<img className={`item-image item-image-${orientation}`} src={src} alt={alt} {...imgProps} />
 			<div className={`item-options-${orientation}`}>
 				<div className='item-details'>
-					<h3 className={`item-name ${!withButton && 'item-name-button'}`} onClick={withButton ? undefined : onClick}>
-						{name}
-					</h3>
+					{withTitleLink ? (
+						<a href={titleLink} className='pointer-cursor item-link'>
+							<h3 className='item-name'>
+								{name}
+							</h3>
+						</a>
+					) : (
+						<h3 className='item-name'>
+							{name}
+						</h3>
+					)}
 					{description && (
 						<p className='item-description'>
 							{description}
 						</p>
 					)}
 				</div>
-				{withButton && (
-					<div className={`item-button-${orientation}`}>
+				{withButtonLink && (
+					<a href={buttonLink} className={`item-button-${orientation} item-link`}>
 						<Button
 							primary={primary}
 							backgroundColor={backgroundColor}
 							size={size}
 							label={label}
-							onClick={withButton ? onClick : undefined}
 							{...buttonProps}
 						/>
-					</div>
+					</a>
 				)}
 			</div>
 		</article>
@@ -42,6 +53,7 @@ const Item = ({ buttonProps, description, img, imgProps, onClick, orientation, n
 }
 
 Item.propTypes = {
+	buttonLink: PropTypes.string,
 	buttonProps: PropTypes.shape({
 		primary: PropTypes.bool,
 		backgroundColor: PropTypes.string,
@@ -54,20 +66,24 @@ Item.propTypes = {
 		alt: PropTypes.string.isRequired,
 	}).isRequired,
 	imgProps: PropTypes.shape({}),
-	onClick: PropTypes.func,
 	orientation: PropTypes.oneOf(['horizontal', 'vertical']),
 	name: PropTypes.string.isRequired,
 	style: PropTypes.shape({}),
-	withButton: PropTypes.bool,
+	titleLink: PropTypes.string,
+	withButtonLink: PropTypes.bool,
+	withTitleLink: PropTypes.bool,
 }
 
 Item.defaultProps = {
 	buttonProps: {},
 	description: '',
-	onClick: undefined,
+	imgProps: {},
+	buttonLink: '',
 	orientation: 'vertical',
 	style: {},
-	withButton: false,
+	titleLink: '',
+	withButtonLink: false,
+	withTitleLink: false,
 }
 
 export default Item

@@ -24,6 +24,15 @@
   width: 100%;
 }
 
+.item-link {
+  text-decoration: none;
+  color: #000000;
+}
+
+.item-link:hover {
+  color: #A9A9A9;
+}
+
 .item-name-button {
   cursor: pointer;
 }
