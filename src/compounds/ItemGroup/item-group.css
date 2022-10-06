@@ -2,6 +2,7 @@
   padding: 25px 20px;
   width: fit-content;
   margin: auto;
+	max-width: initial;
 }
 
 .group-container--3 {
