@@ -1,0 +1,20 @@
+.nav-link {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+	font-size: 14px;
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+	text-decoration: none;
+	color: #000000;
+}
+
+.nav-link:hover {
+	color: #A9A9A9;
+}
+
+.nav-link + .nav-link {
+	margin-left: 10px;
+}
