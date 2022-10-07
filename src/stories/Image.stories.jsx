@@ -15,7 +15,7 @@ Default.args = {
 	alt: 'test tubes',
 	src: item,
 	height: 0,
-	width: 0,
+	width: '',
 }
 
 export const Alternate = Template.bind({})

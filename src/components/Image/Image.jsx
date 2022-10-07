@@ -25,8 +25,8 @@ Image.propTypes = {
 }
 
 Image.defaultProps = {
-	height: 0,
-	width: 0,
+	height: 'auto',
+	width: 'auto',
 }
 
 export default Image
