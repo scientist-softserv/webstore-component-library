@@ -1,11 +1,11 @@
 import React from 'react'
-import Header from '../components/Header'
+import { Header } from '../compounds'
+import logoFull from '../assets/img/logo-full.png'
 
 export default {
-	title: 'Example/Header',
+	title: 'Compounds/Header',
 	component: Header,
 	parameters: {
-		// More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
 		layout: 'fullscreen',
 	},
 }
@@ -14,10 +14,22 @@ const Template = (args) => <Header {...args} />
 
 export const LoggedIn = Template.bind({})
 LoggedIn.args = {
+	browseLink: '',
+	logInLink: '',
+	logo: logoFull,
+	logOutLink: '',
+	requestsLink: '',
 	user: {
 		name: 'Aaliyah Haughton',
 	},
 }
 
 export const LoggedOut = Template.bind({})
-LoggedOut.args = {}
+LoggedOut.args = {
+	browseLink: '',
+	logInLink: '',
+	logo: logoFull,
+	logOutLink: '',
+	requestsLink: '',
+	user: null,
+}
