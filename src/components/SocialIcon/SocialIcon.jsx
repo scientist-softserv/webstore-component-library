@@ -3,13 +3,14 @@ import PropTypes from 'prop-types'
 import FaceBook from '../../assets/svg/FaceBook'
 import Instagram from '../../assets/svg/Instagram'
 import Rss from '../../assets/svg/Rss'
+import TikTok from '../../assets/svg/TikTok'
 import Twitter from '../../assets/svg/Twitter'
 
 const iconsList = {
 	'facebook': (height, color) => <FaceBook height={height} fill={color} />,
 	'instagram': (height, color) => <Instagram height={height} fill={color} />,
 	'rss': (height, color) => <Rss height={height} fill={color} />,
-	'tiktok': '',
+	'tiktok': (height, color) => <TikTok height={height} fill={color} />,
 	'twitter': (height, color) => <Twitter height={height} fill={color} />,
 }
 
@@ -22,7 +23,7 @@ const SocialIcon = ({ color, height, icon, url }) => (
 SocialIcon.propTypes = {
 	color: PropTypes.string,
 	height: PropTypes.number,
-	icon: PropTypes.oneOf(['facebook', 'instagram', 'rss', 'twitter']).isRequired,
+	icon: PropTypes.oneOf(['facebook', 'instagram', 'rss', 'tiktok', 'twitter']).isRequired,
 	url: PropTypes.string.isRequired,
 }
 
