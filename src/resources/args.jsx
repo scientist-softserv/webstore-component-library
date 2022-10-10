@@ -54,3 +54,18 @@ export const multipleParagraphs = `When the party broke up, Lydia returned with 
 Had Elizabeth’s opinion been all drawn from her own family, she could not have formed a very pleasing opinion of conjugal felicity or domestic comfort. Her father, captivated by youth and beauty, and that appearance of good humour which youth and beauty generally give, had married a woman whose weak understanding and illiberal mind had very early in their marriage put an end to all real affection for her. Respect, esteem, and confidence had vanished for ever; and all his views of domestic happiness were overthrown. But Mr. Bennet was not of a disposition to seek comfort for the disappointment which his own imprudence had brought on, in any of those pleasures which too often console the unfortunate for their folly or their vice. He was fond of the country and of books; and from these tastes had arisen his principal enjoyments. To his wife he was very little otherwise indebted, than as her ignorance and folly had contributed to his amusement. This is not the sort of happiness which a man would in general wish to owe to his wife; but where other powers of entertainment are wanting, the true philosopher will derive benefit from such as are given.
 
 Elizabeth, however, had never been blind to the impropriety of her father’s behaviour as a husband. She had always seen it with pain; but respecting his abilities, and grateful for his affectionate treatment of herself, she endeavoured to forget what she could not overlook, and to banish from her thoughts that continual breach of conjugal obligation and decorum which, in exposing his wife to the contempt of her own children, was so highly reprehensible. But she had never felt so strongly as now the disadvantages which must attend the children of so unsuitable a marriage, nor ever been so fully aware of the evils arising from so ill-judged a direction of talents; talents, which, rightly used, might at least have preserved the respectability of his daughters, even if incapable of enlarging the mind of his wife.`
+
+export const links = [
+	{
+		name: 'The Team',
+		url: '/about-us',
+	},
+	{
+		name: 'Contact',
+		url: '/contact',
+	},
+	{
+		name: 'Services',
+		url: '/services',
+	},
+]
