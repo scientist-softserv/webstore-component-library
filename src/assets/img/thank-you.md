@@ -5,3 +5,4 @@ Our images were sourced from the following photographers:
 
 Our icons were sourced from the following:
 * [Twitter social badge icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/twitter-social-badge)
+* [Instagram icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/instagram)

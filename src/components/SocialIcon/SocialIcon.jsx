@@ -4,6 +4,7 @@ import Instagram from '../../assets/svg/Instagram'
 import Twitter from '../../assets/svg/Twitter'
 
 const iconsList = {
+	'instagram': (height, color) => <Instagram height={height} fill={color} />,
 	'twitter': (height, color) => <Twitter height={height} fill={color} />,
 }
 

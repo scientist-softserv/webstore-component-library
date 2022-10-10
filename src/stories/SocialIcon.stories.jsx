@@ -15,3 +15,10 @@ Twitter.args = {
 	url: 'www.twitter.com',
 }
 
+export const Instagram = Template.bind({})
+Instagram.args = {
+	color: '#AB8983',
+	height: 40,
+	icon: 'instagram',
+	url: 'www.instagram.com',
+}
