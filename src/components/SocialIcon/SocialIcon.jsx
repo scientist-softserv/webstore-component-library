@@ -17,7 +17,7 @@ const SocialIcon = ({ color, height, icon, url }) => (
 SocialIcon.propTypes = {
 	color: PropTypes.string,
 	height: PropTypes.number,
-	icon: PropTypes.string.isRequired,
+	icon: PropTypes.oneOf(['instagram', 'twitter']).isRequired,
 	url: PropTypes.string.isRequired,
 }
 
