@@ -6,6 +6,7 @@ import Rss from '../../assets/svg/Rss'
 import TikTok from '../../assets/svg/TikTok'
 import Twitter from '../../assets/svg/Twitter'
 import Vimeo from '../../assets/svg/Vimeo'
+import YouTube from '../../assets/svg/YouTube'
 
 const iconsList = {
 	'facebook': (height, color) => <FaceBook height={height} fill={color} />,
@@ -14,6 +15,7 @@ const iconsList = {
 	'tiktok': (height, color) => <TikTok height={height} fill={color} />,
 	'twitter': (height, color) => <Twitter height={height} fill={color} />,
 	'vimeo': (height, color) => <Vimeo height={height} fill={color} />,
+	'youtube': (height, color) => <YouTube height={height} fill={color} />,
 }
 
 const SocialIcon = ({ color, height, icon, url }) => (
@@ -25,7 +27,7 @@ const SocialIcon = ({ color, height, icon, url }) => (
 SocialIcon.propTypes = {
 	color: PropTypes.string,
 	height: PropTypes.number,
-	icon: PropTypes.oneOf(['facebook', 'instagram', 'rss', 'tiktok', 'twitter', 'vimeo']).isRequired,
+	icon: PropTypes.oneOf(['facebook', 'instagram', 'rss', 'tiktok', 'twitter', 'vimeo', 'youtube']).isRequired,
 	url: PropTypes.string.isRequired,
 }
 
