@@ -69,3 +69,41 @@ export const links = [
 		url: '/services',
 	},
 ]
+
+export const sections = [
+	{
+		header: 'One',
+		links,
+	},
+	{
+		header: 'Two',
+		links,
+	},
+	{
+		header: 'Three',
+		links,
+	},
+]
+
+export const socials = [
+	{
+		icon: 'twitter',
+		url: 'www.twitter.com',
+	},
+	{
+		icon: 'instagram',
+		url: 'www.instagram.com',
+	},
+	{
+		icon: 'facebook',
+		url: 'www.facebook.com',
+	},
+	{
+		icon: 'youtube',
+		url: 'www.youtube.com',
+	},
+	{
+		icon: 'rss',
+		url: 'www.rss.com',
+	},
+]

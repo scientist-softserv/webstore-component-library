@@ -18,3 +18,10 @@ Default.args = {
 	sections: [],
 	socials: [],
 }
+
+export const Alternate = Template.bind({})
+Alternate.args = {
+	companyName: 'Company B',
+	sections,
+	socials,
+}
