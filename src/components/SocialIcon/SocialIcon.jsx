@@ -7,6 +7,7 @@ import TikTok from '../../assets/svg/TikTok'
 import Twitter from '../../assets/svg/Twitter'
 import Vimeo from '../../assets/svg/Vimeo'
 import YouTube from '../../assets/svg/YouTube'
+import './social-icon.css'
 
 const iconsList = {
 	'facebook': (height, color) => <FaceBook height={height} fill={color} />,
@@ -19,7 +20,7 @@ const iconsList = {
 }
 
 const SocialIcon = ({ color, height, icon, url }) => (
-	<a href={url} target='_blank' className={`social-icon-${icon}`}>
+	<a href={url} target='_blank' className={`social-icon social-icon-${icon}`}>
 		{iconsList[icon](height || 25, color)}
 	</a>
 )
