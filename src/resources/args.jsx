@@ -98,12 +98,4 @@ export const socials = [
 		icon: 'facebook',
 		url: 'www.facebook.com',
 	},
-	{
-		icon: 'youtube',
-		url: 'www.youtube.com',
-	},
-	{
-		icon: 'rss',
-		url: 'www.rss.com',
-	},
 ]
