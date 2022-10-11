@@ -12,10 +12,12 @@ const LinkGroup = ({ header, headerStyle, links, linkStyle }) => (
 
 LinkGroup.propTypes = {
 	header: PropTypes.string.isRequired,
+	headerStyle: PropTypes.shape({}),
 	links: PropTypes.arrayOf(PropTypes.shape({
 		name: PropTypes.string.isRequired,
 		url: PropTypes.string.isRequired,
 	})).isRequired,
+	linkStyle: PropTypes.shape({}),
 }
 
 LinkGroup.defaultProps = {
