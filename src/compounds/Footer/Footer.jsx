@@ -5,8 +5,8 @@ import LinkGroup from '../LinkGroup/LinkGroup'
 import './footer.css'
 
 const Footer = ({ companyName, sections, socials }) => (
-	<footer className='container'>
-		<h6>© {companyName} {new Date().getFullYear()}</h6>
+	<footer className='container footer-container'>
+		<h5>© {companyName} {new Date().getFullYear()}</h5>
 		<div className='footer-sections'>
 			{sections && sections.map((section) => {
 				const { header, links } = section
