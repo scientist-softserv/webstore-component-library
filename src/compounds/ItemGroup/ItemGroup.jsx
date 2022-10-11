@@ -8,7 +8,7 @@ const ItemGroup = ({ columns, items }) => (
 		<Title size='medium' title='Featured Services' />
 		<div className={`group-container--${columns}`}>
 			{items.map((item) => {
-				const margin = { marginBottom: 35, marginRight: 35, height: 300 }
+				const margin = { marginBottom: 35, marginRight: 33, height: 300 }
 				return <Item key={item.id} {...item} style={margin} />
 			})}
 		</div>
