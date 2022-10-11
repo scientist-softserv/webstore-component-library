@@ -8,7 +8,7 @@ import './header.css'
 
 const Header = ({ browseLink, logInLink, logo, logOutLink, requestsLink, user }) => (
 	<header>
-		<div className='wrapper'>
+		<div className='container'>
 			<Logo logo={logo} />
 			<div>
 				<NavLink href={browseLink} label='Browse' />

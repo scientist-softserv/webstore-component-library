@@ -1,13 +1,3 @@
-.wrapper {
-  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 15px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 70,
-}
-
 svg {
   display: inline-block;
   vertical-align: top;
