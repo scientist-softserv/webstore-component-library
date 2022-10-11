@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import { Link } from '../../components'
 import './link-group.css'
 
-const LinkGroup = ({ header, links }) => (
+const LinkGroup = ({ header, headerStyle, links, linkStyle }) => (
 	<div className='link-group-container'>
-		<p className='link-group-header'>{header}</p>
-		{links.map(({ name, url }) => <Link href={url} label={name} addClass='link-group-links' />)}
+		<p className='link-group-header' style={headerStyle}>{header}</p>
+		{links.map(({ name, url }) => <Link href={url} label={name} addClass='link-group-links' style={linkStyle} />)}
 	</div>
 )
 
@@ -16,6 +16,11 @@ LinkGroup.propTypes = {
 		name: PropTypes.string.isRequired,
 		url: PropTypes.string.isRequired,
 	})).isRequired,
+}
+
+LinkGroup.defaultProps = {
+	headerStyle: {},
+	linkStyle: {},
 }
 
 export default LinkGroup
