@@ -1,10 +1,10 @@
 import React from 'react'
 import { LoggedOut } from './Header.stories'
-import { Default as SearchBar } from './SearchBar.stories'
-import { Default as TitledTextBox } from './TitledTextBox.stories'
+import { Alternate as Footer } from './Footer.stories'
 import { Alternate as Hero } from './Image.stories'
 import { Alternate as ItemGroup } from './ItemGroup.stories'
-import { Alternate as Footer } from './Footer.stories'
+import { Default as SearchBar } from './SearchBar.stories'
+import { Default as TitledTextBox } from './TitledTextBox.stories'
 
 const Home = () => (
 	<main>
