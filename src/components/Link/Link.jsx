@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './link.css'
 
-const Link = ({ href, label, style, ...props }) => (
+const Link = ({ addClass, href, label, style, ...props }) => (
 	<a
 		href={href}
-		className='link'
+		className={`link ${addClass}`}
 		style={style}
 		{...props}
 	>
@@ -14,12 +14,14 @@ const Link = ({ href, label, style, ...props }) => (
 )
 
 Link.propTypes = {
+	addClass: PropTypes.string,
 	href: PropTypes.string.isRequired,
 	label: PropTypes.string.isRequired,
 	style: PropTypes.shape({}),
 }
 
 Link.defaultProps = {
+	addClass: '',
 	style: {},
 }
 
