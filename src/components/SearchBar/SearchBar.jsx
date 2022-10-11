@@ -14,9 +14,7 @@ const SearchBar = ({ onSubmit, placeholder }) => {
 
 	// TODO(alishaevn): figure out the action below once connected to the api
 	return (
-		<form action='/' method='get' onSubmit={handleSubmit}>
-			<label>
-				<span className='visually-hidden'>Search all services</span>
+		<div className='search-bar-container center-content'>
 				<input
 					className='search-bar'
 					ref={inputRef}
@@ -28,6 +26,7 @@ const SearchBar = ({ onSubmit, placeholder }) => {
 				<Search />
 			</button>
 		</form>
+		</div>
 	)
 }
 
