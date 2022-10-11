@@ -4,9 +4,9 @@ import { Link } from '../../components'
 import './link-group.css'
 
 const LinkGroup = ({ header, links }) => (
-	<div>
+	<div className='link-group-container'>
 		<p className='link-group-header'>{header}</p>
-		{links.map(({ name, url }) => <Link href={url} label={name} />)}
+		{links.map(({ name, url }) => <Link href={url} label={name} addClass='link-group-links' />)}
 	</div>
 )
 
