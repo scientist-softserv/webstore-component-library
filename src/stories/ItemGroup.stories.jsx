@@ -1,12 +1,12 @@
 import React from 'react'
-import { ItemGroup } from '../compounds'
+import { ItemGroup } from '../components'
 import { items } from '../resources/args'
 
 const fiveItems = items.filter((_s, index) => index < 5)
 const sixItems = items
 
 export default {
-	title: 'Compounds/ItemGroup',
+	title: 'Components/ItemGroup',
 	component: ItemGroup,
 }
 
