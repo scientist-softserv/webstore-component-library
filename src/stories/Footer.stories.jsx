@@ -1,9 +1,9 @@
 import React from 'react'
-import { Footer } from '../compounds'
+import { Footer } from '../components'
 import { sections, socials } from '../resources/args'
 
 export default {
-	title: 'Compounds/Footer',
+	title: 'Components/Footer',
 	component: Footer,
 	parameters: {
 		layout: 'fullscreen',

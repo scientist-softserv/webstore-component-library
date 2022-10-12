@@ -1,9 +1,9 @@
 import React from 'react'
-import { TitledTextBox } from '../compounds'
+import { TitledTextBox } from '../components'
 import { singleParagraph } from '../resources/args'
 
 export default {
-	title: 'Compounds/TitledTextBox',
+	title: 'Components/TitledTextBox',
 	component: TitledTextBox,
 }
 

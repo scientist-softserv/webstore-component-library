@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { NavLink } from '../../components'
-import { Logo } from '..'
+import { Logo, NavLink } from '..'
 import './header.css'
 
 //  may come back to hard code these

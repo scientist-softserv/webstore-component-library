@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { TextBox, Title } from '../../components'
+import { TextBox, Title } from '..'
 import './titled-text-box.css'
 
 const TitledTextBox = ({ text, textAlignment, textSize, textStyle, title, titleAlignment, titleSize, titleStyle }) => (
