@@ -10,6 +10,7 @@ const Template = (args) => <SearchBar {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
+	onSubmit: ({ value }) => console.log('the value is:', value),
 	placeholder: 'Search for a service',
 	style: {},
 }

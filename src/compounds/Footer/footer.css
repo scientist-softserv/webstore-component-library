@@ -1,0 +1,12 @@
+.footer-container {
+  background-color: lightgray;
+}
+
+.footer-sections {
+  display: contents;
+  width: 60%;
+}
+
+.footer-socials {
+  width: 105px;
+}
