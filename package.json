@@ -2,12 +2,14 @@
   "name": "webstore-component-library",
   "version": "0.0.0",
   "description": "A React component library intended for use with WebStore applications",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "test-storybook": "test-storybook"
+    "test-storybook": "test-storybook",
+    "build-lib": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
   "homepage": "https://gitlab.com/notch8/webstore-component-library#readme",
   "dependencies": {
     "@fontsource/inter": "^4.5.12",
+    "@rollup/plugin-commonjs": "^23.0.0",
     "@storybook/testing-library": "^0.0.13",
     "prop-types": "^15.8.1"
   },
