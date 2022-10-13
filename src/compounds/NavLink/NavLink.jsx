@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from '..'
+import { Link } from '../../components'
 import './nav-link.css'
 
 const NavLink = ({ href, label, style, ...props }) => (
