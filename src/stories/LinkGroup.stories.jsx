@@ -1,9 +1,9 @@
 import React from 'react'
-import { LinkGroup } from '../components'
+import { LinkGroup } from '../compounds'
 import { links } from '../resources/args'
 
 export default {
-	title: 'Components/LinkGroup',
+	title: 'Compounds/LinkGroup',
 	component: LinkGroup,
 }
 

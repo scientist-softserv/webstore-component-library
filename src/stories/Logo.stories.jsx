@@ -1,10 +1,10 @@
 import React from 'react'
-import { Logo } from '../components'
+import { Logo } from '../compounds'
 import logoFull from '../assets/img/logo-full.png'
 import logoPictorial from '../assets/img/logo-pictorial.png'
 
 export default {
-	title: 'Components/Logo',
+	title: 'Compounds/Logo',
 	component: Logo,
 	parameters: {
 		layout: 'fullscreen',

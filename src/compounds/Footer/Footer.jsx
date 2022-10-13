@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import SocialIcon from '../SocialIcon/SocialIcon'
+import SocialIcon from '../../components/SocialIcon/SocialIcon'
 import LinkGroup from '../LinkGroup/LinkGroup'
 import './footer.css'
 
