@@ -19,7 +19,9 @@ export default [
 			},
 		],
 		plugins: [
+			// helps rollup know how to handle common js importing and exporting. e.g. the prop-types package
 			commonjs(),
+			// process our css files
 			postcss({
 				plugins: [],
 				minimize: true,
@@ -27,7 +29,6 @@ export default [
 			babel({
 				exclude: 'node_modules/**',
 				presets : ['@babel/preset-react'],
-				// babelHelpers: "bundled",
 			}),
 			external(),
 			resolve({
