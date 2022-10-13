@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from '..'
+import { Link } from '../../components'
 import './link-group.css'
 
 const LinkGroup = ({ header, headerStyle, links, linkStyle }) => (
