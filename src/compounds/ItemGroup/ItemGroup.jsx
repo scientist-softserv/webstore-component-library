@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Item, Title } from '../../components'
+import { Title } from '../../components'
+import Item from '../Item/Item'
 import './item-group.css'
 
 const ItemGroup = ({ columns, items }) => (

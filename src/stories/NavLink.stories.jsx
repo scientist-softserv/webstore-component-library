@@ -1,8 +1,8 @@
 import React from 'react'
-import { NavLink } from '../components'
+import { NavLink } from '../compounds'
 
 export default {
-	title: 'Components/NavLink',
+	title: 'Compounds/NavLink',
 	component: NavLink,
 	parameters: {
 		layout: 'fullscreen',
