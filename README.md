@@ -47,6 +47,12 @@ Tell people where they can go to for help. It can be any combination of an issue
 If you have ideas for releases in the future, it is a good idea to list them in the README.
 
 ## Contributing
+### File Structure
+- A component that uses HTML elements, but not other named components, belongs in "src/components"
+- A component that uses one or more other named components belongs in "src/compounds"
+- If a compound component needs to import another compound component, use the direct import
+  - e.g. "import Component from '../Component/Component'" and NOT "import { Component } from '..'"
+
 ### NPM version
 NPM version `v8.19.2` is the version we're using in implementing this package. Please do not mix it with Yarn.
 

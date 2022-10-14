@@ -1,10 +1,9 @@
 import React from 'react'
-import { Header } from '../components'
 import { Header } from '../compounds'
 import logoFull from '../assets/img/logo-full.png'
 
 export default {
-	title: 'Components/Header',
+	title: 'Compounds/Header',
 	component: Header,
 	parameters: {
 		layout: 'fullscreen',

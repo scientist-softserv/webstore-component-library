@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Image } from '..'
+import { Image } from '../../components'
 
 const Logo = ({ alt, logo }) => (
 	<a href=''>
