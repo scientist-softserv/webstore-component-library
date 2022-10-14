@@ -1,13 +1,15 @@
 {
   "name": "webstore-component-library",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A React component library intended for use with WebStore applications",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "test-storybook": "test-storybook"
+    "test-storybook": "test-storybook",
+    "build-lib": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -26,12 +28,15 @@
   "homepage": "https://gitlab.com/notch8/webstore-component-library#readme",
   "dependencies": {
     "@fontsource/inter": "^4.5.12",
+    "@rollup/plugin-commonjs": "^23.0.0",
     "@storybook/testing-library": "^0.0.13",
     "prop-types": "^15.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",
+    "@babel/preset-react": "^7.18.6",
     "@mdx-js/react": "^1.6.22",
+    "@rollup/plugin-node-resolve": "^15.0.0",
     "@storybook/addon-actions": "^6.5.12",
     "@storybook/addon-essentials": "^6.5.12",
     "@storybook/addon-interactions": "^6.5.12",
@@ -49,7 +54,11 @@
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.6.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "rollup": "^2.79.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2"
   },
   "peerDependencies": {
     "react": "^18.2.0",

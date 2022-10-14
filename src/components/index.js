@@ -1,3 +1,8 @@
+/**
+ * using .jsx for component files only for ease of use
+ * https://reactjs.org/docs/react-without-jsx.html
+ */
+
 import Button from './Button/Button'
 import Image from './Image/Image'
 import Link from './Link/Link'
