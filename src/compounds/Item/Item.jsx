@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Button } from '../../components'
+import { Button, Image } from '../../components'
 import './item.css'
 
 const Item = (props) => {
@@ -16,7 +16,12 @@ const Item = (props) => {
 			className={`item-container item-${orientation}`}
 			style={{ ...style }}
 		>
-			<img className={`item-image item-image-${orientation}`} src={src} alt={alt} {...imgProps} />
+			<Image
+				className={`item-image item-image-${orientation}`}
+				src={src}
+				alt={alt}
+				{...imgProps}
+			/>
 			<div className={`item-options-${orientation}`}>
 				<div className='item-details'>
 					{withTitleLink ? (
