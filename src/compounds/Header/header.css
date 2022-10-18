@@ -3,5 +3,6 @@ button + button {
 }
 
 .header-container {
+  background-color: lightgray;
   height: 70px;
 }

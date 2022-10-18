@@ -28,7 +28,7 @@ ItemGroup.propTypes = {
 }
 
 ItemGroup.defaultProps = {
-	columns: 3,
+	columns: 4,
 }
 
 export default ItemGroup
