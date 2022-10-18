@@ -9,7 +9,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test-storybook": "test-storybook",
-    "build-lib": "rollup -c"
+    "build-lib": "rollup -c",
+    "watch-lib": "rollup -c --watch"
   },
   "repository": {
     "type": "git",
