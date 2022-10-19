@@ -1,6 +1,6 @@
 import React from 'react'
-import { Item } from '../compounds'
-import item from '../assets/img/item.jpg'
+import Item from './Item'
+import item from '../../assets/img/item.jpg'
 
 export default {
 	title: 'Compounds/Item',

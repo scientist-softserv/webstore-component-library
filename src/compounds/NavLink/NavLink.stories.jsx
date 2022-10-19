@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from '../compounds'
+import NavLink from './NavLink'
 
 export default {
 	title: 'Compounds/NavLink',

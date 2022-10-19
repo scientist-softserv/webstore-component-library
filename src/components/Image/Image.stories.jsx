@@ -1,7 +1,7 @@
 import React from 'react'
-import { Image } from '../components'
-import hero from '../assets/img/hero.jpg'
-import item from '../assets/img/item.jpg'
+import Image from './Image'
+import hero from '../../assets/img/hero.jpg'
+import item from '../../assets/img/item.jpg'
 
 export default {
 	title: 'Components/Image',

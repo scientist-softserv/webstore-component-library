@@ -1,5 +1,5 @@
 import React from 'react'
-import { Title } from '../components'
+import Title from './Title'
 
 export default {
 	title: 'Components/Title',
