@@ -1,6 +1,6 @@
 import React from 'react'
-import { TextBox } from '../components'
-import { multipleParagraphs, singleParagraph } from '../resources/args'
+import TextBox from './TextBox'
+import { multipleParagraphs, singleParagraph } from '../../resources/args'
 
 export default {
 	title: 'Components/TextBox',

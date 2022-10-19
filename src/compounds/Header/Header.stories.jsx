@@ -1,6 +1,6 @@
 import React from 'react'
-import { Header } from '../compounds'
-import logoFull from '../assets/img/logo-full.png'
+import Header from './Header'
+import logoFull from '../../assets/img/logo-full.png'
 
 export default {
 	title: 'Compounds/Header',

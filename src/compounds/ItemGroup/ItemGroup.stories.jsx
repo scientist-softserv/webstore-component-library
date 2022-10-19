@@ -1,6 +1,6 @@
 import React from 'react'
-import { ItemGroup } from '../compounds'
-import { items } from '../resources/args'
+import ItemGroup from './ItemGroup'
+import { items } from '../../resources/args'
 
 const fiveItems = items.filter((_s, index) => index < 5)
 const sixItems = items

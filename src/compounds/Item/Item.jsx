@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Button, Image } from '../../components'
+import Button from '../../components/Button/Button'
+import Image from '../../components/Image/Image'
 import './item.css'
 
 const Item = (props) => {

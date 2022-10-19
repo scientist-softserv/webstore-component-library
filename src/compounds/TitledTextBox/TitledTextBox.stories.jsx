@@ -1,6 +1,6 @@
 import React from 'react'
-import { TitledTextBox } from '../compounds'
-import { singleParagraph } from '../resources/args'
+import TitledTextBox from './TitledTextBox'
+import { singleParagraph } from '../../resources/args'
 
 export default {
 	title: 'Compounds/TitledTextBox',

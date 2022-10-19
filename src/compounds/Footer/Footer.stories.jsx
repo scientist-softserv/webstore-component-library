@@ -1,6 +1,6 @@
 import React from 'react'
-import { Footer } from '../compounds'
-import { sections, socials } from '../resources/args'
+import { Footer } from '..'
+import { sections, socials } from '../../resources/args'
 
 export default {
 	title: 'Compounds/Footer',

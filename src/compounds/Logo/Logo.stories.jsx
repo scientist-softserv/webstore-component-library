@@ -1,7 +1,7 @@
 import React from 'react'
-import { Logo } from '../compounds'
-import logoFull from '../assets/img/logo-full.png'
-import logoPictorial from '../assets/img/logo-pictorial.png'
+import Logo from './Logo'
+import logoFull from '../../assets/img/logo-full.png'
+import logoPictorial from '../../assets/img/logo-pictorial.png'
 
 export default {
 	title: 'Compounds/Logo',

@@ -1,5 +1,5 @@
 import React from 'react'
-import { SocialIcon } from '../components'
+import SocialIcon from './SocialIcon'
 
 export default {
 	title: 'Components/SocialIcon',
