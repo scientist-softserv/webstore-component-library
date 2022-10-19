@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/notch8/webstore-component-library.git"
+    "url": "git+https://github.com/scientist-softserv/webstore-component-library.git"
   },
   "keywords": [
     "webstore",
@@ -24,9 +24,9 @@
   "author": "Alisha Evans",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/notch8/webstore-component-library/issues"
+    "url": "https://github.com/scientist-softserv/webstore-component-library/issues"
   },
-  "homepage": "https://gitlab.com/notch8/webstore-component-library#readme",
+  "homepage": "https://github.com/scientist-softserv/webstore-component-library#readme",
   "dependencies": {
     "@fontsource/inter": "^4.5.12",
     "@rollup/plugin-commonjs": "^23.0.0",
