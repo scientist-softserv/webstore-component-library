@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Title } from '../../components'
+import Title from '../../components/Title/Title'
 import Item from '../Item/Item'
 import './item-group.css'
 

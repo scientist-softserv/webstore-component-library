@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { SocialIcon } from '../../components'
 import LinkGroup from '../LinkGroup/LinkGroup'
+import SocialIcon from '../../components/SocialIcon/SocialIcon'
 import './footer.css'
 
 const Footer = ({ companyName, sections, socials }) => (
