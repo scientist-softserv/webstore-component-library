@@ -4,20 +4,16 @@ import Title from '../../components/Title/Title'
 import Item from '../Item/Item'
 import './item-group.css'
 
-const ItemGroup = ({ columns, items }) => (
+const ItemGroup = ({ items }) => (
 	<section className='item-group'>
 		<Title size='medium' title='Featured Services' />
-		<div className={`group-container--${columns}`}>
-			{items.map((item) => {
-				const margin = { marginBottom: 35, marginRight: 33, height: 300 }
-				return <Item key={item.id} {...item} style={margin} />
-			})}
+		<div className={'group-container--4'}>
+			{items.slice(0, 4).map((item) => <Item key={item.id} {...item} /> )}
 		</div>
 	</section>
 )
 
 ItemGroup.propTypes = {
-	columns: PropTypes.oneOf([3, 4]),
 	items: PropTypes.arrayOf(PropTypes.shape({
 		description: PropTypes.string.isRequired,
 		img: PropTypes.shape({}).isRequired,
@@ -25,10 +21,6 @@ ItemGroup.propTypes = {
 		name: PropTypes.string.isRequired,
 		style: PropTypes.shape({}),
 	})).isRequired,
-}
-
-ItemGroup.defaultProps = {
-	columns: 4,
 }
 
 export default ItemGroup
