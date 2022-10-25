@@ -63,3 +63,11 @@
   justify-content: space-between;
   width: 100%;
 }
+
+.item-vertical {
+  height: 300px;
+}
+
+.item-vertical + .item-vertical {
+  margin-left: 33px;
+}
