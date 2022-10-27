@@ -4,11 +4,23 @@ import Title from '../../components/Title/Title'
 import Item from '../Item/Item'
 import './item-group.css'
 
-const ItemGroup = ({ items }) => (
+const ItemGroup = ({ buttonLink, buttonProps, imgProps, items, orientation, style, titleLink, withButtonLink, withTitleLink }) => (
 	<section className='item-group'>
-		<Title size='medium' title='Featured Services' />
+		<Title size='large' title='Featured Services' />
 		<div className={'group-container--4'}>
-			{items.slice(0, 4).map((item) => <Item key={item.id} {...item} /> )}
+			{items.map((item) => (
+				<Item
+					buttonLink={buttonLink}
+					buttonProps={buttonProps}
+					imgProps={imgProps}
+					item={item}
+					orientation={orientation}
+					style={style}
+					titleLink={titleLink}
+					withButtonLink={withButtonLink}
+					withTitleLink={withTitleLink}
+				/>
+			) )}
 		</div>
 	</section>
 )
@@ -20,6 +32,7 @@ ItemGroup.propTypes = {
 		imgProps: PropTypes.shape({}),
 		name: PropTypes.string.isRequired,
 		style: PropTypes.shape({}),
+		slug: PropTypes.string,
 	})).isRequired,
 }
 
