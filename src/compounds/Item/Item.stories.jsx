@@ -13,15 +13,18 @@ export const Default = Template.bind({})
 Default.args = {
 	buttonLink: '',
 	buttonProps: {},
-	description: '',
-	img: {
-		src: item,
-		alt: 'Several rows of test tubes with a liquid being put into one.',
-	},
 	imgProps: {},
+	item: {
+		description: '',
+		id: 1,
+		img: {
+			src: item,
+			alt: 'Several rows of test tubes with a liquid being put into one.',
+		},
+		name: 'Test Tubes',
+	},
 	titleLink: '',
 	orientation: 'vertical',
-	name: 'Test Tubes',
 	style: {},
 	withButtonLink: false,
 	withTitleLink: false,
@@ -35,14 +38,17 @@ WithButtonLink.args = {
 		label: 'Request this item',
 		primary: true,
 	},
-	description: 'Test the presence of viable microorganisms.',
-	img: {
-		src: item,
-		alt: 'Several rows of test tubes with a liquid being put into one.',
-	},
 	imgProps: {},
+	item: {
+		description: 'Test the presence of viable microorganisms.',
+		id: 2,
+		img: {
+			src: item,
+			alt: 'Several rows of test tubes with a liquid being put into one.',
+		},
+		name: 'Microbiological Sterility Testing',
+	},
 	orientation: 'horizontal',
-	name: 'Microbiological Sterility Testing',
 	style: {},
 	titleLink: '',
 	withButtonLink: true,
@@ -53,14 +59,17 @@ export const WithTitleLink = Template.bind({})
 WithTitleLink.args = {
 	buttonLink: '',
 	buttonProps: {},
-	description: 'Test the presence of viable microorganisms.',
-	img: {
-		src: item,
-		alt: 'Several rows of test tubes with a liquid being put into one.',
+	item: {
+		description: 'Test the presence of viable microorganisms.',
+		id: 3,
+		img: {
+			src: item,
+			alt: 'Several rows of test tubes with a liquid being put into one.',
+		},
+		name: 'Microbiological Sterility Testing',
 	},
 	imgProps: {},
 	orientation: 'vertical',
-	name: 'Microbiological Sterility Testing',
 	style: {},
 	titleLink: '?path=/story/components-item--with-title-link',
 	withButtonLink: false,

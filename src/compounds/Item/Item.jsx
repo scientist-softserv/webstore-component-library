@@ -4,17 +4,18 @@ import Button from '../../components/Button/Button'
 import Image from '../../components/Image/Image'
 import './item.css'
 
-const Item = (props) => {
-	const {
-		buttonProps, description, img, imgProps, buttonLink, orientation, name, style, withButtonLink,
-		withTitleLink, titleLink,
-	} = props
+// the href, onClick and ref attributes are from forwardRef
+// and will only be defined when this component is wrapped in a Next JS Link component
+const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, item, orientation, style, titleLink, withButtonLink, withTitleLink,
+	href, onClick }, ref) => {
+	const { id, description, img, name } = item
 	const { primary, backgroundColor, size, label } = buttonProps
 	const { alt, src } = img
 
 	return (
 		<article
 			className={`item-container item-${orientation}`}
+			key={id}
 			style={{ ...style }}
 		>
 			<Image
@@ -26,7 +27,7 @@ const Item = (props) => {
 			<div className={`item-options-${orientation}`}>
 				<div className='item-details'>
 					{withTitleLink ? (
-						<a href={titleLink} className='pointer-cursor item-link'>
+						<a href={titleLink || href} onClick={onClick} ref={ref} className='pointer-cursor item-link'>
 							<h3 className='item-name'>
 								{name}
 							</h3>
@@ -43,7 +44,7 @@ const Item = (props) => {
 					)}
 				</div>
 				{withButtonLink && (
-					<a href={buttonLink} className={`item-button-${orientation} item-link`}>
+					<a href={buttonLink || href} onClick={onClick} ref={ref} className={`item-button-${orientation} item-link`}>
 						<Button
 							primary={primary}
 							backgroundColor={backgroundColor}
@@ -56,7 +57,7 @@ const Item = (props) => {
 			</div>
 		</article>
 	)
-}
+})
 
 Item.propTypes = {
 	buttonLink: PropTypes.string,
@@ -64,16 +65,19 @@ Item.propTypes = {
 		primary: PropTypes.bool,
 		backgroundColor: PropTypes.string,
 		size: PropTypes.oneOf(['small', 'medium', 'large']),
-		label: PropTypes.string.isRequired,
+		label: PropTypes.string,
 	}),
-	description: PropTypes.string,
-	img: PropTypes.shape({
-		src: PropTypes.string.isRequired,
-		alt: PropTypes.string.isRequired,
-	}).isRequired,
+	item: PropTypes.shape({
+		description: PropTypes.string,
+		id: PropTypes.number.isRequired,
+		img: PropTypes.shape({
+			src: PropTypes.string.isRequired,
+			alt: PropTypes.string.isRequired,
+		}).isRequired,
+		name: PropTypes.string.isRequired,
+	}),
 	imgProps: PropTypes.shape({}),
 	orientation: PropTypes.oneOf(['horizontal', 'vertical']),
-	name: PropTypes.string.isRequired,
 	style: PropTypes.shape({}),
 	titleLink: PropTypes.string,
 	withButtonLink: PropTypes.bool,
@@ -82,8 +86,10 @@ Item.propTypes = {
 
 Item.defaultProps = {
 	buttonProps: {},
-	description: '',
 	imgProps: {},
+	item: {
+		description: '',
+	},
 	buttonLink: '',
 	orientation: 'vertical',
 	style: {},
