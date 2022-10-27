@@ -32,7 +32,7 @@ Default.args = {
 
 export const WithButtonLink = Template.bind({})
 WithButtonLink.args = {
-	buttonLink: '?path=/story/components-item--with-button-link',
+	buttonLink: '',
 	buttonProps: {
 		backgroundColor: '#A9A9A9',
 		label: 'Request this item',
@@ -47,12 +47,22 @@ WithButtonLink.args = {
 			alt: 'Several rows of test tubes with a liquid being put into one.',
 		},
 		name: 'Microbiological Sterility Testing',
+		slug: 'microbiological-sterility-testing',
 	},
 	orientation: 'horizontal',
 	style: {},
 	titleLink: '',
 	withButtonLink: true,
 	withTitleLink: false,
+}
+
+WithButtonLink.parameters = {
+  nextRouter: {
+    path: '/item/[id]',
+    query: {
+      id: 'microbiological-sterility-testing',
+    },
+  },
 }
 
 export const WithTitleLink = Template.bind({})
@@ -67,11 +77,21 @@ WithTitleLink.args = {
 			alt: 'Several rows of test tubes with a liquid being put into one.',
 		},
 		name: 'Microbiological Sterility Testing',
+		slug: 'microbiological-sterility-testing'
 	},
 	imgProps: {},
 	orientation: 'vertical',
 	style: {},
-	titleLink: '?path=/story/components-item--with-title-link',
+	titleLink: '',
 	withButtonLink: false,
 	withTitleLink: true,
+}
+
+WithTitleLink.parameters = {
+  nextRouter: {
+    path: '/item/[id]',
+    query: {
+      id: 'microbiological-sterility-testing',
+    },
+  },
 }
