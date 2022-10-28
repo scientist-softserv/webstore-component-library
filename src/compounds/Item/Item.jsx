@@ -1,17 +1,18 @@
 import React from 'react'
-import Link from 'next/link'
 import PropTypes from 'prop-types'
 import Button from '../../components/Button/Button'
 import Image from '../../components/Image/Image'
 import './item.css'
 
-// the href, onClick and ref attributes are from forwardRef
-// and will only be defined when this component is wrapped in a Next JS Link component
 const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, item, orientation, style, titleLink, withButtonLink, withTitleLink,
-	href, onClick }, ref) => {
-	const { id, description, img, name, slug } = item
+	href }) => {
+	const { id, description, img, name } = item
 	const { primary, backgroundColor, size, label } = buttonProps
 	const { alt, src } = img
+
+	// "href" will apply when this component is being rendered from the ItemGroup
+	if (withButtonLink) buttonLink = buttonLink || href
+	if (withTitleLink) titleLink = titleLink || href
 
 	return (
 		<article
@@ -28,13 +29,11 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, item, orient
 			<div className={`item-options-${orientation}`}>
 				<div className='item-details'>
 					{withTitleLink ? (
-						<Link href={`/${slug}`} legacyBehavior>
-							<a className='pointer-cursor item-link'>
-								<h3 className='item-name'>
-									{name}
-								</h3>
-							</a>
-						</Link>
+						<a href={titleLink} className='pointer-cursor item-link'>
+							<h3 className='item-name'>
+								{name}
+							</h3>
+						</a>
 					) : (
 						<h3 className='item-name'>
 							{name}
@@ -47,17 +46,15 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, item, orient
 					)}
 				</div>
 				{withButtonLink && (
-					<Link href={`/${slug}`} passHref legacyBehavior>
-						<a href={buttonLink || href} onClick={onClick} ref={ref} className={`item-button-${orientation} item-link`}>
-							<Button
-								primary={primary}
-								backgroundColor={backgroundColor}
-								size={size}
-								label={label}
-								{...buttonProps}
-							/>
-						</a>
-					</Link>
+					<a href={buttonLink} className={`item-button-${orientation} item-link`}>
+						<Button
+							primary={primary}
+							backgroundColor={backgroundColor}
+							size={size}
+							label={label}
+							{...buttonProps}
+						/>
+					</a>
 				)}
 			</div>
 		</article>
