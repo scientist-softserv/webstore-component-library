@@ -56,15 +56,6 @@ WithButtonLink.args = {
 	withTitleLink: false,
 }
 
-WithButtonLink.parameters = {
-  nextRouter: {
-    path: '/item/[id]',
-    query: {
-      id: 'microbiological-sterility-testing',
-    },
-  },
-}
-
 export const WithTitleLink = Template.bind({})
 WithTitleLink.args = {
 	buttonLink: '',
@@ -77,7 +68,7 @@ WithTitleLink.args = {
 			alt: 'Several rows of test tubes with a liquid being put into one.',
 		},
 		name: 'Microbiological Sterility Testing',
-		slug: 'microbiological-sterility-testing'
+		// slug: 'microbiological-sterility-testing'
 	},
 	imgProps: {},
 	orientation: 'vertical',
@@ -85,13 +76,4 @@ WithTitleLink.args = {
 	titleLink: '',
 	withButtonLink: false,
 	withTitleLink: true,
-}
-
-WithTitleLink.parameters = {
-  nextRouter: {
-    path: '/item/[id]',
-    query: {
-      id: 'microbiological-sterility-testing',
-    },
-  },
 }
