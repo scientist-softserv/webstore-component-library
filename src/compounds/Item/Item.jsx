@@ -4,17 +4,20 @@ import Button from '../../components/Button/Button'
 import Image from '../../components/Image/Image'
 import './item.css'
 
-const Item = (props) => {
-	const {
-		buttonProps, description, img, imgProps, buttonLink, orientation, name, style, withButtonLink,
-		withTitleLink, titleLink,
-	} = props
+const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, item, orientation, style, titleLink, withButtonLink, withTitleLink,
+	href }, ref) => {
+	const { id, description, img, name } = item
 	const { primary, backgroundColor, size, label } = buttonProps
 	const { alt, src } = img
+
+	// "href" will apply when this component is being rendered from the ItemGroup
+	if (withButtonLink) buttonLink = buttonLink || href
+	if (withTitleLink) titleLink = titleLink || href
 
 	return (
 		<article
 			className={`item-container item-${orientation}`}
+			key={id}
 			style={{ ...style }}
 		>
 			<Image
@@ -26,7 +29,7 @@ const Item = (props) => {
 			<div className={`item-options-${orientation}`}>
 				<div className='item-details'>
 					{withTitleLink ? (
-						<a href={titleLink} className='pointer-cursor item-link'>
+						<a href={titleLink} ref={ref} className='pointer-cursor item-link'>
 							<h3 className='item-name'>
 								{name}
 							</h3>
@@ -43,7 +46,7 @@ const Item = (props) => {
 					)}
 				</div>
 				{withButtonLink && (
-					<a href={buttonLink} className={`item-button-${orientation} item-link`}>
+					<a href={buttonLink} ref={ref} className={`item-button-${orientation} item-link`}>
 						<Button
 							primary={primary}
 							backgroundColor={backgroundColor}
@@ -56,7 +59,7 @@ const Item = (props) => {
 			</div>
 		</article>
 	)
-}
+})
 
 Item.propTypes = {
 	buttonLink: PropTypes.string,
@@ -64,16 +67,20 @@ Item.propTypes = {
 		primary: PropTypes.bool,
 		backgroundColor: PropTypes.string,
 		size: PropTypes.oneOf(['small', 'medium', 'large']),
-		label: PropTypes.string.isRequired,
+		label: PropTypes.string,
 	}),
-	description: PropTypes.string,
-	img: PropTypes.shape({
-		src: PropTypes.string.isRequired,
-		alt: PropTypes.string.isRequired,
-	}).isRequired,
+	item: PropTypes.shape({
+		description: PropTypes.string,
+		id: PropTypes.number.isRequired,
+		img: PropTypes.shape({
+			src: PropTypes.string.isRequired,
+			alt: PropTypes.string.isRequired,
+		}).isRequired,
+		name: PropTypes.string.isRequired,
+		slug: PropTypes.string,
+	}),
 	imgProps: PropTypes.shape({}),
 	orientation: PropTypes.oneOf(['horizontal', 'vertical']),
-	name: PropTypes.string.isRequired,
 	style: PropTypes.shape({}),
 	titleLink: PropTypes.string,
 	withButtonLink: PropTypes.bool,
@@ -82,8 +89,10 @@ Item.propTypes = {
 
 Item.defaultProps = {
 	buttonProps: {},
-	description: '',
 	imgProps: {},
+	item: {
+		description: '',
+	},
 	buttonLink: '',
 	orientation: 'vertical',
 	style: {},

@@ -14,36 +14,42 @@ export const items = [
 		description: 'This is the the first service.',
 		img,
 		name: 'Service One',
+		slug: 'service-one',
 	},
 	{
 		id: 2,
 		description: 'This is the the second service.',
 		img,
 		name: 'Service Two',
+		slug: 'service-two',
 	},
 	{
 		id: 3,
 		description: 'This is the the third service.',
 		img,
 		name: 'Service Three',
+		slug: 'service-three',
 	},
 	{
 		id: 4,
 		description: 'This is the the fourth service.',
 		img,
 		name: 'Service Four',
+		slug: 'service-four',
 	},
 	{
 		id: 5,
 		description: 'This is the the fifth service. This is the the fifth service. This is the the fifth service.',
 		img,
 		name: 'Service Five',
+		slug: 'service-five',
 	},
 	{
 		id: 6,
 		description: 'This is the the sixth service.',
 		img,
 		name: 'Service Six',
+		slug: 'service-six',
 	},
 ]
 
