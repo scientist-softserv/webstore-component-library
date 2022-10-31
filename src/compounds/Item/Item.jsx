@@ -5,7 +5,7 @@ import Image from '../../components/Image/Image'
 import './item.css'
 
 const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, item, orientation, style, titleLink, withButtonLink, withTitleLink,
-	href }) => {
+	href }, ref) => {
 	const { id, description, img, name } = item
 	const { primary, backgroundColor, size, label } = buttonProps
 	const { alt, src } = img
@@ -29,7 +29,7 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, item, orient
 			<div className={`item-options-${orientation}`}>
 				<div className='item-details'>
 					{withTitleLink ? (
-						<a href={titleLink} className='pointer-cursor item-link'>
+						<a href={titleLink} ref={ref} className='pointer-cursor item-link'>
 							<h3 className='item-name'>
 								{name}
 							</h3>
@@ -46,7 +46,7 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, item, orient
 					)}
 				</div>
 				{withButtonLink && (
-					<a href={buttonLink} className={`item-button-${orientation} item-link`}>
+					<a href={buttonLink} ref={ref} className={`item-button-${orientation} item-link`}>
 						<Button
 							primary={primary}
 							backgroundColor={backgroundColor}
