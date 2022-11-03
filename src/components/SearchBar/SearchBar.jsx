@@ -12,10 +12,9 @@ const SearchBar = ({ onSubmit, placeholder }) => {
 		onSubmit({ value: inputRef.current.value })
 	}
 
-	// TODO(alishaevn): figure out the action below once connected to the api
 	return (
 		<div className='search-bar-container center-content'>
-			<form className='search-bar-form' action='/' method='get' onSubmit={handleSubmit}>
+			<form className='search-bar-form' method='get' onSubmit={handleSubmit}>
 				<label>
 					<span className='visually-hidden'>Search all services</span>
 				</label>
