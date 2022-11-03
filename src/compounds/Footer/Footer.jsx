@@ -5,19 +5,21 @@ import SocialIcon from '../../components/SocialIcon/SocialIcon'
 import './footer.css'
 
 const Footer = ({ companyName, sections, socials }) => (
-	<footer className='container footer-container'>
-		<h5>© {companyName} {new Date().getFullYear()}</h5>
-		<div className='footer-sections'>
-			{sections && sections.map((section) => {
-				const { header, links } = section
-				return <LinkGroup header={header} links={links} {...section} />
-			})}
-		</div>
-		<div className='footer-socials'>
-			{socials && socials.map((social) => {
-				const { icon, url } = social
-				return <SocialIcon icon={icon} url={url} {...social} />
-			})}
+	<footer className='footer-container'>
+		<div className='container center-content'>
+			<h4>© {companyName} {new Date().getFullYear()}</h4>
+			<div className='footer-sections'>
+				{sections && sections.map((section) => {
+					const { header, links } = section
+					return <LinkGroup header={header} links={links} {...section} />
+				})}
+			</div>
+			<div className='footer-socials'>
+				{socials && socials.map((social) => {
+					const { icon, url } = social
+					return <SocialIcon icon={icon} url={url} {...social} />
+				})}
+			</div>
 		</div>
 	</footer>
 )

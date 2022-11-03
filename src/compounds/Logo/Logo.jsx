@@ -4,7 +4,7 @@ import Image from '../../components/Image/Image'
 
 const Logo = ({ alt, img }) => (
 	<a href='/'>
-		<Image src={img} alt={alt} height={40} />
+		<Image src={img} alt={alt} height={50} />
 	</a>
 )
 

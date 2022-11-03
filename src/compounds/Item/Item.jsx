@@ -16,7 +16,7 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, item, orient
 
 	return (
 		<article
-			className={`item-container item-${orientation}`}
+			className={`item-container item-${orientation} ${orientation === 'horizontal' && 'center-content'}`}
 			key={id}
 			style={{ ...style }}
 		>

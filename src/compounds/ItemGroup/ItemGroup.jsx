@@ -6,7 +6,7 @@ import Item from '../Item/Item'
 import './item-group.css'
 
 const ItemGroup = ({ buttonProps, imgProps, items, orientation, style, withButtonLink, withTitleLink }) => (
-	<section className='item-group'>
+	<section className='item-group center-content'>
 		<Title size='large' title='Featured Services' />
 		<div className={'group-container--4'}>
 			{items.map((item) => (
