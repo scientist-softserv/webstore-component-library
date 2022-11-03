@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import Search from '../../assets/svg/Search'
 import './search-bar.css'
 
-const SearchBar = ({ onSubmit, placeholder }) => {
+const SearchBar = ({ initialValue, onSubmit, placeholder }) => {
 	const inputRef = useRef(null)
 
 	const handleSubmit = (event) => {
@@ -23,6 +23,7 @@ const SearchBar = ({ onSubmit, placeholder }) => {
 					ref={inputRef}
 					placeholder={placeholder}
 					type='text'
+					defaultValue={initialValue}
 				/>
 				<button type='submit' className='search-button'>
 					<Search />
@@ -35,10 +36,12 @@ const SearchBar = ({ onSubmit, placeholder }) => {
 SearchBar.propTypes = {
 	onSubmit: PropTypes.func.isRequired,
 	placeholder: PropTypes.string,
+	initialValue: PropTypes.string,
 }
 
 SearchBar.defaultProps = {
 	placeholder: 'Search for a service',
+	initialValue: '',
 }
 
 export default SearchBar
