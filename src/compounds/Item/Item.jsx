@@ -83,7 +83,7 @@ Item.propTypes = {
 }
 
 Item.defaultProps = {
-	buttonProps: {},
+	buttonProps: Button.defaultProps,
 	imgProps: {},
 	item: {
 		description: '',
