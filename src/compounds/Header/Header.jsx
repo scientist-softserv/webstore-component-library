@@ -7,12 +7,12 @@ import './header.css'
 // may come back to hard code these
 
 const Header = ({ browseLink, logInLink, logo, logOutLink, requestsLink, user }) => {
-	const { img, alt } = logo
+	const { src, alt } = logo
 
 	return (
 		<header className='header-container'>
 			<div className='container center-content'>
-				<Logo img={img} alt={alt} />
+				<Logo src={src} alt={alt} />
 				<div>
 					<NavLink href={browseLink} label='Browse' />
 					<NavLink href={requestsLink} label='Requests' />
@@ -30,7 +30,7 @@ const Header = ({ browseLink, logInLink, logo, logOutLink, requestsLink, user })
 Header.propTypes = {
 	browseLink: PropTypes.string.isRequired,
 	logo: PropTypes.shape({
-		img: PropTypes.string.isRequired,
+		src: PropTypes.string.isRequired,
 		alt: PropTypes.string.isRequired,
 	}).isRequired,
 	logInLink: PropTypes.string.isRequired,
