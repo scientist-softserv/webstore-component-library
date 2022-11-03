@@ -36,12 +36,9 @@ ItemGroup.propTypes = {
 	}),
 	imgProps: PropTypes.shape({}),
 	items: PropTypes.arrayOf(PropTypes.shape({
-		description: PropTypes.string.isRequired,
-		img: PropTypes.shape({}).isRequired,
+		...Item.propTypes,
 		imgProps: PropTypes.shape({}),
-		name: PropTypes.string.isRequired,
 		style: PropTypes.shape({}),
-		slug: PropTypes.string,
 	})).isRequired,
 	orientation: PropTypes.oneOf(['horizontal', 'vertical']),
 	style: PropTypes.shape({}),
