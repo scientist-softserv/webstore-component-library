@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import PropTypes from 'prop-types'
 import Button from '../../components/Button/Button'
 import Image from '../../components/Image/Image'
@@ -7,7 +8,6 @@ import './item.css'
 const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, item, orientation, style, titleLink, withButtonLink, withTitleLink,
 	href }, ref) => {
 	const { id, description, img, name } = item
-	const { primary, backgroundColor, size, label } = buttonProps
 	const { alt, src } = img
 
 	// "href" will apply when this component is being rendered from the ItemGroup
@@ -46,29 +46,24 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, item, orient
 					)}
 				</div>
 				{withButtonLink && (
-					<a href={buttonLink} ref={ref} className={`item-button-${orientation} item-link`}>
-						<Button
-							primary={primary}
-							backgroundColor={backgroundColor}
-							size={size}
-							label={label}
-							{...buttonProps}
-						/>
-					</a>
+					<Link href={buttonLink} passHref legacyBehavior>
+						<LinkedButton href={buttonLink} orientation={orientation} buttonProps={buttonProps} />
+					</Link>
 				)}
 			</div>
 		</article>
 	)
 })
 
+const LinkedButton = React.forwardRef(({ buttonProps, href, orientation }, ref) =>
+	<a href={href} ref={ref} className={`item-button-${orientation} item-link`}>
+		<Button {...buttonProps} />
+	</a>
+)
+
 Item.propTypes = {
 	buttonLink: PropTypes.string,
-	buttonProps: PropTypes.shape({
-		primary: PropTypes.bool,
-		backgroundColor: PropTypes.string,
-		size: PropTypes.oneOf(['small', 'medium', 'large']),
-		label: PropTypes.string,
-	}),
+	buttonProps: PropTypes.shape(Button.propTypes),
 	item: PropTypes.shape({
 		description: PropTypes.string,
 		id: PropTypes.number.isRequired,
