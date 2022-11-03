@@ -32,7 +32,7 @@ Default.args = {
 
 export const WithButtonLink = Template.bind({})
 WithButtonLink.args = {
-	buttonLink: '',
+	buttonLink: '/',
 	buttonProps: {
 		backgroundColor: '#A9A9A9',
 		label: 'Request this item',
@@ -68,12 +68,11 @@ WithTitleLink.args = {
 			alt: 'Several rows of test tubes with a liquid being put into one.',
 		},
 		name: 'Microbiological Sterility Testing',
-		// slug: 'microbiological-sterility-testing'
 	},
 	imgProps: {},
 	orientation: 'vertical',
 	style: {},
-	titleLink: '',
+	titleLink: '/',
 	withButtonLink: false,
 	withTitleLink: true,
 }

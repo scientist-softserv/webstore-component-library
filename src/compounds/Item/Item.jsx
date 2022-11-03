@@ -11,6 +11,7 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, item, orient
 	const { alt, src } = img
 
 	// "href" will apply when this component is being rendered from the ItemGroup
+	// when rendering this component directly with a button or title link, the corresponding link cannot be an empty string
 	if (withButtonLink) buttonLink = buttonLink || href
 	if (withTitleLink) titleLink = titleLink || href
 
@@ -55,11 +56,11 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, item, orient
 	)
 })
 
-const LinkedButton = React.forwardRef(({ buttonProps, href, orientation }, ref) =>
+const LinkedButton = React.forwardRef(({ buttonProps, href, orientation }, ref) => (
 	<a href={href} ref={ref} className={`item-button-${orientation} item-link`}>
 		<Button {...buttonProps} />
 	</a>
-)
+))
 
 Item.propTypes = {
 	buttonLink: PropTypes.string,
