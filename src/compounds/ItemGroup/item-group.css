@@ -1,8 +1,5 @@
 .item-group {
-  padding: 25px 20px;
-  width: fit-content;
-  margin: auto;
-	max-width: initial;
+  padding: 25px 0;
 }
 
 .group-container--4 {

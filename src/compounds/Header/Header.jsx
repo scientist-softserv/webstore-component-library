@@ -10,8 +10,8 @@ const Header = ({ browseLink, logInLink, logo, logOutLink, requestsLink, user })
 	const { img, alt } = logo
 
 	return (
-		<header>
-			<div className='container header-container'>
+		<header className='header-container'>
+			<div className='container center-content'>
 				<Logo img={img} alt={alt} />
 				<div>
 					<NavLink href={browseLink} label='Browse' />

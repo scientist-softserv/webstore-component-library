@@ -4,5 +4,12 @@ button + button {
 
 .header-container {
   background-color: lightgray;
-  height: 71px;
+  height: 100px;
+  align-content: center;
+  display: flex;
+}
+
+header > div.container {
+  padding: 0;
+  width: 100%;
 }
