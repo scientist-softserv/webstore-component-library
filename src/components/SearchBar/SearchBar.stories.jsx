@@ -12,5 +12,11 @@ export const Default = Template.bind({})
 Default.args = {
 	onSubmit: ({ value }) => console.log('the value is:', value),
 	placeholder: 'Search for a service',
-	style: {},
+}
+
+export const Alternate = Template.bind({})
+Alternate.args = {
+	onSubmit: ({ value }) => console.log('the value is:', value),
+	placeholder: 'Search for a service',
+	initialValue: 'abg',
 }
