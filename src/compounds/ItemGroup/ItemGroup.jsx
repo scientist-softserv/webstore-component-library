@@ -10,7 +10,7 @@ const ItemGroup = ({ buttonProps, imgProps, items, orientation, style, withButto
 		<Title size='large' title='Featured Services' />
 		<div className={'group-container--4'}>
 			{items.map((item) => (
-				<Link href={`${item.slug}`} passHref legacyBehavior>
+				<Link key={item.id} href={`${item.slug}`} passHref legacyBehavior>
 					<Item
 						buttonProps={buttonProps}
 						imgProps={imgProps}
@@ -35,12 +35,9 @@ ItemGroup.propTypes = {
 	}),
 	imgProps: PropTypes.shape({}),
 	items: PropTypes.arrayOf(PropTypes.shape({
-		description: PropTypes.string.isRequired,
-		img: PropTypes.shape({}).isRequired,
+		...Item.propTypes,
 		imgProps: PropTypes.shape({}),
-		name: PropTypes.string.isRequired,
 		style: PropTypes.shape({}),
-		slug: PropTypes.string,
 	})).isRequired,
 	orientation: PropTypes.oneOf(['horizontal', 'vertical']),
 	style: PropTypes.shape({}),

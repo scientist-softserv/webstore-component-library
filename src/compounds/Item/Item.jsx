@@ -11,6 +11,7 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, item, orient
 	const { alt, src } = img
 
 	// "href" will apply when this component is being rendered from the ItemGroup
+	// when rendering this component directly with a button or title link, the corresponding link cannot be an empty string
 	if (withButtonLink) buttonLink = buttonLink || href
 	if (withTitleLink) titleLink = titleLink || href
 
@@ -55,15 +56,23 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, item, orient
 	)
 })
 
-const LinkedButton = React.forwardRef(({ buttonProps, href, orientation }, ref) =>
+const LinkedButton = React.forwardRef(({ buttonProps, href, orientation }, ref) => (
 	<a href={href} ref={ref} className={`item-button-${orientation} item-link`}>
 		<Button {...buttonProps} />
 	</a>
-)
+))
 
 Item.propTypes = {
 	buttonLink: PropTypes.string,
-	buttonProps: PropTypes.shape(Button.propTypes),
+	// currently overriding the label on a button from being required in this component,
+	// because it shouldn't be if we are not rendering a button
+	// refer to the comment below
+	buttonProps: PropTypes.shape({ ...Button.propTypes, label: PropTypes.string }),
+	// TODO(alishaevn): is there a way to set conditional proptypes without adding another package?
+	// buttonProps: props => props.withButtonLink
+	// 	? PropTypes.shape(Button.propTypes)
+	// 	: PropTypes.shape({ ...Button.propTypes, label: PropTypes.string })
+	// ,
 	item: PropTypes.shape({
 		description: PropTypes.string,
 		id: PropTypes.number.isRequired,
@@ -83,7 +92,7 @@ Item.propTypes = {
 }
 
 Item.defaultProps = {
-	buttonProps: {},
+	buttonProps: Button.defaultProps,
 	imgProps: {},
 	item: {
 		description: '',

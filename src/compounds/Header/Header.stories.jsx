@@ -16,7 +16,10 @@ export const LoggedIn = Template.bind({})
 LoggedIn.args = {
 	browseLink: '',
 	logInLink: '',
-	logo: logoFull,
+	logo: {
+		src: logoFull,
+		alt: 'The company logo'
+	},
 	logOutLink: '',
 	requestsLink: '',
 	user: {
@@ -28,7 +31,10 @@ export const LoggedOut = Template.bind({})
 LoggedOut.args = {
 	browseLink: '',
 	logInLink: '',
-	logo: logoFull,
+	logo: {
+		src: logoFull,
+		alt: 'The company logo'
+	},
 	logOutLink: '',
 	requestsLink: '',
 	user: null,

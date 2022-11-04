@@ -24,10 +24,10 @@ TitledTextBox.propTypes = {
 TitledTextBox.defaultProps = {
 	textAlignment: 'left',
 	textSize: 'medium',
-	textStyle: PropTypes.shape({}),
+	textStyle: {},
 	titleAlignment: 'left',
 	titleSize: 'large',
-	titleStyle: PropTypes.shape({}),
+	titleStyle: {},
 }
 
 export default TitledTextBox
