@@ -1,3 +1,4 @@
+/************ all items ************/
 .item-container {
   border: 1px solid grey;
   border-radius: 5px;
@@ -38,12 +39,26 @@
   cursor: pointer;
 }
 
+/************ vertical items ************/
+.item-vertical {
+  height: 300px;
+}
+
+.item-vertical + .item-vertical {
+  margin-left: 33px;
+}
+
 .item-button-vertical {
   margin: 15px;
   display: flex;
   flex-direction: row-reverse;
 }
 
+.item-options-vertical > .item-details {
+  padding-left: 15px;
+}
+
+/************ horizontal items ************/
 .item-horizontal {
   display: flex;
   width: auto;
@@ -56,7 +71,7 @@
 }
 
 .item-button-horizontal {
-  width: 157px;
+  width: 165px;
 }
 
 .item-options-horizontal {
@@ -65,12 +80,4 @@
   align-items: center;
   width: 100%;
   padding: 0 25px;
-}
-
-.item-vertical {
-  height: 300px;
-}
-
-.item-vertical + .item-vertical {
-  margin-left: 33px;
 }

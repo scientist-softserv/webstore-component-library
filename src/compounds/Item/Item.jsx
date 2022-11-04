@@ -7,8 +7,8 @@ import './item.css'
 
 const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, item, orientation, style, titleLink, withButtonLink, withTitleLink,
 	href }, ref) => {
-	const { id, description, img, name } = item
-	const { alt, src } = img
+	const { id, description, name } = item
+	const { alt, src } = item.img
 
 	// "href" will apply when this component is being rendered from the ItemGroup
 	// when rendering this component directly with a button or title link, the corresponding link cannot be an empty string
