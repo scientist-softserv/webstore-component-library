@@ -16,8 +16,19 @@ Default.args = {
 	img: {
 		alt: 'test tubes',
 		src: item,
-		height: 0,
-		width: 400,
+	},
+	title: 'CRISPR[DEMO]',
+	titleStyle: {},
+}
+
+export const Alternative = Template.bind({})
+Alternative.args = {
+	description: 'Using advanced CRISPR technology, add or delete base pairs at a specifically targeted DNA loci. Using advanced CRISPR technology, add or delete base pairs at a specifically targeted DNA loci. Using advanced CRISPR technology, add or delete base pairs at a specifically targeted DNA loci. Using advanced CRISPR technology, add or delete base pairs at a specifically targeted DNA loci. Using advanced CRISPR technology, add or delete base pairs at a specifically targeted DNA loci. Using advanced CRISPR technology, add or delete base pairs at a specifically targeted DNA loci.',
+	descriptionStyle: {},
+	img: {
+		alt: 'test tubes',
+		src: item,
+		width: 650,
 	},
 	title: 'CRISPR[DEMO]',
 	titleStyle: {},

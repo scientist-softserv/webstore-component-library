@@ -6,6 +6,9 @@ import Title from '../../components/Title/Title'
 import './item-page.css'
 
 const ItemPage = ({ title, titleStyle, description, descriptionStyle, img }) => {
+	// sets a default width while still allowing width to be overridden
+	img = { width: 400, ...img }
+
 	return (
 		<main className='center-content'>
 			<Title title={title} style={titleStyle} />
