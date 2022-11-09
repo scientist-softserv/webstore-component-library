@@ -7,7 +7,7 @@ import './item-page.css'
 
 const ItemPage = ({ title, titleStyle, description, descriptionStyle, img }) => {
 	return (
-		<main>
+		<main className='center-content'>
 			<Title title={title} style={titleStyle} />
 			<div className='item-page-details'>
 				<TextBox text={description} style={descriptionStyle} />

@@ -1,3 +1,9 @@
 .item-page-details {
   display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.item-page-details :first-child {
+  margin-right: 50px;
 }

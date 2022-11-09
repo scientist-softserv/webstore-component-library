@@ -11,13 +11,13 @@ const Template = (args) => <ItemPage {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-	description: 'Using advanced CRISPR technology, add or delete base pairs at a specifically targeted DNA loci.',
+	description: 'Using advanced CRISPR technology, add or delete base pairs at a specifically targeted DNA loci. Using advanced CRISPR technology, add or delete base pairs at a specifically targeted DNA loci. Using advanced CRISPR technology, add or delete base pairs at a specifically targeted DNA loci. Using advanced CRISPR technology, add or delete base pairs at a specifically targeted DNA loci. Using advanced CRISPR technology, add or delete base pairs at a specifically targeted DNA loci. Using advanced CRISPR technology, add or delete base pairs at a specifically targeted DNA loci.',
 	descriptionStyle: {},
 	img: {
 		alt: 'test tubes',
 		src: item,
 		height: 0,
-		width: '',
+		width: 400,
 	},
 	title: 'CRISPR[DEMO]',
 	titleStyle: {},
