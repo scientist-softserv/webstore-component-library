@@ -42,6 +42,7 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, item, orient
 					)}
 					{description && (
 						<p className='item-description'>
+							{/* TODO(alishaevn): account for really long descriptions */}
 							{description}
 						</p>
 					)}

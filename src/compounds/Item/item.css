@@ -8,7 +8,6 @@
 
 .item-details {
   font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  width: 81.5%;
   padding-right: 15px;
 }
 
@@ -40,12 +39,21 @@
 }
 
 /************ vertical items ************/
+.item-container.item-vertical {
+  width: 325px;
+}
+
 .item-vertical {
-  height: 300px;
+  height: 350px;
+}
+
+.item-vertical > .item-image {
+  height: 150px;
+  object-fit: cover;
 }
 
 .item-vertical + .item-vertical {
-  margin-left: 33px;
+  margin-left: 5px;
 }
 
 .item-button-vertical {
@@ -63,6 +71,10 @@
   display: flex;
   width: auto;
   height: 175px;
+}
+
+.item-horizontal.item-details {
+  width: 81.5%;
 }
 
 .item-image-horizontal {

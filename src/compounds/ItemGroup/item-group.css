@@ -2,9 +2,7 @@
   padding: 25px 0;
 }
 
-.group-container--4 {
+.group-container {
   display: flex;
-  flex-wrap: wrap;
-  max-width: 1108px;
-  margin-top: 5px;
+  justify-content: space-between;
 }

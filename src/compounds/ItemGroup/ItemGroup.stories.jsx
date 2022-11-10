@@ -11,11 +11,11 @@ const Template = (args) => <ItemGroup {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-	items: items,
+	items: items.slice(0, 3),
 }
 
 export const withTitleLink = Template.bind({})
 withTitleLink.args = {
-	items: items,
+	items: items.slice(0, 4),
 	withTitleLink: true
 }
