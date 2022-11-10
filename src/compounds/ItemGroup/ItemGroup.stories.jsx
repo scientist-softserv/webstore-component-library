@@ -16,6 +16,6 @@ Default.args = {
 
 export const withTitleLink = Template.bind({})
 withTitleLink.args = {
-	items: items.slice(0, 3),
+	items: items.slice(0, 4),
 	withTitleLink: true
 }

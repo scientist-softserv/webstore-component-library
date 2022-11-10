@@ -8,7 +8,7 @@ import './item-group.css'
 const ItemGroup = ({ buttonProps, imgProps, items, orientation, style, withButtonLink, withTitleLink }) => (
 	<section className='item-group center-content'>
 		<Title size='large' title='Featured Services' />
-		<div className={'group-container--3'}>
+		<div className={'group-container'}>
 			{items.map((item) => (
 				// TODO(alishaevn): is there a way to hide the id from the url?
 				// adding "as={`${item.href}`}" as a Link prop removed the id from the query entirely
