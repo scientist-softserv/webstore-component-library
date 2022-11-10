@@ -4,7 +4,11 @@
 
 .group-container--4 {
   display: flex;
-  flex-wrap: wrap;
   max-width: 1108px;
   margin-top: 5px;
+}
+
+.group-container--3 {
+  display: flex;
+  justify-content: space-between;
 }
