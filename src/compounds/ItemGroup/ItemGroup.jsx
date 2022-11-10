@@ -10,7 +10,7 @@ const ItemGroup = ({ buttonProps, imgProps, items, orientation, style, withButto
 		<Title size='large' title='Featured Services' />
 		<div className={'group-container--4'}>
 			{items.map((item) => (
-				<Link key={item.id} href={{ pathname: `${item.href}`, query: { id: `${item.id}` } }} passHref legacyBehavior>
+				<Link key={item.id} as={`${item.href}`} href={{ pathname: `${item.href}`, query: { id: `${item.id}` } }} passHref legacyBehavior>
 					<Item
 						buttonProps={buttonProps}
 						imgProps={imgProps}
