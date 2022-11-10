@@ -13,3 +13,9 @@ export const Default = Template.bind({})
 Default.args = {
 	items: items,
 }
+
+export const withTitleLink = Template.bind({})
+withTitleLink.args = {
+	items: items,
+	withTitleLink: true
+}

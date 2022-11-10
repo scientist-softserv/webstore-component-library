@@ -10,7 +10,9 @@ const ItemGroup = ({ buttonProps, imgProps, items, orientation, style, withButto
 		<Title size='large' title='Featured Services' />
 		<div className={'group-container--4'}>
 			{items.map((item) => (
-				<Link key={item.id} href={`${item.slug}`} passHref legacyBehavior>
+				// TODO(alishaevn): is there a way to hide the id from the url?
+				// adding "as={`${item.href}`}" as a Link prop removed the id from the query entirely
+				<Link key={item.id} href={{ pathname: `${item.href}`, query: { id: `${item.id}` } }} passHref legacyBehavior>
 					<Item
 						buttonProps={buttonProps}
 						imgProps={imgProps}
