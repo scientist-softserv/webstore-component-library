@@ -13,7 +13,7 @@ const ItemPage = ({ title, titleStyle, description, descriptionStyle, img }) => 
 		<main className='center-content'>
 			<Title title={title} style={titleStyle} />
 			<div className='item-page-details'>
-				<TextBox text={description} style={descriptionStyle} />
+				<TextBox text={description} style={descriptionStyle} size={'medium'} />
 				<Image {...img} />
 			</div>
 		</main>
