@@ -14,13 +14,13 @@ import NavLink from './NavLink/NavLink'
 import TitledTextBox from './TitledTextBox/TitledTextBox'
 
 export {
-	Footer,
-	Header,
-	Item,
-	ItemGroup,
-	ItemPage,
-	LinkGroup,
-	Logo,
-	NavLink,
-	TitledTextBox,
+  Footer,
+  Header,
+  Item,
+  ItemGroup,
+  ItemPage,
+  LinkGroup,
+  Logo,
+  NavLink,
+  TitledTextBox,
 }

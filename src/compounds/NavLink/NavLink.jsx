@@ -4,23 +4,23 @@ import Link from '../../components/Link/Link'
 import './nav-link.css'
 
 const NavLink = ({ href, label, style, ...props }) => (
-	<Link
-		href={href}
-		label={label}
-		className='nav-link'
-		style={style}
-		{...props}
-	/>
+  <Link
+    href={href}
+    label={label}
+    className='nav-link'
+    style={style}
+    {...props}
+  />
 )
 
 NavLink.propTypes = {
-	href: PropTypes.string.isRequired,
-	label: PropTypes.string.isRequired,
-	style: PropTypes.shape({}),
+  href: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  style: PropTypes.shape({}),
 }
 
 NavLink.defaultProps = {
-	style: {},
+  style: {},
 }
 
 export default NavLink

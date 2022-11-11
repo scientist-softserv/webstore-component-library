@@ -3,3 +3,5 @@
 *.md
 *.mdx
 src/assets/img/**
+node_modules
+dist

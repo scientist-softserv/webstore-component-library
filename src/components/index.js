@@ -12,11 +12,11 @@ import TextBox from './TextBox/TextBox'
 import Title from './Title/Title'
 
 export {
-	Button,
-	Image,
-	Link,
-	SearchBar,
-	SocialIcon,
-	TextBox,
-	Title,
+  Button,
+  Image,
+  Link,
+  SearchBar,
+  SocialIcon,
+  TextBox,
+  Title,
 }

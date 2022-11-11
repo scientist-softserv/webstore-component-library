@@ -3,19 +3,19 @@ import ItemGroup from './ItemGroup'
 import { items } from '../../resources/args'
 
 export default {
-	title: 'Compounds/ItemGroup',
-	component: ItemGroup,
+  title: 'Compounds/ItemGroup',
+  component: ItemGroup,
 }
 
 const Template = (args) => <ItemGroup {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-	items: items.slice(0, 3),
+  items: items.slice(0, 3),
 }
 
 export const withTitleLink = Template.bind({})
 withTitleLink.args = {
-	items: items.slice(0, 4),
-	withTitleLink: true
+  items: items.slice(0, 4),
+  withTitleLink: true,
 }

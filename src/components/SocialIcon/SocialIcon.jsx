@@ -10,31 +10,31 @@ import YouTube from '../../assets/svg/YouTube'
 import './social-icon.css'
 
 const iconsList = {
-	'facebook': (height, color) => <FaceBook height={height} fill={color} />,
-	'instagram': (height, color) => <Instagram height={height} fill={color} />,
-	'rss': (height, color) => <Rss height={height} fill={color} />,
-	'tiktok': (height, color) => <TikTok height={height} fill={color} />,
-	'twitter': (height, color) => <Twitter height={height} fill={color} />,
-	'vimeo': (height, color) => <Vimeo height={height} fill={color} />,
-	'youtube': (height, color) => <YouTube height={height} fill={color} />,
+  facebook: (height, color) => <FaceBook height={height} fill={color} />,
+  instagram: (height, color) => <Instagram height={height} fill={color} />,
+  rss: (height, color) => <Rss height={height} fill={color} />,
+  tiktok: (height, color) => <TikTok height={height} fill={color} />,
+  twitter: (height, color) => <Twitter height={height} fill={color} />,
+  vimeo: (height, color) => <Vimeo height={height} fill={color} />,
+  youtube: (height, color) => <YouTube height={height} fill={color} />,
 }
 
 const SocialIcon = ({ color, height, icon, url }) => (
-	<a href={url} target='_blank' className={`social-icon social-icon-${icon}`}>
-		{iconsList[icon](height || 25, color)}
-	</a>
+  <a href={url} target='_blank' className={`social-icon social-icon-${icon}`} rel='noreferrer'>
+    {iconsList[icon](height || 25, color)}
+  </a>
 )
 
 SocialIcon.propTypes = {
-	color: PropTypes.string,
-	height: PropTypes.number,
-	icon: PropTypes.oneOf(['facebook', 'instagram', 'rss', 'tiktok', 'twitter', 'vimeo', 'youtube']).isRequired,
-	url: PropTypes.string.isRequired,
+  color: PropTypes.string,
+  height: PropTypes.number,
+  icon: PropTypes.oneOf(['facebook', 'instagram', 'rss', 'tiktok', 'twitter', 'vimeo', 'youtube']).isRequired,
+  url: PropTypes.string.isRequired,
 }
 
 SocialIcon.defaultProps = {
-	color: '#000000',
-	height: 25,
+  color: '#000000',
+  height: 25,
 }
 
 export default SocialIcon
