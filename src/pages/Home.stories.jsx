@@ -7,23 +7,22 @@ import { Default as SearchBar } from '../components/SearchBar/SearchBar.stories'
 import { Default as TitledTextBox } from '../compounds/TitledTextBox/TitledTextBox.stories'
 
 const Home = () => (
-	<main>
-		<LoggedOut {...LoggedOut.args} />
-		<Hero {...Hero.args} />
-		<SearchBar {...SearchBar.args} />
-		<TitledTextBox {...TitledTextBox.args} />
-		<ItemGroup {...ItemGroup.args} />
-		<Footer {...Footer.args} />
-	</main>
+  <main>
+    <LoggedOut {...LoggedOut.args} />
+    <Hero {...Hero.args} />
+    <SearchBar {...SearchBar.args} />
+    <TitledTextBox {...TitledTextBox.args} />
+    <ItemGroup {...ItemGroup.args} />
+    <Footer {...Footer.args} />
+  </main>
 )
 
-
 export default {
-	title: 'Example/Home Page',
-	component: Home,
-	parameters: {
-		layout: 'fullscreen',
-	},
+  title: 'Example/Home Page',
+  component: Home,
+  parameters: {
+    layout: 'fullscreen',
+  },
 }
 
 export const HomePage = () => <Home />
