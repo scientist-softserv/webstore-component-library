@@ -9,7 +9,7 @@ const Logo = ({ alt, src }) => (
 )
 
 Logo.propTypes = {
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
   src: PropTypes.string.isRequired,
 }
 

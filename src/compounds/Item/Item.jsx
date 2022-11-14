@@ -79,7 +79,7 @@ Item.propTypes = {
     id: PropTypes.number.isRequired,
     img: PropTypes.shape({
       src: PropTypes.string.isRequired,
-      alt: PropTypes.string.isRequired,
+      alt: PropTypes.string,
     }).isRequired,
     name: PropTypes.string.isRequired,
     slug: PropTypes.string,
