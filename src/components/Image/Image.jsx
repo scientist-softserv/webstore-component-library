@@ -12,7 +12,7 @@ const Image = ({ alt, height, src, width, ...props }) => (
 )
 
 Image.propTypes = {
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
   height: PropTypes.oneOfType([
     PropTypes.string, // allows percentages
     PropTypes.number, // uses pixels

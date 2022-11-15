@@ -31,7 +31,7 @@ Header.propTypes = {
   browseLink: PropTypes.string.isRequired,
   logo: PropTypes.shape({
     src: PropTypes.string.isRequired,
-    alt: PropTypes.string.isRequired,
+    alt: PropTypes.string,
   }).isRequired,
   logInLink: PropTypes.string.isRequired,
   logOutLink: PropTypes.string.isRequired,
