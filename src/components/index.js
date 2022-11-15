@@ -6,6 +6,7 @@
 import Button from './Button/Button'
 import Image from './Image/Image'
 import Link from './Link/Link'
+import Loading from './Loading/Loading'
 import SearchBar from './SearchBar/SearchBar'
 import SocialIcon from './SocialIcon/SocialIcon'
 import TextBox from './TextBox/TextBox'
@@ -15,6 +16,7 @@ export {
   Button,
   Image,
   Link,
+  Loading,
   SearchBar,
   SocialIcon,
   TextBox,
