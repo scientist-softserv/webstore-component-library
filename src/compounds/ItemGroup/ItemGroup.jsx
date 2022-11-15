@@ -3,6 +3,7 @@ import Link from 'next/link'
 import PropTypes from 'prop-types'
 import Title from '../../components/Title/Title'
 import Item from '../Item/Item'
+import ItemLoading from '../Item/ItemLoading'
 import './item-group.css'
 
 const ItemGroup = ({ buttonProps, imgProps, items, isLoading, orientation, style, withButtonLink, withTitleLink }) => (
@@ -11,11 +12,7 @@ const ItemGroup = ({ buttonProps, imgProps, items, isLoading, orientation, style
     <div className='group-container'>
       {isLoading ?
         (
-          <>
-            <article className='item-container item-vertical is-loading-vertical'></article>
-            <article className='item-container item-vertical is-loading-vertical'></article>
-            <article className='item-container item-vertical is-loading-vertical'></article>
-          </>
+          <ItemLoading orientation={orientation} />
         ) : (
           items.map((item) => (
             // TODO(alishaevn): is there a way to hide the id from the url?

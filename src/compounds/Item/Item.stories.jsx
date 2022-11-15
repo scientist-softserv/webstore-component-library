@@ -76,3 +76,9 @@ WithTitleLink.args = {
   withButtonLink: false,
   withTitleLink: true,
 }
+
+export const isLoading = Template.bind({})
+isLoading.args = {
+  isLoading: true,
+  orientation: 'horizontal',
+}
