@@ -2,7 +2,7 @@ import React from 'react'
 import { LoggedOut } from '../compounds/Header/Header.stories'
 import { Alternate as Footer } from '../compounds/Footer/Footer.stories'
 import { Alternate as Hero } from '../components/Image/Image.stories'
-import { Alternate as ItemGroup } from '../compounds/ItemGroup/ItemGroup.stories'
+import { withTitleLink as ItemGroup } from '../compounds/ItemGroup/ItemGroup.stories'
 import { Default as SearchBar } from '../components/SearchBar/SearchBar.stories'
 import { Default as TitledTextBox } from '../compounds/TitledTextBox/TitledTextBox.stories'
 
