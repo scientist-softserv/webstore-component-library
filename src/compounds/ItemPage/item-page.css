@@ -1,3 +1,8 @@
+.item-page {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
 .item-page-details {
   display: flex;
   justify-content: space-between;

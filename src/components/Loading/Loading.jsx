@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { TailSpin } from 'react-loader-spinner'
 
-const Loading = ({ color, height, radius, width, ...props }) => (
+const Loading = ({ color, height, radius, width, wrapperStyle, ...props }) => (
   <TailSpin
     ariaLabel='tail-spin-loading'
     color={color}
@@ -10,6 +10,7 @@ const Loading = ({ color, height, radius, width, ...props }) => (
     width={width}
     radius={radius}
     visible={true}
+    wrapperStyle={{ justifyContent: 'center', ...wrapperStyle }}
     {...props}
   />
 )
