@@ -6,7 +6,3 @@
 .item-group {
   padding: 25px 0;
 }
-
-.is-loading-vertical {
-  background-image: linear-gradient(lightgray, white);
-}
