@@ -1,8 +1,12 @@
+.group-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .item-group {
   padding: 25px 0;
 }
 
-.group-container {
-  display: flex;
-  justify-content: space-between;
+.is-loading-vertical {
+  background-image: linear-gradient(lightgray, white);
 }
