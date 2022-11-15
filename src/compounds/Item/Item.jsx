@@ -3,10 +3,19 @@ import Link from 'next/link'
 import PropTypes from 'prop-types'
 import Button from '../../components/Button/Button'
 import Image from '../../components/Image/Image'
+import ItemLoading from './ItemLoading'
 import './item.css'
 
-const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, item, orientation, style, titleLink, withButtonLink, withTitleLink,
+const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, isLoading, item, orientation, style, titleLink, withButtonLink, withTitleLink,
   href }, ref) => {
+  if (isLoading) {
+    return (
+      <div className='center-content'>
+        <ItemLoading orientation={orientation} />
+      </div>
+    )
+  }
+
   const { id, description, name } = item
   const { alt, src } = item.img
 
@@ -74,6 +83,7 @@ Item.propTypes = {
   // 	? PropTypes.shape(Button.propTypes)
   // 	: PropTypes.shape({ ...Button.propTypes, label: PropTypes.string })
   // ,
+  isLoading: PropTypes.bool,
   item: PropTypes.shape({
     description: PropTypes.string,
     id: PropTypes.number.isRequired,
@@ -93,12 +103,13 @@ Item.propTypes = {
 }
 
 Item.defaultProps = {
+  buttonLink: '',
   buttonProps: Button.defaultProps,
   imgProps: {},
+  isLoading: false,
   item: {
     description: '',
   },
-  buttonLink: '',
   orientation: 'vertical',
   style: {},
   titleLink: '',

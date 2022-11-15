@@ -1,4 +1,8 @@
 /************ all items ************/
+.is-loading {
+  background-image: linear-gradient(lightgray, white);
+}
+
 .item-container {
   border: 1px solid grey;
   border-radius: 5px;
@@ -71,6 +75,7 @@
   display: flex;
   width: auto;
   height: 175px;
+  margin-bottom: 30px;
 }
 
 .item-horizontal.item-details {
