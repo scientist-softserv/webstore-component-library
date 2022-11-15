@@ -14,6 +14,11 @@ Default.args = {
   items: items.slice(0, 3),
 }
 
+export const Loading = Template.bind({})
+Loading.args = {
+  isLoading: true,
+}
+
 export const withTitleLink = Template.bind({})
 withTitleLink.args = {
   items: items.slice(0, 4),
