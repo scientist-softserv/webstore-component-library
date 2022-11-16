@@ -10,8 +10,8 @@ const ItemGroup = ({ buttonProps, imgProps, items, isLoading, orientation, style
   <section className='item-group center-content'>
     <Title size='large' title='Featured Services' />
     <div className='group-container'>
-      {isLoading ?
-        (
+      {isLoading
+        ? (
           <ItemLoading orientation={orientation} />
         ) : (
           items.map((item) => (
@@ -29,8 +29,7 @@ const ItemGroup = ({ buttonProps, imgProps, items, isLoading, orientation, style
               />
             </Link>
           ))
-        )
-      }
+        )}
     </div>
   </section>
 )

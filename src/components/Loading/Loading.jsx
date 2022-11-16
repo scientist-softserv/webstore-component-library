@@ -9,7 +9,7 @@ const Loading = ({ color, height, radius, width, wrapperStyle, ...props }) => (
     height={height}
     width={width}
     radius={radius}
-    visible={true}
+    visible
     wrapperStyle={{ justifyContent: 'center', ...wrapperStyle }}
     {...props}
   />

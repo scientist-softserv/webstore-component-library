@@ -4,9 +4,9 @@ import './item.css'
 
 const ItemLoading = ({ orientation }) => (
   <>
-    <article className={`item-container item-${orientation} is-loading`}></article>
-    <article className={`item-container item-${orientation} is-loading`}></article>
-    <article className={`item-container item-${orientation} is-loading`}></article>
+    <article className={`item-container item-${orientation} is-loading`} />
+    <article className={`item-container item-${orientation} is-loading`} />
+    <article className={`item-container item-${orientation} is-loading`} />
   </>
 )
 
