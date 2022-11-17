@@ -11,6 +11,7 @@ import ItemPage from './ItemPage/ItemPage'
 import LinkGroup from './LinkGroup/LinkGroup'
 import Logo from './Logo/Logo'
 import NavLink from './NavLink/NavLink'
+import RequestItem from './RequestItem/RequestItem'
 import TitledTextBox from './TitledTextBox/TitledTextBox'
 
 export {
@@ -22,5 +23,6 @@ export {
   LinkGroup,
   Logo,
   NavLink,
+  RequestItem,
   TitledTextBox,
 }
