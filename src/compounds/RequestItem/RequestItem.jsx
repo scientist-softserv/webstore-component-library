@@ -8,11 +8,11 @@ import './request-item.css'
 
 const RequestItem = ({ createdAt, description, img, title, status, updatedAt }) => {
   const { backgroundColor, text, textColor } = status
-  img = { ...img, height: 70, width: 70 }
+  const image = { ...img, height: 70, width: 70 }
 
   return (
     <article className='request-item'>
-      <Image {...img} />
+      <Image {...image} />
       <div>
         <Title title={title} size='small' />
         <TextBox text={description} />
@@ -33,8 +33,8 @@ const RequestItem = ({ createdAt, description, img, title, status, updatedAt }) 
 RequestItem.propTypes = {
   createdAt: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  img: Image.propTypes,
-  status: Badge.propTypes,
+  img: PropTypes.shape(Image.propTypes).isRequired,
+  status: PropTypes.shape(Badge.propTypes).isRequired,
   title: PropTypes.string.isRequired,
   updatedAt: PropTypes.string.isRequired,
 }
