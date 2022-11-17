@@ -4,7 +4,6 @@ import Badge from '../../components/Badge/Badge'
 import Image from '../../components/Image/Image'
 import TextBox from '../../components/TextBox/TextBox'
 import Title from '../../components/Title/Title'
-import { img as defaultImg } from '../../resources/args'
 import './request-item.css'
 
 const RequestItem = ({ createdAt, description, img, title, status, updatedAt }) => {
@@ -38,10 +37,6 @@ RequestItem.propTypes = {
   status: Badge.propTypes,
   title: PropTypes.string.isRequired,
   updatedAt: PropTypes.string.isRequired,
-}
-
-RequestItem.defaultProps = {
-  img: defaultImg,
 }
 
 export default RequestItem
