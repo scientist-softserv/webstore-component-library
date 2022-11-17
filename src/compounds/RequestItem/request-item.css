@@ -1,0 +1,15 @@
+.request-item {
+  display: flex;
+  justify-content: space-between;
+  width: 750px;
+}
+
+.status {
+  background-color: lightgray;
+  padding: 10px;
+  border-radius: 2px;
+}
+
+.status > :first-child {
+  margin-bottom: 15px;
+}
