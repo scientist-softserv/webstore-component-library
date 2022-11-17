@@ -7,6 +7,7 @@ const img = {
   src: item,
   alt: 'Several rows of test tubes with a liquid being put into one.',
 }
+export { img as defaultImage }
 
 export const items = [
   {

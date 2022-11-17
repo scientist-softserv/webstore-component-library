@@ -1,6 +1,6 @@
 import React from 'react'
 import RequestItem from './RequestItem'
-import { img } from '../../resources/args'
+import { defaultImage } from '../../resources/args'
 
 export default {
   title: 'Compounds/RequestItem',
@@ -13,7 +13,7 @@ export const Default = Template.bind({})
 Default.args = {
   createdAt: 'September 9, 2022',
   description: 'Does the Company offer services related to Flow Cytometry?',
-  img,
+  img: defaultImage,
   title: 'F575C4: Assay Depot Coffee Mug',
   status: {
     text: 'Vendor Review',
@@ -25,7 +25,7 @@ export const Alternate = Template.bind({})
 Alternate.args = {
   createdAt: 'September 9, 2022',
   description: 'Does the Company offer services related to Flow Cytometry?',
-  img,
+  img: defaultImage,
   title: 'F575C4: Assay Depot Coffee Mug',
   status: {
     backgroundColor: '#DEAF17',
