@@ -11,9 +11,9 @@ const RequestItem = ({ createdAt, description, img, title, status, updatedAt }) 
   const image = { ...img, height: 70, width: 70 }
 
   return (
-    <article className='request-item'>
+    <article className='request-item margin-top'>
       <Image {...image} />
-      <div>
+      <div className='request-item-details'>
         <Title title={title} size='small' />
         <TextBox text={description} />
       </div>
