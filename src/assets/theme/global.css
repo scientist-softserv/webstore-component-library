@@ -32,6 +32,12 @@
   margin: auto;
 }
 
+/* TODO(alishaevn): make this customizable */
+.link {
+  text-decoration: none;
+  color: #000000;
+}
+
 @media only screen and (max-width: 1140px) {
 	.center-content {
 		margin-left: 20px;

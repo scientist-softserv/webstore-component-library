@@ -39,7 +39,7 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, isLoading, i
       <div className={`item-options-${orientation}`}>
         <div className='item-details'>
           {withTitleLink ? (
-            <a href={titleLink} ref={ref} className='pointer-cursor item-link'>
+            <a href={titleLink} ref={ref} className='pointer-cursor link'>
               <h3 className='item-name margin-top'>
                 {name}
               </h3>
