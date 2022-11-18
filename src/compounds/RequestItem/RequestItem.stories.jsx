@@ -13,6 +13,7 @@ export const Default = Template.bind({})
 Default.args = {
   createdAt: 'September 9, 2022',
   description: 'Does the Company offer services related to Flow Cytometry?',
+  href: '/request/F575C4',
   img: defaultImage,
   title: 'F575C4: Assay Depot Coffee Mug',
   status: {
@@ -25,6 +26,7 @@ export const Alternate = Template.bind({})
 Alternate.args = {
   createdAt: 'September 9, 2022',
   description: 'Does the Company offer services related to Flow Cytometry?',
+  href: '/request/F575C4',
   img: defaultImage,
   title: 'F575C4: Assay Depot Coffee Mug',
   status: {
