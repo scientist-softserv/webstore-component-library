@@ -6,15 +6,7 @@ import TextBox from '../../components/TextBox/TextBox'
 import Title from '../../components/Title/Title'
 import './request-item.css'
 
-const RequestItem = React.forwardRef(({ createdAt, description, href, img, isLoading, title, status, updatedAt }, ref) => {
-  if (isLoading) {
-    return (
-      <div className='center-content'>
-        <ItemLoading orientation='vertical' />
-      </div>
-    )
-  }
-
+const RequestItem = React.forwardRef(({ createdAt, description, href, img, title, status, updatedAt }, ref) => {
   const { backgroundColor, text, textColor } = status
   const image = { ...img, height: 70, width: 70 }
 
@@ -43,14 +35,11 @@ const RequestItem = React.forwardRef(({ createdAt, description, href, img, isLoa
 RequestItem.propTypes = {
   createdAt: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  id: PropTypes.number,
   img: PropTypes.shape(Image.propTypes).isRequired,
   status: PropTypes.shape(Badge.propTypes).isRequired,
   title: PropTypes.string.isRequired,
   updatedAt: PropTypes.string.isRequired,
-}
-
-RequestItem.defaultProps = {
-  isLoading: false,
 }
 
 export default RequestItem
