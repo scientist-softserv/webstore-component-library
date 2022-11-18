@@ -6,7 +6,15 @@ import TextBox from '../../components/TextBox/TextBox'
 import Title from '../../components/Title/Title'
 import './request-item.css'
 
-const RequestItem = ({ createdAt, description, img, title, status, updatedAt }) => {
+const RequestItem = React.forwardRef(({ createdAt, description, href, img, isLoading, title, status, updatedAt }, ref) => {
+  if (isLoading) {
+    return (
+      <div className='center-content'>
+        <ItemLoading orientation='vertical' />
+      </div>
+    )
+  }
+
   const { backgroundColor, text, textColor } = status
   const image = { ...img, height: 70, width: 70 }
 
@@ -14,7 +22,9 @@ const RequestItem = ({ createdAt, description, img, title, status, updatedAt }) 
     <article className='request-item margin-top'>
       <Image {...image} />
       <div className='request-item-details'>
-        <Title title={title} size='small' />
+        <a href={href} ref={ref} className='link pointer-cursor'>
+          <Title title={title} size='small' />
+        </a>
         <TextBox text={description} />
       </div>
       <div className='status'>
@@ -28,7 +38,7 @@ const RequestItem = ({ createdAt, description, img, title, status, updatedAt }) 
       </div>
     </article>
   )
-}
+})
 
 RequestItem.propTypes = {
   createdAt: PropTypes.string.isRequired,
@@ -37,6 +47,10 @@ RequestItem.propTypes = {
   status: PropTypes.shape(Badge.propTypes).isRequired,
   title: PropTypes.string.isRequired,
   updatedAt: PropTypes.string.isRequired,
+}
+
+RequestItem.defaultProps = {
+  isLoading: false,
 }
 
 export default RequestItem
