@@ -50,7 +50,7 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, isLoading, i
             </h3>
           )}
           {description && (
-            <p className='item-description margin-vertical'>
+            <p className='item-description my-2'>
               {/* TODO(alishaevn): account for really long descriptions */}
               {description}
             </p>

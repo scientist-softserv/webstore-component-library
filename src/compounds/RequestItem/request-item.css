@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
-  gap: 20px
+  gap: 30px
 }
 
 .request-item-details {
@@ -13,7 +13,7 @@
   background-color: lightgray;
   padding: 10px;
   border-radius: 2px;
-  flex: 1;
+  width: 260px;
 }
 
 .status > :first-child {
