@@ -6,7 +6,7 @@ import Title from '../../components/Title/Title'
 import RequestItem from '../RequestItem/RequestItem'
 
 const RequestList = ({ requests, isLoading }) => (
-  <>
+  <div className='center-content'>
     <Title title='My Requests' size='medium' />
     {isLoading
       ? (
@@ -25,7 +25,7 @@ const RequestList = ({ requests, isLoading }) => (
           </Link>
         ))
       )}
-  </>
+  </div>
 )
 
 RequestList.propTypes = {

@@ -1,19 +1,19 @@
 .request-item {
   display: flex;
   justify-content: space-between;
-  width: 780px;
   margin-bottom: 25px;
+  gap: 20px
 }
 
 .request-item-details {
-  width: 380px;
+  flex: 2
 }
 
 .status {
   background-color: lightgray;
   padding: 10px;
   border-radius: 2px;
-  width: 260px;
+  flex: 1;
 }
 
 .status > :first-child {
