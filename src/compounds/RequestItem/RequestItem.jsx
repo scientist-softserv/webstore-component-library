@@ -4,18 +4,19 @@ import Badge from '../../components/Badge/Badge'
 import Image from '../../components/Image/Image'
 import TextBox from '../../components/TextBox/TextBox'
 import Title from '../../components/Title/Title'
-import { img as defaultImg } from '../../resources/args'
 import './request-item.css'
 
-const RequestItem = ({ createdAt, description, img, title, status, updatedAt }) => {
+const RequestItem = React.forwardRef(({ createdAt, description, href, img, title, status, updatedAt }, ref) => {
   const { backgroundColor, text, textColor } = status
-  img = { ...img, height: 70, width: 70 }
+  const image = { ...img, height: 70, width: 70 }
 
   return (
-    <article className='request-item'>
-      <Image {...img} />
-      <div>
-        <Title title={title} size='small' />
+    <article className='request-item margin-top'>
+      <Image {...image} />
+      <div className='request-item-details'>
+        <a href={href} ref={ref} className='link pointer-cursor'>
+          <Title title={title} size='small' />
+        </a>
         <TextBox text={description} />
       </div>
       <div className='status'>
@@ -29,19 +30,16 @@ const RequestItem = ({ createdAt, description, img, title, status, updatedAt }) 
       </div>
     </article>
   )
-}
+})
 
 RequestItem.propTypes = {
   createdAt: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  img: Image.propTypes,
-  status: Badge.propTypes,
+  id: PropTypes.number,
+  img: PropTypes.shape(Image.propTypes).isRequired,
+  status: PropTypes.shape(Badge.propTypes).isRequired,
   title: PropTypes.string.isRequired,
   updatedAt: PropTypes.string.isRequired,
-}
-
-RequestItem.defaultProps = {
-  img: defaultImg,
 }
 
 export default RequestItem

@@ -1,13 +1,19 @@
 .request-item {
   display: flex;
   justify-content: space-between;
-  width: 750px;
+  width: 780px;
+  margin-bottom: 25px;
+}
+
+.request-item-details {
+  width: 380px;
 }
 
 .status {
   background-color: lightgray;
   padding: 10px;
   border-radius: 2px;
+  width: 260px;
 }
 
 .status > :first-child {
