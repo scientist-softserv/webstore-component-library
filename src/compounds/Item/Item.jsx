@@ -39,18 +39,18 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, isLoading, i
       <div className={`item-options-${orientation}`}>
         <div className='item-details'>
           {withTitleLink ? (
-            <a href={titleLink} ref={ref} className='pointer-cursor item-link'>
-              <h3 className='item-name'>
+            <a href={titleLink} ref={ref} className='pointer-cursor link'>
+              <h3 className='item-name margin-top'>
                 {name}
               </h3>
             </a>
           ) : (
-            <h3 className='item-name'>
+            <h3 className='item-name margin-top'>
               {name}
             </h3>
           )}
           {description && (
-            <p className='item-description'>
+            <p className='item-description margin-vertical'>
               {/* TODO(alishaevn): account for really long descriptions */}
               {description}
             </p>

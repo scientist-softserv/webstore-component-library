@@ -12,6 +12,7 @@ import LinkGroup from './LinkGroup/LinkGroup'
 import Logo from './Logo/Logo'
 import NavLink from './NavLink/NavLink'
 import RequestItem from './RequestItem/RequestItem'
+import RequestList from './RequestList/RequestList'
 import TitledTextBox from './TitledTextBox/TitledTextBox'
 
 export {
@@ -24,5 +25,6 @@ export {
   Logo,
   NavLink,
   RequestItem,
+  RequestList,
   TitledTextBox,
 }
