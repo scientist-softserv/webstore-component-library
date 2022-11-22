@@ -11,9 +11,10 @@ const Template = (args) => <LinkedButton {...args} />
 
 export const Default = Template.bind({})
 
+const { onClick, ...remainingDefaultProps } = Button.defaultProps
 Default.args = {
   buttonProps: {
-    ...Button.defaultProps,
+    ...remainingDefaultProps,
     label: 'Linked Button',
   },
   orientation: 'vertical',

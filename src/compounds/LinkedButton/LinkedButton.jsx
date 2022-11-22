@@ -4,13 +4,10 @@ import PropTypes from 'prop-types'
 import Button from '../../components/Button/Button'
 import './linked-button.css'
 
-const InteriorButton = React.forwardRef(({ buttonProps, href, orientation }, ref) => (
-  <a href={href} ref={ref} className={`linked-button-${orientation} linked-button`}>
-    <Button {...buttonProps} />
-  </a>
-))
-
-const LinkedButton = ({ buttonProps, path, orientation }) => (
+/**
+ * Component for user interactions that include page routing
+ */
+const LinkedButton = ({ buttonProps, orientation, path }) => (
   <Link href={path} passHref legacyBehavior>
     <InteriorButton
       buttonProps={buttonProps}
@@ -20,8 +17,15 @@ const LinkedButton = ({ buttonProps, path, orientation }) => (
   </Link>
 )
 
+const InteriorButton = React.forwardRef(({ buttonProps, href, orientation }, ref) => (
+  <a href={href} ref={ref} className={`linked-button-${orientation} linked-button`}>
+    <Button {...buttonProps} />
+  </a>
+))
+
+const { onClick, ...remainingPropTypes } = Button.propTypes
 LinkedButton.propTypes = {
-  buttonProps: PropTypes.shape(Button.propTypes).isRequired,
+  buttonProps: PropTypes.shape(remainingPropTypes).isRequired,
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
   path: PropTypes.string.isRequired,
 }
