@@ -36,7 +36,6 @@ WithButtonLink.args = {
   buttonProps: {
     backgroundColor: '#A9A9A9',
     label: 'Request this item',
-    primary: true,
   },
   imgProps: {},
   item: {

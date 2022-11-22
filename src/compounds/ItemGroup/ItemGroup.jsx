@@ -37,7 +37,6 @@ const ItemGroup = ({ buttonProps, imgProps, items, isLoading, orientation, style
 
 ItemGroup.propTypes = {
   buttonProps: PropTypes.shape({
-    primary: PropTypes.bool,
     backgroundColor: PropTypes.string,
     size: PropTypes.oneOf(['small', 'medium', 'large']),
     label: PropTypes.string,
