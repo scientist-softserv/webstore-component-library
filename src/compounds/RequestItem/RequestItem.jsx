@@ -11,7 +11,7 @@ const RequestItem = React.forwardRef(({ createdAt, description, href, img, title
   const image = { ...img, height: 70, width: 70 }
 
   return (
-    <article className='request-item margin-top'>
+    <article className='request-item mt-2'>
       <Image {...image} />
       <div className='request-item-details'>
         <a href={href} ref={ref} className='link pointer-cursor'>

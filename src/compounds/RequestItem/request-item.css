@@ -1,12 +1,12 @@
 .request-item {
   display: flex;
   justify-content: space-between;
-  width: 780px;
   margin-bottom: 25px;
+  gap: 30px
 }
 
 .request-item-details {
-  width: 380px;
+  flex: 2
 }
 
 .status {

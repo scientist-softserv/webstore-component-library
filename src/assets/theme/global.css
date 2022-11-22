@@ -3,16 +3,25 @@
 	padding: 0;
 }
 
-.margin-bottom {
-	margin-bottom: 10px;
+.mb-2 {
+	margin-bottom: 1rem;
 }
 
-.margin-top {
-	margin-top: 10px;
+.mt-2 {
+	margin-top: 1rem;
 }
 
-.margin-vertical {
-	margin: 10px 0;
+.my-2 {
+	margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ml-auto {
+	margin-left: auto;
+}
+
+.d-block {
+  display: block !important;
 }
 
 .container {

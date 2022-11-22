@@ -25,7 +25,7 @@ const RequestList = ({ requests, isLoading }) => (
           </Link>
         ))
       )}
-  </>
+    </>
 )
 
 RequestList.propTypes = {
