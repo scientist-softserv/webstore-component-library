@@ -1,13 +1,17 @@
-.linked-button-vertical {
-  margin: 15px;
-  display: flex;
-  flex-direction: row-reverse;
+.linked-button {
+  text-decoration: none;
+}
+
+.linked-button:hover {
+  color: #A9A9A9;
 }
 
 .linked-button-horizontal {
   width: 165px;
 }
 
-.linked-button:hover {
-  color: #A9A9A9;
+.linked-button-vertical {
+  margin: 15px;
+  display: flex;
+  flex-direction: row-reverse;
 }
