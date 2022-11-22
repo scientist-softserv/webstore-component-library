@@ -1,0 +1,7 @@
+.linked-button {
+  text-decoration: none;
+}
+
+.linked-button:hover {
+  color: #A9A9A9;
+}

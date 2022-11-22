@@ -1,7 +1,6 @@
 import React from 'react'
-import Link from 'next/link'
 import PropTypes from 'prop-types'
-import Button from '../../components/Button/Button'
+import LinkedButton from '../LinkedButton/LinkedButton'
 import Image from '../../components/Image/Image'
 import ItemLoading from './ItemLoading'
 import './item.css'
@@ -57,27 +56,23 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, isLoading, i
           )}
         </div>
         {withButtonLink && (
-          <Link href={buttonLink} passHref legacyBehavior>
-            <LinkedButton href={buttonLink} orientation={orientation} buttonProps={buttonProps} />
-          </Link>
+          <LinkedButton
+            addClass={`item-button-${orientation} item-link`}
+            buttonProps={buttonProps}
+            path={buttonLink}
+          />
         )}
       </div>
     </article>
   )
 })
 
-const LinkedButton = React.forwardRef(({ buttonProps, href, orientation }, ref) => (
-  <a href={href} ref={ref} className={`item-button-${orientation} item-link`}>
-    <Button {...buttonProps} />
-  </a>
-))
-
 Item.propTypes = {
   buttonLink: PropTypes.string,
   // currently overriding the label on a button from being required in this component,
   // because it shouldn't be if we are not rendering a button
   // refer to the comment below
-  buttonProps: PropTypes.shape({ ...Button.propTypes, label: PropTypes.string }),
+  buttonProps: PropTypes.shape({ ...LinkedButton.propTypes.buttonProps, label: PropTypes.string }),
   // TODO(alishaevn): is there a way to set conditional proptypes without adding another package?
   // buttonProps: props => props.withButtonLink
   // 	? PropTypes.shape(Button.propTypes)
@@ -104,7 +99,7 @@ Item.propTypes = {
 
 Item.defaultProps = {
   buttonLink: '',
-  buttonProps: Button.defaultProps,
+  buttonProps: LinkedButton.defaultProps,
   imgProps: {},
   isLoading: false,
   item: {
