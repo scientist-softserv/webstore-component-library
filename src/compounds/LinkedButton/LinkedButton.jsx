@@ -9,17 +9,17 @@ import './linked-button.css'
  */
 // TODO(alishaevn):
 //   - use this component in Item.jsx instead, but make sure it maintains its current styling
-const LinkedButton = ({ buttonProps, addClass, path }) => (
+const LinkedButton = ({ addClass, buttonProps, path }) => (
   <Link href={path} passHref legacyBehavior>
     <ButtonLinkWrapper
+      addClass={addClass}
       buttonProps={buttonProps}
       href={path}
-      addClass={addClass}
     />
   </Link>
 )
 
-const ButtonLinkWrapper = React.forwardRef(({ buttonProps, href, addClass }, ref) => (
+const ButtonLinkWrapper = React.forwardRef(({ addClass, buttonProps, href }, ref) => (
   <a href={href} ref={ref} className={addClass}>
     <Button {...buttonProps} />
   </a>

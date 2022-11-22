@@ -56,7 +56,11 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, isLoading, i
           )}
         </div>
         {withButtonLink && (
-          <LinkedButton href={buttonLink} addClass={`item-button-${orientation} item-link`} buttonProps={buttonProps} />
+          <LinkedButton
+            addClass={`item-button-${orientation} item-link`}
+            buttonProps={buttonProps}
+            path={buttonLink}
+          />
         )}
       </div>
     </article>
@@ -68,7 +72,7 @@ Item.propTypes = {
   // currently overriding the label on a button from being required in this component,
   // because it shouldn't be if we are not rendering a button
   // refer to the comment below
-  buttonProps: PropTypes.shape({ ...LinkedButton.propTypes, label: PropTypes.string }),
+  buttonProps: PropTypes.shape({ ...LinkedButton.propTypes.buttonProps, label: PropTypes.string }),
   // TODO(alishaevn): is there a way to set conditional proptypes without adding another package?
   // buttonProps: props => props.withButtonLink
   // 	? PropTypes.shape(Button.propTypes)
