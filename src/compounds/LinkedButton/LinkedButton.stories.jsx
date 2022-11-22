@@ -17,6 +17,6 @@ Default.args = {
     ...remainingDefaultProps,
     label: 'Linked Button',
   },
-  orientation: 'vertical',
+  addClass: '',
   path: '/',
 }

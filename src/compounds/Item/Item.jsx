@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
-import Button from '../../components/Button/Button'
+import LinkedButton from '../LinkedButton/LinkedButton'
 import Image from '../../components/Image/Image'
 import ItemLoading from './ItemLoading'
 import './item.css'
@@ -58,19 +58,13 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, isLoading, i
         </div>
         {withButtonLink && (
           <Link href={buttonLink} passHref legacyBehavior>
-            <LinkedButton href={buttonLink} orientation={orientation} buttonProps={buttonProps} />
+            <LinkedButton href={buttonLink} addClass={`item-button-${orientation} item-link`} buttonProps={buttonProps} />
           </Link>
         )}
       </div>
     </article>
   )
 })
-
-const LinkedButton = React.forwardRef(({ buttonProps, href, orientation }, ref) => (
-  <a href={href} ref={ref} className={`item-button-${orientation} item-link`}>
-    <Button {...buttonProps} />
-  </a>
-))
 
 Item.propTypes = {
   buttonLink: PropTypes.string,

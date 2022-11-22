@@ -37,6 +37,16 @@
   cursor: pointer;
 }
 
+.item-button-horizontal {
+  width: 165px;
+}
+
+.item-button-vertical {
+  margin: 15px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 /************ vertical items ************/
 .item-container.item-vertical {
   width: 325px;
