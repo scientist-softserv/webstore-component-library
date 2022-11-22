@@ -7,6 +7,9 @@ import './linked-button.css'
 /**
  * Component for user interactions that include page routing
  */
+// TODO(alishaevn):
+//   - remove default right alignment
+//   - use this component in Item.jsx instead, but make sure it maintains its current styling
 const LinkedButton = ({ buttonProps, orientation, path }) => (
   <Link href={path} passHref legacyBehavior>
     <InteriorButton
