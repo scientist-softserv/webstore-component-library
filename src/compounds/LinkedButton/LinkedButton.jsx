@@ -10,15 +10,20 @@ const InteriorButton = React.forwardRef(({ buttonProps, href, orientation }, ref
   </a>
 ))
 
-const LinkedButton = ({ buttonProps, href, orientation }) => (
-  <Link href={href} passHref legacyBehavior>
-    <InteriorButton href={href} orientation={orientation} buttonProps={buttonProps} />
+const LinkedButton = ({ buttonProps, path, orientation }) => (
+  <Link href={path} passHref legacyBehavior>
+    <InteriorButton
+      buttonProps={buttonProps}
+      href={path}
+      orientation={orientation}
+    />
   </Link>
 )
 
 LinkedButton.propTypes = {
   buttonProps: PropTypes.shape(Button.propTypes).isRequired,
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
+  path: PropTypes.string.isRequired,
 }
 
 LinkedButton.defaultProps = {
