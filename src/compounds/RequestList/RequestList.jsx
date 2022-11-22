@@ -5,7 +5,7 @@ import Loading from '../../components/Loading/Loading'
 import Title from '../../components/Title/Title'
 import RequestItem from '../RequestItem/RequestItem'
 
-const RequestList = ({ requests, isLoading }) => (
+const RequestList = ({ requests, isLoading, user }) => (
   <>
     <Title title='My Requests' size='medium' />
     {isLoading
@@ -21,6 +21,7 @@ const RequestList = ({ requests, isLoading }) => (
               title={req.title}
               status={req.status}
               updatedAt={req.updatedAt}
+              user={user}
             />
           </Link>
         ))
