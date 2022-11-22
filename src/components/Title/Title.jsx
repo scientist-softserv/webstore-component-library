@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import './title.css'
 
 const Title = ({ alignment, size, style, title }) => (
-  <div className={`title--${alignment} margin-bottom`}>
+  <div className={`title--${alignment} mb-2`}>
     <h1
       className={`title title--${size}`}
       style={{ ...style }}
