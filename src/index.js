@@ -6,5 +6,5 @@
 import './assets/theme/global.css'
 import './assets/theme/typography.js'
 
-export * from './components/index'
-export * from './compounds/index'
+export * from './components'
+export * from './compounds'
