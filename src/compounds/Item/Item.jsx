@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import LinkedButton from '../LinkedButton/LinkedButton'
-import Button from '../../components/Button/Button'
 import Image from '../../components/Image/Image'
 import ItemLoading from './ItemLoading'
 import './item.css'
@@ -69,7 +68,7 @@ Item.propTypes = {
   // currently overriding the label on a button from being required in this component,
   // because it shouldn't be if we are not rendering a button
   // refer to the comment below
-  //buttonProps: PropTypes.shape({ ...Button.propTypes, label: PropTypes.string }),
+  buttonProps: PropTypes.shape({ ...LinkedButton.propTypes, label: PropTypes.string }),
   // TODO(alishaevn): is there a way to set conditional proptypes without adding another package?
   // buttonProps: props => props.withButtonLink
   // 	? PropTypes.shape(Button.propTypes)
@@ -96,7 +95,7 @@ Item.propTypes = {
 
 Item.defaultProps = {
   buttonLink: '',
-  buttonProps: Button.defaultProps,
+  buttonProps: LinkedButton.defaultProps,
   imgProps: {},
   isLoading: false,
   item: {
