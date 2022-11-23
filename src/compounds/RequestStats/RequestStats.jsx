@@ -2,13 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import TextBox from '../../components/TextBox/TextBox'
 import Title from '../../components/Title/Title'
+import './request-stats.css'
 
 const RequestStats = ({ billingAddress, createdAt, deadline, detailsColor, projectCode, shippingAddress, headerColor }) => {
   const titleStyle = { color: headerColor }
   const textStyle = { color: detailsColor }
 
   return (
-  <article className='request-stats mt-2'>
+  <article className='request-stats'>
     <div className='mb-2'>
       <Title title='Request Info' size='small' />
     </div>
@@ -28,7 +29,7 @@ const RequestStats = ({ billingAddress, createdAt, deadline, detailsColor, proje
       <Title title='Shipping address' size='x-small' style={titleStyle} />
       <TextBox text={shippingAddress} style={textStyle} />
     </div>
-    <div className='mb-2'>
+    <div>
       <Title title='Billing address' size='x-small' style={titleStyle} />
       <TextBox text={billingAddress} style={textStyle} />
     </div>
