@@ -5,7 +5,7 @@ import './titled-text-box.css'
 
 const TitledTextBox = ({ text, textAlignment, textSize, textStyle, title, titleAlignment, titleSize, titleStyle }) => (
   <section className='titled-text-box center-content'>
-    <Title alignment={titleAlignment} size={titleSize} style={titleStyle} title={title} />
+    <Title addClass='mb-2' alignment={titleAlignment} size={titleSize} style={titleStyle} title={title} />
     <TextBox alignment={textAlignment} size={textSize} style={textStyle} text={text} />
   </section>
 )
