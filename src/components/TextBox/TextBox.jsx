@@ -3,14 +3,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './text-box.css'
 
-const TextBox = ({ alignment, size, style, text }) => {
+const TextBox = ({ addClass, alignment, size, style, text }) => {
   // account for Unix and Windows devices
   const paragraphs = text.split(/\n+\t?\r?/)
 
   return (
     <>
       {paragraphs.map((par, index) => (
-        <div className={`text-box--${alignment}`} key={index}>
+        <div className={`text-box--${alignment} ${addClass || ''}`} key={index}>
           <p
             className={`text-box text-box--${size}`}
             style={{ ...style }}
