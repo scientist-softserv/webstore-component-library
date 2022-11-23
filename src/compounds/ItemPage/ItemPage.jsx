@@ -10,7 +10,7 @@ const ItemPage = ({ title, titleStyle, description, descriptionStyle, img }) => 
   img = { width: 400, ...img }
 
   return (
-    <main className='center-content item-page'>
+    <main className='container item-page'>
       <Title title={title} style={titleStyle} />
       <div className='item-page-details'>
         <TextBox text={description} style={descriptionStyle} size='medium' />

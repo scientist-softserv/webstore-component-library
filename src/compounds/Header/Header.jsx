@@ -11,7 +11,7 @@ const Header = ({ browseLink, logInLink, logo, logOutLink, requestsLink, user })
 
   return (
     <header className='header-container'>
-      <div className='webstore-container center-content'>
+      <div className='webstore-container container'>
         <Logo src={src} alt={alt} />
         <div>
           <NavLink href={browseLink} label='Browse' />

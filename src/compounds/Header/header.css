@@ -8,8 +8,3 @@ button + button {
   align-content: center;
   display: flex;
 }
-
-header > div.container {
-  padding: 0;
-  width: 100%;
-}
