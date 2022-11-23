@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import './badge.css'
 
 const Badge = ({ backgroundColor, text, textColor }) => (
-  <div style={{ backgroundColor }} className='badge'>
-    <p style={{ color: textColor }}>
+  <div style={{ backgroundColor }} className='webstore-badge'>
+    <span style={{ color: textColor }}>
       {text}
-    </p>
+    </span>
   </div>
 )
 
