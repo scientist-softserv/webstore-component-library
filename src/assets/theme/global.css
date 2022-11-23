@@ -3,6 +3,8 @@
 	padding: 0;
 }
 
+/* TODO (summer-cook) remove these styles after adding bootstrap to component library */
+
 .mb-2 {
 	margin-bottom: 1rem;
 }
@@ -23,6 +25,12 @@
 .d-block {
   display: block !important;
 }
+
+.text-end {
+  text-align: right;
+}
+
+/* end TODO*/
 
 .container {
 	font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
