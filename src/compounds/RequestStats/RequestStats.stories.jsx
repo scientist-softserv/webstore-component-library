@@ -16,4 +16,3 @@ Default.args = {
   projectCode: '',
   shippingAddress: '505 Lomas Sante Fe Dr\nSuite 110\nSolana Beach, CA, 92075\nUnited States',
 }
-
