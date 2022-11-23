@@ -32,6 +32,7 @@
     "@rollup/plugin-commonjs": "^23.0.0",
     "@storybook/testing-library": "^0.0.13",
     "prop-types": "^15.8.1",
+    "react-bootstrap-storybook": "^1.5.1",
     "react-loader-spinner": "^5.3.4",
     "storybook-addon-next-router": "^4.0.1"
   },
@@ -46,9 +47,11 @@
     "@storybook/addon-links": "^6.5.12",
     "@storybook/builder-webpack4": "^6.5.12",
     "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^6.5.12",
     "@storybook/test-runner": "^0.7.2",
     "babel-loader": "^8.2.5",
+    "css-loader": "^5.2.7",
     "eslint": "^8.23.1",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-react": "^1.1.7",
@@ -61,7 +64,10 @@
     "rollup": "^2.79.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2"
+    "rollup-plugin-postcss": "^4.0.2",
+    "sass": "^1.56.1",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^2.0.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",

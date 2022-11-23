@@ -7,7 +7,7 @@ import ItemLoading from '../Item/ItemLoading'
 import './item-group.css'
 
 const ItemGroup = ({ buttonProps, imgProps, items, isLoading, orientation, style, withButtonLink, withTitleLink }) => (
-  <section className='item-group center-content'>
+  <section className='item-group container'>
     <Title addClass='mb-2' size='large' title='Featured Services' />
     <div className='group-container'>
       {isLoading ?

@@ -9,9 +9,7 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, isLoading, i
   href }, ref) => {
   if (isLoading) {
     return (
-      <div className='center-content'>
-        <ItemLoading orientation={orientation} />
-      </div>
+      <ItemLoading orientation={orientation} />
     )
   }
 
@@ -25,7 +23,7 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, isLoading, i
 
   return (
     <article
-      className={`item-container item-${orientation} ${orientation === 'horizontal' && 'center-content'}`}
+      className={`item-container item-${orientation}`}
       key={id}
       style={{ ...style }}
     >

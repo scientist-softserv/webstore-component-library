@@ -13,7 +13,7 @@ const SearchBar = ({ initialValue, onSubmit, placeholder }) => {
   }
 
   return (
-    <div className='search-bar-container center-content'>
+    <div className='search-bar-container'>
       <form className='search-bar-form' method='get' onSubmit={handleSubmit}>
         <label>
           <span className='visually-hidden'>Search all services</span>

@@ -6,8 +6,8 @@ import './footer.css'
 
 const Footer = ({ companyName, sections, socials }) => (
   <footer className='footer-container'>
-    <div className='container center-content'>
-      <h4>© {companyName} {new Date().getFullYear()}</h4>
+    <div className='webstore-container container py-2'>
+      <h5>© {companyName} {new Date().getFullYear()}</h5>
       <div className='footer-sections'>
         {sections && sections.map((section) => {
           const { header, links } = section
