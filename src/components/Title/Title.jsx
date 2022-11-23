@@ -15,7 +15,7 @@ const Title = ({ addClass, alignment, size, style, title }) => (
 
 Title.propTypes = {
   alignment: PropTypes.oneOf(['left', 'center', 'right']),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(['x-small', 'small', 'medium', 'large']),
   style: PropTypes.shape({}),
   title: PropTypes.string.isRequired,
 }
