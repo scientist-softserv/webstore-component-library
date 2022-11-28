@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Document = ({ id, date, documentStatusColor, documentType, documentTypeColor, status, subtotalPrice }) => (
+const Document = ({ id, date, documentStatusColor, documentType, documentTypeColor, documentStatus, subtotalPrice }) => (
   <div className='d-flex border rounded mb-2 bg-light'>
     <div className='d-flex align-items-center'>
       <div className='border-end p-2'>
@@ -13,7 +13,7 @@ const Document = ({ id, date, documentStatusColor, documentType, documentTypeCol
     </div>
     <div className='ms-auto p-2'>
       <div className={`badge p-2 ${documentStatusColor}`}>
-        {status}
+        {documentStatus}
       </div>
       <div className={`badge p-2 ms-2 text-uppercase ${documentTypeColor}`}>
         {documentType}

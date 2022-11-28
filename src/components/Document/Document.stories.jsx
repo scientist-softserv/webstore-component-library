@@ -13,6 +13,8 @@ Default.args = {
   id: '97734',
   date: 'Nov 22 2022',
   documentType: 'SOW',
-  status: 'Approval Required',
+  documentTypeColor: 'bg-dark',
+  documentStatus: 'Approval Required',
+  documentStatusColor: 'bg-secondary',
   subtotalPrice: '$55.00',
 }
