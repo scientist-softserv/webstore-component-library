@@ -15,7 +15,7 @@ const Document = ({ id, date, documentStatusColor, documentType,
 
   return (
     <>
-      <div className='d-flex border rounded mb-2 bg-light document-wrapper' onClick={handleShow}>
+      <div className='d-flex border rounded mb-2 bg-light document-wrapper' onClick={handleShow} role='presentation'>
         <div className='d-flex align-items-center'>
           <div className={`badge p-2 ms-2 div-uppercase ${documentTypeColor}`}>
             {documentType}
@@ -98,8 +98,14 @@ Document.propTypes = {
   lineItems: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   request: PropTypes.string.isRequired,
   shippingPrice: PropTypes.string.isRequired,
-  shipTo: PropTypes.shape({}).isRequired,
-  shipFrom: PropTypes.shape({}).isRequired,
+  shipTo: {
+    organization_name: PropTypes.string,
+    text: PropTypes.string,
+  }.isRequired,
+  shipFrom: {
+    organization_name: PropTypes.string,
+    text: PropTypes.string,
+  }.isRequired,
   subtotalPrice: PropTypes.string.isRequired,
   taxAmount: PropTypes.string.isRequired,
   terms: PropTypes.string.isRequired,

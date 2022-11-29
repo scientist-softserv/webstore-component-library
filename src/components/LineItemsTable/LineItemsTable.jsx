@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Table from 'react-bootstrap/Table';
+import Table from 'react-bootstrap/Table'
 
 const LineItemsTable = (props) => {
-  const{ lineItems, shippingPrice, subtotalPrice, taxAmount, totalPrice } = props
+  const { lineItems, shippingPrice, subtotalPrice, taxAmount, totalPrice } = props
   return (
-    <Table striped bordered hover size="sm" className='mt-5'>
+    <Table striped bordered hover size='sm' className='mt-5'>
       <thead>
         <tr>
           <th>Quantity</th>
@@ -15,8 +15,8 @@ const LineItemsTable = (props) => {
         </tr>
       </thead>
       <tbody>
-        {lineItems.map((item)=>{
-          const{ quantity, name, unit_price, subtotal } = item
+        {lineItems.map((item) => {
+          const { quantity, name, unit_price, subtotal } = item
           return (
             <tr key={name}>
               <td>{quantity}</td>
@@ -24,9 +24,8 @@ const LineItemsTable = (props) => {
               <td>{unit_price}</td>
               <td>{subtotal}</td>
             </tr>
-            )
-          }
-        )}
+          )
+        })}
         <tr>
           <td colSpan={3} className='text-end fw-bold'>Subtotal</td>
           <td>{subtotalPrice}</td>

@@ -17,7 +17,7 @@ Default.args = {
   documentStatusColor: 'bg-secondary',
   documentType: 'SOW',
   documentTypeColor: 'bg-dark',
-  lineItems: lineItems,
+  lineItems,
   request: '97734',
   subtotalPrice: '$3.00',
   taxAmount: '$0.00',
@@ -25,6 +25,6 @@ Default.args = {
   terms: 'NET 60',
   totalPrice: '$503.00',
   shippingPrice: '$500.00',
-  shipTo: shipTo,
-  shipFrom: shipFrom,
+  shipTo,
+  shipFrom,
 }
