@@ -1,4 +1,5 @@
 import '../src/assets/theme/global.scss'
+import '../src/assets/theme/bootstrap-preview.scss'
 import { RouterContext } from 'next/dist/shared/lib/router-context'
 
 export const parameters = {
