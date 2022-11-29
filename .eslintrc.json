@@ -38,6 +38,10 @@
         "unnamedComponents": "arrow-function"
       }
     ],
-    "semi": ["error", "never"]
+    "semi": ["error", "never"],
+    "camelcase": ["warn", {
+      "ignoreDestructuring": true
+      }
+    ]
   }
 }
