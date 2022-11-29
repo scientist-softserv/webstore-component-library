@@ -49,7 +49,7 @@ const Document = (props) => {
       <Offcanvas.Body>
         <div className='d-block d-md-flex justify-content-between'>
           <div className='details'>
-            <h6>:</h6>
+            <h6>Details:</h6>
             <b>Proposal:</b> {id}<br/>
             <b>Amount:</b> {subtotalPrice}<br/>
             <b>Request:</b> {request} <br/>
