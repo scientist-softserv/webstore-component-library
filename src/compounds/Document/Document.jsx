@@ -15,6 +15,9 @@ const Document = (props) => {
     <>
       <div className='d-flex border rounded mb-2 bg-light document-wrapper' onClick={handleShow}>
         <div className='d-flex align-items-center'>
+          <div className={`badge p-2 ms-2 div-uppercase ${documentTypeColor}`}>
+            {documentType}
+          </div>
           <div className='border-end p-2'>
             <b>{id}:</b> {subtotalPrice}
           </div>
@@ -25,9 +28,6 @@ const Document = (props) => {
         <div className='ms-auto p-2'>
           <div className={`badge p-2 ${documentStatusColor}`}>
             {documentStatus}
-          </div>
-          <div className={`badge p-2 ms-2 div-uppercase ${documentTypeColor}`}>
-            {documentType}
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@ const Document = (props) => {
       <Offcanvas.Body>
         <div className='d-block d-md-flex justify-content-between'>
           <div className='details'>
-            <h6>Details</h6>
+            <h6>:</h6>
             <b>Proposal:</b> {id}<br/>
             <b>Amount:</b> {subtotalPrice}<br/>
             <b>Request:</b> {request} <br/>
