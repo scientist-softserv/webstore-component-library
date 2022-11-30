@@ -29,8 +29,13 @@
   "homepage": "https://github.com/scientist-softserv/webstore-component-library#readme",
   "dependencies": {
     "@fontsource/inter": "^4.5.12",
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@rollup/plugin-commonjs": "^23.0.0",
     "@storybook/testing-library": "^0.0.13",
+    "babel-plugin-macros": "^3.1.0",
     "prop-types": "^15.8.1",
     "react-bootstrap": "^2.6.0",
     "react-bootstrap-storybook": "^1.5.1",
