@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ListGroup from 'react-bootstrap/ListGroup'
-import SendMessage from './actions/SendMessage'
+import './actions-group.scss'
 
 const ActionsGroup = () => {
   const [show, setShow] = useState(false)
@@ -18,6 +18,7 @@ const ActionsGroup = () => {
 
   return (
     <>
+      <ListGroup className='actions-group'>
         <ListGroup.Item action variant='primary' onClick={() => handleShow('SendMessage')}>
           Send Message
         </ListGroup.Item>
