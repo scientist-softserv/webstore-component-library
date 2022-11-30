@@ -70,6 +70,9 @@ append `--fix` to any of the commands above
 e.g.: npx eslint src/components/Button/index.jsx --fix
 ```
 
+### Using Icons
+This project uses [fontawesome's free solid icons](https://fontawesome.com/search?o=r&m=free). An icon library that explicitly states the react imports for all icons in use is defined at `src/assets/fontawesome.js`. If you need to add additional icons for use in a component or compound, you must import/export them in this library file. 
+
 ## Building the library
 We are using Rollup JS to build and publish the library. The scripts will build based on the contents of "src/index.js" so make sure that any newly created components are referenced in the appropriate "components/index" or "compounds/index" files.
 ``` bash
