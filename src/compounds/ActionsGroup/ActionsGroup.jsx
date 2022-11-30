@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import ListGroup from 'react-bootstrap/ListGroup'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import SendMessage from './actions/SendMessage'
 import './actions-group.scss'
 // NOTE(alishaevn): when adding more actions in the future, list each action as an additional list group item
 // and then add the new action component as a conditional underneath the list group
@@ -23,6 +25,7 @@ const ActionsGroup = () => {
     <>
       <ListGroup className='actions-group'>
         <ListGroup.Item action variant='primary' onClick={() => handleShow('SendMessage')}>
+          <FontAwesomeIcon icon='fa-envelope' />
           Send Message
         </ListGroup.Item>
       </ListGroup>
