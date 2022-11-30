@@ -18,8 +18,7 @@ const ActionsGroup = () => {
 
   return (
     <>
-      <ListGroup>
-        <ListGroup.Item as='button' onClick={() => handleShow('SendMessage')}>
+        <ListGroup.Item action variant='primary' onClick={() => handleShow('SendMessage')}>
           Send Message
         </ListGroup.Item>
       </ListGroup>
