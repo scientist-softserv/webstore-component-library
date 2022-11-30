@@ -1,9 +1,6 @@
 {
   "name": "webstore-component-library",
   "version": "0.0.0",
-  "babel": {
-    "plugins": [ "macros" ]
-  },
   "description": "A React component library intended for use with WebStore applications",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -38,7 +35,6 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@rollup/plugin-commonjs": "^23.0.0",
     "@storybook/testing-library": "^0.0.13",
-    "babel-plugin-macros": "^3.1.0",
     "prop-types": "^15.8.1",
     "react-bootstrap": "^2.6.0",
     "react-bootstrap-storybook": "^1.5.1",
