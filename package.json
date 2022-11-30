@@ -1,6 +1,9 @@
 {
   "name": "webstore-component-library",
   "version": "0.0.0",
+  "babel": {
+    "plugins": [ "macros" ]
+  },
   "description": "A React component library intended for use with WebStore applications",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
