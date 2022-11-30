@@ -3,6 +3,7 @@
  * https://reactjs.org/docs/react-without-jsx.html
  */
 
+import ActionsGroup from './ActionsGroup/ActionsGroup'
 import Footer from './Footer/Footer'
 import Header from './Header/Header'
 import Item from './Item/Item'
@@ -17,6 +18,7 @@ import RequestList from './RequestList/RequestList'
 import TitledTextBox from './TitledTextBox/TitledTextBox'
 
 export {
+  ActionsGroup,
   Footer,
   Header,
   Item,
