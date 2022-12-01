@@ -1,6 +1,16 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
-  faSquareCheck, faVial, faVialCircleCheck, faListCheck,
+  faEnvelope,
+  faListCheck,
+  faSquareCheck,
+  faVial,
+  faVialCircleCheck,
 } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faSquareCheck, faVial, faVialCircleCheck, faListCheck)
+library.add(
+  faEnvelope,
+  faListCheck,
+  faSquareCheck,
+  faVial,
+  faVialCircleCheck,
+)
