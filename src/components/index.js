@@ -9,6 +9,7 @@ import Link from './Link/Link'
 import Loading from './Loading/Loading'
 import SearchBar from './SearchBar/SearchBar'
 import SocialIcon from './SocialIcon/SocialIcon'
+import StatusBar from './StatusBar/StatusBar'
 import TextBox from './TextBox/TextBox'
 import Title from './Title/Title'
 
@@ -19,6 +20,7 @@ export {
   Loading,
   SearchBar,
   SocialIcon,
+  StatusBar,
   TextBox,
   Title,
 }
