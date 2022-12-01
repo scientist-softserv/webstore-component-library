@@ -1,18 +1,18 @@
 import React from 'react'
-import BootstrapFooter from './BootstrapFooter'
+import Footer2 from './Footer2'
 import { links } from '../../resources/args'
 import logoFull from '../../assets/img/logo-full.png'
 import logoPictorial from '../../assets/img/logo-pictorial.png'
 
 export default {
-  title: 'Compounds/BootstrapFooter',
-  component: BootstrapFooter,
+  title: 'Compounds/Footer2',
+  component: Footer2,
   parameters: {
     layout: 'fullscreen',
   },
 }
 
-const Template = (args) => <BootstrapFooter {...args} />
+const Template = (args) => <Footer2 {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

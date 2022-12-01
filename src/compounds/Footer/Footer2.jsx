@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Logo from '../Logo/Logo'
-import './bootstrap-footer.css'
 
-const BootstrapFooter = ({ companyName, links, alt, src, height }) => (
+const Footer2 = ({ companyName, links, alt, src, height }) => (
   <footer className='align-items-center py-3 border-top container-fluid'>
     <div className='row'>
       <p className='col-sm-6 col-md-4 mb-0 text-muted order-3 order-sm-1
@@ -36,7 +35,7 @@ const BootstrapFooter = ({ companyName, links, alt, src, height }) => (
   </footer>
 )
 
-BootstrapFooter.propTypes = {
+Footer2.propTypes = {
   companyName: PropTypes.string.isRequired,
   links: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
@@ -47,9 +46,9 @@ BootstrapFooter.propTypes = {
   height: PropTypes.string,
 }
 
-BootstrapFooter.defaultProps = {
+Footer2.defaultProps = {
   alt: '',
   height: 40,
 }
 
-export default BootstrapFooter
+export default Footer2

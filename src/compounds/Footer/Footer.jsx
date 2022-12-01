@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import LinkGroup from '../LinkGroup/LinkGroup'
 import SocialIcon from '../../components/SocialIcon/SocialIcon'
-import './footer.css'
 
 const Footer = ({ companyName, sections, socials }) => (
   <footer id='footer' className='container-fluid bg-secondary py-4'>

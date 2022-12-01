@@ -3,10 +3,10 @@
  * https://reactjs.org/docs/react-without-jsx.html
  */
 
- import BootstrapFooter from './BootstrapFooter/BootstrapFooter'
 import ActionsGroup from './ActionsGroup/ActionsGroup'
 import Document from './Document/Document'
 import Footer from './Footer/Footer'
+import Footer2 from './Footer/Footer2'
 import Header from './Header/Header'
 import Item from './Item/Item'
 import ItemGroup from './ItemGroup/ItemGroup'
@@ -20,10 +20,10 @@ import RequestList from './RequestList/RequestList'
 import TitledTextBox from './TitledTextBox/TitledTextBox'
 
 export {
-  BootstrapFooter,
   ActionsGroup,
   Document,
   Footer,
+  Footer2,
   Header,
   Item,
   ItemGroup,
