@@ -4,6 +4,8 @@
  */
 
  import BootstrapFooter from './BootstrapFooter/BootstrapFooter'
+import ActionsGroup from './ActionsGroup/ActionsGroup'
+import Document from './Document/Document'
 import Footer from './Footer/Footer'
 import Header from './Header/Header'
 import Item from './Item/Item'
@@ -19,6 +21,8 @@ import TitledTextBox from './TitledTextBox/TitledTextBox'
 
 export {
   BootstrapFooter,
+  ActionsGroup,
+  Document,
   Footer,
   Header,
   Item,
