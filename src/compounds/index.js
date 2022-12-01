@@ -13,6 +13,7 @@ import ItemPage from './ItemPage/ItemPage'
 import LinkGroup from './LinkGroup/LinkGroup'
 import LinkedButton from './LinkedButton/LinkedButton'
 import Logo from './Logo/Logo'
+import Messages from './Messages/Messages'
 import NavLink from './NavLink/NavLink'
 import RequestItem from './RequestItem/RequestItem'
 import RequestList from './RequestList/RequestList'
@@ -29,6 +30,7 @@ export {
   LinkGroup,
   LinkedButton,
   Logo,
+  Messages,
   NavLink,
   RequestItem,
   RequestList,

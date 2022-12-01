@@ -172,12 +172,12 @@ export const lineItems = [
   }
 ]
 
-export const statusArray= [
+export const statusArray = [
   {
     statusLabel: 'Supplier Review',
     requestStatus: 'Vendor Review',
     statusIcon: 'fa-list-check'
-  }, 
+  },
   {
     statusLabel: 'SOW Selection',
     requestStatus: 'SOW Submitted',
@@ -193,4 +193,22 @@ export const statusArray= [
     requestStatus: 'Completed',
     statusIcon: 'fa-vial-circle-check'
   }
+]
+
+export const messages = [
+  {
+    avatar: 'https://avatars.scientist.com/avatars/3fef33aff64de7ff8cc6243e9ee05ed2/A E/xs?time=1669913857',
+    body: `Hello, we have replied with 2 SOW's for your consideration.`,
+    name: 'Alisha Evans',
+  },
+  {
+    avatar: 'https://avatars.scientist.com/avatars/0d93b3808f701fc3dbde5002a80c2475/S C/xs?time=1669923117',
+    body: `Thank you, I'll look them over!`,
+    name: 'Summer Cook',
+  },
+  {
+    avatar: 'https://avatars.scientist.com/avatars/3fef33aff64de7ff8cc6243e9ee05ed2/A E/xs?time=1669913857',
+    body: 'We have updated SOW F289U2',
+    name: 'Alisha Evans',
+  },
 ]
