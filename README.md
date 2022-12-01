@@ -4,11 +4,13 @@ A React component library intended for use with WebStore applications.
 ## Table of Contents
 
 - [Getting started](#getting-started)
-	- [NPM version](#npm-version)
-	- [Running the app](#running-the-app)
+  - [NPM version](#npm-version)
+  - [Running the app](#running-the-app)
 - [Contributing](#contributing)
-	- [Running tests](#running-tests)
-	- [Linting](#linting)
+  - [File Structure](#file-structure)
+  - [Running tests](#running-tests)
+  - [Linting](#linting)
+  - [Using Icons](#using-icons)
 - [Building the library](#building-the-library)
 
 ---
@@ -18,10 +20,10 @@ Use NPM version `v8.19.2` and please do not mix it with Yarn.
 
 ### Running the app
 - Start the app using:
-	``` bash
-	npm i # installs any new packages
-	npm run storybook # starts the storybook app so that we can view/test the components in a UI
-	```
+  ``` bash
+  npm i # installs any new packages
+  npm run storybook # starts the storybook app so that we can view/test the components in a UI
+  ```
 - A new browser tab will automatically open to "http://localhost:6006/"
 ## Contributing
 <!-- State if you are open to contributions and what your requirements are for accepting them.
@@ -35,10 +37,10 @@ Use NPM version `v8.19.2` and please do not mix it with Yarn.
   - e.g. "import Component from '../Component/Component'" and NOT "import { Component } from '..'"
 - All components are named .jsx files that live within a folder of the same name. The corresponding css file and story/stories should also be in this folder
   - e.g.
-	  - ComponentA
-			- component-a.css
-		  - ComponentA.jsx
-			- ComponentA.stories.jsx
+    - ComponentA
+      - component-a.css
+      - ComponentA.jsx
+      - ComponentA.stories.jsx
 
 ### Running tests
 This code implements the [StoryBook test runners](https://storybook.js.org/docs/react/writing-tests/test-runner). Use the appropriate command below to run tests.
@@ -71,7 +73,30 @@ e.g.: npx eslint src/components/Button/index.jsx --fix
 ```
 
 ### Using Icons
-This project uses [fontawesome's free solid icons](https://fontawesome.com/search?o=r&m=free). An icon library that explicitly states the react imports for all icons in use is defined at `src/assets/fontawesome.js`. If you need to add additional icons for use in a component or compound, you must import/export them in this library file. 
+This project uses [fontawesome's free solid icons](https://fontawesome.com/search?o=r&m=free). An icon library that explicitly states the react imports for all icons in use is defined at `src/assets/fontawesome.js`. If you need to add additional icons for use in a component or compound, you must import/export them in this library file.
+
+1. Using the link above, find the name of the icon you want to import (e.g.: "circle-user").
+2. Convert the name of the icon into a camelcase variable, appending "fa" to it.
+    ``` js
+    # fontawesome.js
+    import { ..., faCircleUser } from '@fortawesome/free-solid-svg-icons'
+
+    library.add(..., faCircleUser)
+    ```
+3. Use the string name of the icon in your component, also with "fa" appended to the beginning
+    ``` js
+    # Component.js
+    import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+    const Component = () => (
+      // not appending "fa" will work, but we defer to using it since that's how the icon will show up in the inspect tool
+      // which aids with consistency of variable names and future debugging
+      <FontAwesomeIcon icon='fa-circle-user' />
+    )
+    ```
+
+#### Troubleshooting Icons
+- If the expected icon doesn't show up, use the link provided above to search for it again. Click on the icon and confirm that the string in the example matches the camelcase variable that was imported and the string that was used with the "icon" prop.
 
 ## Building the library
 We are using Rollup JS to build and publish the library. The scripts will build based on the contents of "src/index.js" so make sure that any newly created components are referenced in the appropriate "components/index" or "compounds/index" files.
