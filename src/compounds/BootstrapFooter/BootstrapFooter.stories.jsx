@@ -22,3 +22,12 @@ Default.args = {
   src: logoPictorial,
   height: 40,
 }
+
+export const Alternate = Template.bind({})
+Alternate.args = {
+  companyName: 'Company A',
+  links,
+  alt: 'alt text here',
+  src: logoFull,
+  height: 30,
+}
