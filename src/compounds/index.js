@@ -3,6 +3,7 @@
  * https://reactjs.org/docs/react-without-jsx.html
  */
 
+ import BootstrapFooter from './BootstrapFooter/BootstrapFooter'
 import Footer from './Footer/Footer'
 import Header from './Header/Header'
 import Item from './Item/Item'
@@ -17,6 +18,7 @@ import RequestList from './RequestList/RequestList'
 import TitledTextBox from './TitledTextBox/TitledTextBox'
 
 export {
+  BootstrapFooter,
   Footer,
   Header,
   Item,
