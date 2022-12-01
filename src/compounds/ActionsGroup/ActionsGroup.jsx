@@ -39,7 +39,7 @@ const ActionsGroup = ({ handleSendingMessages }) => {
 }
 
 ActionsGroup.propTypes = {
-  handleSendingMessages: PropTypes.func({}).isRequired,
+  handleSendingMessages: PropTypes.func.isRequired,
 }
 
 export default ActionsGroup
