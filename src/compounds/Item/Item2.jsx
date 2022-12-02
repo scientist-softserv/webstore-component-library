@@ -1,12 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Card from 'react-bootstrap/card';
 import LinkedButton from '../LinkedButton/LinkedButton'
-import Image from '../../components/Image/Image'
-import ItemLoading from './ItemLoading'
+import ItemLoading from './ItemLoading';
 import './item.scss'
 
-const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, isLoading, item, orientation, style, titleLink, withButtonLink, withTitleLink,
-  href }, ref) => {
+const Item2 = React.forwardRef(({ buttonLink, buttonProps, isLoading, item, orientation, titleLink, withButtonLink, withTitleLink, href, width }, ref) => {
   if (isLoading) {
     return (
       <ItemLoading orientation={orientation} />
@@ -16,56 +15,73 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, isLoading, i
   const { id, description, name } = item
   const { alt, src } = item.img
 
+  const CardImg = () => {
+    return (
+      <img 
+        className={orientation === 'horizontal' ? 'img-fluid h-100 rounded-start cover' : 'card-img-top'}
+        src={src}
+        alt={alt}
+      />
+    )
+  }
+
+  const CardBody = () => {
+    return (
+      <Card.Body>
+      {withTitleLink ? (
+        <Card.Title>
+          <a className='text-decoration-none pointer-cursor' href={titleLink} ref={ref}>
+            {name}
+          </a>
+        </Card.Title>
+      ) : (
+        <Card.Title>
+          {name}
+        </Card.Title>
+      )}
+      {description && 
+        <Card.Text className='fw-light'>
+          {description}
+        </Card.Text>
+      }
+      {withButtonLink && (
+        <LinkedButton
+          addClass={`item-button-${orientation} item-link`}
+          buttonProps={buttonProps}
+          path={buttonLink}
+        />
+      )}
+      </Card.Body>
+    )
+  }
+
   // "href" will apply when this component is being rendered from the ItemGroup
   // when rendering this component directly with a button or title link, the corresponding link cannot be an empty string
-  if (withButtonLink) buttonLink = buttonLink || href
+  //if (withButtonLink) buttonLink = buttonLink || href
   if (withTitleLink) titleLink = titleLink || href
 
   return (
-    <article
-      className={`item-container item-${orientation}`}
-      key={id}
-      style={{ ...style }}
-    >
-      <Image
-        className={`item-image item-image-${orientation}`}
-        src={src}
-        alt={alt}
-        {...imgProps}
-      />
-      <div className={`item-options-${orientation}`}>
-        <div className='item-details'>
-          {withTitleLink ? (
-            <a href={titleLink} ref={ref} className='pointer-cursor link'>
-              <h3 className='item-name mt-2'>
-                {name}
-              </h3>
-            </a>
-          ) : (
-            <h3 className='item-name mt-2'>
-              {name}
-            </h3>
-          )}
-          {description && (
-            <p className='item-description my-2'>
-              {/* TODO(alishaevn): account for really long descriptions */}
-              {description}
-            </p>
-          )}
+    <Card key={id} style={{ width: `${width}` }}>
+      {orientation === 'horizontal' ? (
+        <div className='row g-0'>
+          <div className='col-4'>
+            <CardImg/>
+          </div>
+          <div className='col-8 d-flex align-items-center'>
+            <CardBody/>
+          </div>
         </div>
-        {withButtonLink && (
-          <LinkedButton
-            addClass={`item-button-${orientation} item-link`}
-            buttonProps={buttonProps}
-            path={buttonLink}
-          />
-        )}
-      </div>
-    </article>
+      ) : (
+        <>
+          <CardImg/>
+          <CardBody/>
+        </>
+      )}
+    </Card>
   )
 })
 
-Item.propTypes = {
+Item2.propTypes = {
   buttonLink: PropTypes.string,
   // currently overriding the label on a button from being required in this component,
   // because it shouldn't be if we are not rendering a button
@@ -93,9 +109,10 @@ Item.propTypes = {
   titleLink: PropTypes.string,
   withButtonLink: PropTypes.bool,
   withTitleLink: PropTypes.bool,
+  width: PropTypes.string
 }
 
-Item.defaultProps = {
+Item2.defaultProps = {
   buttonLink: '',
   buttonProps: LinkedButton.defaultProps,
   imgProps: {},
@@ -108,6 +125,7 @@ Item.defaultProps = {
   titleLink: '',
   withButtonLink: false,
   withTitleLink: false,
+  width: '',
 }
 
-export default Item
+export default Item2

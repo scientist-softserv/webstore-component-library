@@ -1,4 +1,4 @@
-/************ all items ************/
+/*********** all items ***********/
 .is-loading {
   background-image: linear-gradient(lightgray, white);
 }
@@ -48,6 +48,7 @@
 }
 
 /************ vertical items ************/
+
 .item-container.item-vertical {
   width: 325px;
 }
@@ -76,6 +77,7 @@
 }
 
 /************ horizontal items ************/
+
 .item-horizontal {
   display: flex;
   width: auto;
@@ -102,4 +104,8 @@
   align-items: center;
   width: 100%;
   padding: 0 25px;
+} 
+
+.cover {
+  object-fit: cover
 }

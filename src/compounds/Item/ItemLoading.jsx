@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './item.css'
+import './item.scss'
 
 const ItemLoading = ({ orientation }) => (
   <>
