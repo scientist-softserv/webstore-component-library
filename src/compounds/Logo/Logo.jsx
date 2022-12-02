@@ -2,15 +2,21 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Image from '../../components/Image/Image'
 
-const Logo = ({ alt, src }) => (
+const Logo = ({ alt, src, height }) => (
   <a href='/'>
-    <Image src={src} alt={alt} height={50} />
+    <Image src={src} alt={alt} height={height} />
   </a>
 )
 
 Logo.propTypes = {
   alt: PropTypes.string,
   src: PropTypes.string.isRequired,
+  height: PropTypes.number,
+}
+
+Logo.defaultProps = {
+  alt: '',
+  height: 50,
 }
 
 export default Logo

@@ -6,6 +6,7 @@
 import ActionsGroup from './ActionsGroup/ActionsGroup'
 import Document from './Document/Document'
 import Footer from './Footer/Footer'
+import Footer2 from './Footer/Footer2'
 import Header from './Header/Header'
 import Item from './Item/Item'
 import ItemGroup from './ItemGroup/ItemGroup'
@@ -22,6 +23,7 @@ export {
   ActionsGroup,
   Document,
   Footer,
+  Footer2,
   Header,
   Item,
   ItemGroup,
