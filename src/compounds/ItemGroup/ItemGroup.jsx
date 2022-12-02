@@ -1,24 +1,20 @@
 import React from 'react'
-import Link from 'next/link'
 import PropTypes from 'prop-types'
-import Title from '../../components/Title/Title'
+import { Col, Row } from 'react-bootstrap'
 import Item from '../Item/Item'
 import ItemLoading from '../Item/ItemLoading'
 import './item-group.css'
 
 const ItemGroup = ({ buttonProps, imgProps, items, isLoading, orientation, style, withButtonLink, withTitleLink }) => (
-  <section className='item-group container'>
-    <Title addClass='mb-2' size='large' title='Featured Services' />
-    <div className='group-container'>
+  <Row xs={1} sm={2} className={`g-5 mb-5 ${orientation == 'vertical' && 'row-cols-md-3'}`}>
       {isLoading ?
         (
           <ItemLoading orientation={orientation} />
         ) : (
           items.map((item) => (
-            // TODO(alishaevn): is there a way to hide the id from the url?
-            // adding "as={`${item.href}`}" as a Link prop removed the id from the query entirely
-            <Link key={item.id} href={{ pathname: `${item.href}`, query: { id: `${item.id}` } }} passHref legacyBehavior>
-              <Item
+            //TODO: Figure out how to add the Next Link back. It may need to be on the item and not the itemgroup
+        <Col>
+            <Item
                 buttonProps={buttonProps}
                 imgProps={imgProps}
                 item={item}
@@ -27,12 +23,10 @@ const ItemGroup = ({ buttonProps, imgProps, items, isLoading, orientation, style
                 withButtonLink={withButtonLink}
                 withTitleLink={withTitleLink}
               />
-            </Link>
-          ))
-        )
-      }
-    </div>
-  </section>
+        </Col>
+      ))
+    )}
+  </Row>
 )
 
 ItemGroup.propTypes = {
@@ -48,10 +42,16 @@ ItemGroup.propTypes = {
     style: PropTypes.shape({}),
   })).isRequired,
   isLoading: PropTypes.bool,
-  orientation: PropTypes.oneOf(['horizontal', 'vertical']),
+  orientation: PropTypes.oneOf(['horizontal', 'vertical']).isRequired,
   style: PropTypes.shape({}),
   withButtonLink: PropTypes.bool,
   withTitleLink: PropTypes.bool,
+}
+
+ItemGroup.defaultProps = {
+  orientation: 'vertical',
+  withButtonLink: false,
+  withTitleLink: false,
 }
 
 export default ItemGroup

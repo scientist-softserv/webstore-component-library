@@ -1,12 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import LinkedButton from '../LinkedButton/LinkedButton'
+import Link from 'next/link'
+import Card from 'react-bootstrap/card';
 import Image from '../../components/Image/Image'
-import ItemLoading from './ItemLoading'
+import LinkedButton from '../LinkedButton/LinkedButton'
+import ItemLoading from './ItemLoading';
 import './item.scss'
 
-const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, isLoading, item, orientation, style, titleLink, withButtonLink, withTitleLink,
-  href }, ref) => {
+// TODO: summ- Next Link is currently working, but something will probably need to be done to get buttonlink & titlelink to work if they are NOT next links
+const Item = React.forwardRef(({ buttonLink, buttonProps, isLoading, item, orientation, titleLink, withButtonLink, withTitleLink, href, width }, ref) => {
   if (isLoading) {
     return (
       <ItemLoading orientation={orientation} />
@@ -21,47 +23,66 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, imgProps, isLoading, i
   if (withButtonLink) buttonLink = buttonLink || href
   if (withTitleLink) titleLink = titleLink || href
 
-  return (
-    <article
-      className={`item-container item-${orientation}`}
-      key={id}
-      style={{ ...style }}
-    >
-      <Image
-        className={`item-image item-image-${orientation}`}
-        src={src}
-        alt={alt}
-        {...imgProps}
-      />
-      <div className={`item-options-${orientation}`}>
-        <div className='item-details'>
-          {withTitleLink ? (
-            <a href={titleLink} ref={ref} className='pointer-cursor link'>
-              <h3 className='item-name mt-2'>
-                {name}
-              </h3>
-            </a>
-          ) : (
-            <h3 className='item-name mt-2'>
+  const CardBody = () => {
+    return (
+      <Card.Body>
+      {withTitleLink ? (
+        <Card.Title>
+          <Link key={item.id} href={{ pathname: `${item.href}`, query: { id: `${item.id}` } }} passHref legacyBehavior>
+            <a className='text-decoration-none pointer-cursor' href={titleLink} ref={ref}>
               {name}
-            </h3>
-          )}
-          {description && (
-            <p className='item-description my-2'>
-              {/* TODO(alishaevn): account for really long descriptions */}
-              {description}
-            </p>
-          )}
-        </div>
-        {withButtonLink && (
+            </a>
+          </Link>
+        </Card.Title>
+      ) : (
+        <Card.Title>
+          {name}
+        </Card.Title>
+      )}
+      {description && 
+        <Card.Text className='fw-light'>
+          {description}
+        </Card.Text>
+      }
+      {withButtonLink && (
+        <Link key={item.id} href={{ pathname: `${item.href}`, query: { id: `${item.id}` } }} passHref legacyBehavior>
           <LinkedButton
             addClass={`item-button-${orientation} item-link`}
             buttonProps={buttonProps}
             path={buttonLink}
           />
-        )}
-      </div>
-    </article>
+        </Link>
+      )}
+      </Card.Body>
+    )
+  }
+
+  return (
+    <Card key={id} style={{ width: `${width}` }} className='h-100'>
+      {orientation === 'horizontal' ? (
+        <div className='row g-0 h-100'>
+          <div className='col-4'>
+            <Image 
+              className={orientation === 'horizontal' ? 'img-fluid h-100 rounded-start cover' : 'card-img-top'}
+              src={src}
+              alt={alt}
+            />
+          </div>
+          <div className='col-8 d-flex align-items-center'>
+            <CardBody/>
+          </div>
+        </div>
+      ) : (
+        <>
+          <Image
+            className={orientation === 'horizontal' ? 'img-fluid h-100 rounded-start cover' : 'card-img-top'}
+            src={src}
+            alt={alt}
+          />
+          <CardBody/>
+        </>
+      )}
+    </Card>
   )
 })
 
@@ -93,6 +114,7 @@ Item.propTypes = {
   titleLink: PropTypes.string,
   withButtonLink: PropTypes.bool,
   withTitleLink: PropTypes.bool,
+  width: PropTypes.string
 }
 
 Item.defaultProps = {
@@ -108,6 +130,7 @@ Item.defaultProps = {
   titleLink: '',
   withButtonLink: false,
   withTitleLink: false,
+  width: '',
 }
 
 export default Item
