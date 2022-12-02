@@ -9,9 +9,9 @@ const Messages = ({ messages }) => (
     const { avatar, body, name } = message
 
       return (
-        <Card className={`${idx === (messages.length - 1) ? '' : 'mb-4'} flex-row`}>
-          <Card.Img variant='left' src={avatar} />
-          <Card.Body>
+        <Card className={`${idx === (messages.length - 1) ? '' : 'mb-4'} flex-row border-0`}>
+          <Card.Img variant='left' src={avatar} className='h-25' />
+          <Card.Body className='pt-0'>
             <Card.Title>{name}</Card.Title>
             <Card.Text>
               {body}
