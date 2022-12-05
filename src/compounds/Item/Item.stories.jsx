@@ -11,8 +11,11 @@ const Template = (args) => <Item {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  buttonLink: '',
-  buttonProps: {},
+  buttonLink: '/',
+  buttonProps: {
+    backgroundColor: '#A9A9A9',
+    label: 'Request this item',
+  },
   imgProps: {},
   item: {
     description: '',
@@ -23,7 +26,7 @@ Default.args = {
     },
     name: 'Test Tubes',
   },
-  titleLink: '',
+  titleLink: '/',
   orientation: 'vertical',
   style: {},
   withButtonLink: false,

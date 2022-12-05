@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import PropTypes from 'prop-types'
 import { Col, Row } from 'react-bootstrap'
 import Item from '../Item/Item'
@@ -12,17 +13,18 @@ const ItemGroup = ({ buttonProps, imgProps, items, isLoading, orientation, style
           <ItemLoading orientation={orientation} />
         ) : (
           items.map((item) => (
-            //TODO: Figure out how to add the Next Link back. It may need to be on the item and not the itemgroup
-        <Col>
-            <Item
-                buttonProps={buttonProps}
-                imgProps={imgProps}
-                item={item}
-                orientation={orientation}
-                style={style}
-                withButtonLink={withButtonLink}
-                withTitleLink={withTitleLink}
-              />
+        <Col key={item.id}>
+          <Item
+              buttonProps={buttonProps}
+              imgProps={imgProps}
+              item={item}
+              orientation={orientation}
+              style={style}
+              withButtonLink={withButtonLink}
+              withTitleLink={withTitleLink}
+              href={item.href}
+              fromItemGroup='true'
+            />
         </Col>
       ))
     )}

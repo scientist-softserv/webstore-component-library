@@ -11,23 +11,21 @@ const Template = (args) => <ItemGroup {...args} />
 
 export const Vertical = Template.bind({})
 Vertical.args = {
-  items: items.slice(0, 3),
-  buttonLink: '',
   buttonProps: {
     backgroundColor: '#A9A9A9',
     label: 'Request this item',
   },
+  items: items.slice(0, 3),
   orientation: 'vertical'
 }
 
 export const Horizontal = Template.bind({})
 Horizontal.args = {
-  items: items.slice(0, 3),
-  buttonLink: '',
   buttonProps: {
     backgroundColor: '#A9A9A9',
     label: 'Request this item',
   },
+  items: items.slice(0, 3),
   orientation: 'horizontal'
 }
 
@@ -38,6 +36,16 @@ isLoading.args = {
 
 export const withTitleLink = Template.bind({})
 withTitleLink.args = {
-  items: items.slice(0, 4),
+  items: items.slice(0, 6),
   withTitleLink: true,
+}
+
+export const withButtonLink = Template.bind({})
+withButtonLink.args = {
+  buttonProps: {
+    backgroundColor: '#A9A9A9',
+    label: 'Request this item',
+  },
+  items: items.slice(0, 6),
+  withButtonLink: true,
 }

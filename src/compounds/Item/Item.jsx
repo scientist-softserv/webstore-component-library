@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'next/link'
 import Card from 'react-bootstrap/card';
 import Image from '../../components/Image/Image'
+import Link from '../../components/Link/Link'
+import NextLink from '../../components/NextLink/NextLink'
 import LinkedButton from '../LinkedButton/LinkedButton'
 import ItemLoading from './ItemLoading';
 import './item.scss'
 
-// TODO: summ- Next Link is currently working, but something will probably need to be done to get buttonlink & titlelink to work if they are NOT next links
-const Item = React.forwardRef(({ buttonLink, buttonProps, isLoading, item, orientation, titleLink, withButtonLink, withTitleLink, href, width }, ref) => {
+const Item = ({ buttonLink, buttonProps, fromItemGroup, isLoading, item, orientation, titleLink, withButtonLink, withTitleLink, href, width }) => {
   if (isLoading) {
     return (
       <ItemLoading orientation={orientation} />
@@ -17,41 +17,40 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, isLoading, item, orien
 
   const { id, description, name } = item
   const { alt, src } = item.img
-
   // "href" will apply when this component is being rendered from the ItemGroup
   // when rendering this component directly with a button or title link, the corresponding link cannot be an empty string
   if (withButtonLink) buttonLink = buttonLink || href
   if (withTitleLink) titleLink = titleLink || href
-
+  console.log(titleLink)
+  
   const CardBody = () => {
     return (
-      <Card.Body>
-      {withTitleLink ? (
+      <Card.Body className={withButtonLink && 'd-flex flex-column'}>
         <Card.Title>
-          <Link key={item.id} href={{ pathname: `${item.href}`, query: { id: `${item.id}` } }} passHref legacyBehavior>
-            <a className='text-decoration-none pointer-cursor' href={titleLink} ref={ref}>
-              {name}
-            </a>
-          </Link>
+        {(withTitleLink && fromItemGroup) && (
+          <NextLink
+            text={name}
+            path={{ pathname: `${titleLink}`, query: { id: `${id}` } }} addClass="text-decoration-none"
+          />
+        )}
+        {(withTitleLink && !fromItemGroup) && (
+          <Link label={name} addClass={'text-decoration-none'} href={titleLink}/>
+        )}
+        {(!withTitleLink) && (
+          name
+        )}
         </Card.Title>
-      ) : (
-        <Card.Title>
-          {name}
-        </Card.Title>
-      )}
       {description && 
         <Card.Text className='fw-light'>
           {description}
         </Card.Text>
       }
-      {withButtonLink && (
-        <Link key={item.id} href={{ pathname: `${item.href}`, query: { id: `${item.id}` } }} passHref legacyBehavior>
-          <LinkedButton
-            addClass={`item-button-${orientation} item-link`}
-            buttonProps={buttonProps}
-            path={buttonLink}
-          />
-        </Link>
+      {(withButtonLink) && (
+        <LinkedButton
+          addClass={`item-button-${orientation} item-link mt-auto`}
+          buttonProps={buttonProps}
+          path={fromItemGroup ? { pathname: `${buttonLink}`, query: { id: `${id}` } } : buttonLink}
+        />
       )}
       </Card.Body>
     )
@@ -84,7 +83,7 @@ const Item = React.forwardRef(({ buttonLink, buttonProps, isLoading, item, orien
       )}
     </Card>
   )
-})
+}
 
 Item.propTypes = {
   buttonLink: PropTypes.string,
@@ -109,6 +108,7 @@ Item.propTypes = {
     slug: PropTypes.string,
   }),
   imgProps: PropTypes.shape({}),
+  fromItemGroup: PropTypes.string,
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
   style: PropTypes.shape({}),
   titleLink: PropTypes.string,
@@ -120,6 +120,7 @@ Item.propTypes = {
 Item.defaultProps = {
   buttonLink: '',
   buttonProps: LinkedButton.defaultProps,
+  fromItemGroup: false,
   imgProps: {},
   isLoading: false,
   item: {
