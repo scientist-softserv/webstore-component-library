@@ -6,13 +6,17 @@ import PropTypes from 'prop-types'
 
 const AddressDetails = () => {
   const [shippingEqualsBilling, setShippingEqualsBilling] = useState(false)
-  const [country, setCountry] = useState('');
+  const [shippingCountry, setShippingCountry] = useState('');
+  const [billingCountry, setBillingCountry] = useState('');
 
   const toggleBilling = () => {
     setShippingEqualsBilling(!shippingEqualsBilling);
   }
 
   const AddressForm = ({shippingOrBillingString, shippingOrBillingIndex}) => {
+    // TODO: @summer-cook
+    // Manage the state for the inputs so they persist after changing the select dropdown
+    // add anything needed to save the values so they can be passed to the webstore
     return (
         <Card.Body>
           <Form>
@@ -46,14 +50,14 @@ const AddressDetails = () => {
               </Form.Group>
             </Row>
             {/* the country dropdown is displaying the countries correctly, but there are several issues that need to be addressed.  
-            - currently selecting a country selects both shipping & billing country
-            - selecting a country erases/resets the rest of the form
+            - selecting a country erases/resets the rest of the form - need to handle the state of the form so it saves the values. It uses controlled inputs and i'm not sure how that is different from uncontrolled
+            - theres might be a better way to manage the state as opposed to using 2 separate state hooks for shipping and billing countries
             */}
             <CountryDropdown
               name={`country-${shippingOrBillingString.toLowerCase()}`}
               priorityOptions={['US', 'GB', 'CA']}
-              value={country}
-              onChange={(val) => setCountry(val)}
+              value={shippingOrBillingString === 'Shipping' ? shippingCountry : billingCountry}
+              onChange={shippingOrBillingString === 'Shipping' ? (val) => setShippingCountry(val) : (val) => setBillingCountry(val)}
               className='form-select mb-3 form-control'
               id={`country-${shippingOrBillingString.toLowerCase()}`}
             />
