@@ -175,22 +175,18 @@ export const lineItems = [
 export const statusArray = [
   {
     statusLabel: 'Supplier Review',
-    requestStatus: 'Vendor Review',
     statusIcon: 'fa-list-check',
   },
   {
     statusLabel: 'SOW Selection',
-    requestStatus: 'SOW Submitted',
     statusIcon: 'fa-square-check',
   },
   {
     statusLabel: 'Work Started',
-    requestStatus: 'Work In Progress',
     statusIcon: 'fa-vial',
   },
   {
     statusLabel: 'Work Completed',
-    requestStatus: 'Completed',
     statusIcon: 'fa-vial-circle-check',
   },
 ]
