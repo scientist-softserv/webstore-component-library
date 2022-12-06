@@ -1,27 +1,16 @@
-import React, { useState, useRef } from 'react'
-import ReactDOM from 'react-dom'
+import React, { useState } from 'react'
 import { Button, Card, Col, Form, Row } from 'react-bootstrap';
 import PropTypes from 'prop-types'
 
 
 const ShippingDetails = () => {
-  const [shippingEqualsBilling, setShippingEqualsBilling] = useState()
-  const ref = useRef(null);
+  const [shippingEqualsBilling, setShippingEqualsBilling] = useState(false)
 
-    // this isnt working- can't get the checkmark to show and hide.  it only toggles the component for billing details
   const toggleBilling = () => {
     setShippingEqualsBilling(!shippingEqualsBilling);
   }
-  const handleChange = () => {
-    toggleBilling()
-    if (ref.current.checked) {
-      ref.current.checked = false
-    } else {
-      ref.current.checked = true
-    }
-  };
 
-  const Address = ({shippingEqualsBilling, shippingOrBillingString}) => {
+  const Address = ({shippingOrBillingString}) => {
     return (
       <Card className='mb-4'>
         <Card.Header>{shippingOrBillingString} Details</Card.Header>
@@ -62,8 +51,7 @@ const ShippingDetails = () => {
                 <Form.Check 
                   type="checkbox"
                   label="My shipping address is the same as my billing address."
-                  onChange={handleChange}
-                  ref={ref}
+                  onChange={toggleBilling}
                   checked={shippingEqualsBilling}
                 />
               </Form.Group>
@@ -80,7 +68,7 @@ const ShippingDetails = () => {
   return (
     <>
     <Address shippingOrBillingString='Shipping' />
-    {!shippingEqualsBilling && (
+    {shippingEqualsBilling === false && (
       <Address shippingOrBillingString='Billing'/>
     )}
     </>
