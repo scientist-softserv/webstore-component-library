@@ -9,30 +9,26 @@ export default {
 
 const Template = (args) => <StatusBar {...args} />
 
-export const VendorReview = Template.bind({})
-
-VendorReview.args = {
+export const SupplierReview = Template.bind({})
+SupplierReview.args = {
   statusArray,
-  apiRequestStatus: 'Vendor Review',
+  apiRequestStatus: 'Supplier Review',
 }
 
-export const SOWSubmitted = Template.bind({})
-
-SOWSubmitted.args = {
+export const SOWSelection = Template.bind({})
+SOWSelection.args = {
   statusArray,
-  apiRequestStatus: 'SOW Submitted',
+  apiRequestStatus: 'SOW Selection',
 }
 
-export const WorkInProgress = Template.bind({})
-
-WorkInProgress.args = {
+export const WorkStarted = Template.bind({})
+WorkStarted.args = {
   statusArray,
-  apiRequestStatus: 'Work In Progress',
+  apiRequestStatus: 'Work Started',
 }
 
-export const Completed = Template.bind({})
-
-Completed.args = {
+export const WorkCompleted = Template.bind({})
+WorkCompleted.args = {
   statusArray,
-  apiRequestStatus: 'Completed',
+  apiRequestStatus: 'Work Completed',
 }
