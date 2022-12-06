@@ -1,6 +1,6 @@
 {
-  "name": "webstore-component-library",
-  "version": "0.0.0",
+  "name": "@scientist-softserv/webstore-component-library",
+  "version": "0.1.0",
   "description": "A React component library intended for use with WebStore applications",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -12,10 +12,7 @@
     "build-lib": "rollup -c",
     "watch-lib": "rollup -c --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/scientist-softserv/webstore-component-library.git"
-  },
+  "repository": "https://github.com/scientist-softserv/webstore-component-library.git",
   "keywords": [
     "webstore",
     "component",
@@ -85,6 +82,7 @@
     }
   },
   "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
     "ignore": [
       ".eslintrc"
     ]
