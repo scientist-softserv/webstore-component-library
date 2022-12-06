@@ -6,17 +6,6 @@ import PropTypes from 'prop-types'
 
 const AddressDetails = () => {
   const [shippingEqualsBilling, setShippingEqualsBilling] = useState(false)
-
-  const initialvalues = {
-    addressName: "",
-    address1Shipping: ""
-  };
-  const [data, setData] = useState(initialvalues);
-
-  const handleChange = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value });
-  };
-
   const [country, setCountry] = useState('');
 
   const toggleBilling = () => {
@@ -29,7 +18,7 @@ const AddressDetails = () => {
           <Form>
             {shippingOrBillingString == 'Shipping' && (
               <Form.Group className='mb-5' controlId='address-name' name={`addressName`}>
-                <Form.Control placeholder='Address Name' onChange={handleChange} value={data.addressName}/>
+                <Form.Control placeholder='Address Name'/>
               </Form.Group>
             )}
 
@@ -56,21 +45,18 @@ const AddressDetails = () => {
                 <Form.Control placeholder='Zip/Postal Code'/>
               </Form.Group>
             </Row>
-
+            {/* the country dropdown is displaying the countries correctly, but there are several issues that need to be addressed.  
+            - currently selecting a country selects both shipping & billing country
+            - selecting a country erases/resets the rest of the form
+            */}
             <CountryDropdown
               name={`country-${shippingOrBillingString.toLowerCase()}`}
-              //value={getCountryValue(shippingOrBillingIndex)}
-              //onChange={(val) => setCountry(shippingOrBillingIndex, val)}
-              priorityOptions={['CA', 'US', 'GB']}
+              priorityOptions={['US', 'GB', 'CA']}
               value={country}
               onChange={(val) => setCountry(val)}
               className='form-select mb-3 form-control'
               id={`country-${shippingOrBillingString.toLowerCase()}`}
             />
-{/* 
-value={this.getCountryValue(13)}
-									onChange={(val) => this.selectCountry(13, val)}
-									priorityOptions={['CA', 'US', 'GB']} /> */}
   
             {shippingOrBillingString == 'Shipping' && (
               <Form.Group className='mb-3' controlId='shippingEqualsBilling'>
