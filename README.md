@@ -110,7 +110,7 @@ A git tag should exist for every release. We use `release-it` to automate the co
 
 If you are on version `0.1.0` and want to go to `0.1.1` you would run:
 
-  npm run release -- minor
+  npm run release -- patch
 
 ## Authors and acknowledgment
 Alisha Evans
