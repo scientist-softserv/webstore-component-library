@@ -54,7 +54,7 @@ ItemGroup.propTypes = {
     imgProps: PropTypes.shape({}),
     style: PropTypes.shape({}),
   })).isRequired,
-  isLoading: PropTypes.bool,
+  isLoading: PropTypes.bool.isRequired,
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
   withButtonLink: PropTypes.bool,
   withTitleLink: PropTypes.bool,
@@ -62,7 +62,6 @@ ItemGroup.propTypes = {
 
 ItemGroup.defaultProps = {
   buttonProps: {},
-  isLoading: 'false',
   orientation: 'vertical',
   withButtonLink: false,
   withTitleLink: false,

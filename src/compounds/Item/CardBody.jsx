@@ -15,11 +15,11 @@ const CardBody = ({ buttonLink, buttonProps, fromItemGroup, item,
           <NextLink
             text={name}
             path={{ pathname: `${titleLink}`, query: { id: `${id}` } }}
-            addClass='text-decoration-none'
+            addClass='text-decoration-none link-hover'
           />
         )}
         {(withTitleLink && !fromItemGroup) && (
-          <Link label={name} addClass='text-decoration-none' href={titleLink} />
+          <Link label={name} addClass='text-decoration-none link-hover' href={titleLink} />
         )}
         {(!withTitleLink) && (
           name

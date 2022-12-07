@@ -68,6 +68,7 @@ WithTitleLink.args = {
       alt: 'Several rows of test tubes with a liquid being put into one.',
     },
     name: 'Microbiological Sterility Testing',
+  },
   orientation: 'vertical',
   style: {},
   titleLink: '/',

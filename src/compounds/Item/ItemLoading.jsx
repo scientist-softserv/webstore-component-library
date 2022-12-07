@@ -15,7 +15,7 @@ const CardBodyLoading = ({ withButtonLink }) => (
       <Placeholder xs={6} />
       <Placeholder xs={8} />
     </Placeholder>
-    {(withButtonLink) && (
+    {withButtonLink && (
       <Placeholder.Button variant='secondary' xs={6} animation='glow'>
           &nbsp;
       </Placeholder.Button>
@@ -23,20 +23,20 @@ const CardBodyLoading = ({ withButtonLink }) => (
   </Card.Body>
 )
 
-const ItemLoading = ({ orientation, width }) => (
+const ItemLoading = ({ orientation, width, withButtonLink }) => (
   orientation === 'horizontal' ? (
     <Card style={{ width: `${width}` }} className='h-100'>
       <div className='row g-0 h-100'>
         <div className='col-4 bg-secondary' />
         <div className='col-8 d-flex align-items-center'>
-          <CardBodyLoading />
+          <CardBodyLoading withButtonLink={withButtonLink} />
         </div>
       </div>
     </Card>
   ) : (
     <Card className='w-100 item-vertical'>
       <div className='h-100 bg-secondary' />
-      <CardBodyLoading />
+      <CardBodyLoading withButtonLink={withButtonLink} />
     </Card>
   )
 )
