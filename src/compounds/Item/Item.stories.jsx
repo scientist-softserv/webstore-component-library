@@ -16,7 +16,6 @@ Default.args = {
     backgroundColor: '#A9A9A9',
     label: 'Request this item',
   },
-  imgProps: {},
   item: {
     description: '',
     id: 1,
@@ -40,7 +39,6 @@ WithButtonLink.args = {
     backgroundColor: '#A9A9A9',
     label: 'Request this item',
   },
-  imgProps: {},
   item: {
     description: 'Test the presence of viable microorganisms.',
     id: 2,
@@ -70,8 +68,6 @@ WithTitleLink.args = {
       alt: 'Several rows of test tubes with a liquid being put into one.',
     },
     name: 'Microbiological Sterility Testing',
-  },
-  imgProps: {},
   orientation: 'vertical',
   style: {},
   titleLink: '/',

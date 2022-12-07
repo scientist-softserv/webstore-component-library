@@ -16,7 +16,7 @@ Vertical.args = {
     label: 'Request this item',
   },
   items: items.slice(0, 3),
-  orientation: 'vertical'
+  orientation: 'vertical',
 }
 
 export const Horizontal = Template.bind({})
@@ -26,11 +26,12 @@ Horizontal.args = {
     label: 'Request this item',
   },
   items: items.slice(0, 3),
-  orientation: 'horizontal'
+  orientation: 'horizontal',
 }
 
 export const isLoading = Template.bind({})
 isLoading.args = {
+  items: items.slice(0, 3),
   isLoading: true,
 }
 
