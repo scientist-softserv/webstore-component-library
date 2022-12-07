@@ -105,6 +105,15 @@ npm run build-lib # use when you want to build the library for publishing
 npm run watch-lib # use when you want to build the library for local use; it will watch for changes. it may take up to 30 seconds to reflect a change though
 ```
 
+## Cutting a New Release
+A git tag should exist for every release. We use `release-it` to automate the coordination of package.json and git tag.
+
+If you are on version `0.1.0` and want to go to `0.1.1` you would run:
+
+  npm run release -- patch
+
+And be sure to say yes to all the prompts, you want a commit, you want a tag, and you want to push up to github.
+
 ## Authors and acknowledgment
 Alisha Evans
 
