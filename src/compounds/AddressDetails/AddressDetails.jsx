@@ -4,7 +4,7 @@ import { CountryDropdown } from 'react-country-region-selector';
 import PropTypes from 'prop-types'
 
 
-const AddressForm = ({ shippingOrBillingString, toggleBilling, handleSubmit }) => {
+const AddressForm = ({ shippingEqualsBilling, shippingOrBillingString, toggleBilling, handleSubmit }) => {
   const [shippingCountry, setShippingCountry] = useState('');
   const [billingCountry, setBillingCountry] = useState('');
 
@@ -68,9 +68,14 @@ const AddressForm = ({ shippingOrBillingString, toggleBilling, handleSubmit }) =
 
 const AddressDetails = ({handleSubmit}) => {
   const [shippingEqualsBilling, setShippingEqualsBilling] = useState(false)
+  const [shippingValues, setShippingValues] = useState('');
+  const [billingValues, setBillingValues] = useState('');
 
   const toggleBilling = () => {
     setShippingEqualsBilling(shippingEqualsBilling => !shippingEqualsBilling);
+    if (shippingEqualsBilling === true) {
+      setBillingValues(shippingValues)
+    }
   }
 
   return (
