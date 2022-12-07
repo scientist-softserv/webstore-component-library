@@ -1,7 +1,7 @@
 name: CI
 on:
-  release:
-    types: [created]
+  push:
+    tags: ["*"]
 jobs:
   build:
     runs-on: ubuntu-latest
