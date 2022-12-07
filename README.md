@@ -112,6 +112,8 @@ If you are on version `0.1.0` and want to go to `0.1.1` you would run:
 
   npm run release -- patch
 
+And be sure to say yes to all the prompts, you want a commit, you want a tag, and you want to push up to github.
+
 ## Authors and acknowledgment
 Alisha Evans
 
