@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'
 const AddressForm = ({ shippingEqualsBilling, shippingOrBillingString, toggleBilling }) => {
   const [shippingCountry, setShippingCountry] = useState('');
   const [billingCountry, setBillingCountry] = useState('');
+
   // TODO: @summer-cook
   // add anything needed to save the values so they can be passed to the webstore
   return (
@@ -70,30 +71,31 @@ const AddressForm = ({ shippingEqualsBilling, shippingOrBillingString, toggleBil
 
 const AddressDetails = () => {
   const [shippingEqualsBilling, setShippingEqualsBilling] = useState(false)
+  //const [childData, setChildData] = useState("");
+
   const toggleBilling = () => {
-    setShippingEqualsBilling(!shippingEqualsBilling);
+    setShippingEqualsBilling(shippingEqualsBilling => !shippingEqualsBilling);
   }
 
   return (
     <>
-    <Card className='mb-4'>
-      <Card.Header className='h3'>Shipping Details</Card.Header>
-      <AddressForm
-        shippingOrBillingString='Shipping' 
-        shippingOrBillingIndex={1} 
-      />
-      {shippingEqualsBilling === false && (
+      <Card className='mb-4'>
+        <Card.Header className='h3'>Shipping Details</Card.Header>
         <AddressForm
-          shippingOrBillingString='Billing'
-          shippingOrBillingIndex={2}
+          shippingOrBillingString='Shipping' 
           shippingEqualsBilling={shippingEqualsBilling}
           toggleBilling={toggleBilling}
         />
-      )}
-      <Button variant="primary" type="submit">
-          Submit
-      </Button>
-    </Card>
+        {shippingEqualsBilling === false && (
+          <AddressForm
+            shippingOrBillingString='Billing'
+            shippingEqualsBilling={shippingEqualsBilling}
+          />
+        )}
+        <Button variant="primary" type="submit">
+            Submit
+        </Button>
+      </Card>
     </>
   )
 }
