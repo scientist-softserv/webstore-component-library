@@ -11,7 +11,7 @@
     "test-storybook": "test-storybook",
     "build-lib": "rollup -c",
     "watch-lib": "rollup -c --watch",
-    "release": "release-it --only-version"
+    "release": "release-it"
   },
   "repository": "https://github.com/scientist-softserv/webstore-component-library.git",
   "keywords": [
