@@ -11,7 +11,7 @@ const CardBody = ({ buttonLink, buttonProps, fromItemGroup, item,
   return (
     <Card.Body className={withButtonLink && 'd-flex flex-column'}>
       <div className={orientation === 'horizontal' ? 'd-block d-md-flex align-items-center justify-content-between' : ''}>
-        <div>
+        <div className={orientation === 'horizontal' ? 'me-2' : ''}>
           <Card.Title>
             {(withTitleLink && fromItemGroup) && (
               <NextLink

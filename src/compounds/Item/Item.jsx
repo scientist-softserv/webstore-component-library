@@ -11,7 +11,11 @@ const Item = ({ buttonLink, buttonProps, href, fromItemGroup, isLoading, item, o
   withTitleLink, width }) => {
   if (isLoading) {
     return (
+      <>
       <ItemLoading orientation={orientation} width={width} withButtonLink={withButtonLink} />
+      <ItemLoading orientation={orientation} width={width} withButtonLink={withButtonLink} />
+      <ItemLoading orientation={orientation} width={width} withButtonLink={withButtonLink} />
+      </>
     )
   }
 
@@ -25,17 +29,17 @@ const Item = ({ buttonLink, buttonProps, href, fromItemGroup, isLoading, item, o
   if (withTitleLink || withButtonLink) link = titleLink || buttonLink || href
 
   return (
-    <Card key={id} style={{ width: `${width}` }} className='h-100'>
+    <Card key={id} style={{ width: `${width}` }} className={`h-100${orientation === 'horizontal' ? ' mb-4' : ''}`}>
       {orientation === 'horizontal' ? (
         <div className='row g-0 h-100'>
-          <div className='col-4'>
+          <div className='col-3'>
             <Image
-              className={orientation === 'horizontal' ? 'img-fluid h-100 rounded-start cover' : 'card-img-top'}
+              className={orientation === 'horizontal' ? 'img-fluid h-100 rounded-start cover-horizontal' : 'card-img-top'}
               src={src}
               alt={alt}
             />
           </div>
-          <div className='col-8 d-flex align-items-center'>
+          <div className='col-9 d-flex align-items-center'>
             <CardBody
               buttonLink={link}
               buttonProps={buttonProps}

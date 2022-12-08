@@ -25,10 +25,10 @@ const CardBodyLoading = ({ withButtonLink }) => (
 
 const ItemLoading = ({ orientation, width, withButtonLink }) => (
   orientation === 'horizontal' ? (
-    <Card style={{ width: `${width}` }} className='h-100'>
+    <Card style={{ width: `${width}` }} className='h-100 mb-4'>
       <div className='row g-0 h-100'>
-        <div className='col-4 bg-secondary' />
-        <div className='col-8 d-flex align-items-center'>
+        <div className='col-3 bg-secondary' />
+        <div className='col-9 d-flex align-items-center'>
           <CardBodyLoading withButtonLink={withButtonLink} />
         </div>
       </div>
