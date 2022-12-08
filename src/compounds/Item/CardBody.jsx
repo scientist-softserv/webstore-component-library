@@ -10,34 +10,39 @@ const CardBody = ({ buttonLink, buttonProps, fromItemGroup, item,
   const { id, description, name } = item
   return (
     <Card.Body className={withButtonLink && 'd-flex flex-column'}>
-      <Card.Title>
-        {(withTitleLink && fromItemGroup) && (
-          <NextLink
-            text={name}
-            path={{ pathname: `${titleLink}`, query: { id: `${id}` } }}
-            addClass='text-decoration-none link-hover'
-          />
+      <div className={orientation === 'horizontal' ? 'd-block d-md-flex align-items-center justify-content-between' : ''}>
+        <div>
+          <Card.Title>
+            {(withTitleLink && fromItemGroup) && (
+              <NextLink
+                text={name}
+                path={{ pathname: `${titleLink}`, query: { id: `${id}` } }}
+                addClass='text-decoration-none link-hover'
+              />
+            )}
+            {(withTitleLink && !fromItemGroup) && (
+              <Link label={name} addClass='text-decoration-none link-hover' href={titleLink} />
+            )}
+            {(!withTitleLink) && (
+              name
+            )}
+          </Card.Title>
+          {description && (
+            <Card.Text className='fw-light'>
+              {description}
+            </Card.Text>
+          )}
+        </div>
+        {(withButtonLink) && (
+          <div className={orientation === 'horizontal' ? 'mt-3 mt-md-0' : 'mt-3'}>
+            <LinkedButton
+              addClass={`item-button-${orientation} item-link mt-auto`}
+              buttonProps={buttonProps}
+              path={fromItemGroup ? { pathname: `${buttonLink}`, query: { id: `${id}` } } : buttonLink}
+            />
+          </div>
         )}
-        {(withTitleLink && !fromItemGroup) && (
-          <Link label={name} addClass='text-decoration-none link-hover' href={titleLink} />
-        )}
-        {(!withTitleLink) && (
-          name
-        )}
-      </Card.Title>
-      {description
-        && (
-          <Card.Text className='fw-light'>
-            {description}
-          </Card.Text>
-        )}
-      {(withButtonLink) && (
-        <LinkedButton
-          addClass={`item-button-${orientation} item-link mt-auto`}
-          buttonProps={buttonProps}
-          path={fromItemGroup ? { pathname: `${buttonLink}`, query: { id: `${id}` } } : buttonLink}
-        />
-      )}
+      </div>
     </Card.Body>
   )
 }

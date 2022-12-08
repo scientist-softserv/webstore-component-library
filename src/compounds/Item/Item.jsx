@@ -21,8 +21,8 @@ const Item = ({ buttonLink, buttonProps, href, fromItemGroup, isLoading, item, o
   // "href" will apply when this component is being rendered from the ItemGroup
   // when rendering this component directly with a button or title link,
   // the corresponding link cannot be an empty string
-  if (withButtonLink) buttonLink = buttonLink || href
-  if (withTitleLink) titleLink = titleLink || href
+  let link
+  if (withTitleLink || withButtonLink) link = titleLink || buttonLink || href
 
   return (
     <Card key={id} style={{ width: `${width}` }} className='h-100'>
@@ -37,12 +37,12 @@ const Item = ({ buttonLink, buttonProps, href, fromItemGroup, isLoading, item, o
           </div>
           <div className='col-8 d-flex align-items-center'>
             <CardBody
-              buttonLink={buttonLink}
+              buttonLink={link}
               buttonProps={buttonProps}
               fromItemGroup={fromItemGroup}
               item={item}
               orientation={orientation}
-              titleLink={titleLink}
+              titleLink={link}
               withButtonLink={withButtonLink}
               withTitleLink={withTitleLink}
             />
@@ -56,12 +56,12 @@ const Item = ({ buttonLink, buttonProps, href, fromItemGroup, isLoading, item, o
             alt={alt}
           />
           <CardBody
-            buttonLink={buttonLink}
+            buttonLink={link}
             buttonProps={buttonProps}
             fromItemGroup={fromItemGroup}
             item={item}
             orientation={orientation}
-            titleLink={titleLink}
+            titleLink={link}
             withButtonLink={withButtonLink}
             withTitleLink={withTitleLink}
           />
