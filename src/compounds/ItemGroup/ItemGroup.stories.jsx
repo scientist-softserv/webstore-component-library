@@ -9,8 +9,8 @@ export default {
 
 const Template = (args) => <ItemGroup {...args} />
 
-export const Vertical = Template.bind({})
-Vertical.args = {
+export const Default = Template.bind({})
+Default.args = {
   buttonProps: {
     backgroundColor: '#A9A9A9',
     label: 'Request this item',
