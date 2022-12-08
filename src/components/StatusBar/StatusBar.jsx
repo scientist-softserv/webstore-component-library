@@ -7,12 +7,12 @@ const StatusBar = ({ statusArray, apiRequestStatus }) => (
   <div className='container'>
     <div className='row border bg-light'>
       {statusArray.map((statusObject, index) => {
-        const { requestStatus, statusLabel, statusIcon } = statusObject
+        const { statusLabel, statusIcon } = statusObject
         return (
           <div
-            className={`status-bar-column col-3 py-2 gap-2 d-flex justify-content-center align-items-center 
-              ${index !== statusArray.length - 1 ? 'border-end' : ''} 
-              ${requestStatus === apiRequestStatus ? 'active' : ''}`}
+            className={`status-bar-column col-3 py-2 gap-2 d-flex justify-content-center align-items-center
+              ${index !== statusArray.length - 1 ? 'border-end' : ''}
+              ${statusLabel === apiRequestStatus ? 'active' : ''}`}
             key={statusLabel}
           >
             <FontAwesomeIcon icon={statusIcon} />
