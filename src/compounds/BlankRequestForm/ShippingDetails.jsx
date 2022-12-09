@@ -62,19 +62,21 @@ const AddressForm = ({ addressType, toggleBilling }) => {
   )
 }
 
-const ShippingDetails = ({toggleBilling, shippingEqualsBilling}) => {
+const ShippingDetails = ({ billingSameAsShipping }) => {
+  const [showBilling, setShowBilling] = useState(true)
+
   return (
     <Card className='mb-4'>
       <Card.Header className='h3'>Shipping Details</Card.Header>
       <AddressForm
         addressType='Shipping'
-        shippingEqualsBilling={shippingEqualsBilling}
-        toggleBilling={toggleBilling}
+        billingSameAsShipping={billingSameAsShipping}
+        toggleBilling={() => setShowBilling(!showBilling)}
       />
-      {shippingEqualsBilling === false && (
+      {showBilling && (
         <AddressForm
           addressType='Billing'
-          shippingEqualsBilling={shippingEqualsBilling}
+          billingSameAsShipping={billingSameAsShipping}
         />
       )}
     </Card>
@@ -82,14 +84,15 @@ const ShippingDetails = ({toggleBilling, shippingEqualsBilling}) => {
 }
 AddressForm.propTypes = {
   addressType: PropTypes.string.isRequired,
+  billingSameAsShipping: PropTypes.bool.isRequired,
 }
 
 ShippingDetails.propTypes = {
-  shippingEqualsBilling: PropTypes.bool,
+  billingSameAsShipping: PropTypes.bool,
 }
 
 ShippingDetails.defaultProps = {
-  shippingEqualsBilling: false,
+  billingSameAsShipping: false,
 }
 
 
