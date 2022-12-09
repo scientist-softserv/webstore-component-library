@@ -1,21 +1,27 @@
 import React, { useState } from 'react'
-import { Card, Col, Form, Row } from 'react-bootstrap';
-import { CountryDropdown } from 'react-country-region-selector';
+import {
+  Card,
+  Col,
+  Form,
+  Row,
+} from 'react-bootstrap'
+import { CountryDropdown } from 'react-country-region-selector'
 import PropTypes from 'prop-types'
 
-
 const AddressForm = ({ addressType, toggleBilling }) => {
-  const [shippingCountry, setShippingCountry] = useState('');
-  const [billingCountry, setBillingCountry] = useState('');
+  const [shippingCountry, setShippingCountry] = useState('')
+  const [billingCountry, setBillingCountry] = useState('')
 
   // TODO: @summer-cook
   // add anything needed to save the values so they can be passed to the webstore
   return (
     <Card.Body>
-      {shippingOrBillingString == 'Shipping' && (
+      {/* TODO(alishaevn): decide if we will keep this based on the api endpoint */}
+      {/* {addressType == 'Shipping' && (
         <Form.Group className='mb-5' controlId='address-name'>
           <Form.Control placeholder='Address Name' name='addressName'/>
         </Form.Group>
+      )} */}
       <Card.Title className='mb-3'>{addressType} Address</Card.Title>
 
       <Form.Group className='mb-3' controlId={`address1-${addressType.toLowerCase()}`}>
@@ -49,7 +55,7 @@ const AddressForm = ({ addressType, toggleBilling }) => {
         id={`country-${addressType.toLowerCase()}`}
       />
 
-      {addressType == 'Shipping' && (
+      {addressType === 'Shipping' && (
         <Form.Group className='mb-3' controlId='billingSameAsShipping'>
           <Form.Check
             type='checkbox'
@@ -84,7 +90,7 @@ const ShippingDetails = ({ billingSameAsShipping }) => {
 }
 AddressForm.propTypes = {
   addressType: PropTypes.string.isRequired,
-  billingSameAsShipping: PropTypes.bool.isRequired,
+  toggleBilling: PropTypes.func.isRequired,
 }
 
 ShippingDetails.propTypes = {
@@ -94,6 +100,5 @@ ShippingDetails.propTypes = {
 ShippingDetails.defaultProps = {
   billingSameAsShipping: false,
 }
-
 
 export default ShippingDetails

@@ -1,9 +1,14 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { Form, Button, Row, Col } from 'react-bootstrap';
+import {
+  Form,
+  Button,
+  Row,
+  Col,
+} from 'react-bootstrap'
 import Title from '../../components/Title/Title'
 import ShippingDetails from './ShippingDetails'
-import AdditionalInfo from './AdditionalInfo';
+import AdditionalInfo from './AdditionalInfo'
 
 const BlankRequestForm = ({ onSubmit }) => {
   // used in the shipping details component
@@ -51,7 +56,7 @@ const BlankRequestForm = ({ onSubmit }) => {
 
     setRequestForm((currentState) => {
       const updatedState = nestedProperty
-        ? { [initialProperty]: { ...requestForm[initialProperty], [nestedProperty]: event.target.value }}
+        ? { [initialProperty]: { ...requestForm[initialProperty], [nestedProperty]: event.target.value } }
         : { [initialProperty]: event.target.value }
 
       return {
@@ -63,9 +68,7 @@ const BlankRequestForm = ({ onSubmit }) => {
 
   // used in the additional info component
   const [showProposalDueDate, setShowProposalDueDate] = useState(true)
-  const toggleShowProposalDueDate = () => {
-    setShowProposalDueDate(showProposalDueDate => !showProposalDueDate);
-  }
+  const toggleShowProposalDueDate = () => setShowProposalDueDate(!showProposalDueDate)
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -74,12 +77,16 @@ const BlankRequestForm = ({ onSubmit }) => {
 
   return (
     <>
-      <Title title='New Request'/>
+      <Title title='New Request' />
       <Form onSubmit={handleSubmit} id='new-request-form'>
         <Row className='mt-4 mb-2'>
           <Form.Group className='mb-3' controlId='service-product-description'>
             <Form.Label>Enter a service or product description.</Form.Label>
-            <Form.Control as='textarea' rows={3} />
+            <Form.Control
+              as='textarea'
+              rows={3}
+              onChange={(e) => updateRequestForm(e, 'data.description')}
+            />
           </Form.Group>
           <Form.Group className='mb-3' controlId='project-timeline'>
             <Form.Label>What is the timeline for this project?</Form.Label>
@@ -103,8 +110,9 @@ const BlankRequestForm = ({ onSubmit }) => {
           variant='primary'
           type='submit'
           className='my-2 ms-auto d-block'
-          size='lg'>
-            Initiate Request
+          size='lg'
+        >
+          Initiate Request
         </Button>
       </Form>
     </>
