@@ -10,7 +10,7 @@ const RequestStats = ({ billingInfo, createdAt, deadline, shippingInfo }) => {
   return (
     <Card className='request-stats w-25'>
       <Card.Header>
-        <Card.Title>Request Info</Card.Title>
+        <Card.Title className='mb-0'>Request Info</Card.Title>
       </Card.Header>
       <Card.Body>
         <Card.Subtitle>Date of request</Card.Subtitle>
