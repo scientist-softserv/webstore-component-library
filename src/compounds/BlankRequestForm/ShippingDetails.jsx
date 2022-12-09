@@ -8,9 +8,9 @@ import {
 import { CountryDropdown } from 'react-country-region-selector'
 import PropTypes from 'prop-types'
 
-const AddressForm = ({ addressType, toggleBilling }) => {
-  const [shippingCountry, setShippingCountry] = useState('')
-  const [billingCountry, setBillingCountry] = useState('')
+const AddressForm = ({ addressType, billingValues, shippingValues, showBilling, setShowBilling, updateRequestForm }) => {
+  //const [shippingValues, setShippingCountry] = useState('')
+  //const [billingValues, setBillingCountry] = useState('')
 
   // TODO: @summer-cook
   // add anything needed to save the values so they can be passed to the webstore
@@ -22,45 +22,58 @@ const AddressForm = ({ addressType, toggleBilling }) => {
           <Form.Control placeholder='Address Name' name='addressName'/>
         </Form.Group>
       )} */}
-      <Card.Title className='mb-3'>{addressType} Address</Card.Title>
+      <Card.Title className='mb-3'>{addressType.charAt(0).toUpperCase() + addressType.slice(1)} Address</Card.Title>
 
-      <Form.Group className='mb-3' controlId={`address1-${addressType.toLowerCase()}`}>
-        <Form.Control placeholder='Address' />
+      <Form.Group className='mb-3' controlId={`address1-${addressType}`}>
+        <Form.Control 
+          placeholder='Address'
+          onChange={(e) => updateRequestForm(e.target.value, `${addressType}.street`)}/>
       </Form.Group>
 
-      <Form.Group className='mb-3' controlId={`address2-${addressType.toLowerCase()}`}>
-        <Form.Control placeholder='Address Line 2 (optional)' />
+      <Form.Group className='mb-3' controlId={`address2-${addressType}`}>
+        <Form.Control
+          placeholder='Address Line 2 (optional)'
+          onChange={(e) => updateRequestForm(e.target.value, `${addressType}.street2`)}/>
       </Form.Group>
 
-      <Form.Group className='mb-3' controlId={`city-${addressType.toLowerCase()}`}>
-        <Form.Control placeholder='City/Region' />
+      <Form.Group className='mb-3' controlId={`city-${addressType}`}>
+        <Form.Control
+          placeholder='City/Region'
+          onChange={(e) => updateRequestForm(e.target.value, `${addressType}.city`)}/>
       </Form.Group>
 
       <Row className='mb-3'>
-        <Form.Group as={Col} controlId={`state-${addressType.toLowerCase()}`}>
-          <Form.Control placeholder='State/Province' />
+        <Form.Group as={Col} controlId={`state-${addressType}`}>
+          <Form.Control
+            placeholder='State/Province'
+            onChange={(e) => updateRequestForm(e.target.value, `${addressType}.state`)}/>
         </Form.Group>
 
-        <Form.Group as={Col} controlId={`zip-${addressType.toLowerCase()}`}>
-          <Form.Control placeholder='Zip/Postal Code' />
+        <Form.Group as={Col} controlId={`zip-${addressType}`}>
+          <Form.Control
+            placeholder='Zip/Postal Code'
+            onChange={(e) => updateRequestForm(e.target.value, `${addressType}.zipCode`)}
+          />
         </Form.Group>
       </Row>
 
       <CountryDropdown
-        name={`country-${addressType.toLowerCase()}`}
+        name={`country-${addressType}`}
         priorityOptions={['US', 'GB', 'CA']}
-        value={addressType === 'Shipping' ? shippingCountry : billingCountry}
-        onChange={addressType === 'Shipping' ? (val) => setShippingCountry(val) : (val) => setBillingCountry(val)}
+        value={addressType === 'shipping' ? shippingValues.country : billingValues.country}
+        onChange={(e) => updateRequestForm(e, `${addressType}.country`)}
         className='form-select mb-3 form-control'
-        id={`country-${addressType.toLowerCase()}`}
+        id={`country-${addressType}`}
       />
 
-      {addressType === 'Shipping' && (
+      {addressType === 'shipping' && (
         <Form.Group className='mb-3' controlId='billingSameAsShipping'>
           <Form.Check
             type='checkbox'
             label='My shipping address is the same as my billing address.'
-            onChange={toggleBilling}
+            onChange={() => {
+              setShowBilling(!showBilling)
+              if (!showBilling) Object.assign(billingValues, shippingValues)}}
           />
         </Form.Group>
       )}
@@ -68,21 +81,28 @@ const AddressForm = ({ addressType, toggleBilling }) => {
   )
 }
 
-const ShippingDetails = ({ billingSameAsShipping }) => {
+const ShippingDetails = ({ billingSameAsShipping, billingValues, shippingValues, updateRequestForm }) => {
   const [showBilling, setShowBilling] = useState(true)
 
   return (
     <Card className='mb-4'>
       <Card.Header className='h3'>Shipping Details</Card.Header>
       <AddressForm
-        addressType='Shipping'
+        addressType='shipping'
         billingSameAsShipping={billingSameAsShipping}
-        toggleBilling={() => setShowBilling(!showBilling)}
+        billingValues={billingValues}
+        shippingValues={shippingValues}
+        showBilling={showBilling}
+        setShowBilling={setShowBilling}
+        updateRequestForm={updateRequestForm}
       />
       {showBilling && (
         <AddressForm
-          addressType='Billing'
+          addressType='billing'
           billingSameAsShipping={billingSameAsShipping}
+          billingValues={billingValues}
+          shippingValues={shippingValues}
+          updateRequestForm={updateRequestForm}
         />
       )}
     </Card>
@@ -90,7 +110,8 @@ const ShippingDetails = ({ billingSameAsShipping }) => {
 }
 AddressForm.propTypes = {
   addressType: PropTypes.string.isRequired,
-  toggleBilling: PropTypes.func.isRequired,
+  showBilling: PropTypes.bool,
+  setShowBilling: PropTypes.func,
 }
 
 ShippingDetails.propTypes = {

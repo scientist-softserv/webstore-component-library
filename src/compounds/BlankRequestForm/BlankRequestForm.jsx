@@ -15,7 +15,7 @@ const BlankRequestForm = ({ onSubmit }) => {
     name: 'New Request',
     billingSameAsShipping: false,
     proposedDeadline: null,
-    billingAddress: {
+    billing: {
       id: null,
       street: '',
       street2: '',
@@ -25,7 +25,7 @@ const BlankRequestForm = ({ onSubmit }) => {
       country: '',
       text: '',
     },
-    shippingAddress: {
+    shipping: {
       id: null,
       street: '',
       street2: '',
@@ -85,13 +85,20 @@ const BlankRequestForm = ({ onSubmit }) => {
           </Form.Group>
           <Form.Group className='mb-3' controlId='project-timeline'>
             <Form.Label>What is the timeline for this project?</Form.Label>
-            <Form.Control as='textarea' rows={3} />
+            <Form.Control
+              as='textarea'
+              rows={3}
+              onChange={(e) => updateRequestForm(e.target.value, 'data.timeline')}
+            />
           </Form.Group>
         </Row>
         <Row>
           <Col>
             <ShippingDetails
               billingSameAsShipping={requestForm.billingSameAsShipping}
+              updateRequestForm={updateRequestForm}
+              shippingValues={requestForm.shipping}
+              billingValues={requestForm.billing}
             />
           </Col>
           <Col>
