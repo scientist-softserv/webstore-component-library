@@ -96,6 +96,7 @@ const BlankRequestForm = ({ onSubmit }) => {
           </Col>
           <Col>
             <AdditionalInfo
+              updateRequestForm={updateRequestForm}
             />
           </Col>
         </Row>

@@ -2,8 +2,13 @@ import React, { useState } from 'react'
 import { Card, Form } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 
+const AdditionalInfo = ({ updateRequestForm }) => {
   const [showProposalDate, setShowProposalDate] = useState(true)
   const today = new Date().toISOString().slice(0, 10)
+  const handleChange = (value) => {
+    updateRequestForm(value, 'proposedDeadline')
+  }
+
   return (
     <Card className='mb-4'>
       <Card.Header className='h3'>Additional Information</Card.Header>
@@ -20,6 +25,7 @@ import PropTypes from 'prop-types'
                 min={today}
                 placeholder='Proposals Required By'
                 disabled={showProposalDate === false}
+                onChange={showProposalDate && ((e) => handleChange(e.target.value))}
               />
             </Form.Group>
           )}
@@ -32,6 +38,7 @@ import PropTypes from 'prop-types'
             label='Proposals can be submitted at any time.'
             onChange={() => {
               setShowProposalDate(!showProposalDate)
+              if (showProposalDate) handleChange(null)
             }}
           />
         </Form.Group>
@@ -45,8 +52,7 @@ import PropTypes from 'prop-types'
 }
 
 AdditionalInfo.propTypes = {
-  showProposalDueDate: PropTypes.bool.isRequired,
-  toggleShowProposalDueDate: PropTypes.func.isRequired,
+  updateRequestForm: PropTypes.func.isRequired,
 }
 
 export default AdditionalInfo
