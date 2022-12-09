@@ -21,8 +21,10 @@ const BlankRequestForm = () => {
     }
   }
 
-  const toggleOpenProposalDueDate = () => {
-    setOpenProposalDueDate(openProposalDueDate => !openProposalDueDate);
+  // used in the additional info component
+  const [showProposalDueDate, setShowProposalDueDate] = useState(true)
+  const toggleShowProposalDueDate = () => {
+    setShowProposalDueDate(showProposalDueDate => !showProposalDueDate);
   }
 
   const handleSubmit = () => {
@@ -52,8 +54,8 @@ const BlankRequestForm = () => {
           </Col>
           <Col>
             <AdditionalInfo
-              toggleOpenProposalDueDate={toggleOpenProposalDueDate}
-              openProposalDueDate={openProposalDueDate}
+              toggleShowProposalDueDate={toggleShowProposalDueDate}
+              showProposalDueDate={showProposalDueDate}
             />
           </Col>
         </Row>

@@ -4,7 +4,7 @@ import { CountryDropdown } from 'react-country-region-selector';
 import PropTypes from 'prop-types'
 
 
-const AddressForm = ({ shippingOrBillingString, toggleBilling }) => {
+const AddressForm = ({ addressType, toggleBilling }) => {
   const [shippingCountry, setShippingCountry] = useState('');
   const [billingCountry, setBillingCountry] = useState('');
 
@@ -16,44 +16,42 @@ const AddressForm = ({ shippingOrBillingString, toggleBilling }) => {
         <Form.Group className='mb-5' controlId='address-name'>
           <Form.Control placeholder='Address Name' name='addressName'/>
         </Form.Group>
-      )}
+      <Card.Title className='mb-3'>{addressType} Address</Card.Title>
 
-      <Card.Title className='mb-3'>{shippingOrBillingString} Address</Card.Title>
-
-      <Form.Group className='mb-3' controlId={`address1-${shippingOrBillingString.toLowerCase()}`}>
+      <Form.Group className='mb-3' controlId={`address1-${addressType.toLowerCase()}`}>
         <Form.Control placeholder='Address' />
       </Form.Group>
 
-      <Form.Group className='mb-3' controlId={`address2-${shippingOrBillingString.toLowerCase()}`}>
+      <Form.Group className='mb-3' controlId={`address2-${addressType.toLowerCase()}`}>
         <Form.Control placeholder='Address Line 2 (optional)' />
       </Form.Group>
 
-      <Form.Group className='mb-3' controlId={`city-${shippingOrBillingString.toLowerCase()}`}>
+      <Form.Group className='mb-3' controlId={`city-${addressType.toLowerCase()}`}>
         <Form.Control placeholder='City/Region' />
       </Form.Group>
 
       <Row className='mb-3'>
-        <Form.Group as={Col} controlId={`state-${shippingOrBillingString.toLowerCase()}`}>
-          <Form.Control placeholder='State/Province'/>
+        <Form.Group as={Col} controlId={`state-${addressType.toLowerCase()}`}>
+          <Form.Control placeholder='State/Province' />
         </Form.Group>
 
-        <Form.Group as={Col} controlId={`zip-${shippingOrBillingString.toLowerCase()}`}>
-          <Form.Control placeholder='Zip/Postal Code'/>
+        <Form.Group as={Col} controlId={`zip-${addressType.toLowerCase()}`}>
+          <Form.Control placeholder='Zip/Postal Code' />
         </Form.Group>
       </Row>
 
       <CountryDropdown
-        name={`country-${shippingOrBillingString.toLowerCase()}`}
+        name={`country-${addressType.toLowerCase()}`}
         priorityOptions={['US', 'GB', 'CA']}
-        value={shippingOrBillingString === 'Shipping' ? shippingCountry : billingCountry}
-        onChange={shippingOrBillingString === 'Shipping' ? (val) => setShippingCountry(val) : (val) => setBillingCountry(val)}
+        value={addressType === 'Shipping' ? shippingCountry : billingCountry}
+        onChange={addressType === 'Shipping' ? (val) => setShippingCountry(val) : (val) => setBillingCountry(val)}
         className='form-select mb-3 form-control'
-        id={`country-${shippingOrBillingString.toLowerCase()}`}
+        id={`country-${addressType.toLowerCase()}`}
       />
 
-      {shippingOrBillingString == 'Shipping' && (
-        <Form.Group className='mb-3' controlId='shippingEqualsBilling'>
-          <Form.Check 
+      {addressType == 'Shipping' && (
+        <Form.Group className='mb-3' controlId='billingSameAsShipping'>
+          <Form.Check
             type='checkbox'
             label='My shipping address is the same as my billing address.'
             onChange={toggleBilling}
@@ -69,13 +67,13 @@ const ShippingDetails = ({toggleBilling, shippingEqualsBilling}) => {
     <Card className='mb-4'>
       <Card.Header className='h3'>Shipping Details</Card.Header>
       <AddressForm
-        shippingOrBillingString='Shipping' 
+        addressType='Shipping'
         shippingEqualsBilling={shippingEqualsBilling}
         toggleBilling={toggleBilling}
       />
       {shippingEqualsBilling === false && (
         <AddressForm
-          shippingOrBillingString='Billing'
+          addressType='Billing'
           shippingEqualsBilling={shippingEqualsBilling}
         />
       )}
@@ -83,9 +81,7 @@ const ShippingDetails = ({toggleBilling, shippingEqualsBilling}) => {
   )
 }
 AddressForm.propTypes = {
-  shippingOrBillingString: PropTypes.string.isRequired,
-  shippingEqualsBilling: PropTypes.bool.isRequired,
-  toggleBilling: PropTypes.func.isRequired,
+  addressType: PropTypes.string.isRequired,
 }
 
 ShippingDetails.propTypes = {

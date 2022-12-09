@@ -3,7 +3,7 @@ import { Card, Form } from 'react-bootstrap';
 import PropTypes from 'prop-types'
 
 
-const AdditionalInfo = ({openProposalDueDate, toggleOpenProposalDueDate}) => {
+const AdditionalInfo = ({ showProposalDueDate, toggleShowProposalDueDate }) => {
   let today = new Date().toISOString().slice(0, 10)
   return (
     <Card className='mb-4'>
@@ -20,7 +20,7 @@ const AdditionalInfo = ({openProposalDueDate, toggleOpenProposalDueDate}) => {
           type='date' 
           min={today}
           placeholder='Proposals Required By'
-          disabled={openProposalDueDate === true ? true : false}
+            disabled={showProposalDueDate === true ? true : false}
         />
       </Form.Group>
       <Form.Group
@@ -30,7 +30,7 @@ const AdditionalInfo = ({openProposalDueDate, toggleOpenProposalDueDate}) => {
         <Form.Check 
           type='checkbox'
           label='Proposals can be submitted at any time.'
-          onChange={toggleOpenProposalDueDate}
+            onChange={toggleShowProposalDueDate}
         />
       </Form.Group>
       <Form.Group controlId='attachments' className='mb-3'>
@@ -44,8 +44,8 @@ const AdditionalInfo = ({openProposalDueDate, toggleOpenProposalDueDate}) => {
 
 
 AdditionalInfo.propTypes = {
-  openProposalDueDate: PropTypes.bool.isRequired,
-  toggleOpenProposalDueDate: PropTypes.func.isRequired,
+  showProposalDueDate: PropTypes.bool.isRequired,
+  toggleShowProposalDueDate: PropTypes.func.isRequired,
 }
 
 export default AdditionalInfo
