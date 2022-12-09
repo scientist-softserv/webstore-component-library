@@ -11,9 +11,9 @@ const Template = (args) => <RequestStats {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  billingAddress: shipTo.text,
+  billingInfo: { address: shipTo.text, id: shipTo.id },
   createdAt: 'September 9, 2022',
   deadline: 'September 17, 2022',
   projectCode: '',
-  shippingAddress: shipTo.text,
+  shippingInfo: { address: shipTo.text, id: shipTo.id },
 }
