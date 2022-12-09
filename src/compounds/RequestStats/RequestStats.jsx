@@ -3,13 +3,13 @@ import { Card } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import './request-stats.css'
 
-const RequestStats = ({ billingInfo, createdAt, deadline, shippingInfo }) => {
+const RequestStats = ({ addClass, billingInfo, createdAt, deadline, shippingInfo }) => {
   const shippingAddress = shippingInfo.address.split(/\n/)
   const billingAddress = billingInfo.address.split(/\n/)
 
   return (
     <Card className='request-stats w-25'>
-      <Card.Header>
+      <Card.Header className={`${addClass}`}>
         <Card.Title className='mb-0'>Request Info</Card.Title>
       </Card.Header>
       <Card.Body>
@@ -41,6 +41,7 @@ const RequestStats = ({ billingInfo, createdAt, deadline, shippingInfo }) => {
 }
 
 RequestStats.propTypes = {
+  addClass: PropTypes.string,
   billingInfo: PropTypes.shape({
     address: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
@@ -54,6 +55,7 @@ RequestStats.propTypes = {
 }
 
 RequestStats.defaultProps = {
+  addClass: '',
   deadline: '',
 }
 
