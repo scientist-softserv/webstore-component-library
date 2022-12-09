@@ -89,8 +89,7 @@ const BlankRequestForm = ({ onSubmit }) => {
         <Row>
           <Col>
             <ShippingDetails
-              toggleBilling={toggleBilling}
-              shippingEqualsBilling={shippingEqualsBilling}
+              billingSameAsShipping={requestForm.billingSameAsShipping}
             />
           </Col>
           <Col>
