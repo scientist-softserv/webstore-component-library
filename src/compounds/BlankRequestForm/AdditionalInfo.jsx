@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Card, Form } from 'react-bootstrap';
 import PropTypes from 'prop-types'
 
@@ -44,9 +44,8 @@ const AdditionalInfo = ({openProposalDueDate, toggleOpenProposalDueDate}) => {
 
 
 AdditionalInfo.propTypes = {
-}
-
-AdditionalInfo.defaultProps = {
+  openProposalDueDate: PropTypes.bool.isRequired,
+  toggleOpenProposalDueDate: PropTypes.func.isRequired,
 }
 
 export default AdditionalInfo

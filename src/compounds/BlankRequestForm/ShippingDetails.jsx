@@ -82,6 +82,11 @@ const ShippingDetails = ({toggleBilling, shippingEqualsBilling}) => {
     </Card>
   )
 }
+AddressForm.propTypes = {
+  shippingOrBillingString: PropTypes.string.isRequired,
+  shippingEqualsBilling: PropTypes.bool.isRequired,
+  toggleBilling: PropTypes.func.isRequired,
+}
 
 ShippingDetails.propTypes = {
   shippingEqualsBilling: PropTypes.bool,
@@ -90,5 +95,6 @@ ShippingDetails.propTypes = {
 ShippingDetails.defaultProps = {
   shippingEqualsBilling: false,
 }
+
 
 export default ShippingDetails
