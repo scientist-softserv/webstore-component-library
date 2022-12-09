@@ -7,18 +7,58 @@ import AdditionalInfo from './AdditionalInfo';
 
 const BlankRequestForm = () => {
   // used in the shipping details component
-  const [shippingEqualsBilling, setShippingEqualsBilling] = useState(false)
-  const [shippingValues, setShippingValues] = useState('');
-  const [billingValues, setBillingValues] = useState('');
+  const initialState = {
+    name: 'New Request',
+    billingSameAsShipping: false,
+    proposedDeadline: null,
+    billingAddress: {
+      id: null,
+      street: '',
+      street2: '',
+      city: '',
+      state: '',
+      zipCode: '',
+      country: '',
+      text: '',
+    },
+    shippingAddress: {
+      id: null,
+      street: '',
+      street2: '',
+      city: '',
+      state: '',
+      zipCode: '',
+      country: '',
+      text: '',
+    },
+    data: {
+      timeline: '',
+      description: '',
+      suppliersIdentified: 'Yes',
+    },
+    // TODO(alishaevn): how do we handle attachments?
+  }
 
-  // used in the additional info component
-  const [openProposalDueDate, setOpenProposalDueDate] = useState()
+  const [requestForm, setRequestForm] = useState(initialState)
 
-  const toggleBilling = () => {
-    setShippingEqualsBilling(shippingEqualsBilling => !shippingEqualsBilling);
-    if (shippingEqualsBilling === true) {
-      setBillingValues(shippingValues)
-    }
+  /**
+   * @param {event} event onChange event
+   * @param {string} property dot notated string representing the property in initialValue
+   * @returns {object} the updated component state
+   */
+  const updateRequestForm = (event, property) => {
+    const [initialProperty, nestedProperty] = property.split('.')
+
+    setRequestForm((currentState) => {
+      const updatedState = nestedProperty
+        ? { [initialProperty]: { ...requestForm[initialProperty], [nestedProperty]: event.target.value }}
+        : { [initialProperty]: event.target.value }
+
+      return {
+        ...currentState,
+        ...updatedState,
+      }
+    })
   }
 
   // used in the additional info component
