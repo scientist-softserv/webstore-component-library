@@ -10,4 +10,5 @@ const Template = (args) => <BlankRequestForm {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
+  onSubmit: (requestForm) => console.log({ requestForm })
 }

@@ -5,7 +5,7 @@ import Title from '../../components/Title/Title'
 import ShippingDetails from './ShippingDetails'
 import AdditionalInfo from './AdditionalInfo';
 
-const BlankRequestForm = () => {
+const BlankRequestForm = ({ onSubmit }) => {
   // used in the shipping details component
   const initialState = {
     name: 'New Request',
@@ -67,8 +67,9 @@ const BlankRequestForm = () => {
     setShowProposalDueDate(showProposalDueDate => !showProposalDueDate);
   }
 
-  const handleSubmit = () => {
-
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    onSubmit(requestForm)
   }
 
   return (
@@ -112,11 +113,7 @@ const BlankRequestForm = () => {
 }
 
 BlankRequestForm.propTypes = {
-  
-}
-
-BlankRequestForm.defaultProps = {
-  
+  onSubmit: PropTypes.func.isRequired,
 }
 
 export default BlankRequestForm
