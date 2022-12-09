@@ -88,9 +88,14 @@ const ShippingDetails = ({ billingSameAsShipping }) => {
     </Card>
   )
 }
+
 AddressForm.propTypes = {
   addressType: PropTypes.string.isRequired,
-  toggleBilling: PropTypes.func.isRequired,
+  toggleBilling: PropTypes.func,
+}
+
+AddressForm.defaultProps = {
+  toggleBilling: null,
 }
 
 ShippingDetails.propTypes = {
