@@ -1,25 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Card, Form } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 
-const AdditionalInfo = ({ showProposalDueDate, toggleShowProposalDueDate }) => {
+  const [showProposalDate, setShowProposalDate] = useState(true)
   const today = new Date().toISOString().slice(0, 10)
   return (
     <Card className='mb-4'>
       <Card.Header className='h3'>Additional Information</Card.Header>
       <Card.Body>
-        <Form.Group
-          className='mb-3'
-          controlId='required-by'
-        >
-          <Form.Label>Proposals Required By:</Form.Label>
-          <Form.Control
-            type='date'
-            min={today}
-            placeholder='Proposals Required By'
-            disabled={showProposalDueDate === true}
-          />
-        </Form.Group>
+        {showProposalDate
+          && (
+            <Form.Group
+              className='mb-3'
+              controlId='required-by'
+            >
+              <Form.Label>Proposals Required By:</Form.Label>
+              <Form.Control
+                type='date'
+                min={today}
+                placeholder='Proposals Required By'
+                disabled={showProposalDate === false}
+              />
+            </Form.Group>
+          )}
         <Form.Group
           className='mb-3'
           controlId='open-proposal-due-date'
@@ -27,7 +30,9 @@ const AdditionalInfo = ({ showProposalDueDate, toggleShowProposalDueDate }) => {
           <Form.Check
             type='checkbox'
             label='Proposals can be submitted at any time.'
-            onChange={toggleShowProposalDueDate}
+            onChange={() => {
+              setShowProposalDate(!showProposalDate)
+            }}
           />
         </Form.Group>
         <Form.Group controlId='attachments' className='mb-3'>

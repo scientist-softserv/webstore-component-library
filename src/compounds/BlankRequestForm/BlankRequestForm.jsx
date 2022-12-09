@@ -66,10 +66,6 @@ const BlankRequestForm = ({ onSubmit }) => {
     })
   }
 
-  // used in the additional info component
-  const [showProposalDueDate, setShowProposalDueDate] = useState(true)
-  const toggleShowProposalDueDate = () => setShowProposalDueDate(!showProposalDueDate)
-
   const handleSubmit = (event) => {
     event.preventDefault()
     onSubmit(requestForm)
@@ -101,8 +97,6 @@ const BlankRequestForm = ({ onSubmit }) => {
           </Col>
           <Col>
             <AdditionalInfo
-              toggleShowProposalDueDate={toggleShowProposalDueDate}
-              showProposalDueDate={showProposalDueDate}
             />
           </Col>
         </Row>
