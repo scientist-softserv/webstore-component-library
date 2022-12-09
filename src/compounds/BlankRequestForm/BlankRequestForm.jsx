@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import {
-  Form,
   Button,
+  Form,
   Row,
   Col,
 } from 'react-bootstrap'
@@ -11,7 +11,6 @@ import ShippingDetails from './ShippingDetails'
 import AdditionalInfo from './AdditionalInfo'
 
 const BlankRequestForm = ({ onSubmit }) => {
-  // used in the shipping details component
   const initialState = {
     name: 'New Request',
     billingSameAsShipping: false,
@@ -47,17 +46,17 @@ const BlankRequestForm = ({ onSubmit }) => {
   const [requestForm, setRequestForm] = useState(initialState)
 
   /**
-   * @param {event} event onChange event
+   * @param {object} event onChange event
    * @param {string} property dot notated string representing the property in initialValue
    * @returns {object} the updated component state
    */
-  const updateRequestForm = (event, property) => {
+  const updateRequestForm = (value, property) => {
     const [initialProperty, nestedProperty] = property.split('.')
 
     setRequestForm((currentState) => {
       const updatedState = nestedProperty
-        ? { [initialProperty]: { ...requestForm[initialProperty], [nestedProperty]: event.target.value } }
-        : { [initialProperty]: event.target.value }
+        ? { [initialProperty]: { ...requestForm[initialProperty], [nestedProperty]: value } }
+        : { [initialProperty]: value }
 
       return {
         ...currentState,
@@ -81,7 +80,7 @@ const BlankRequestForm = ({ onSubmit }) => {
             <Form.Control
               as='textarea'
               rows={3}
-              onChange={(e) => updateRequestForm(e, 'data.description')}
+              onChange={(e) => updateRequestForm(e.target.value, 'data.description')}
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='project-timeline'>
