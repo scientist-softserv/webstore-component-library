@@ -67,10 +67,11 @@ const BlankRequestForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    onSubmit(requestForm)
     if (requestForm.billingSameAsShipping === true) {
       Object.assign(requestForm.billing, requestForm.shipping)
     }
+
+    onSubmit(requestForm)
   }
 
   return (
