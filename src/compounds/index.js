@@ -4,6 +4,7 @@
  */
 
 import ActionsGroup from './ActionsGroup/ActionsGroup'
+import BlankRequestForm from './BlankRequestForm/BlankRequestForm'
 import Document from './Document/Document'
 import Footer from './Footer/Footer'
 import Footer2 from './Footer/Footer2'
@@ -21,6 +22,7 @@ import TitledTextBox from './TitledTextBox/TitledTextBox'
 
 export {
   ActionsGroup,
+  BlankRequestForm,
   Document,
   Footer,
   Footer2,
