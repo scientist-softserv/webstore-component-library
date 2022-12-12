@@ -10,7 +10,7 @@ import Title from '../../components/Title/Title'
 import ShippingDetails from './ShippingDetails'
 import AdditionalInfo from './AdditionalInfo'
 
-const BlankRequestForm = ({ onSubmit }) => {
+const BlankRequestForm = () => {
   const initialState = {
     name: 'New Request',
     billingSameAsShipping: false,
@@ -120,10 +120,6 @@ const BlankRequestForm = ({ onSubmit }) => {
       </Form>
     </>
   )
-}
-
-BlankRequestForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
 }
 
 export default BlankRequestForm
