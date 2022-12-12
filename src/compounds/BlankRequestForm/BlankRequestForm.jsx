@@ -71,7 +71,6 @@ const BlankRequestForm = ({ onSubmit }) => {
     if (requestForm.billingSameAsShipping === true) {
       Object.assign(requestForm.billing, requestForm.shipping)
     }
-    console.log(requestForm)
   }
 
   return (
@@ -99,10 +98,9 @@ const BlankRequestForm = ({ onSubmit }) => {
         <Row>
           <Col>
             <ShippingDetails
-              billingSameAsShipping={requestForm.billingSameAsShipping}
-              updateRequestForm={updateRequestForm}
-              shippingCountry={requestForm.shipping.country}
               billingCountry={requestForm.billing.country}
+              shippingCountry={requestForm.shipping.country}
+              updateRequestForm={updateRequestForm}
             />
           </Col>
           <Col>

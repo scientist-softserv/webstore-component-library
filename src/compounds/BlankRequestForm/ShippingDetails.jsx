@@ -8,8 +8,8 @@ import {
 import { CountryDropdown } from 'react-country-region-selector'
 import PropTypes from 'prop-types'
 
-const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBilling, showBilling,  updateRequestForm }) => {
-
+const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBilling,
+  showBilling, updateRequestForm }) => {
   const handleChange = (value) => {
     updateRequestForm(value, 'billingSameAsShipping')
   }
@@ -25,28 +25,32 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
       <Card.Title className='mb-3'>{addressType.charAt(0).toUpperCase() + addressType.slice(1)} Address</Card.Title>
 
       <Form.Group className='mb-3' controlId={`address1-${addressType}`}>
-        <Form.Control 
+        <Form.Control
           placeholder='Address'
-          onChange={(e) => updateRequestForm(e.target.value, `${addressType}.street`)}/>
+          onChange={(e) => updateRequestForm(e.target.value, `${addressType}.street`)}
+        />
       </Form.Group>
 
       <Form.Group className='mb-3' controlId={`address2-${addressType}`}>
         <Form.Control
           placeholder='Address Line 2 (optional)'
-          onChange={(e) => updateRequestForm(e.target.value, `${addressType}.street2`)}/>
+          onChange={(e) => updateRequestForm(e.target.value, `${addressType}.street2`)}
+        />
       </Form.Group>
 
       <Form.Group className='mb-3' controlId={`city-${addressType}`}>
         <Form.Control
           placeholder='City/Region'
-          onChange={(e) => updateRequestForm(e.target.value, `${addressType}.city`)}/>
+          onChange={(e) => updateRequestForm(e.target.value, `${addressType}.city`)}
+        />
       </Form.Group>
 
       <Row className='mb-3'>
         <Form.Group as={Col} controlId={`state-${addressType}`}>
           <Form.Control
             placeholder='State/Province'
-            onChange={(e) => updateRequestForm(e.target.value, `${addressType}.state`)}/>
+            onChange={(e) => updateRequestForm(e.target.value, `${addressType}.state`)}
+          />
         </Form.Group>
 
         <Form.Group as={Col} controlId={`zip-${addressType}`}>
@@ -71,7 +75,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
           <Form.Check
             type='checkbox'
             label='My shipping address is the same as my billing address.'
-            onChange={() =>{
+            onChange={() => {
               setShowBilling(!showBilling)
               if (showBilling) handleChange(true)
             }}
@@ -82,7 +86,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
   )
 }
 
-const ShippingDetails = ({ billingSameAsShipping, billingCountry, shippingCountry, updateRequestForm }) => {
+const ShippingDetails = ({ billingCountry, shippingCountry, updateRequestForm }) => {
   const [showBilling, setShowBilling] = useState(true)
 
   return (
@@ -90,7 +94,6 @@ const ShippingDetails = ({ billingSameAsShipping, billingCountry, shippingCountr
       <Card.Header className='h3'>Shipping Details</Card.Header>
       <AddressForm
         addressType='shipping'
-        billingSameAsShipping={billingSameAsShipping}
         billingCountry={billingCountry}
         shippingCountry={shippingCountry}
         showBilling={showBilling}
@@ -102,25 +105,31 @@ const ShippingDetails = ({ billingSameAsShipping, billingCountry, shippingCountr
           addressType='billing'
           billingCountry={billingCountry}
           shippingCountry={shippingCountry}
-          billingSameAsShipping={billingSameAsShipping}
           updateRequestForm={updateRequestForm}
         />
       )}
     </Card>
   )
 }
+
 AddressForm.propTypes = {
   addressType: PropTypes.string.isRequired,
+  billingCountry: PropTypes.string.isRequired,
   showBilling: PropTypes.bool,
   setShowBilling: PropTypes.func,
+  shippingCountry: PropTypes.string.isRequired,
+  updateRequestForm: PropTypes.func.isRequired,
 }
 
 ShippingDetails.propTypes = {
-  billingSameAsShipping: PropTypes.bool,
+  billingCountry: PropTypes.string.isRequired,
+  shippingCountry: PropTypes.string.isRequired,
+  updateRequestForm: PropTypes.func.isRequired,
 }
 
-ShippingDetails.defaultProps = {
-  billingSameAsShipping: false,
+AddressForm.defaultProps = {
+  showBilling: false,
+  setShowBilling: () => {},
 }
 
 export default ShippingDetails
