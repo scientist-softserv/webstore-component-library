@@ -26,7 +26,6 @@ const BlankRequestForm = () => {
       text: '',
     },
     shipping: {
-      id: null,
       street: '',
       street2: '',
       city: '',
@@ -67,10 +66,11 @@ const BlankRequestForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    onSubmit(requestForm)
     if (requestForm.billingSameAsShipping === true) {
       Object.assign(requestForm.billing, requestForm.shipping)
     }
+
+    onSubmit(requestForm)
   }
 
   return (
@@ -120,6 +120,10 @@ const BlankRequestForm = () => {
       </Form>
     </>
   )
+}
+
+BlankRequestForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 }
 
 export default BlankRequestForm
