@@ -16,7 +16,6 @@ const BlankRequestForm = ({ onSubmit }) => {
     billingSameAsShipping: false,
     proposedDeadline: null,
     billing: {
-      id: null,
       street: '',
       street2: '',
       city: '',
