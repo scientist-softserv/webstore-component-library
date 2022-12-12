@@ -122,4 +122,8 @@ const BlankRequestForm = () => {
   )
 }
 
+BlankRequestForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+}
+
 export default BlankRequestForm
