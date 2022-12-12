@@ -78,6 +78,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
             onChange={() => {
               setShowBilling(!showBilling)
               if (showBilling) handleChange(true)
+              if (!showBilling) handleChange(false)
             }}
           />
         </Form.Group>
