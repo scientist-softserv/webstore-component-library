@@ -38,6 +38,7 @@
     "prop-types": "^15.8.1",
     "react-bootstrap": "^2.6.0",
     "react-bootstrap-storybook": "^1.5.1",
+    "react-country-region-selector": "^3.6.1",
     "react-loader-spinner": "^5.3.4",
     "storybook-addon-next-router": "^4.0.1"
   },
