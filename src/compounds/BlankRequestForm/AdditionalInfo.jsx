@@ -42,6 +42,7 @@ const AdditionalInfo = ({ updateRequestForm }) => {
             }}
           />
         </Form.Group>
+        {/* TODO(summercook): figure out how these attachments will be saved. Currently we have an open question in slack */}
         <Form.Group controlId='attachments' className='mb-3'>
           <Form.Label>Attachments:</Form.Label>
           <Form.Control type='file' multiple />
