@@ -26,7 +26,6 @@ const BlankRequestForm = () => {
       text: '',
     },
     shipping: {
-      id: null,
       street: '',
       street2: '',
       city: '',
