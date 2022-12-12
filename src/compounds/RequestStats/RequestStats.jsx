@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 import PropTypes from 'prop-types'
-import './request-stats.css'
+import './request-stats.scss'
 
 const RequestStats = ({ addClass, billingInfo, createdAt, deadline, shippingInfo }) => (
   <Card className='request-stats w-25'>
