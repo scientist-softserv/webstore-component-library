@@ -8,12 +8,12 @@ import {
 import { CountryDropdown } from 'react-country-region-selector'
 import PropTypes from 'prop-types'
 
-const AddressForm = ({ addressType, billingValues, shippingValues, showBilling, setShowBilling, updateRequestForm }) => {
-  //const [shippingValues, setShippingCountry] = useState('')
-  //const [billingValues, setBillingCountry] = useState('')
+const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBilling, showBilling,  updateRequestForm }) => {
 
-  // TODO: @summer-cook
-  // add anything needed to save the values so they can be passed to the webstore
+  const handleChange = (value) => {
+    updateRequestForm(value, 'billingSameAsShipping')
+  }
+
   return (
     <Card.Body>
       {/* TODO(alishaevn): decide if we will keep this based on the api endpoint */}
@@ -60,7 +60,7 @@ const AddressForm = ({ addressType, billingValues, shippingValues, showBilling, 
       <CountryDropdown
         name={`country-${addressType}`}
         priorityOptions={['US', 'GB', 'CA']}
-        value={addressType === 'shipping' ? shippingValues.country : billingValues.country}
+        value={addressType === 'shipping' ? shippingCountry : billingCountry}
         onChange={(e) => updateRequestForm(e, `${addressType}.country`)}
         className='form-select mb-3 form-control'
         id={`country-${addressType}`}
@@ -71,9 +71,10 @@ const AddressForm = ({ addressType, billingValues, shippingValues, showBilling, 
           <Form.Check
             type='checkbox'
             label='My shipping address is the same as my billing address.'
-            onChange={() => {
+            onChange={() =>{
               setShowBilling(!showBilling)
-              if (!showBilling) Object.assign(billingValues, shippingValues)}}
+              if (showBilling) handleChange(true)
+            }}
           />
         </Form.Group>
       )}
@@ -81,7 +82,7 @@ const AddressForm = ({ addressType, billingValues, shippingValues, showBilling, 
   )
 }
 
-const ShippingDetails = ({ billingSameAsShipping, billingValues, shippingValues, updateRequestForm }) => {
+const ShippingDetails = ({ billingSameAsShipping, billingCountry, shippingCountry, updateRequestForm }) => {
   const [showBilling, setShowBilling] = useState(true)
 
   return (
@@ -90,8 +91,8 @@ const ShippingDetails = ({ billingSameAsShipping, billingValues, shippingValues,
       <AddressForm
         addressType='shipping'
         billingSameAsShipping={billingSameAsShipping}
-        billingValues={billingValues}
-        shippingValues={shippingValues}
+        billingCountry={billingCountry}
+        shippingCountry={shippingCountry}
         showBilling={showBilling}
         setShowBilling={setShowBilling}
         updateRequestForm={updateRequestForm}
@@ -99,9 +100,9 @@ const ShippingDetails = ({ billingSameAsShipping, billingValues, shippingValues,
       {showBilling && (
         <AddressForm
           addressType='billing'
+          billingCountry={billingCountry}
+          shippingCountry={shippingCountry}
           billingSameAsShipping={billingSameAsShipping}
-          billingValues={billingValues}
-          shippingValues={shippingValues}
           updateRequestForm={updateRequestForm}
         />
       )}

@@ -68,6 +68,10 @@ const BlankRequestForm = ({ onSubmit }) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     onSubmit(requestForm)
+    if (requestForm.billingSameAsShipping === true) {
+      Object.assign(requestForm.billing, requestForm.shipping)
+    }
+    console.log(requestForm)
   }
 
   return (
@@ -97,8 +101,8 @@ const BlankRequestForm = ({ onSubmit }) => {
             <ShippingDetails
               billingSameAsShipping={requestForm.billingSameAsShipping}
               updateRequestForm={updateRequestForm}
-              shippingValues={requestForm.shipping}
-              billingValues={requestForm.billing}
+              shippingCountry={requestForm.shipping.country}
+              billingCountry={requestForm.billing.country}
             />
           </Col>
           <Col>
