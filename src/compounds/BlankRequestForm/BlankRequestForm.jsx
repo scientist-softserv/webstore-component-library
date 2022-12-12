@@ -96,14 +96,14 @@ const BlankRequestForm = ({ onSubmit }) => {
           </Form.Group>
         </Row>
         <Row>
-          <Col>
+          <Col md={6}>
             <ShippingDetails
               billingCountry={requestForm.billing.country}
               shippingCountry={requestForm.shipping.country}
               updateRequestForm={updateRequestForm}
             />
           </Col>
-          <Col>
+          <Col md={6}>
             <AdditionalInfo
               updateRequestForm={updateRequestForm}
             />
