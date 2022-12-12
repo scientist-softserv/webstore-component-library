@@ -10,7 +10,7 @@ import Title from '../../components/Title/Title'
 import ShippingDetails from './ShippingDetails'
 import AdditionalInfo from './AdditionalInfo'
 
-const BlankRequestForm = () => {
+const BlankRequestForm = ({ onSubmit }) => {
   const initialState = {
     name: 'New Request',
     billingSameAsShipping: false,
