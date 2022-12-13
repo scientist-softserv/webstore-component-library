@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import {
   Button,
+  CloseButton,
   FloatingLabel,
   Form,
   ListGroup,
@@ -27,6 +28,11 @@ const SendMessage = ({ onSubmit, handleClose }) => {
     fileRef.current.value = ''
   }
 
+  const handleDeleteFile = (file) => {
+    const remainingFiles = files.filter(obj => obj !== file)
+    setFiles(remainingFiles)
+  }
+
   return (
     <Modal show={true} onHide={handleClose}>
       <Modal.Header closeButton>
@@ -48,8 +54,13 @@ const SendMessage = ({ onSubmit, handleClose }) => {
               ref={fileRef}
             />
           </Form.Group>
-          <ListGroup variant="flush">
-            {files.map(file => <ListGroup.Item key={file.name}>{file.name}</ListGroup.Item>)}
+          <ListGroup variant='flush'>
+            {files.map(file => (
+              <ListGroup.Item key={file.name}>
+                {file.name}
+                <CloseButton onClick={() => handleDeleteFile(file)} />
+              </ListGroup.Item>
+            ))}
           </ListGroup>
         </Modal.Body>
         <Modal.Footer>
