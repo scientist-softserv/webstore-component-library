@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import PropTypes from 'prop-types'
 import {
   Button,
   CloseButton,
@@ -29,12 +30,12 @@ const SendMessage = ({ onSubmit, handleClose }) => {
   }
 
   const handleDeleteFile = (file) => {
-    const remainingFiles = files.filter(obj => obj !== file)
+    const remainingFiles = files.filter((obj) => obj !== file)
     setFiles(remainingFiles)
   }
 
   return (
-    <Modal show={true} onHide={handleClose}>
+    <Modal show onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>Send a Message</Modal.Title>
       </Modal.Header>
@@ -55,7 +56,7 @@ const SendMessage = ({ onSubmit, handleClose }) => {
             />
           </Form.Group>
           <ListGroup variant='flush'>
-            {files.map(file => (
+            {files.map((file) => (
               <ListGroup.Item key={file.name} className='d-flex align-items-center'>
                 <span>{file.name}</span>
                 <CloseButton onClick={() => handleDeleteFile(file)} className='ms-auto' />
@@ -73,5 +74,9 @@ const SendMessage = ({ onSubmit, handleClose }) => {
   )
 }
 
+SendMessage.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  handleClose: PropTypes.func.isRequired,
+}
 
 export default SendMessage
