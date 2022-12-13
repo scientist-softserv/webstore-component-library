@@ -56,9 +56,9 @@ const SendMessage = ({ onSubmit, handleClose }) => {
           </Form.Group>
           <ListGroup variant='flush'>
             {files.map(file => (
-              <ListGroup.Item key={file.name}>
-                {file.name}
-                <CloseButton onClick={() => handleDeleteFile(file)} />
+              <ListGroup.Item key={file.name} className='d-flex align-items-center'>
+                <span>{file.name}</span>
+                <CloseButton onClick={() => handleDeleteFile(file)} className='ms-auto' />
               </ListGroup.Item>
             ))}
           </ListGroup>
