@@ -3,17 +3,19 @@ import {
   Button,
   FloatingLabel,
   Form,
+  ListGroup,
   Modal,
 } from 'react-bootstrap'
 import './styles.scss'
 
 const SendMessage = ({ onSubmit, handleClose }) => {
-  const inputRef = useRef(null)
+  const messageRef = useRef(null)
+  const fileRef = useRef(null)
   const [files, setFiles] = useState([])
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    onSubmit({ message: inputRef.current.value, files })
+    onSubmit({ message: messageRef.current.value, files })
     handleClose()
   }
 
@@ -21,7 +23,8 @@ const SendMessage = ({ onSubmit, handleClose }) => {
     event.preventDefault()
     // "event.target.files" returns a FileList, which looks like an array but does not respond to array methods
     // except "length". we are using the spread syntax to set "files" to be an iterable array
-    setFiles([...event.target.files])
+    setFiles([...files, ...event.target.files])
+    fileRef.current.value = ''
   }
 
   return (
@@ -33,7 +36,7 @@ const SendMessage = ({ onSubmit, handleClose }) => {
         <Modal.Body>
           <Form.Group>
             <FloatingLabel controlId='send-message' className='mb-3' label='Message'>
-              <Form.Control as='textarea' placeholder='Message' ref={inputRef} />
+              <Form.Control as='textarea' placeholder='Message' ref={messageRef} />
             </FloatingLabel>
           </Form.Group>
           <Form.Group controlId='message-attachments' className='mb-3'>
@@ -42,8 +45,12 @@ const SendMessage = ({ onSubmit, handleClose }) => {
               multiple
               type='file'
               onChange={handleAttachments}
+              ref={fileRef}
             />
           </Form.Group>
+          <ListGroup variant="flush">
+            {files.map(file => <ListGroup.Item key={file.name}>{file.name}</ListGroup.Item>)}
+          </ListGroup>
         </Modal.Body>
         <Modal.Footer>
           <Button variant='primary' onClick={handleSubmit} type='submit'>
