@@ -21,16 +21,12 @@ const SendMessage = ({ onSubmit, handleClose }) => {
     handleClose()
   }
 
-  const convertToBase64 = (files) => {
-    return files.map(file => {
-      return new Promise((resolve, reject) => {
-        const fileReader = new FileReader()
-        fileReader.readAsDataURL(file)
-        fileReader.onload = () => resolve(fileReader.result)
-        fileReader.onerror = (error) => reject(new Error(error))
-      })
-    })
-  }
+  const convertToBase64 = (fileArray) => fileArray.map((file) => new Promise((resolve, reject) => {
+    const fileReader = new FileReader()
+    fileReader.readAsDataURL(file)
+    fileReader.onload = () => resolve(fileReader.result)
+    fileReader.onerror = (error) => reject(new Error(error))
+  }))
 
   const handleAddFile = async (event) => {
     event.preventDefault()
@@ -39,10 +35,12 @@ const SendMessage = ({ onSubmit, handleClose }) => {
       // except "length". we are using the spread syntax to set "files" to be an iterable array
       const fileArray = [...event.target.files]
       const newBase64Files = await Promise.all(convertToBase64(fileArray))
-      setFiles({ ...files, ...newBase64Files })
+      const newFiles = fileArray.map((file, index) => ({ [file.name]: newBase64Files[index] }))
+
+      setFiles([...files, ...newFiles])
       fileRef.current.value = ''
     } catch (error) {
-
+      throw new Error(error)
     }
   }
 
@@ -75,7 +73,7 @@ const SendMessage = ({ onSubmit, handleClose }) => {
           <ListGroup variant='flush'>
             {files.map((file) => (
               <ListGroup.Item key={file.name} className='d-flex align-items-center'>
-                <span>{file.name}</span>
+                <span>{Object.keys(file)[0]}</span>
                 <CloseButton onClick={() => handleDeleteFile(file)} className='ms-auto' />
               </ListGroup.Item>
             ))}
