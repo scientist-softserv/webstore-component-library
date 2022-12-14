@@ -13,6 +13,6 @@ Default.args = {
   // TODO(alishaevn): figure out why the story actions aren't working *shakes fist*
   handleSendingMessages: ({ message, files }) => {
     console.log('the message is:', message)
-    console.log(`attached file count: ${files.length}`)
+    console.log(`attached file(s): ${files.map((file) => file.split('name=')[1])}`)
   },
 }
