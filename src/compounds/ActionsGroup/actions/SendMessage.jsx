@@ -18,8 +18,9 @@ const SendMessage = ({ onSubmit, handleClose }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    const base64StringsOnly = files.map((file) => Object.entries(file)[0][1])
-    onSubmit({ message: messageRef.current.value, files: base64StringsOnly })
+    // api v2 wants a string that has a "name" property on it so we are manually adding it here
+    const apiV2CompatibleStrings = files.map((file) => `${Object.values(file)[0]};name=${Object.keys(file)[0]};`)
+    onSubmit({ message: messageRef.current.value, files: apiV2CompatibleStrings })
     handleClose()
   }
 
