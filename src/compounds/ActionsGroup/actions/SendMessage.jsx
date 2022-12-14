@@ -21,12 +21,29 @@ const SendMessage = ({ onSubmit, handleClose }) => {
     handleClose()
   }
 
-  const handleAddFile = (event) => {
+  const convertToBase64 = (files) => {
+    return files.map(file => {
+      return new Promise((resolve, reject) => {
+        const fileReader = new FileReader()
+        fileReader.readAsDataURL(file)
+        fileReader.onload = () => resolve(fileReader.result)
+        fileReader.onerror = (error) => reject(new Error(error))
+      })
+    })
+  }
+
+  const handleAddFile = async (event) => {
     event.preventDefault()
-    // "event.target.files" returns a FileList, which looks like an array but does not respond to array methods
-    // except "length". we are using the spread syntax to set "files" to be an iterable array
-    setFiles([...files, ...event.target.files])
-    fileRef.current.value = ''
+    try {
+      // "event.target.files" returns a FileList, which looks like an array but does not respond to array methods
+      // except "length". we are using the spread syntax to set "files" to be an iterable array
+      const fileArray = [...event.target.files]
+      const newBase64Files = await Promise.all(convertToBase64(fileArray))
+      setFiles({ ...files, ...newBase64Files })
+      fileRef.current.value = ''
+    } catch (error) {
+
+    }
   }
 
   const handleDeleteFile = (file) => {
