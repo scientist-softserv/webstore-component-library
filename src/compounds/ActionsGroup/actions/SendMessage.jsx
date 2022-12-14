@@ -17,7 +17,8 @@ const SendMessage = ({ onSubmit, handleClose }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    onSubmit({ message: messageRef.current.value, files })
+    const base64StringsOnly = files.map((file) => Object.entries(file)[0][1])
+    onSubmit({ message: messageRef.current.value, files: base64StringsOnly })
     handleClose()
   }
 
@@ -71,12 +72,16 @@ const SendMessage = ({ onSubmit, handleClose }) => {
             />
           </Form.Group>
           <ListGroup variant='flush'>
-            {files.map((file) => (
-              <ListGroup.Item key={file.name} className='d-flex align-items-center'>
-                <span>{Object.keys(file)[0]}</span>
-                <CloseButton onClick={() => handleDeleteFile(file)} className='ms-auto' />
-              </ListGroup.Item>
-            ))}
+            {files.map((file) => {
+              const fileName = Object.keys(file)[0]
+
+              return (
+                <ListGroup.Item key={fileName} className='d-flex align-items-center'>
+                  <span>{fileName}</span>
+                  <CloseButton onClick={() => handleDeleteFile(file)} className='ms-auto' />
+                </ListGroup.Item>
+              )
+            })}
           </ListGroup>
         </Modal.Body>
         <Modal.Footer>
