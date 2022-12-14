@@ -21,7 +21,7 @@ const SendMessage = ({ onSubmit, handleClose }) => {
     handleClose()
   }
 
-  const handleAttachments = (event) => {
+  const handleAddFile = (event) => {
     event.preventDefault()
     // "event.target.files" returns a FileList, which looks like an array but does not respond to array methods
     // except "length". we are using the spread syntax to set "files" to be an iterable array
@@ -51,7 +51,7 @@ const SendMessage = ({ onSubmit, handleClose }) => {
             <Form.Control
               multiple
               type='file'
-              onChange={handleAttachments}
+              onChange={handleAddFile}
               ref={fileRef}
             />
           </Form.Group>
