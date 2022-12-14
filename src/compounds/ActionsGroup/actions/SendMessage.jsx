@@ -8,6 +8,7 @@ import {
   ListGroup,
   Modal,
 } from 'react-bootstrap'
+import { convertToBase64 } from '../../../resources/utilityFunctions'
 import './styles.scss'
 
 const SendMessage = ({ onSubmit, handleClose }) => {
@@ -21,13 +22,6 @@ const SendMessage = ({ onSubmit, handleClose }) => {
     onSubmit({ message: messageRef.current.value, files: base64StringsOnly })
     handleClose()
   }
-
-  const convertToBase64 = (fileArray) => fileArray.map((file) => new Promise((resolve, reject) => {
-    const fileReader = new FileReader()
-    fileReader.readAsDataURL(file)
-    fileReader.onload = () => resolve(fileReader.result)
-    fileReader.onerror = (error) => reject(new Error(error))
-  }))
 
   const handleAddFile = async (event) => {
     event.preventDefault()
