@@ -1,0 +1,22 @@
+.request-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  gap: 30px
+}
+
+.request-item-details {
+  flex: 2
+}
+
+.status {
+  background-color: lightgray;
+  padding: 10px;
+  border-radius: 2px;
+  width: 260px;
+  max-height: 175px;
+}
+
+.status > :first-child {
+  margin-bottom: 15px;
+}

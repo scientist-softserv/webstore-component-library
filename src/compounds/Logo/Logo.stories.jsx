@@ -17,10 +17,12 @@ export const Default = Template.bind({})
 Default.args = {
   alt: 'The full logo for this company',
   src: logoFull,
+  height: 50,
 }
 
 export const Alternate = Template.bind({})
 Alternate.args = {
   alt: 'The pictorial mark for this company',
   src: logoPictorial,
+  height: 50,
 }

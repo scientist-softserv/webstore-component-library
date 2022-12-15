@@ -7,6 +7,7 @@ const img = {
   src: item,
   alt: 'Several rows of test tubes with a liquid being put into one.',
 }
+export { img as defaultImage }
 
 export const items = [
   {
@@ -103,5 +104,107 @@ export const socials = [
   {
     icon: 'facebook',
     url: 'www.facebook.com',
+  },
+]
+
+export const shipTo = {
+  "id": 2385964,
+  "organization_name": "Scientist.com",
+  "street": "505 Lomas Sante Fe Dr",
+  "street2": "Suite 110",
+  "city": "Solana Beach",
+  "state": "CA",
+  "zipcode": "92075",
+  "country": "US",
+  "latitude": null,
+  "longitude": null,
+  "name": null,
+  "attention": "",
+  "person_name": "",
+  "care_of": null,
+  "text": "505 Lomas Sante Fe Dr\nSuite 110\nSolana Beach, CA, 92075\nUnited States"
+}
+
+export const shipFrom = {
+  "id": 2385966,
+  "organization_name": "Golden",
+  "street": "1313 Mocking Bird Lane",
+  "street2": "",
+  "city": "Raleigh",
+  "state": "NC",
+  "zipcode": "27519",
+  "country": "US",
+  "latitude": "35.8789623",
+  "longitude": "-78.6528039",
+  "name": "",
+  "attention": null,
+  "person_name": null,
+  "care_of": null,
+  "text": "1313 Mocking Bird Lane\nRaleigh, NC, 27519\nUnited States"
+}
+
+export const lineItems = [
+  {
+      "id": 921424,
+      "retail_unit_price_currency": "$1.00",
+      "retail_unit_price": "1.0",
+      "retail_subtotal_price_currency": "$1.00",
+      "retail_subtotal_price": "1.0",
+      "quantity": "1.0",
+      "currency": "USD",
+      "currency_unit": "$",
+      "name": "Milestone 1",
+      "subtotal": "$1.00",
+      "unit_price": "$1.00"
+  },
+  {
+      "id": 921425,
+      "retail_unit_price_currency": "$2.00",
+      "retail_unit_price": "2.0",
+      "retail_subtotal_price_currency": "$2.00",
+      "retail_subtotal_price": "2.0",
+      "quantity": "1.0",
+      "currency": "USD",
+      "currency_unit": "$",
+      "name": "Milestone 2",
+      "subtotal": "$2.00",
+      "unit_price": "$2.00"
+  }
+]
+
+export const statusArray = [
+  {
+    statusLabel: 'Supplier Review',
+    statusIcon: 'fa-list-check',
+  },
+  {
+    statusLabel: 'SOW Selection',
+    statusIcon: 'fa-square-check',
+  },
+  {
+    statusLabel: 'Work Started',
+    statusIcon: 'fa-vial',
+  },
+  {
+    statusLabel: 'Work Completed',
+    statusIcon: 'fa-vial-circle-check',
+  },
+]
+
+export const messages = [
+  {
+    avatar: 'https://avatars.scientist.com/avatars/3fef33aff64de7ff8cc6243e9ee05ed2/A E/xs?time=1669913857',
+    body: 'Hello, we have replied with 2 SOW\'s for your consideration.',
+    name: 'Alisha Evans',
+  },
+  {
+    avatar: 'https://avatars.scientist.com/avatars/0d93b3808f701fc3dbde5002a80c2475/S C/xs?time=1669923117',
+    body: 'Thank you, I\'ll look them over!',
+    name: 'Summer Cook',
+  },
+  {
+    avatar: 'https://avatars.scientist.com/avatars/3fef33aff64de7ff8cc6243e9ee05ed2/A E/xs?time=1669913857',
+    body: 'We have updated SOW F289U2. The rest of this message is just so that I have characters to demonstrate what a longer sentence would look like. Hmm...this should be enough!',
+    name: 'Alisha Evans',
   },
 ]

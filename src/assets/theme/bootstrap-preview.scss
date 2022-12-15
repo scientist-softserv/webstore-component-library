@@ -1,0 +1,14 @@
+// these colors match what is in the webstore, and must be updated here as well. this file enables us to see the preview of what these overrides will look like without actually importing these from here into the webstore project.
+
+$primary: #333333; 
+$secondary: #CCCCCC; 
+$success: #666666; 
+$info: #999999; 
+$warning: #2a2a2a;
+$danger: #606060;
+$light: #f8f9fa;
+$dark: #212529;
+$white: #ffffff;
+
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss'
+

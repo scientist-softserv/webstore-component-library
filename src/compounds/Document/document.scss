@@ -1,0 +1,14 @@
+.document-wrapper {
+  transition: .2s ease-in-out;
+  &:hover {
+    filter: brightness(95%);
+  }
+}
+
+.offcanvas.offcanvas-end {
+  --bs-offcanvas-width: 75vw;
+}
+
+.address {
+  white-space: pre-line;
+}
