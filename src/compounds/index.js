@@ -3,7 +3,11 @@
  * https://reactjs.org/docs/react-without-jsx.html
  */
 
+import ActionsGroup from './ActionsGroup/ActionsGroup'
+import BlankRequestForm from './BlankRequestForm/BlankRequestForm'
+import Document from './Document/Document'
 import Footer from './Footer/Footer'
+import Footer2 from './Footer/Footer2'
 import Header from './Header/Header'
 import Item from './Item/Item'
 import ItemGroup from './ItemGroup/ItemGroup'
@@ -11,13 +15,18 @@ import ItemPage from './ItemPage/ItemPage'
 import LinkGroup from './LinkGroup/LinkGroup'
 import LinkedButton from './LinkedButton/LinkedButton'
 import Logo from './Logo/Logo'
+import Messages from './Messages/Messages'
 import NavLink from './NavLink/NavLink'
 import RequestItem from './RequestItem/RequestItem'
 import RequestList from './RequestList/RequestList'
 import TitledTextBox from './TitledTextBox/TitledTextBox'
 
 export {
+  ActionsGroup,
+  BlankRequestForm,
+  Document,
   Footer,
+  Footer2,
   Header,
   Item,
   ItemGroup,
@@ -25,6 +34,7 @@ export {
   LinkGroup,
   LinkedButton,
   Logo,
+  Messages,
   NavLink,
   RequestItem,
   RequestList,

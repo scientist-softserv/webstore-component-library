@@ -1,0 +1,21 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.webstore-container {
+	font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.pointer-cursor {
+	cursor: pointer;
+}
+
+/* TODO(alishaevn): make this customizable */
+.link {
+  text-decoration: none;
+  color: #000000;
+}

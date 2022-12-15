@@ -1,38 +1,50 @@
 import React from 'react'
-import Link from 'next/link'
 import PropTypes from 'prop-types'
+import { Col, Row } from 'react-bootstrap'
 import Title from '../../components/Title/Title'
 import Item from '../Item/Item'
 import ItemLoading from '../Item/ItemLoading'
-import './item-group.css'
+import './item-group.scss'
 
-const ItemGroup = ({ buttonProps, imgProps, items, isLoading, orientation, style, withButtonLink, withTitleLink }) => (
-  <section className='item-group center-content'>
-    <Title addClass='mb-2' size='large' title='Featured Services' />
-    <div className='group-container'>
-      {isLoading ?
-        (
-          <ItemLoading orientation={orientation} />
+const ItemGroup = ({ buttonProps, items, isLoading, orientation, withButtonLink, withTitleLink }) => (
+  <>
+  <Title addClass='mb-2' size='large' title='Featured Services' />
+    <Row xs={1} sm={2} className={`g-5 mb-5 ${orientation === 'vertical' && 'row-cols-md-3'}`}>
+      {isLoading
+        ? (
+          <>
+            <Col className={`item-${orientation}`}>
+              <ItemLoading orientation={orientation} withButtonLink={withButtonLink} />
+            </Col>
+            <Col className={`item-${orientation}`}>
+              <ItemLoading orientation={orientation} withButtonLink={withButtonLink} />
+            </Col>
+            <Col className={`item-${orientation}`}>
+              <ItemLoading orientation={orientation} withButtonLink={withButtonLink} />
+            </Col>
+            { orientation === 'horizontal' && (
+              <Col className={`item-${orientation}`}>
+                <ItemLoading orientation={orientation} withButtonLink={withButtonLink} />
+              </Col>
+            )}
+          </>
         ) : (
           items.map((item) => (
-            // TODO(alishaevn): is there a way to hide the id from the url?
-            // adding "as={`${item.href}`}" as a Link prop removed the id from the query entirely
-            <Link key={item.id} href={{ pathname: `${item.href}`, query: { id: `${item.id}` } }} passHref legacyBehavior>
+            <Col key={item.id}>
               <Item
                 buttonProps={buttonProps}
-                imgProps={imgProps}
                 item={item}
                 orientation={orientation}
-                style={style}
                 withButtonLink={withButtonLink}
                 withTitleLink={withTitleLink}
+                href={item.href}
+                fromItemGroup='true'
               />
-            </Link>
+            </Col>
           ))
-        )
-      }
-    </div>
-  </section>
+        )}
+    </Row>
+  </>
 )
 
 ItemGroup.propTypes = {
@@ -41,17 +53,22 @@ ItemGroup.propTypes = {
     size: PropTypes.oneOf(['small', 'medium', 'large']),
     label: PropTypes.string,
   }),
-  imgProps: PropTypes.shape({}),
   items: PropTypes.arrayOf(PropTypes.shape({
     ...Item.propTypes,
     imgProps: PropTypes.shape({}),
     style: PropTypes.shape({}),
   })).isRequired,
-  isLoading: PropTypes.bool,
+  isLoading: PropTypes.bool.isRequired,
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
-  style: PropTypes.shape({}),
   withButtonLink: PropTypes.bool,
   withTitleLink: PropTypes.bool,
+}
+
+ItemGroup.defaultProps = {
+  buttonProps: {},
+  orientation: 'vertical',
+  withButtonLink: false,
+  withTitleLink: false,
 }
 
 export default ItemGroup

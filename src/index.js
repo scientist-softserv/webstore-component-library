@@ -3,8 +3,9 @@
  * https://stackoverflow.com/a/60234368/8079848
 */
 
-import './assets/theme/global.css'
+import './assets/theme/global.scss'
 import './assets/theme/typography.js'
+import './assets/fontawesome.js'
 
 export * from './components'
 export * from './compounds'

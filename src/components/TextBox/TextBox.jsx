@@ -12,7 +12,7 @@ const TextBox = ({ addClass, alignment, size, style, text }) => {
       {paragraphs.map((par, index) => (
         <div className={`text-box--${alignment} ${addClass || ''}`} key={index}>
           <p
-            className={`text-box text-box--${size}`}
+            className={`text-box text-box--${size} mb-0`}
             style={{ ...style }}
           >
             {par}
