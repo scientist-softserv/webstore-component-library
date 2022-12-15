@@ -11,5 +11,5 @@ const Template = (args) => <CollapsibleSection {...args} />
 export const Default = Template.bind({})
 Default.args = {
   description: 'this is a description',
-  header: 'this is a header'
+  header: 'this is a header',
 }
