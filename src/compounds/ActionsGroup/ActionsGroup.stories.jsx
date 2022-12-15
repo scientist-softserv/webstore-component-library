@@ -10,5 +10,5 @@ const Template = (args) => <ActionsGroup {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  handleSendingMessages: ({ value }) => console.log('the typed value is:', value)
+  handleSendingMessages: ({ value }) => console.log('the typed value is:', value),
 }

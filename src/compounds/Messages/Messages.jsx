@@ -6,7 +6,7 @@ const Messages = ({ messages }) => (
   <>
     <Title title='Messages' size='small' />
     {messages.map((message, idx) => {
-    const { avatar, body, name } = message
+      const { avatar, body, name } = message
 
       return (
         <Card className={`${idx === (messages.length - 1) ? '' : 'mb-4'} flex-row border-0`}>
@@ -22,6 +22,5 @@ const Messages = ({ messages }) => (
     })}
   </>
 )
-
 
 export default Messages

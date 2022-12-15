@@ -17,7 +17,7 @@ const SendMessage = ({ onSubmit, handleClose }) => {
   }
 
   return (
-    <Modal show={true} onHide={handleClose}>
+    <Modal show onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>Send a Message</Modal.Title>
       </Modal.Header>
@@ -38,6 +38,5 @@ const SendMessage = ({ onSubmit, handleClose }) => {
     </Modal>
   )
 }
-
 
 export default SendMessage
