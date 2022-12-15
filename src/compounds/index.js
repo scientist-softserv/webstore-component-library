@@ -19,6 +19,7 @@ import Messages from './Messages/Messages'
 import NavLink from './NavLink/NavLink'
 import RequestItem from './RequestItem/RequestItem'
 import RequestList from './RequestList/RequestList'
+import RequestStats from './RequestStats/RequestStats'
 import TitledTextBox from './TitledTextBox/TitledTextBox'
 
 export {
@@ -38,5 +39,6 @@ export {
   NavLink,
   RequestItem,
   RequestList,
+  RequestStats,
   TitledTextBox,
 }
