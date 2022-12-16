@@ -5,10 +5,11 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import LineItemsTable from '../../components/LineItemsTable/LineItemsTable'
 import './document.scss'
 
-const Document = ({ id, date, documentStatusColor, documentType,
-  documentTypeColor, documentStatus, lineItems, request,
-  shippingPrice, shipTo, shipFrom, subtotalPrice,
-  taxAmount, terms, totalPrice }) => {
+const Document = ({ document }) => {
+  const { id, date, documentStatusColor, documentType,
+    documentTypeColor, documentStatus, lineItems, request,
+    shippingPrice, shipTo, shipFrom, subtotalPrice,
+    taxAmount, terms, totalPrice } = document
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
@@ -62,12 +63,12 @@ const Document = ({ id, date, documentStatusColor, documentType,
             </div>
             <div className='ship-to mt-5 mt-md-0'>
               <h6>Ship to:</h6>
-              {shipTo.organization_name}<br />
+              {shipTo.organizationName}<br />
               <div className='address'>{shipTo.text}</div>
             </div>
             <div className='ship-from mt-5 mt-md-0'>
               <h6>Ship From:</h6>
-              {shipFrom.organization_name}<br />
+              {shipFrom.organizationName}<br />
               <div className='address'>{shipFrom.text}</div>
             </div>
           </div>
@@ -89,32 +90,36 @@ const Document = ({ id, date, documentStatusColor, documentType,
 }
 
 Document.propTypes = {
-  id: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  documentStatus: PropTypes.string.isRequired,
-  documentStatusColor: PropTypes.string,
-  documentType: PropTypes.string.isRequired,
-  documentTypeColor: PropTypes.string,
-  lineItems: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-  request: PropTypes.string.isRequired,
-  shippingPrice: PropTypes.string.isRequired,
-  shipTo: {
-    organization_name: PropTypes.string,
-    text: PropTypes.string,
-  }.isRequired,
-  shipFrom: {
-    organization_name: PropTypes.string,
-    text: PropTypes.string,
-  }.isRequired,
-  subtotalPrice: PropTypes.string.isRequired,
-  taxAmount: PropTypes.string.isRequired,
-  terms: PropTypes.string.isRequired,
-  totalPrice: PropTypes.string.isRequired,
+  document: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    documentStatus: PropTypes.string.isRequired,
+    documentStatusColor: PropTypes.string,
+    documentType: PropTypes.string.isRequired,
+    documentTypeColor: PropTypes.string,
+    lineItems: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+    request: PropTypes.string.isRequired,
+    shippingPrice: PropTypes.string.isRequired,
+    shipTo: {
+      organizationName: PropTypes.string,
+      text: PropTypes.string,
+    }.isRequired,
+    shipFrom: {
+      organizationName: PropTypes.string,
+      text: PropTypes.string,
+    }.isRequired,
+    subtotalPrice: PropTypes.string.isRequired,
+    taxAmount: PropTypes.string.isRequired,
+    terms: PropTypes.string.isRequired,
+    totalPrice: PropTypes.string.isRequired,
+  }),
 }
 
 Document.defaultProps = {
-  documentTypeColor: 'bg-dark',
-  documentStatusColor: 'bg-secondary',
+  document: {
+    documentTypeColor: 'bg-dark',
+    documentStatusColor: 'bg-secondary',
+  },
 }
 
 export default Document

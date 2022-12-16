@@ -109,7 +109,7 @@ export const socials = [
 
 export const shipTo = {
   "id": 2385964,
-  "organization_name": "Scientist.com",
+  "organizationName": "Scientist.com",
   "street": "505 Lomas Sante Fe Dr",
   "street2": "Suite 110",
   "city": "Solana Beach",
@@ -121,13 +121,13 @@ export const shipTo = {
   "name": null,
   "attention": "",
   "person_name": "",
-  "care_of": null,
+  "careOf": null,
   "text": "505 Lomas Sante Fe Dr\nSuite 110\nSolana Beach, CA, 92075\nUnited States"
 }
 
 export const shipFrom = {
   "id": 2385966,
-  "organization_name": "Golden",
+  "organizationName": "Golden",
   "street": "1313 Mocking Bird Lane",
   "street2": "",
   "city": "Raleigh",
@@ -139,7 +139,7 @@ export const shipFrom = {
   "name": "",
   "attention": null,
   "person_name": null,
-  "care_of": null,
+  "careOf": null,
   "text": "1313 Mocking Bird Lane\nRaleigh, NC, 27519\nUnited States"
 }
 
