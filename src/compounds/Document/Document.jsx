@@ -6,8 +6,8 @@ import LineItemsTable from '../../components/LineItemsTable/LineItemsTable'
 import './document.scss'
 
 const Document = ({ document }) => {
-  const { id, date, documentStatusColor, documentType,
-    documentTypeColor, documentStatus, lineItems, request,
+  const { identifier, date, documentStatusColor, documentType,
+    documentTypeColor, documentStatus, lineItems, requestIdentifier,
     shippingPrice, shipTo, shipFrom, subtotalPrice,
     taxAmount, terms, totalPrice } = document
   const [show, setShow] = useState(false)
@@ -22,7 +22,7 @@ const Document = ({ document }) => {
             {documentType}
           </div>
           <div className='border-end p-2'>
-            <b>{id}:</b> {subtotalPrice}
+            <b>{identifier}:</b> {subtotalPrice}
           </div>
           <small className='text-muted fw-light p-2'>
             {date}
@@ -36,7 +36,7 @@ const Document = ({ document }) => {
       </div>
       <Offcanvas show={show} onHide={handleClose} placement='end' scroll='true'>
         <Offcanvas.Header className='d-flex' closeButton>
-          <Offcanvas.Title> {documentType}: #{id}</Offcanvas.Title>
+          <Offcanvas.Title> {documentType}: #{identifier}</Offcanvas.Title>
           <div className='ms-auto me-2'>
             <Dropdown>
               <Dropdown.Toggle variant='light' id='dropdown-basic' size='small' className='border'>
@@ -54,9 +54,9 @@ const Document = ({ document }) => {
           <div className='d-block d-md-flex justify-content-between'>
             <div className='details'>
               <h6>Details:</h6>
-              <b>Proposal:</b> {id}<br />
+              <b>Proposal:</b> {identifier}<br />
               <b>Amount:</b> {subtotalPrice}<br />
-              <b>Request:</b> {request} <br />
+              <b>Request:</b> {requestIdentifier} <br />
               <b>Date:</b> {date}<br />
               <b>Payment Terms:</b> {terms}<br />
               <b>Status:</b> {documentStatus}<br />
@@ -91,14 +91,14 @@ const Document = ({ document }) => {
 
 Document.propTypes = {
   document: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    identifier: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     documentStatus: PropTypes.string.isRequired,
     documentStatusColor: PropTypes.string,
     documentType: PropTypes.string.isRequired,
     documentTypeColor: PropTypes.string,
     lineItems: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-    request: PropTypes.string.isRequired,
+    requestIdentifier: PropTypes.string.isRequired,
     shippingPrice: PropTypes.string.isRequired,
     shipTo: {
       organizationName: PropTypes.string,

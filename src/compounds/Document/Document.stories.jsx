@@ -12,14 +12,14 @@ const Template = (args) => <Document {...args} />
 export const Default = Template.bind({})
 Default.args = {
   document: {
-    id: '76EBF1',
+    identifier: '97734',
     date: 'Nov 22 2022',
     documentStatus: 'Approval Required',
     documentStatusColor: 'bg-secondary',
     documentType: 'SOW',
     documentTypeColor: 'bg-dark',
     lineItems,
-    request: '97734',
+    requestIdentifier: '76EBF1',
     subtotalPrice: '$3.00',
     taxAmount: '$0.00',
     taxCategory: '',

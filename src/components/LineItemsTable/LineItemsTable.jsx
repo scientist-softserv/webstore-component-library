@@ -17,13 +17,13 @@ const LineItemsTable = (props) => {
       </thead>
       <tbody>
         {lineItems.map((item) => {
-          const { quantity, name, unitPrice, subtotal } = item
+          const { quantity, name, unitPrice, total } = item
           return (
             <tr key={name}>
               <td>{quantity}</td>
               <td>{name}</td>
               <td>{unitPrice}</td>
-              <td>{subtotal}</td>
+              <td>{total}</td>
             </tr>
           )
         })}
