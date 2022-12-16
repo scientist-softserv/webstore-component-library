@@ -29,7 +29,7 @@ const Document = ({ document }) => {
           </small>
         </div>
         <div className='ms-auto p-2'>
-          <div className={`badge p-2 ${documentStatusColor}`}>
+          <div className='badge p-2' style={{backgroundColor: documentStatusColor}}>
             {documentStatus}
           </div>
         </div>

@@ -15,7 +15,7 @@ Default.args = {
     identifier: '97734',
     date: 'Nov 22 2022',
     documentStatus: 'Approval Required',
-    documentStatusColor: 'bg-secondary',
+    documentStatusColor: '#999999',
     documentType: 'SOW',
     documentTypeColor: 'bg-dark',
     lineItems,
