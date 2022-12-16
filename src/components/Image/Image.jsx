@@ -1,17 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Image = ({ alt, height, src, width, ...props }) => (
+const Image = ({ addClass, alt, height, src, width, ...props }) => (
   <img
     alt={alt}
     src={src}
     height={height || 'auto'}
     width={width || 'auto'}
+    className={`${addClass}`}
     {...props}
   />
 )
 
 Image.propTypes = {
+  addClass: PropTypes.string,
   alt: PropTypes.string,
   height: PropTypes.oneOfType([
     PropTypes.string, // allows percentages
@@ -26,6 +28,7 @@ Image.propTypes = {
 
 Image.defaultProps = {
   alt: '',
+  addClass: '',
   height: 'auto',
   width: 'auto',
 }
