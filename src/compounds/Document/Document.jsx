@@ -5,7 +5,7 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import LineItemsTable from '../../components/LineItemsTable/LineItemsTable'
 import './document.scss'
 
-const Document = ({ document }) => {
+const Document = ({ document, addClass }) => {
   const { identifier, date, documentStatusColor, documentType,
     documentTypeColor, documentStatus, lineItems, requestIdentifier,
     shippingPrice, shipTo, shipFrom, subtotalPrice,
@@ -16,7 +16,7 @@ const Document = ({ document }) => {
 
   return (
     <>
-      <div className='d-flex border rounded mb-2 bg-light document-wrapper' onClick={handleShow} role='presentation'>
+      <div className={`d-flex border rounded mb-2 bg-light document-wrapper ${addClass}`} onClick={handleShow} role='presentation'>
         <div className='d-flex align-items-center'>
           <div className={`badge p-2 ms-2 div-uppercase ${documentTypeColor}`}>
             {documentType}
@@ -90,6 +90,7 @@ const Document = ({ document }) => {
 }
 
 Document.propTypes = {
+  addClass: PropTypes.string,
   document: PropTypes.shape({
     identifier: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
@@ -116,6 +117,7 @@ Document.propTypes = {
 }
 
 Document.defaultProps = {
+  addClass: '',
   document: {
     documentTypeColor: 'bg-dark',
     documentStatusColor: 'bg-secondary',

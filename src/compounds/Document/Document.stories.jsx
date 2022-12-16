@@ -11,6 +11,7 @@ const Template = (args) => <Document {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
+  addClass: '',
   document: {
     identifier: '97734',
     date: 'Nov 22 2022',
