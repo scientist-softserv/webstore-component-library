@@ -19,4 +19,8 @@ Logo.defaultProps = {
   height: 50,
 }
 
+Logo.defaultProps = {
+  alt: '',
+}
+
 export default Logo

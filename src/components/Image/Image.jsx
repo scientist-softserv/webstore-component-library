@@ -27,6 +27,7 @@ Image.propTypes = {
 }
 
 Image.defaultProps = {
+  alt: '',
   addClass: '',
   height: 'auto',
   width: 'auto',

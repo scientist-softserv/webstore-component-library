@@ -12,9 +12,9 @@ const Item = ({ buttonLink, buttonProps, href, fromItemGroup, isLoading, item, o
   if (isLoading) {
     return (
       <>
-      <ItemLoading orientation={orientation} width={width} withButtonLink={withButtonLink} />
-      <ItemLoading orientation={orientation} width={width} withButtonLink={withButtonLink} />
-      <ItemLoading orientation={orientation} width={width} withButtonLink={withButtonLink} />
+        <ItemLoading orientation={orientation} width={width} withButtonLink={withButtonLink} />
+        <ItemLoading orientation={orientation} width={width} withButtonLink={withButtonLink} />
+        <ItemLoading orientation={orientation} width={width} withButtonLink={withButtonLink} />
       </>
     )
   }
