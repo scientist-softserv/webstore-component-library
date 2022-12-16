@@ -4,6 +4,7 @@
  */
 
 import Button from './Button/Button'
+import CollapsibleSection from './CollapsibleSection/CollapsibleSection'
 import Image from './Image/Image'
 import Link from './Link/Link'
 import Loading from './Loading/Loading'
@@ -15,6 +16,7 @@ import Title from './Title/Title'
 
 export {
   Button,
+  CollapsibleSection,
   Image,
   Link,
   Loading,
