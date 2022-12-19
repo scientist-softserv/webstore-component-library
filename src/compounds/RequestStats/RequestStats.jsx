@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import './request-stats.scss'
 
 const RequestStats = ({ addClass, billingInfo, createdAt, deadline, shippingInfo }) => (
-  <Card className='request-stats w-25'>
+  <Card className='request-stats'>
     <Card.Header className={`${addClass}`}>
       <Card.Title className='mb-0'>Request Info</Card.Title>
     </Card.Header>
