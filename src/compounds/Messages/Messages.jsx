@@ -36,7 +36,7 @@ Messages.propTypes = {
   messages: PropTypes.arrayOf(PropTypes.shape({
     avatar: PropTypes.string.isRequired,
     body: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
   })).isRequired,
 }
