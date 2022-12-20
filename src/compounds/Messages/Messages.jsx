@@ -21,8 +21,7 @@ const Messages = ({ addClass, messages }) => (
           </Card.Body>
         </Card>
       )
-    })
-    ) : (
+    })) : (
       <TextBox
         addClass='bt-3'
         alignment='left'

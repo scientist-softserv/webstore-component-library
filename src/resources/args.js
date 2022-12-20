@@ -185,16 +185,19 @@ export const messages = [
   {
     avatar: 'https://avatars.scientist.com/avatars/3fef33aff64de7ff8cc6243e9ee05ed2/A E/xs?time=1669913857',
     body: 'Hello, we have replied with 2 SOW\'s for your consideration.',
+    id: 12345,
     name: 'Alisha Evans',
   },
   {
     avatar: 'https://avatars.scientist.com/avatars/0d93b3808f701fc3dbde5002a80c2475/S C/xs?time=1669923117',
     body: 'Thank you, I\'ll look them over!',
+    id: 23456,
     name: 'Summer Cook',
   },
   {
     avatar: 'https://avatars.scientist.com/avatars/3fef33aff64de7ff8cc6243e9ee05ed2/A E/xs?time=1669913857',
     body: 'We have updated SOW F289U2. The rest of this message is just so that I have characters to demonstrate what a longer sentence would look like. Hmm...this should be enough!',
+    id: 34567,
     name: 'Alisha Evans',
   },
 ]
