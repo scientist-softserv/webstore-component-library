@@ -23,10 +23,9 @@ const Messages = ({ addClass, messages }) => (
       )
     })) : (
       <TextBox
-        addClass='bt-3'
         alignment='left'
         size='medium'
-        text='No messages have been sent yet.'
+        text='No messages have been sent.'
       />
     )}
   </div>
