@@ -9,7 +9,12 @@ export default {
 
 const Template = (args) => <Messages {...args} />
 
-export const Default = Template.bind({})
-Default.args = {
+export const WithoutMessages = Template.bind({})
+WithoutMessages.args = {
+  messages: [],
+}
+
+export const WithMessages = Template.bind({})
+WithMessages.args = {
   messages,
 }
