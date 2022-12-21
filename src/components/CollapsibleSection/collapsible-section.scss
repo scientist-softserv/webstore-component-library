@@ -1,9 +1,8 @@
 .simple-collapsible-section {
-  .panel-default {
-    h1, h2, h3, h4, h5 {
-      font-size: 18px,
-    }
+  h1, h2, h3, h4, h5 {
+    font-size: 18px,
   }
+
   .accordion-header {
     .accordion-button {
       border-radius: 0;
@@ -11,18 +10,22 @@
       padding: 0;
     }
   }
+
   .accordion-item:last-of-type .accordion-button.collapsed,
   .accordion-item:first-of-type .accordion-button {
     border-radius: 0;
   }
+
   label {
     font-weight: 600;
   }
+
   .dynamic-form div {
     padding-left: 1em;
+
     div {
       padding-left: 0;
+      margin-bottom: 10px;
     }
   }
-
 }

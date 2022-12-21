@@ -5,12 +5,12 @@ import { Accordion } from 'react-bootstrap'
 import './collapsible-section.scss'
 
 const CollapsibleSection = ({ header, description }) => (
-  <Accordion defaultActiveKey='0' className='simple-collapsible-section mt-4'>
+  <Accordion className='simple-collapsible-section mt-4'>
     <Accordion.Item eventKey='0' className='border-0 px-0'>
       <Accordion.Header><h4>{header}</h4></Accordion.Header>
       <Accordion.Body className='ps-0 pb-2'>
-      {// eslint-disable-next-line no-danger
-        <div dangerouslySetInnerHTML={{ __html: description }} />}
+        {/* eslint-disable-next-line react/no-danger */}
+        <div dangerouslySetInnerHTML={{ __html: description }} />
       </Accordion.Body>
     </Accordion.Item>
   </Accordion>
