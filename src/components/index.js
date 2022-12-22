@@ -10,6 +10,7 @@ import Image from './Image/Image'
 import Link from './Link/Link'
 import Loading from './Loading/Loading'
 import SearchBar from './SearchBar/SearchBar'
+import ShippingDetails from './ShippingDetails/ShippingDetails'
 import SocialIcon from './SocialIcon/SocialIcon'
 import StatusBar from './StatusBar/StatusBar'
 import TextBox from './TextBox/TextBox'
@@ -23,6 +24,7 @@ export {
   Link,
   Loading,
   SearchBar,
+  ShippingDetails,
   SocialIcon,
   StatusBar,
   TextBox,
