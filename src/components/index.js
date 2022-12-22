@@ -3,6 +3,7 @@
  * https://reactjs.org/docs/react-without-jsx.html
  */
 
+import AdditionalInfo from './AdditionalInfo/AdditionalInfo'
 import Button from './Button/Button'
 import CollapsibleSection from './CollapsibleSection/CollapsibleSection'
 import Image from './Image/Image'
@@ -15,6 +16,7 @@ import TextBox from './TextBox/TextBox'
 import Title from './Title/Title'
 
 export {
+  AdditionalInfo,
   Button,
   CollapsibleSection,
   Image,
