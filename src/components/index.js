@@ -4,6 +4,7 @@
  */
 
 import AdditionalInfo from './AdditionalInfo/AdditionalInfo'
+import BlankRequestForm from './BlankRequestForm/BlankRequestForm'
 import Button from './Button/Button'
 import CollapsibleSection from './CollapsibleSection/CollapsibleSection'
 import Image from './Image/Image'
@@ -18,6 +19,7 @@ import Title from './Title/Title'
 
 export {
   AdditionalInfo,
+  BlankRequestForm,
   Button,
   CollapsibleSection,
   Image,
