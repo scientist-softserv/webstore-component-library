@@ -19,24 +19,22 @@ const MessageCardBody = ({messages, message, idx}) => {
             {body}
           </Card.Text>
           {(attachments.length > 0) && (attachments.map((attachment) => {
-              const { content_length, filename, uuid } = attachment 
-              // this href in the link below is the URLto download attachments from the marketplace- this works, since all these attachments already show up in the marketplace, and these requests will always be in the marketplace as well as the webstore
-              // but, not sure if we should be using the URL from the marketplace or creating a new, webstore based url from the "download" property. download property returns a string like this example: "/quote_groups/10bd825f-c7e0-4c07-bd9e-f7982b21f435/attachments/nepal5.png"
+              const { content_length, filename, uuid, href } = attachment
               return (
                 <div key={uuid}>
                   <Link
                     icon={'fa-paperclip'}
                     label={filename}
-                    href={`https://acme.scientist.com/secure_attachments/${uuid}`}
+                    href={href}
                     addClass='small mt-2 me-2'
                   />
-                  <span className='small text-muted'>{`(${formatBytes(content_length)})`}</span>
+                  <span className='small text-muted'>{content_length}</span>
                 </div>
               )
             })
           )}
         </div>
-        <span className='small text-muted text-nowrap ms-md-auto mt-2 mt-md-0'>{timeSince(Date.parse(dateAndTime))} ago</span>
+        <span className='small text-muted text-nowrap ms-md-auto mt-2 mt-md-0'>{dateAndTime} ago</span>
       </Card.Body>
     </Card>
   )
