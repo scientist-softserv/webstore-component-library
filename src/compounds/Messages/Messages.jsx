@@ -42,7 +42,7 @@ const Messages = ({ addClass, messages }) => {
             )}
           </>
         ) : (
-          <MessageCardBody messages={messages} message={message} idx={idx} />
+          <MessageCardBody message={message} isLatestMessage={idx === (messages.length - 1)} />
         )
       ))) : (
         <TextBox
