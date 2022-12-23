@@ -49,7 +49,7 @@ const Messages = ({ addClass, messages }) => {
     {messages.length ? (messages.map((message, idx) => {
       return (
         <>
-          {((messages.length > 3) && (idx != messages.length - 1 && idx != messages.length - 2 && idx != messages.length - 3)) ? (
+          {((messages.length > 3) && (idx < messages.length - 3)) ? (
             <>
               <Collapse in={open}>
                 <div id='collapse-card'>
