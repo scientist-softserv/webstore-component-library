@@ -2,7 +2,7 @@ import React from 'react'
 import AdditionalInfo from './AdditionalInfo'
 
 export default {
-  title: 'Compounds/AdditionalInfo',
+  title: 'Components/AdditionalInfo',
   component: AdditionalInfo,
 }
 
