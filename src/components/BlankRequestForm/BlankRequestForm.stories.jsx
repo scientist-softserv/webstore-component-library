@@ -2,7 +2,7 @@ import React from 'react'
 import BlankRequestForm from './BlankRequestForm'
 
 export default {
-  title: 'Compounds/BlankRequestForm',
+  title: 'Components/BlankRequestForm',
   component: BlankRequestForm,
 }
 

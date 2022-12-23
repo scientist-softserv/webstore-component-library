@@ -2,7 +2,7 @@ import React from 'react'
 import ShippingDetails from './ShippingDetails'
 
 export default {
-  title: 'Compounds/ShippingDetails',
+  title: 'Components/ShippingDetails',
   component: ShippingDetails,
 }
 
