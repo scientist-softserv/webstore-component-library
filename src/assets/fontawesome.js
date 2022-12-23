@@ -9,11 +9,10 @@ import {
   faVial,
   faVialCircleCheck,
 } from '@fortawesome/free-solid-svg-icons'
-import { 
+import {
   faMinusSquare,
   faPlusSquare,
 } from '@fortawesome/free-regular-svg-icons'
-
 
 library.add(
   faArrowDown,
