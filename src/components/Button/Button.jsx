@@ -5,9 +5,9 @@ import './button.css'
 /**
  * Component for user interactions that don't include page routing
  */
-const Button = ({ addClass, backgroundColor, size, label, textColor, ...props }) => (
+const Button = ({ addClass, backgroundColor, size, label, textColor, type, ...props }) => (
   <button
-    type='button'
+    type={type || 'button'}
     className={`button button--${size} ${addClass}`}
     style={{ backgroundColor, color: textColor }}
     {...props}
@@ -23,6 +23,7 @@ Button.propTypes = {
   onClick: PropTypes.func,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   textColor: PropTypes.string,
+  type: PropTypes.string,
 }
 
 Button.defaultProps = {
@@ -31,6 +32,7 @@ Button.defaultProps = {
   size: 'medium',
   onClick: undefined,
   textColor: '#FFFFFF',
+  type: '',
 }
 
 export default Button
