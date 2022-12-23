@@ -23,6 +23,7 @@ Button.propTypes = {
   onClick: PropTypes.func,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   textColor: PropTypes.string,
+  type: PropTypes.string,
 }
 
 Button.defaultProps = {
@@ -31,6 +32,7 @@ Button.defaultProps = {
   size: 'medium',
   onClick: undefined,
   textColor: '#FFFFFF',
+  type: '',
 }
 
 export default Button
