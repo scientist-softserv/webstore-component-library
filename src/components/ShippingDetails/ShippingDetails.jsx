@@ -48,7 +48,12 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
         <Form.Control
           placeholder='City/Region'
           onChange={(e) => updateRequestForm(e.target.value, `${addressType}.city`)}
+          type='text'
+          required
         />
+        <Form.Control.Feedback type="invalid">
+          Please enter your city or region.
+        </Form.Control.Feedback>
       </Form.Group>
 
       <Row className='mb-3'>
@@ -56,17 +61,27 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
           <Form.Control
             placeholder='State/Province'
             onChange={(e) => updateRequestForm(e.target.value, `${addressType}.state`)}
+            type='text'
+            required
           />
+          <Form.Control.Feedback type="invalid">
+            Please enter your state or province.
+          </Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group as={Col} controlId={`zip-${addressType}`}>
           <Form.Control
             placeholder='Zip/Postal Code'
             onChange={(e) => updateRequestForm(e.target.value, `${addressType}.zipCode`)}
+            type='text'
+            required
           />
+          <Form.Control.Feedback type="invalid">
+            Please enter your zip or postal code.
+          </Form.Control.Feedback>
         </Form.Group>
       </Row>
-
+      {/* // TODO(summercook):- get the validation message for country to work */}
       <CountryDropdown
         name={`country-${addressType}`}
         priorityOptions={['US', 'GB', 'CA']}
@@ -74,7 +89,11 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
         onChange={(e) => updateRequestForm(e, `${addressType}.country`)}
         className='form-select mb-3 form-control'
         id={`country-${addressType}`}
+        required
       />
+      <Form.Control.Feedback type="invalid">
+        Please select a country.
+      </Form.Control.Feedback>
 
       {addressType === 'shipping' && (
         <Form.Group className='mb-3' controlId='billingSameAsShipping'>
