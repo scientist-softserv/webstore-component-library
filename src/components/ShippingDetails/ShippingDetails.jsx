@@ -13,7 +13,6 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
   const handleChange = (value) => {
     updateRequestForm(value, 'billingSameAsShipping')
   }
-
   return (
     <Card.Body>
       {/* TODO(alishaevn): decide if we will keep this based on the api endpoint */}
@@ -28,7 +27,14 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
         <Form.Control
           placeholder='Address'
           onChange={(e) => updateRequestForm(e.target.value, `${addressType}.street`)}
+          name="address1"
+          type='text'
+          required
         />
+        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+        <Form.Control.Feedback type="invalid">
+          Please enter your address.
+        </Form.Control.Feedback>
       </Form.Group>
 
       <Form.Group className='mb-3' controlId={`address2-${addressType}`}>

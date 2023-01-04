@@ -7,9 +7,11 @@ const BlankRequestForm = ({ updateRequestForm }) => (
     <Form.Group className='mb-3' controlId='service-product-description'>
       <Form.Label>Enter a service or product description.</Form.Label>
       <Form.Control
+        type="text"
         as='textarea'
         rows={3}
         onChange={(e) => updateRequestForm(e.target.value, 'data.description')}
+        required
       />
     </Form.Group>
     <Form.Group className='mb-3' controlId='project-timeline'>
@@ -24,7 +26,7 @@ const BlankRequestForm = ({ updateRequestForm }) => (
 )
 
 BlankRequestForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
+  updateRequestForm: PropTypes.func.isRequired,
 }
 
 export default BlankRequestForm
