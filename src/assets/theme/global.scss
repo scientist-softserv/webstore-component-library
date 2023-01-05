@@ -22,7 +22,8 @@
 
 // remove the valid input styles & styles on form fields that have the .prevent-validation class
 .was-validated .prevent-validation-styles.form-control:valid,
-.prevent-validation-styles.form-control.is-valid {
+.prevent-validation-styles.form-control.is-valid,
+.was-validated .form-select:valid:not([multiple]):not([size]).prevent-validation-styles {
   background-image: none;
   border-color: var(--bs-gray-400);
 }
