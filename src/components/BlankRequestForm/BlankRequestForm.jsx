@@ -8,13 +8,13 @@ const BlankRequestForm = ({ updateRequestForm }) => (
       <Form.Label>Enter a service or product description.</Form.Label>
       <Form.Control
         className='prevent-validation-styles'
-        type="text"
+        type='text'
         as='textarea'
         rows={3}
         onChange={(e) => updateRequestForm(e.target.value, 'data.description')}
         required
       />
-      <Form.Control.Feedback type="invalid">
+      <Form.Control.Feedback type='invalid'>
         Please enter a service or a product description.
       </Form.Control.Feedback>
     </Form.Group>

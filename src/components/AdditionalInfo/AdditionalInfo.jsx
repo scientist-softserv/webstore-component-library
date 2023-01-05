@@ -29,7 +29,7 @@ const AdditionalInfo = ({ updateRequestForm }) => {
                 onChange={showProposalDate && ((e) => handleChange(e.target.value))}
                 required
               />
-              <Form.Control.Feedback type="invalid">
+              <Form.Control.Feedback type='invalid'>
                 Please select a date when you will need your proposal, or check the box below.
               </Form.Control.Feedback>
             </Form.Group>
@@ -55,7 +55,7 @@ const AdditionalInfo = ({ updateRequestForm }) => {
           <Form.Control
             className='prevent-validation-styles'
             type='file'
-            multiple 
+            multiple
           />
         </Form.Group>
       </Card.Body>

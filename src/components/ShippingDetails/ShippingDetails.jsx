@@ -27,12 +27,12 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
         <Form.Control
           placeholder='Address'
           onChange={(e) => updateRequestForm(e.target.value, `${addressType}.street`)}
-          name="address1"
+          name='address1'
           type='text'
           className='prevent-validation-styles'
           required
         />
-        <Form.Control.Feedback type="invalid">
+        <Form.Control.Feedback type='invalid'>
           Please enter your address.
         </Form.Control.Feedback>
       </Form.Group>
@@ -53,7 +53,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
           required
           className='prevent-validation-styles'
         />
-        <Form.Control.Feedback type="invalid">
+        <Form.Control.Feedback type='invalid'>
           Please enter your city or region.
         </Form.Control.Feedback>
       </Form.Group>
@@ -67,7 +67,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
             required
             className='prevent-validation-styles'
           />
-          <Form.Control.Feedback type="invalid">
+          <Form.Control.Feedback type='invalid'>
             Please enter your state or province.
           </Form.Control.Feedback>
         </Form.Group>
@@ -80,7 +80,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
             required
             className='prevent-validation-styles'
           />
-          <Form.Control.Feedback type="invalid">
+          <Form.Control.Feedback type='invalid'>
             Please enter your zip or postal code.
           </Form.Control.Feedback>
         </Form.Group>
@@ -95,7 +95,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
         id={`country-${addressType}`}
         required
       />
-      <Form.Control.Feedback type="invalid">
+      <Form.Control.Feedback type='invalid'>
         Please select a country.
       </Form.Control.Feedback>
 
