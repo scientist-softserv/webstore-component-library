@@ -13,6 +13,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
   const handleChange = (value) => {
     updateRequestForm(value, 'billingSameAsShipping')
   }
+
   return (
     <Card.Body>
       {/* TODO(alishaevn): decide if we will keep this based on the api endpoint */}
