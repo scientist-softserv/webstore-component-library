@@ -19,3 +19,22 @@
   text-decoration: none;
   color: #000000;
 }
+
+// remove the valid input styles & styles on form fields that have the .prevent-validation class
+.was-validated .prevent-validation-styles.form-control:valid,
+.prevent-validation-styles.form-control.is-valid {
+  background-image: none;
+  border-color: var(--bs-gray-400);
+}
+
+// remove the input autofill styles
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+select:-internal-autofill-selected.prevent-validation-styles {
+  background-color: var(--bs-white) !important;
+}

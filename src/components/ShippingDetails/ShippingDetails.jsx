@@ -29,9 +29,9 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
           onChange={(e) => updateRequestForm(e.target.value, `${addressType}.street`)}
           name="address1"
           type='text'
+          className='prevent-validation-styles'
           required
         />
-        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         <Form.Control.Feedback type="invalid">
           Please enter your address.
         </Form.Control.Feedback>
@@ -41,6 +41,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
         <Form.Control
           placeholder='Address Line 2 (optional)'
           onChange={(e) => updateRequestForm(e.target.value, `${addressType}.street2`)}
+          className='prevent-validation-styles'
         />
       </Form.Group>
 
@@ -50,6 +51,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
           onChange={(e) => updateRequestForm(e.target.value, `${addressType}.city`)}
           type='text'
           required
+          className='prevent-validation-styles'
         />
         <Form.Control.Feedback type="invalid">
           Please enter your city or region.
@@ -63,6 +65,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
             onChange={(e) => updateRequestForm(e.target.value, `${addressType}.state`)}
             type='text'
             required
+            className='prevent-validation-styles'
           />
           <Form.Control.Feedback type="invalid">
             Please enter your state or province.
@@ -75,6 +78,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
             onChange={(e) => updateRequestForm(e.target.value, `${addressType}.zipCode`)}
             type='text'
             required
+            className='prevent-validation-styles'
           />
           <Form.Control.Feedback type="invalid">
             Please enter your zip or postal code.
@@ -87,7 +91,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
         priorityOptions={['US', 'GB', 'CA']}
         value={addressType === 'shipping' ? shippingCountry : billingCountry}
         onChange={(e) => updateRequestForm(e, `${addressType}.country`)}
-        className='form-select mb-3 form-control'
+        className='form-select mb-3 form-control prevent-validation-styles'
         id={`country-${addressType}`}
         required
       />
@@ -98,6 +102,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
       {addressType === 'shipping' && (
         <Form.Group className='mb-3' controlId='billingSameAsShipping'>
           <Form.Check
+            className='prevent-validation-styles'
             type='checkbox'
             label='My shipping address is the same as my billing address.'
             onChange={() => {

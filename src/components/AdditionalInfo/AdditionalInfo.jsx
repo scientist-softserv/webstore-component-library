@@ -21,12 +21,17 @@ const AdditionalInfo = ({ updateRequestForm }) => {
             >
               <Form.Label>Proposals Required By:</Form.Label>
               <Form.Control
+                className='prevent-validation-styles'
                 type='date'
                 min={today}
                 placeholder='Proposals Required By'
                 disabled={showProposalDate === false}
                 onChange={showProposalDate && ((e) => handleChange(e.target.value))}
+                required
               />
+              <Form.Control.Feedback type="invalid">
+                Please select a date when you will need your proposal, or check the box below.
+              </Form.Control.Feedback>
             </Form.Group>
           )}
         <Form.Group
@@ -34,6 +39,7 @@ const AdditionalInfo = ({ updateRequestForm }) => {
           controlId='open-proposal-due-date'
         >
           <Form.Check
+            className='prevent-validation-styles'
             type='checkbox'
             label='Proposals can be submitted at any time.'
             onChange={() => {
@@ -46,7 +52,11 @@ const AdditionalInfo = ({ updateRequestForm }) => {
         Currently we have an open question in slack */}
         <Form.Group controlId='attachments' className='mb-3'>
           <Form.Label>Attachments:</Form.Label>
-          <Form.Control type='file' multiple />
+          <Form.Control
+            className='prevent-validation-styles'
+            type='file'
+            multiple 
+          />
         </Form.Group>
       </Card.Body>
     </Card>
