@@ -1,13 +1,16 @@
 import React, { useState, useRef } from 'react'
 import PropTypes from 'prop-types'
-import { Card, CloseButton, Form, ListGroup } from 'react-bootstrap'
-import { convertToBase64 } from '../../resources/utilityFunctions'
+import {
+  Card, CloseButton, Form, ListGroup,
+} from 'react-bootstrap'
+import { convertToBase64, apiV2CompatibleStrings } from '../../resources/utilityFunctions'
 
 const AdditionalInfo = ({ updateRequestForm }) => {
   const [showProposalDate, setShowProposalDate] = useState(true)
   const [files, setFiles] = useState([])
   const today = new Date().toISOString().slice(0, 10)
   const fileRef = useRef(null)
+
   const handleChange = (value) => {
     updateRequestForm(value, 'proposedDeadline')
   }
@@ -22,6 +25,7 @@ const AdditionalInfo = ({ updateRequestForm }) => {
       const newFiles = fileArray.map((file, index) => ({ [file.name]: newBase64Files[index] }))
 
       setFiles([...files, ...newFiles])
+      updateRequestForm(apiV2CompatibleStrings([...files, ...newFiles]), 'attachments')
       fileRef.current.value = ''
     } catch (error) {
       throw new Error(error)
@@ -31,6 +35,7 @@ const AdditionalInfo = ({ updateRequestForm }) => {
   const handleDeleteFile = (file) => {
     const remainingFiles = files.filter((obj) => obj !== file)
     setFiles(remainingFiles)
+    updateRequestForm(apiV2CompatibleStrings(remainingFiles), 'attachments')
   }
 
   return (
