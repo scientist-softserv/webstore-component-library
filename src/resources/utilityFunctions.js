@@ -1,4 +1,4 @@
-// the following 3 functions are used in the AdditionalInfo & SendMessage components
+// the following 2 functions are used in the AdditionalInfo & SendMessage components
 
 // api v2 wants a string that has a "name" property on it so we are manually adding it here
 export const apiV2CompatibleStrings = (files) => files.map((file) => `${Object.values(file)[0]};name=${Object.keys(file)[0]};`)
