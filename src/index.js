@@ -4,7 +4,6 @@
 */
 
 import './assets/theme/global.scss'
-import './assets/theme/typography.js'
 import './assets/fontawesome.js'
 
 export * from './components'
