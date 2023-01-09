@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Container, Nav, Navbar } from 'react-bootstrap'
-// import NavLink from '../NavLink/NavLink'
 import Logo from '../Logo/Logo'
 
 // may come back to hard code these
