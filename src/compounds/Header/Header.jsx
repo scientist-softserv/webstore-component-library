@@ -13,17 +13,17 @@ const Header = ({ browseLink, logInLink, logo, logOutLink, requestsLink, user })
     <Navbar bg='secondary' expand='lg'>
       <Container>
         <Navbar.Brand className='w-50'>
-          <Logo src={src} alt={alt} height={40} />
+          <Logo src={src} alt={alt} height={45} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='ms-auto'>
-            <Nav.Link href={browseLink}>Browse</Nav.Link>
-            <Nav.Link href={requestsLink}>Requests</Nav.Link>
+            <Nav.Link href={browseLink} className='link-dark'>Browse</Nav.Link>
+            <Nav.Link href={requestsLink} className='link-dark'>Requests</Nav.Link>
             {user ? (
-              <Nav.Link href={logOutLink}>Log Out</Nav.Link>
+              <Nav.Link href={logOutLink} className='link-dark'>Log Out</Nav.Link>
             ) : (
-              <Nav.Link href={logInLink}>Log In</Nav.Link>
+              <Nav.Link href={logInLink} className='link-dark'>Log In</Nav.Link>
             )}
           </Nav>
         </Navbar.Collapse>
