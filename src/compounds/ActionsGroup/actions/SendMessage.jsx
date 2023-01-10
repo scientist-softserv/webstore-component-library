@@ -8,7 +8,7 @@ import {
   ListGroup,
   Modal,
 } from 'react-bootstrap'
-import { convertToBase64 } from '../../../resources/utilityFunctions'
+import { apiV2CompatibleStrings, convertToBase64 } from '../../../resources/utilityFunctions'
 import './styles.scss'
 
 const SendMessage = ({ onSubmit, handleClose }) => {
@@ -18,9 +18,7 @@ const SendMessage = ({ onSubmit, handleClose }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    // api v2 wants a string that has a "name" property on it so we are manually adding it here
-    const apiV2CompatibleStrings = files.map((file) => `${Object.values(file)[0]};name=${Object.keys(file)[0]};`)
-    onSubmit({ message: messageRef.current.value, files: apiV2CompatibleStrings })
+    onSubmit({ message: messageRef.current.value, files: apiV2CompatibleStrings(files) })
     handleClose()
   }
 
