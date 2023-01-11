@@ -3,13 +3,14 @@ import PropTypes from 'prop-types'
 import {
   Card, CloseButton, Form, ListGroup,
 } from 'react-bootstrap'
-import { convertToBase64, apiV2CompatibleStrings } from '../../resources/utilityFunctions'
+import { addDays, apiV2CompatibleStrings, convertToBase64 } from '../../resources/utilityFunctions'
 
 const AdditionalInfo = ({ updateRequestForm }) => {
   const [showProposalDate, setShowProposalDate] = useState(true)
   const [files, setFiles] = useState([])
-  const today = new Date().toISOString().slice(0, 10)
   const fileRef = useRef(null)
+  const oneWeekFromNow = addDays((new Date()), 7).toISOString().slice(0, 10)
+  const oneDayFromNow = addDays((new Date()), 1).toISOString().slice(0, 10)
 
   const handleChange = (value) => {
     updateRequestForm(value, 'proposedDeadline')
@@ -52,7 +53,8 @@ const AdditionalInfo = ({ updateRequestForm }) => {
               <Form.Control
                 className='prevent-validation-styles'
                 type='date'
-                min={today}
+                min={oneDayFromNow}
+                defaultValue={oneWeekFromNow}
                 placeholder='Proposals Required By'
                 disabled={showProposalDate === false}
                 onChange={showProposalDate && ((e) => handleChange(e.target.value))}
