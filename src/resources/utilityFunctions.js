@@ -12,6 +12,6 @@ export const convertToBase64 = (fileArray) => fileArray.map((file) => new Promis
 
 // used to add days to a Date () in the AdditionalInfo component
 export const addDays = (date, days) => {
-  date.setDate(date.getDate() + days);
-  return date;
+  date.setDate(date.getDate() + days)
+  return date
 }
