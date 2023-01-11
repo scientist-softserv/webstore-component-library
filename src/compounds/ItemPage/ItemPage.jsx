@@ -10,7 +10,7 @@ const ItemPage = ({ title, titleStyle, description, descriptionStyle, img }) => 
 
   return (
     <main className='container py-5'>
-      <Title title={title} style={titleStyle} addClass='text-center text-md-start'/>
+      <Title title={title} style={titleStyle} addClass='text-center text-md-start' />
       <Row className='mt-3'>
         <Col xs={12} md={6} className='text-center text-md-start d-flex flex-column'>
           {description}
