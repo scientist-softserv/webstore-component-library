@@ -9,3 +9,9 @@ export const convertToBase64 = (fileArray) => fileArray.map((file) => new Promis
   fileReader.onload = () => resolve(fileReader.result)
   fileReader.onerror = (error) => reject(new Error(error))
 }))
+
+// used to add days to a new Date() in the AdditionalInfo component
+export const addDays = (date, days) => {
+  date.setDate(date.getDate() + days)
+  return date
+}
