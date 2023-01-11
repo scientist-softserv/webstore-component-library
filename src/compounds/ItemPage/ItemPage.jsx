@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Button, Row, Col } from 'react-bootstrap'
 import Image from '../../components/Image/Image'
-import Title from '../../components/Title/Title'
 import TextBox from '../../components/TextBox/TextBox'
+import Title from '../../components/Title/Title'
 
 const ItemPage = ({ title, titleStyle, description, descriptionStyle, img }) => {
   // sets a default width while still allowing width to be overridden
