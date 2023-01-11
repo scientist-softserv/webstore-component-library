@@ -34,7 +34,7 @@ const Item = ({ buttonLink, buttonProps, href, fromItemGroup, isLoading, item, o
         <div className='row g-0 h-100'>
           <div className='col-3'>
             <Image
-              className={orientation === 'horizontal' ? 'img-fluid h-100 rounded-start cover-horizontal' : 'card-img-top'}
+              className={`cover ${orientation === 'horizontal' ? 'img-fluid h-100 rounded-start' : 'card-img-top'}`}
               src={src}
               alt={alt}
             />
@@ -55,7 +55,7 @@ const Item = ({ buttonLink, buttonProps, href, fromItemGroup, isLoading, item, o
       ) : (
         <>
           <Image
-            className={orientation === 'horizontal' ? 'img-fluid h-100 rounded-start cover' : 'card-img-top'}
+            className={`cover ${orientation === 'horizontal' ? 'img-fluid h-100 rounded-start' : 'card-img-top'}`}
             src={src}
             alt={alt}
           />
