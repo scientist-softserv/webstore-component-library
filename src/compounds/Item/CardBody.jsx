@@ -39,10 +39,7 @@ const CardBody = ({ buttonLink, buttonProps, fromItemGroup, item,
             <LinkedButton
               addClass={`item-button-${orientation} item-link mt-auto`}
               buttonProps={buttonProps}
-              path={{
-                pathname: buttonLink,
-                query: fromItemGroup ? { id } : { id, name }
-              }}
+              path={{ pathname: buttonLink, query: { id }}}
             />
           </div>
         )}
@@ -61,7 +58,7 @@ CardBody.propTypes = {
   // buttonProps: props => props.withButtonLink
   // ? PropTypes.shape(Button.propTypes)
   // : PropTypes.shape({ ...Button.propTypes, label: PropTypes.string })
-  fromItemGroup: PropTypes.string,
+  fromItemGroup: PropTypes.bool,
   item: PropTypes.shape({
     description: PropTypes.string,
     id: PropTypes.number.isRequired,
