@@ -100,7 +100,7 @@ Item.propTypes = {
     name: PropTypes.string.isRequired,
     slug: PropTypes.string,
   }),
-  fromItemGroup: PropTypes.string,
+  fromItemGroup: PropTypes.bool,
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
   titleLink: PropTypes.string,
   withButtonLink: PropTypes.bool,

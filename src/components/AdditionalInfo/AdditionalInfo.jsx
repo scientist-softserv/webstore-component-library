@@ -5,11 +5,10 @@ import {
 } from 'react-bootstrap'
 import { addDays, apiV2CompatibleStrings, convertToBase64 } from '../../resources/utilityFunctions'
 
-const AdditionalInfo = ({ updateRequestForm }) => {
+const AdditionalInfo = ({ defaultRequiredDate, updateRequestForm }) => {
   const [showProposalDate, setShowProposalDate] = useState(true)
   const [files, setFiles] = useState([])
   const fileRef = useRef(null)
-  const oneWeekFromNow = addDays((new Date()), 7).toISOString().slice(0, 10)
   const oneDayFromNow = addDays((new Date()), 1).toISOString().slice(0, 10)
 
   const handleChange = (value) => {
@@ -54,7 +53,7 @@ const AdditionalInfo = ({ updateRequestForm }) => {
                 className='prevent-validation-styles'
                 type='date'
                 min={oneDayFromNow}
-                defaultValue={oneWeekFromNow}
+                defaultValue={defaultRequiredDate}
                 placeholder='Proposals Required By'
                 disabled={showProposalDate === false}
                 onChange={showProposalDate && ((e) => handleChange(e.target.value))}

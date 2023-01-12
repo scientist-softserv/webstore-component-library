@@ -38,7 +38,7 @@ const ItemGroup = ({ buttonProps, items, isLoading, orientation, withButtonLink,
                 withButtonLink={withButtonLink}
                 withTitleLink={withTitleLink}
                 href={item.href}
-                fromItemGroup='true'
+                fromItemGroup={true}
               />
             </Col>
           ))
