@@ -114,6 +114,10 @@ If you are on version `0.1.0` and want to go to `0.1.1` you would run:
 
 And be sure to say yes to all the prompts, you want a commit, you want a tag, and you want to push up to github.
 
+## Teaching Yarn How To Install This Library
+
+    yarn add @scientist-softserv/webstore-component-library@https://github.com/scientist-softserv/webstore-component-library
+
 ## Authors and acknowledgment
 Alisha Evans
 
