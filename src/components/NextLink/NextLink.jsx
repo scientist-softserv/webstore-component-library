@@ -21,7 +21,7 @@ const NextLinkWrapper = React.forwardRef(({ addClass, text, href }, ref) => (
 NextLink.propTypes = {
   text: PropTypes.string.isRequired,
   addClass: PropTypes.string,
-  path: PropTypes.shape({
+  path: PropTypes.exact({
     pathname: PropTypes.string.isRequired,
     query: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   }).isRequired,

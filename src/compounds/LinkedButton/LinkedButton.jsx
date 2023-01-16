@@ -10,7 +10,7 @@ import './linked-button.css'
 // TODO(alishaevn):
 //   - use this component in Item.jsx instead, but make sure it maintains its current styling
 
-// NOTE(alishaevn): we are not using the "as" prop in the Link because it removes the ability to access the path query
+// we are not using the "as" prop in the Link because it removes the ability to access the path query
 const LinkedButton = ({ addClass, buttonProps, path }) => (
   <Link href={path} passHref>
     <ButtonLinkWrapper
@@ -31,9 +31,9 @@ const { onClick, ...remainingPropTypes } = Button.propTypes
 LinkedButton.propTypes = {
   buttonProps: PropTypes.shape(remainingPropTypes).isRequired,
   addClass: PropTypes.string,
-  path: PropTypes.shape({
+  path: PropTypes.exact({
     pathname: PropTypes.string.isRequired,
-    query: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    query: PropTypes.shape({ id: PropTypes.number }),
   }).isRequired,
 }
 

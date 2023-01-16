@@ -18,7 +18,10 @@ Default.args = {
     label: 'Linked Button',
   },
   addClass: '',
-  path: '/',
+  path: {
+    pathname: '/',
+    query: {},
+  },
 }
 
 export const WithQuery = Template.bind({})
@@ -30,6 +33,6 @@ WithQuery.args = {
   addClass: '',
   path: {
     pathname: '/test',
-    query: { name: 'Best Service Ever' },
+    query: { id: 123 },
   },
 }
