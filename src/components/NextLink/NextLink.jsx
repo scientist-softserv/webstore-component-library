@@ -3,7 +3,7 @@ import Link from 'next/link'
 import PropTypes from 'prop-types'
 
 const NextLink = ({ addClass, text, path }) => (
-  <Link href={path} passHref legacyBehavior>
+  <Link href={path} passHref>
     <NextLinkWrapper
       addClass={addClass}
       href={path}
@@ -21,7 +21,10 @@ const NextLinkWrapper = React.forwardRef(({ addClass, text, href }, ref) => (
 NextLink.propTypes = {
   text: PropTypes.string.isRequired,
   addClass: PropTypes.string,
-  path: PropTypes.string.isRequired,
+  path: PropTypes.exact({
+    pathname: PropTypes.string.isRequired,
+    query: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  }).isRequired,
 }
 
 NextLink.defaultProps = {

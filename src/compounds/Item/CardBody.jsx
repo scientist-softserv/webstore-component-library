@@ -8,6 +8,7 @@ import LinkedButton from '../LinkedButton/LinkedButton'
 const CardBody = ({ buttonLink, buttonProps, fromItemGroup, item,
   orientation, titleLink, withButtonLink, withTitleLink }) => {
   const { id, description, name } = item
+
   return (
     <Card.Body className={withButtonLink && 'd-flex flex-column'}>
       <div className={orientation === 'horizontal' ? 'd-block d-md-flex align-items-center justify-content-between' : ''}>
@@ -16,7 +17,7 @@ const CardBody = ({ buttonLink, buttonProps, fromItemGroup, item,
             {(withTitleLink && fromItemGroup) && (
               <NextLink
                 text={name}
-                path={{ pathname: `${titleLink}`, query: { id: `${id}` } }}
+                path={{ pathname: titleLink, query: { id } }}
                 addClass='text-decoration-none link-hover'
               />
             )}
@@ -38,7 +39,7 @@ const CardBody = ({ buttonLink, buttonProps, fromItemGroup, item,
             <LinkedButton
               addClass={`item-button-${orientation} item-link mt-auto`}
               buttonProps={buttonProps}
-              path={fromItemGroup ? { pathname: `${buttonLink}`, query: { id: `${id}` } } : buttonLink}
+              path={{ pathname: buttonLink, query: { id }}}
             />
           </div>
         )}
@@ -57,7 +58,7 @@ CardBody.propTypes = {
   // buttonProps: props => props.withButtonLink
   // ? PropTypes.shape(Button.propTypes)
   // : PropTypes.shape({ ...Button.propTypes, label: PropTypes.string })
-  fromItemGroup: PropTypes.string,
+  fromItemGroup: PropTypes.bool,
   item: PropTypes.shape({
     description: PropTypes.string,
     id: PropTypes.number.isRequired,
