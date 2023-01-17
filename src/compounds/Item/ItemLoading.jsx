@@ -25,7 +25,7 @@ const CardBodyLoading = ({ withButtonLink }) => (
 
 const ItemLoading = ({ orientation, width, withButtonLink }) => (
   orientation === 'horizontal' ? (
-    <Card style={{ width: `${width}` }} className='h-100 mb-4'>
+    <Card style={{ width }} className='h-100 mb-4'>
       <div className='row g-0 h-100'>
         <div className='col-3 bg-secondary' />
         <div className='col-9 d-flex align-items-center'>
@@ -51,12 +51,15 @@ CardBodyLoading.defaultProps = {
 
 ItemLoading.propTypes = {
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
-  width: PropTypes.string,
+  width: PropTypes.oneOfType([
+    PropTypes.string, // allows percentages
+    PropTypes.number, // uses pixels
+  ]),
 }
 
 ItemLoading.defaultProps = {
   orientation: 'vertical',
-  width: '',
+  width: 'auto',
 }
 
 export default ItemLoading

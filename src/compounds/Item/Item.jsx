@@ -105,7 +105,10 @@ Item.propTypes = {
   titleLink: PropTypes.string,
   withButtonLink: PropTypes.bool,
   withTitleLink: PropTypes.bool,
-  width: PropTypes.string,
+  width: PropTypes.oneOfType([
+    PropTypes.string, // allows percentages
+    PropTypes.number, // uses pixels
+  ]),
 }
 
 Item.defaultProps = {
@@ -121,7 +124,7 @@ Item.defaultProps = {
   titleLink: '',
   withButtonLink: false,
   withTitleLink: false,
-  width: '',
+  width: 'auto',
 }
 
 export default Item
