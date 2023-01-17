@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Button, Row, Col } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 import Image from '../../components/Image/Image'
+import LinkedButton from '../LinkedButton/LinkedButton'
 import TextBox from '../../components/TextBox/TextBox'
 import Title from '../../components/Title/Title'
 
-const ItemPage = ({ title, titleStyle, description, descriptionStyle, img }) => {
+const ItemPage = ({ title, titleStyle, description, descriptionStyle, id, img, slug }) => {
   // sets a default width while still allowing width to be overridden
   img = { width: 400, ...img }
 
@@ -15,8 +16,11 @@ const ItemPage = ({ title, titleStyle, description, descriptionStyle, img }) => 
       <Row className='mt-3'>
         <Col xs={12} md={6} className='d-flex flex-column'>
           <TextBox text={description} style={descriptionStyle} size='medium' />
-          {/* TODO(summer-cook): Update this button's href so it is pointing at the item's form instead of blank request form */}
-          <Button href='/requests/new' className='align-self-start mt-4'>Initiate Request</Button>
+          <LinkedButton
+            addClass='align-self-start mt-4'
+            buttonProps={{label: 'Initiate Request'}}
+            path={{ pathname: `/requests/new/${slug}`, query: { id }}}
+          />
         </Col>
         <Col xs={12} md={6} className='mt-4 mt-md-0 me-md-auto d-flex justify-content-start justify-content-md-end'>
           <Image {...img} />
@@ -29,7 +33,9 @@ const ItemPage = ({ title, titleStyle, description, descriptionStyle, img }) => 
 ItemPage.propTypes = {
   description: PropTypes.string.isRequired,
   descriptionStyle: PropTypes.shape({}),
+  id: PropTypes.string.isRequired,
   img: Image.defaultProps.isRequired,
+  slug: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   titleStyle: PropTypes.shape({}),
 }
