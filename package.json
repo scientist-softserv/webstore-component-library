@@ -1,5 +1,5 @@
 {
-  "name": "webstore-component-library",
+  "name": "@scientist-softserv/webstore-component-library",
   "version": "0.0.0",
   "description": "A React component library intended for use with WebStore applications",
   "main": "dist/index.js",
