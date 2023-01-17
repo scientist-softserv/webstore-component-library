@@ -7,7 +7,7 @@ import LinkedButton from '../LinkedButton/LinkedButton'
 import ItemLoading from './ItemLoading'
 import './item.scss'
 
-const Item = ({ buttonLink, buttonProps, href, fromItemGroup, isLoading, item, orientation, titleLink, withButtonLink,
+const Item = ({ buttonLink, buttonProps, href, isLoading, item, orientation, titleLink, withButtonLink,
   withTitleLink, width }) => {
   if (isLoading) {
     return (
@@ -43,7 +43,6 @@ const Item = ({ buttonLink, buttonProps, href, fromItemGroup, isLoading, item, o
             <CardBody
               buttonLink={link}
               buttonProps={buttonProps}
-              fromItemGroup={fromItemGroup}
               item={item}
               orientation={orientation}
               titleLink={link}
@@ -62,7 +61,6 @@ const Item = ({ buttonLink, buttonProps, href, fromItemGroup, isLoading, item, o
           <CardBody
             buttonLink={link}
             buttonProps={buttonProps}
-            fromItemGroup={fromItemGroup}
             item={item}
             orientation={orientation}
             titleLink={link}
@@ -100,7 +98,6 @@ Item.propTypes = {
     name: PropTypes.string.isRequired,
     slug: PropTypes.string,
   }),
-  fromItemGroup: PropTypes.bool,
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
   titleLink: PropTypes.string,
   withButtonLink: PropTypes.bool,
@@ -111,7 +108,6 @@ Item.propTypes = {
 Item.defaultProps = {
   buttonLink: '',
   buttonProps: LinkedButton.defaultProps,
-  fromItemGroup: false,
   href: '',
   isLoading: false,
   item: {

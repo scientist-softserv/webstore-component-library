@@ -5,7 +5,7 @@ import Link from '../../components/Link/Link'
 import NextLink from '../../components/NextLink/NextLink'
 import LinkedButton from '../LinkedButton/LinkedButton'
 
-const CardBody = ({ buttonLink, buttonProps, fromItemGroup, item,
+const CardBody = ({ buttonLink, buttonProps, item,
   orientation, titleLink, withButtonLink, withTitleLink }) => {
   const { id, description, name } = item
 
@@ -14,15 +14,12 @@ const CardBody = ({ buttonLink, buttonProps, fromItemGroup, item,
       <div className={orientation === 'horizontal' ? 'd-block d-md-flex align-items-center justify-content-between' : ''}>
         <div className={orientation === 'horizontal' ? 'me-2' : ''}>
           <Card.Title>
-            {(withTitleLink && fromItemGroup) && (
+            {(withTitleLink) && (
               <NextLink
                 text={name}
                 path={{ pathname: titleLink, query: { id } }}
                 addClass='text-decoration-none link-hover'
               />
-            )}
-            {(withTitleLink && !fromItemGroup) && (
-              <Link label={name} addClass='text-decoration-none link-hover' href={titleLink} />
             )}
             {(!withTitleLink) && (
               name
@@ -58,7 +55,6 @@ CardBody.propTypes = {
   // buttonProps: props => props.withButtonLink
   // ? PropTypes.shape(Button.propTypes)
   // : PropTypes.shape({ ...Button.propTypes, label: PropTypes.string })
-  fromItemGroup: PropTypes.bool,
   item: PropTypes.shape({
     description: PropTypes.string,
     id: PropTypes.number.isRequired,
@@ -78,7 +74,6 @@ CardBody.propTypes = {
 CardBody.defaultProps = {
   buttonLink: '',
   buttonProps: LinkedButton.defaultProps,
-  fromItemGroup: false,
   item: {
     description: '',
   },
