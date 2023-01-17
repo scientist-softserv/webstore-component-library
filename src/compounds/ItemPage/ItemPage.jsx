@@ -33,8 +33,8 @@ const ItemPage = ({ title, titleStyle, description, descriptionStyle, id, img, s
 ItemPage.propTypes = {
   description: PropTypes.string.isRequired,
   descriptionStyle: PropTypes.shape({}),
-  id: PropTypes.string.isRequired,
-  img: Image.defaultProps.isRequired,
+  id: PropTypes.number.isRequired,
+  img: PropTypes.shape({}),
   slug: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   titleStyle: PropTypes.shape({}),
