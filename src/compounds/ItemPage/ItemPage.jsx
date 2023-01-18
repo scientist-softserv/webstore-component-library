@@ -34,7 +34,10 @@ ItemPage.propTypes = {
   description: PropTypes.string.isRequired,
   descriptionStyle: PropTypes.shape({}),
   id: PropTypes.number.isRequired,
-  img: PropTypes.shape({}),
+  img: PropTypes.shape({
+    alt: PropTypes.string.isRequired,
+    src: PropTypes.string.isRequired,
+  }),
   slug: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   titleStyle: PropTypes.shape({}),
