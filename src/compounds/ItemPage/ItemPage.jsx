@@ -18,7 +18,7 @@ const ItemPage = ({ title, titleStyle, description, descriptionStyle, id, img, s
           <TextBox text={description} style={descriptionStyle} size='medium' />
           <LinkedButton
             addClass='align-self-start mt-4'
-            buttonProps={{label: 'Initiate Request'}}
+            buttonProps={{ label: 'Initiate Request' }}
             path={{ pathname: `/requests/new/${slug}`, query: { id }}}
           />
         </Col>
