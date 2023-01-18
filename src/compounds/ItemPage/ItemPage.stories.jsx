@@ -20,7 +20,7 @@ Default.args = {
   ware: {
     // eslint-disable-next-line max-len
     description: 'Using advanced CRISPR technology, add or delete base pairs at a specifically targeted DNA loci. Using advanced CRISPR technology, add or delete base pairs at a specifically targeted DNA loci. Using advanced CRISPR technology, add or delete base pairs at a specifically targeted DNA loci. Using advanced CRISPR technology, add or delete base pairs at a specifically targeted DNA loci. Using advanced CRISPR technology, add or delete base pairs at a specifically targeted DNA loci. Using advanced CRISPR technology, add or delete base pairs at a specifically targeted DNA loci.',
-    id: '4356',
+    id: 4356,
     name: 'CRISPR[DEMO]',
     slug: 'crispr-demo',
   },
