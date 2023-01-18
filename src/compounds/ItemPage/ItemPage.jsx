@@ -6,8 +6,8 @@ import LinkedButton from '../LinkedButton/LinkedButton'
 import TextBox from '../../components/TextBox/TextBox'
 import Title from '../../components/Title/Title'
 
-const ItemPage = ({ descriptionStyle, img, ware, titleStyle }) => {
-  const { name, description, id, snippet, slug } = ware
+const ItemPage = ({ descriptionStyle, img, titleStyle, ware }) => {
+  const { description, id, name, snippet, slug } = ware
   // sets a default width while still allowing width to be overridden
 
   return (
