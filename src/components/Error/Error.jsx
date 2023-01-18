@@ -8,7 +8,7 @@ const Error = ({ errorText, variant }) => (
 )
 
 Error.propTypes = {
-  text: PropTypes.string.isRequired,
+  errorText: PropTypes.string.isRequired,
   variant: PropTypes.string.isRequired,
 }
 
