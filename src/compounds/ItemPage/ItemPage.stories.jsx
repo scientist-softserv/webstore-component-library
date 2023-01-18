@@ -37,7 +37,7 @@ Alternative.args = {
   titleStyle: {},
   ware: {
     description: '',
-    id: '4356',
+    id: 4356,
     name: 'CRISPR[DEMO]',
     slug: 'crispr-demo',
     // eslint-disable-next-line max-len
