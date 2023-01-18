@@ -23,7 +23,7 @@ const ItemPage = ({ descriptionStyle, img, titleStyle, ware }) => {
           />
         </Col>
         <Col xs={12} md={6} className='mt-4 mt-md-0 me-md-auto d-flex justify-content-start justify-content-md-end'>
-          <Image {...img} addClass='img-fluid'/>
+          <Image {...img} addClass='img-fluid' />
         </Col>
       </Row>
     </main>
