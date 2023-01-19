@@ -8,7 +8,7 @@ const Error = ({ errorText, errorTitle, router, variant }) => {
   if (show) {
     return (
         <Container>
-          <Alert className='mt-5' variant={variant} onClose={() => setShow(false)}>
+          <Alert className='mt-5 text-break' variant={variant} onClose={() => setShow(false)}>
             {errorTitle && (
               <Alert.Heading>{errorTitle}</Alert.Heading>
             )}
