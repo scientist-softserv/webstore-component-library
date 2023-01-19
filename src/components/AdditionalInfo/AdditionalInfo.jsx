@@ -74,7 +74,7 @@ const AdditionalInfo = ({ defaultRequiredDate, updateRequestForm }) => {
             label='Proposals can be submitted at any time.'
             onChange={() => {
               setShowProposalDate(!showProposalDate)
-              if (showProposalDate) handleChange(null)
+              if (showProposalDate) handleChange('')
             }}
           />
         </Form.Group>
