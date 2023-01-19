@@ -108,9 +108,10 @@ npm run watch-lib # use when you want to build the library for local use; it wil
 ## Cutting a New Release
 A git tag should exist for every release. We use `release-it` to automate the coordination of package.json and git tag.
 
-If you are on version `0.1.0` and want to go to `0.1.1` you would run:
+If you want to release a new semver release run:
 
-  npm run release -- patch
+  npm run release
+  (You will be prompted to select a release type, e.g. patch)
 
 And be sure to say yes to all the prompts, you want a commit, you want a tag, and you want to push up to github.
 
