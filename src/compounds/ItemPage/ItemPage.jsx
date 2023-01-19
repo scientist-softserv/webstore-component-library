@@ -9,6 +9,7 @@ import Title from '../../components/Title/Title'
 const ItemPage = ({ descriptionStyle, img, titleStyle, ware }) => {
   const { description, id, name, snippet, slug } = ware
   // sets a default width while still allowing width to be overridden
+  img = { width: 400, ...img }
 
   return (
     <main className='container py-5'>
