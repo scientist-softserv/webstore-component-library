@@ -10,14 +10,14 @@ const Template = (args) => <Error {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  environment: 'dev',
-  errorText: 'this is an error in dev',
+  errorTitle: 'Errors:',
+  errorText: 'this is an error in dev. error block would go here',
   variant: 'danger',
 }
 
 export const Alternate = Template.bind({})
 Alternate.args = {
-  environment: 'prod',
-  errorText: 'this is an error in prod',
+  errorTitle: "We're sorry, something went wrong.",
+  errorText: 'Please refresh the page and try again. this is an error in prod',
   variant: 'warning',
 }
