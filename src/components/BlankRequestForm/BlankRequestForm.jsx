@@ -11,7 +11,7 @@ const BlankRequestForm = ({ updateRequestForm }) => (
         type='text'
         as='textarea'
         rows={3}
-        onChange={(e) => updateRequestForm(e.target.value, 'data.description')}
+        onChange={(e) => updateRequestForm(e.target.value, 'description')}
         required
       />
       <Form.Control.Feedback type='invalid'>
@@ -24,7 +24,7 @@ const BlankRequestForm = ({ updateRequestForm }) => (
         as='textarea'
         className='prevent-validation-styles'
         rows={3}
-        onChange={(e) => updateRequestForm(e.target.value, 'data.timeline')}
+        onChange={(e) => updateRequestForm(e.target.value, 'timeline')}
       />
     </Form.Group>
   </Row>
