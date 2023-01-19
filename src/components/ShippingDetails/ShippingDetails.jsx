@@ -76,7 +76,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
         <Form.Group as={Col} controlId={`zip-${addressType}`}>
           <Form.Control
             placeholder='Zip/Postal Code'
-            onChange={(e) => updateRequestForm(e.target.value, `${addressType}.zipCode`)}
+            onChange={(e) => updateRequestForm(e.target.value, `${addressType}.zipcode`)}
             type='text'
             required
             className='prevent-validation-styles'
