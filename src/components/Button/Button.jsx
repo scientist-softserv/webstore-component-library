@@ -5,10 +5,10 @@ import './button.css'
 /**
  * Component for user interactions that don't include page routing
  */
-const Button = ({ backgroundColor, size, label, textColor, ...props }) => (
+const Button = ({ addClass, backgroundColor, size, label, textColor, type, ...props }) => (
   <button
-    type='button'
-    className={`button button--${size}`}
+    type={type || 'button'}
+    className={`button button--${size} ${addClass}`}
     style={{ backgroundColor, color: textColor }}
     {...props}
   >
@@ -17,18 +17,22 @@ const Button = ({ backgroundColor, size, label, textColor, ...props }) => (
 )
 
 Button.propTypes = {
+  addClass: PropTypes.string,
   backgroundColor: PropTypes.string,
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   textColor: PropTypes.string,
+  type: PropTypes.string,
 }
 
 Button.defaultProps = {
+  addClass: '',
   backgroundColor: '#000000',
   size: 'medium',
   onClick: undefined,
   textColor: '#FFFFFF',
+  type: '',
 }
 
 export default Button

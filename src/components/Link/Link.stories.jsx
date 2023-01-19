@@ -26,4 +26,5 @@ Alternate.args = {
     textDecoration: 'none',
     color: '#AB1289',
   },
+  icon: 'fa-envelope',
 }

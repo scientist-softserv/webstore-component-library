@@ -19,13 +19,14 @@ const iconsList = {
   youtube: (height, color) => <YouTube height={height} fill={color} />,
 }
 
-const SocialIcon = ({ color, height, icon, url }) => (
-  <a href={url} target='_blank' className={`social-icon social-icon-${icon}`} rel='noreferrer'>
+const SocialIcon = ({ addClass, color, height, icon, url }) => (
+  <a href={url} target='_blank' className={`social-icon social-icon-${icon} ${addClass}`} rel='noreferrer'>
     {iconsList[icon](height || 25, color)}
   </a>
 )
 
 SocialIcon.propTypes = {
+  addClass: PropTypes.string,
   color: PropTypes.string,
   height: PropTypes.number,
   icon: PropTypes.oneOf(['facebook', 'instagram', 'rss', 'tiktok', 'twitter', 'vimeo', 'youtube']).isRequired,
@@ -33,6 +34,7 @@ SocialIcon.propTypes = {
 }
 
 SocialIcon.defaultProps = {
+  addClass: '',
   color: '#000000',
   height: 25,
 }

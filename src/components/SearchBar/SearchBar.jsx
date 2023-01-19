@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import Search from '../../assets/svg/Search'
 import './search-bar.css'
 
-const SearchBar = ({ initialValue, onSubmit, placeholder }) => {
+const SearchBar = ({ addClass, initialValue, onSubmit, placeholder }) => {
   const inputRef = useRef(null)
 
   const handleSubmit = (event) => {
@@ -13,7 +13,7 @@ const SearchBar = ({ initialValue, onSubmit, placeholder }) => {
   }
 
   return (
-    <div className='search-bar-container'>
+    <div className={`search-bar-container ${addClass}`}>
       <form className='search-bar-form' method='get' onSubmit={handleSubmit}>
         <label>
           <span className='visually-hidden'>Search all services</span>
@@ -34,12 +34,14 @@ const SearchBar = ({ initialValue, onSubmit, placeholder }) => {
 }
 
 SearchBar.propTypes = {
+  addClass: PropTypes.string,
   onSubmit: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
   initialValue: PropTypes.string,
 }
 
 SearchBar.defaultProps = {
+  addClass: '',
   placeholder: 'Search for a service',
   initialValue: '',
 }

@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 import Table from 'react-bootstrap/Table'
 
 const LineItemsTable = (props) => {
-  const { lineItems, shippingPrice, subtotalPrice, taxAmount, totalPrice } = props
+  const { addClass, lineItems, shippingPrice, subtotalPrice, taxAmount, totalPrice } = props
+
   return (
-    <Table striped bordered hover size='sm' className='mt-5'>
+    <Table striped bordered hover size='sm' className={`mt-5 ${addClass}`}>
       <thead>
         <tr>
           <th>Quantity</th>
@@ -16,13 +17,13 @@ const LineItemsTable = (props) => {
       </thead>
       <tbody>
         {lineItems.map((item) => {
-          const { quantity, name, unit_price, subtotal } = item
+          const { quantity, name, unitPrice, total } = item
           return (
             <tr key={name}>
               <td>{quantity}</td>
               <td>{name}</td>
-              <td>{unit_price}</td>
-              <td>{subtotal}</td>
+              <td>{unitPrice}</td>
+              <td>{total}</td>
             </tr>
           )
         })}
@@ -48,11 +49,16 @@ const LineItemsTable = (props) => {
 }
 
 LineItemsTable.propTypes = {
+  addClass: PropTypes.string,
   lineItems: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   shippingPrice: PropTypes.string.isRequired,
   subtotalPrice: PropTypes.string.isRequired,
   taxAmount: PropTypes.string.isRequired,
   totalPrice: PropTypes.string.isRequired,
+}
+
+LineItemsTable.defaultProps = {
+  addClass: '',
 }
 
 export default LineItemsTable

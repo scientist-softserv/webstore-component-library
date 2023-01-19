@@ -11,8 +11,8 @@ const Template = (args) => <LineItemsTable {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  lineItems: lineItems,
-  subtotalPrice: '$3.00',
+  lineItems,
+  subtotal: '$3.00',
   shippingPrice: '$500.00',
   taxAmount: '$0.00',
   totalPrice: '$503.00',
