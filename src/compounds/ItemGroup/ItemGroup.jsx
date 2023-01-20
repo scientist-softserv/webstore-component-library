@@ -29,7 +29,7 @@ const ItemGroup = ({ buttonProps, items, isLoading, orientation, withButtonLink,
             )}
           </>
         ) : (
-          items.map((item) => (
+          items?.map((item) => (
             <Col key={item.id}>
               <Item
                 buttonProps={buttonProps}
