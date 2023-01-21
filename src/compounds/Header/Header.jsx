@@ -2,10 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import Logo from '../Logo/Logo'
+import { navLinks } from '../../resources/args'
 
-// may come back to hard code these
-
-const Header = ({ browseLink, logInLink, logo, logOutLink, requestsLink, user }) => {
+const Header = ({ logo, navLinks, user }) => {
   const { src, alt } = logo
 
   return (
@@ -17,13 +16,11 @@ const Header = ({ browseLink, logInLink, logo, logOutLink, requestsLink, user })
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='ms-auto'>
-            <Nav.Link href={browseLink} className='link-dark'>Browse</Nav.Link>
-            <Nav.Link href={requestsLink} className='link-dark'>Requests</Nav.Link>
-            {user ? (
-              <Nav.Link href={logOutLink} className='link-dark'>Log Out</Nav.Link>
-            ) : (
-              <Nav.Link href={logInLink} className='link-dark'>Log In</Nav.Link>
-            )}
+            {navLinks.map(nav => (
+              <Nav.Link href={nav.path} className='link-dark' onClick={nav.onClick}>
+                {nav.label}
+              </Nav.Link>
+            ))}
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -32,19 +29,21 @@ const Header = ({ browseLink, logInLink, logo, logOutLink, requestsLink, user })
 }
 
 Header.propTypes = {
-  browseLink: PropTypes.string.isRequired,
   logo: PropTypes.shape({
     src: PropTypes.string.isRequired,
     alt: PropTypes.string,
   }).isRequired,
-  logInLink: PropTypes.string.isRequired,
-  logOutLink: PropTypes.string.isRequired,
-  requestsLink: PropTypes.string.isRequired,
+  navLinks: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    onClick: PropTypes.func,
+    path: PropTypes.string,
+  })),
   user: PropTypes.shape({}),
 }
 
 Header.defaultProps = {
   user: null,
+  navLinks,
 }
 
 export default Header
