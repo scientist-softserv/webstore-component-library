@@ -7,8 +7,8 @@ import LinkedButton from '../LinkedButton/LinkedButton'
 import ItemLoading from './ItemLoading'
 import './item.scss'
 
-const Item = ({ buttonLink, buttonProps, href, isLoading, item, orientation, titleLink, withButtonLink,
-  withTitleLink, width }) => {
+const Item = ({ buttonLink, buttonProps, href, isLoading, item, orientation, showServicePage, titleLink, 
+  withButtonLink, withTitleLink, width }) => {
   if (isLoading) {
     return (
       <>
@@ -45,6 +45,7 @@ const Item = ({ buttonLink, buttonProps, href, isLoading, item, orientation, tit
               buttonProps={buttonProps}
               item={item}
               orientation={orientation}
+              showServicePage={showServicePage}
               titleLink={link}
               withButtonLink={withButtonLink}
               withTitleLink={withTitleLink}
@@ -63,6 +64,7 @@ const Item = ({ buttonLink, buttonProps, href, isLoading, item, orientation, tit
             buttonProps={buttonProps}
             item={item}
             orientation={orientation}
+            showServicePage={showServicePage}
             titleLink={link}
             withButtonLink={withButtonLink}
             withTitleLink={withTitleLink}
@@ -99,6 +101,7 @@ Item.propTypes = {
     slug: PropTypes.string,
   }),
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
+  showServicePage: PropTypes.bool.isRequired,
   titleLink: PropTypes.string,
   withButtonLink: PropTypes.bool,
   withTitleLink: PropTypes.bool,

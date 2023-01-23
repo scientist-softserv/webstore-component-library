@@ -6,7 +6,7 @@ import Item from '../Item/Item'
 import ItemLoading from '../Item/ItemLoading'
 import './item-group.scss'
 
-const ItemGroup = ({ buttonProps, items, isLoading, orientation, withButtonLink, withTitleLink }) => (
+const ItemGroup = ({ buttonProps, items, isLoading, orientation, showServicePage, withButtonLink, withTitleLink }) => (
   <>
     <Title addClass='mb-2' size='large' title='Featured Services' />
     <Row xs={1} sm={2} className={`g-5 mb-5 ${orientation === 'vertical' && 'row-cols-md-3'}`}>
@@ -35,6 +35,7 @@ const ItemGroup = ({ buttonProps, items, isLoading, orientation, withButtonLink,
                 buttonProps={buttonProps}
                 item={item}
                 orientation={orientation}
+                showServicePage={showServicePage}
                 withButtonLink={withButtonLink}
                 withTitleLink={withTitleLink}
                 href={item.href}
@@ -58,6 +59,7 @@ ItemGroup.propTypes = {
     style: PropTypes.shape({}),
   })).isRequired,
   isLoading: PropTypes.bool.isRequired,
+  showServicePage: PropTypes.bool.isRequired,
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
   withButtonLink: PropTypes.bool,
   withTitleLink: PropTypes.bool,

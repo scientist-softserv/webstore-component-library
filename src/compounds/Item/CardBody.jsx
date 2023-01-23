@@ -1,14 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Card from 'react-bootstrap/card'
-import Link from '../../components/Link/Link'
 import NextLink from '../../components/NextLink/NextLink'
 import LinkedButton from '../LinkedButton/LinkedButton'
 
 const CardBody = ({ buttonLink, buttonProps, item,
-  orientation, titleLink, withButtonLink, withTitleLink }) => {
-  const { id, description, name } = item
-
+  orientation, showServicePage, titleLink, withButtonLink, withTitleLink }) => {
+  const { id, description, name, slug } = item
+  
   return (
     <Card.Body className={withButtonLink && 'd-flex flex-column'}>
       <div className={orientation === 'horizontal' ? 'd-block d-md-flex align-items-center justify-content-between' : ''}>
@@ -17,7 +16,7 @@ const CardBody = ({ buttonLink, buttonProps, item,
             {(withTitleLink) && (
               <NextLink
                 text={name}
-                path={{ pathname: titleLink, query: { id } }}
+                path={showServicePage ? { pathname: titleLink, query: { id } } : { pathname: `/requests/new/${slug}`, query: { id } }}
                 addClass='text-decoration-none link-hover'
               />
             )}
@@ -66,6 +65,7 @@ CardBody.propTypes = {
     slug: PropTypes.string,
   }),
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
+  showServicePage: PropTypes.bool.isRequired,
   titleLink: PropTypes.string,
   withButtonLink: PropTypes.bool,
   withTitleLink: PropTypes.bool,
