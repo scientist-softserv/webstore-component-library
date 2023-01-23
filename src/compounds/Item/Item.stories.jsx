@@ -29,6 +29,7 @@ Default.args = {
   titleLink: '/',
   orientation: 'vertical',
   style: {},
+  showServicePage: false,
   withButtonLink: false,
   withTitleLink: false,
 }

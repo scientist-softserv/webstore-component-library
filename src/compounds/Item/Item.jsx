@@ -7,7 +7,7 @@ import LinkedButton from '../LinkedButton/LinkedButton'
 import ItemLoading from './ItemLoading'
 import './item.scss'
 
-const Item = ({ buttonLink, buttonProps, href, isLoading, item, orientation, showServicePage, titleLink, 
+const Item = ({ buttonLink, buttonProps, href, isLoading, item, orientation, showServicePage, titleLink,
   withButtonLink, withTitleLink, width }) => {
   if (isLoading) {
     return (

@@ -17,6 +17,7 @@ Default.args = {
   },
   items: items.slice(0, 3),
   orientation: 'vertical',
+  showServicePage: false,
 }
 
 export const Horizontal = Template.bind({})

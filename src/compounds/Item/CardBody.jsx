@@ -7,7 +7,7 @@ import LinkedButton from '../LinkedButton/LinkedButton'
 const CardBody = ({ buttonLink, buttonProps, item,
   orientation, showServicePage, titleLink, withButtonLink, withTitleLink }) => {
   const { id, description, name, slug } = item
-  
+
   return (
     <Card.Body className={withButtonLink && 'd-flex flex-column'}>
       <div className={orientation === 'horizontal' ? 'd-block d-md-flex align-items-center justify-content-between' : ''}>
@@ -35,7 +35,7 @@ const CardBody = ({ buttonLink, buttonProps, item,
             <LinkedButton
               addClass={`item-button-${orientation} item-link mt-auto`}
               buttonProps={buttonProps}
-              path={{ pathname: buttonLink, query: { id }}}
+              path={{ pathname: buttonLink, query: { id } }}
             />
           </div>
         )}
