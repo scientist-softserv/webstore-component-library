@@ -15,7 +15,7 @@ const Header = ({ auth, logo, navLinks, userSession }) => {
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='ms-auto'>
-            {navLinks.map(nav => (
+            {navLinks.map((nav) => (
               <Nav.Link
                 className='link-dark'
                 href={nav.path}
