@@ -15,22 +15,30 @@ const Template = (args) => <Header {...args} />
 
 export const LoggedIn = Template.bind({})
 LoggedIn.args = {
+  auth: {
+    signIn: () => console.log('I am signing in!'),
+    signOut: () => console.log('I am signing out!'),
+  },
   logo: {
     src: logoFull,
     alt: 'The company logo',
   },
   navLinks: navigationLinks,
-  // userSession: {
-  //   name: 'Aaliyah Haughton',
-  // },
+  userSession: {
+    email: 'aaliyah@scientist.com',
+  },
 }
 
 export const LoggedOut = Template.bind({})
 LoggedOut.args = {
+  auth: {
+    signIn: () => console.log('I am signing in!'),
+    signOut: () => console.log('I am signing out!'),
+  },
   logo: {
     src: logoFull,
     alt: 'The company logo',
   },
   navLinks: navigationLinks,
-  // userSession: null,
+  userSession: undefined,
 }

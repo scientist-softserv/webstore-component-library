@@ -213,14 +213,4 @@ export const navigationLinks = [
     onClick: null,
     path: '/requests',
   },
-  {
-    label: 'Sign In',
-    onClick: () => console.log('I am signing in!'),
-    path: '',
-  },
-  {
-    label: 'Sign Out',
-    onClick: () => console.log('I am signing out!'),
-    path: '',
-  },
 ]

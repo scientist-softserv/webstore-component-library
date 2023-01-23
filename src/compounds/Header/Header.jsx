@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import Logo from '../Logo/Logo'
 
-const Header = ({ logo, navLinks, userSession }) => {
+const Header = ({ auth, logo, navLinks, userSession }) => {
   const { src, alt } = logo
 
   return (
@@ -15,7 +15,6 @@ const Header = ({ logo, navLinks, userSession }) => {
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='ms-auto'>
-            {/* TODO: show the sign in/out button depending on if there's a userSession */}
             {navLinks.map(nav => (
               <Nav.Link
                 className='link-dark'
@@ -26,6 +25,11 @@ const Header = ({ logo, navLinks, userSession }) => {
                 {nav.label}
               </Nav.Link>
             ))}
+            {userSession ? (
+              <Nav.Link className='link-dark' onClick={auth.signOut}>Sign Out</Nav.Link>
+            ) : (
+              <Nav.Link className='link-dark' onClick={auth.signIn}>Sign In</Nav.Link>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -34,6 +38,10 @@ const Header = ({ logo, navLinks, userSession }) => {
 }
 
 Header.propTypes = {
+  auth: PropTypes.shape({
+    signIn: PropTypes.func.isRequired,
+    signOut: PropTypes.func.isRequired,
+  }).isRequired,
   logo: PropTypes.shape({
     src: PropTypes.string.isRequired,
     alt: PropTypes.string,
