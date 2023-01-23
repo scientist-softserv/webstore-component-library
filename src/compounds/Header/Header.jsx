@@ -2,9 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import Logo from '../Logo/Logo'
-import { navLinks } from '../../resources/args'
 
-const Header = ({ logo, navLinks, user }) => {
+const Header = ({ logo, navLinks, userSession }) => {
   const { src, alt } = logo
 
   return (
@@ -16,8 +15,14 @@ const Header = ({ logo, navLinks, user }) => {
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='ms-auto'>
+            {/* TODO: show the sign in/out button depending on if there's a userSession */}
             {navLinks.map(nav => (
-              <Nav.Link href={nav.path} className='link-dark' onClick={nav.onClick}>
+              <Nav.Link
+                className='link-dark'
+                href={nav.path}
+                key={`${nav.label}-nav-link`}
+                onClick={nav.onClick}
+              >
                 {nav.label}
               </Nav.Link>
             ))}
@@ -37,13 +42,12 @@ Header.propTypes = {
     label: PropTypes.string.isRequired,
     onClick: PropTypes.func,
     path: PropTypes.string,
-  })),
-  user: PropTypes.shape({}),
+  })).isRequired,
+  userSession: PropTypes.shape({}),
 }
 
 Header.defaultProps = {
-  user: null,
-  navLinks,
+  userSession: null,
 }
 
 export default Header
