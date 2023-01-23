@@ -6,6 +6,7 @@ import { Alert, Button, Container } from 'react-bootstrap'
 const Error = ({ errors, showBackButton, canDismissAlert, router }) => {
   const { errorTitle, errorText, variant } = errors
   const [show, setShow] = useState(true)
+
   return (
     show && (
       <Container>
