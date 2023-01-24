@@ -3,9 +3,7 @@ import PropTypes from 'prop-types'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import Logo from '../Logo/Logo'
 
-// may come back to hard code these
-
-const Header = ({ browseLink, logInLink, logo, logOutLink, requestsLink, user }) => {
+const Header = ({ auth, logo, navLinks, userSession }) => {
   const { src, alt } = logo
 
   return (
@@ -17,12 +15,20 @@ const Header = ({ browseLink, logInLink, logo, logOutLink, requestsLink, user })
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='ms-auto'>
-            <Nav.Link href={browseLink} className='link-dark'>Browse</Nav.Link>
-            <Nav.Link href={requestsLink} className='link-dark'>Requests</Nav.Link>
-            {user ? (
-              <Nav.Link href={logOutLink} className='link-dark'>Log Out</Nav.Link>
+            {navLinks.map((nav) => (
+              <Nav.Link
+                className='link-dark'
+                href={nav.path}
+                key={`${nav.label}-nav-link`}
+                onClick={nav.onClick}
+              >
+                {nav.label}
+              </Nav.Link>
+            ))}
+            {userSession ? (
+              <Nav.Link className='link-dark' onClick={auth.signOut}>Sign Out</Nav.Link>
             ) : (
-              <Nav.Link href={logInLink} className='link-dark'>Log In</Nav.Link>
+              <Nav.Link className='link-dark' onClick={auth.signIn}>Sign In</Nav.Link>
             )}
           </Nav>
         </Navbar.Collapse>
@@ -32,19 +38,24 @@ const Header = ({ browseLink, logInLink, logo, logOutLink, requestsLink, user })
 }
 
 Header.propTypes = {
-  browseLink: PropTypes.string.isRequired,
+  auth: PropTypes.shape({
+    signIn: PropTypes.func.isRequired,
+    signOut: PropTypes.func.isRequired,
+  }).isRequired,
   logo: PropTypes.shape({
     src: PropTypes.string.isRequired,
     alt: PropTypes.string,
   }).isRequired,
-  logInLink: PropTypes.string.isRequired,
-  logOutLink: PropTypes.string.isRequired,
-  requestsLink: PropTypes.string.isRequired,
-  user: PropTypes.shape({}),
+  navLinks: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    onClick: PropTypes.func,
+    path: PropTypes.string,
+  })).isRequired,
+  userSession: PropTypes.shape({}),
 }
 
 Header.defaultProps = {
-  user: null,
+  userSession: null,
 }
 
 export default Header

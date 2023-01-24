@@ -201,3 +201,16 @@ export const messages = [
     name: 'Alisha Evans',
   },
 ]
+
+export const navigationLinks = [
+  {
+    label: 'Browse',
+    onClick: null,
+    path: '/browse',
+  },
+  {
+    label: 'Requests',
+    onClick: null,
+    path: '/requests',
+  },
+]
