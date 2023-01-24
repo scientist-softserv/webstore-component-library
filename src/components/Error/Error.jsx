@@ -36,7 +36,7 @@ const Error = ({ errors, showBackButton, canDismissAlert, router }) => {
 Error.propTypes = {
   canDismissAlert: PropTypes.bool,
   errors: PropTypes.shape({
-    errorText: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+    errorText: PropTypes.arrayOf(PropTypes.shape('')).isRequired,
     errorTitle: PropTypes.string,
     variant: PropTypes.string.isRequired,
   }).isRequired,
