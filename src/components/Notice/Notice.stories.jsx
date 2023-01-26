@@ -24,7 +24,23 @@ export const Error = Template.bind({})
 Error.args = {
   alert: {
     title: "We're sorry, something went wrong.",
-    body: ['This is how an error would present in dev. There are instances where there may be several api errors on a single page. We would render them all.', 'This is a second error message.', 'This is a third error message.'],
+    body: [
+      JSON.stringify({
+        message: 'This is how an error would present in dev. There are instances where there may be several api errors on a single page. We would render them all.',
+        name: 'First',
+        status: 422,
+      }, null, 2),
+      JSON.stringify({
+        message: 'This is a second error message.',
+        name: 'Second',
+        status: 422,
+      }, null, 2),
+      JSON.stringify({
+        message: 'This is a third error message.',
+        name: 'Third',
+        status: 422,
+      }, null, 2),
+    ],
     variant: 'warning'
   },
   buttonProps: {
