@@ -23,7 +23,7 @@ NextLink.propTypes = {
   addClass: PropTypes.string,
   path: PropTypes.exact({
     pathname: PropTypes.string.isRequired,
-    query: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    query: PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.shape({})]),
   }).isRequired,
 }
 

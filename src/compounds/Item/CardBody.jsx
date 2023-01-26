@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Card from 'react-bootstrap/card'
-import Link from '../../components/Link/Link'
 import NextLink from '../../components/NextLink/NextLink'
 import LinkedButton from '../LinkedButton/LinkedButton'
 
