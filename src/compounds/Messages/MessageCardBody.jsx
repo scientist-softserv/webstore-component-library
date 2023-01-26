@@ -5,7 +5,6 @@ import Link from '../../components/Link/Link'
 
 const MessageCardBody = ({ message, isLatestMessage }) => {
   const { avatar, body, id, name, attachments, timeSince } = message
-  console.log(id)
   return (
     <Card key={id} className={`${isLatestMessage ? '' : 'pb-4'} pt-4 flex-row border-0 border-top`}>
       <Card.Img variant='left' src={avatar} className='h-25' />
