@@ -15,9 +15,7 @@ Default.args = {
     body: ['A standard alert.'],
     variant: 'warning'
   },
-  buttonProps: {
-    text: 'Click to return to the previous page.'
-  },
+  buttonProps: {},
   dismissible: true,
   withBackButton: false,
 }

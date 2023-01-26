@@ -50,9 +50,7 @@ Notice.propTypes = {
 }
 
 Notice.defaultProps = {
-  buttonProps: {
-    text: 'Click to return to the previous page.'
-  },
+  buttonProps: {},
   dismissible: true,
   withBackButton: false,
 }
