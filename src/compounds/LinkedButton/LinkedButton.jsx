@@ -31,10 +31,10 @@ const { onClick, ...remainingPropTypes } = Button.propTypes
 LinkedButton.propTypes = {
   buttonProps: PropTypes.shape(remainingPropTypes).isRequired,
   addClass: PropTypes.string,
-  path: PropTypes.exact({
+  path: PropTypes.oneOfType([PropTypes.shape({
     pathname: PropTypes.string.isRequired,
     query: PropTypes.shape({ id: PropTypes.number }),
-  }).isRequired,
+  }), PropTypes.string]).isRequired,
 }
 
 LinkedButton.defaultProps = {
