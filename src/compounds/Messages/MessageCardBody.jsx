@@ -52,7 +52,11 @@ MessageCardBody.propTypes = {
       }),
     ),
   }).isRequired,
-  isLatestMessage: PropTypes.bool.isRequired,
+  isLatestMessage: PropTypes.bool,
+}
+
+MessageCardBody.defaultProps = {
+  isLatestMessage: false
 }
 
 export default MessageCardBody
