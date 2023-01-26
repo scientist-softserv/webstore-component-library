@@ -23,9 +23,6 @@ const Notice = ({ alert, buttonProps, dismissible, withBackButton }) => {
             <>
               <hr />
               <div className='d-flex justify-content-end'>
-                {/* <Button onClick={() => router.back()} variant={`outline-${variant}`}>
-                  Click to return to the previous page.
-                </Button> */}
                 <Button onClick={onClick} variant={`outline-${variant}`}>
                   {text}
                 </Button>
