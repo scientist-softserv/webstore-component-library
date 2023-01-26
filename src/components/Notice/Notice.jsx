@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Alert, Button, Container } from 'react-bootstrap'
 
-const Error = ({ alert, buttonProps, dismissible, withBackButton }) => {
+const Notice = ({ alert, buttonProps, dismissible, withBackButton }) => {
   const [show, setShow] = useState(true)
   const { title, body, variant } = alert
   let onClick, text
@@ -38,7 +38,7 @@ const Error = ({ alert, buttonProps, dismissible, withBackButton }) => {
   )
 }
 
-Error.propTypes = {
+Notice.propTypes = {
   alert: PropTypes.shape({
     body: PropTypes.arrayOf(PropTypes.string).isRequired,
     title: PropTypes.string,
@@ -52,7 +52,7 @@ Error.propTypes = {
   withBackButton: PropTypes.bool,
 }
 
-Error.defaultProps = {
+Notice.defaultProps = {
   buttonProps: {
     text: 'Click to return to the previous page.'
   },
@@ -60,4 +60,4 @@ Error.defaultProps = {
   withBackButton: false,
 }
 
-export default Error
+export default Notice
