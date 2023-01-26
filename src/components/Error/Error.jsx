@@ -3,26 +3,31 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Alert, Button, Container } from 'react-bootstrap'
 
-const Error = ({ errors, showBackButton, canDismissAlert, router }) => {
-  const { errorTitle, errorText, variant } = errors
+const Error = ({ alert, buttonProps, dismissible, withBackButton }) => {
   const [show, setShow] = useState(true)
+  const { title, body, variant } = alert
+  let onClick, text
+  if (withBackButton) ({ onClick, text } = buttonProps)
 
   return (
     show && (
       <Container>
-        <Alert className='my-5 text-break' variant={variant} onClose={() => setShow(false)} dismissible={canDismissAlert}>
-          {errorTitle && (
-            <Alert.Heading>{errorTitle}</Alert.Heading>
+        <Alert className='my-5 text-break' variant={variant} onClose={() => setShow(false)} dismissible={dismissible}>
+          {title && (
+            <Alert.Heading>{title}</Alert.Heading>
           )}
-          {errorText.map((errorMessage, index) => (
-            <p key={index}>{errorMessage}</p>
+          {body.map((text, index) => (
+            <p className='mb-0' key={index}>{text}</p>
           ))}
-          {showBackButton && (
+          {withBackButton && (
             <>
               <hr />
               <div className='d-flex justify-content-end'>
-                <Button onClick={() => router.back()} variant={`outline-${variant}`}>
+                {/* <Button onClick={() => router.back()} variant={`outline-${variant}`}>
                   Click to return to the previous page.
+                </Button> */}
+                <Button onClick={onClick} variant={`outline-${variant}`}>
+                  {text}
                 </Button>
               </div>
             </>
@@ -34,19 +39,25 @@ const Error = ({ errors, showBackButton, canDismissAlert, router }) => {
 }
 
 Error.propTypes = {
-  canDismissAlert: PropTypes.bool,
-  errors: PropTypes.shape({
-    errorText: PropTypes.arrayOf(PropTypes.string).isRequired,
-    errorTitle: PropTypes.string,
+  alert: PropTypes.shape({
+    body: PropTypes.arrayOf(PropTypes.string).isRequired,
+    title: PropTypes.string,
     variant: PropTypes.string.isRequired,
   }).isRequired,
-  showBackButton: PropTypes.bool,
-  router: PropTypes.shape({}).isRequired,
+  buttonProps: PropTypes.shape({
+    onClick: PropTypes.func,
+    text: PropTypes.string,
+  }),
+  dismissible: PropTypes.bool,
+  withBackButton: PropTypes.bool,
 }
 
 Error.defaultProps = {
-  canDismissAlert: false,
-  showBackButton: true,
+  buttonProps: {
+    text: 'Click to return to the previous page.'
+  },
+  dismissible: true,
+  withBackButton: false,
 }
 
 export default Error
