@@ -16,9 +16,29 @@ const Notice = ({ alert, buttonProps, dismissible, withBackButton }) => {
           {title && (
             <Alert.Heading>{title}</Alert.Heading>
           )}
-          {body.map((text, index) => (
-            <p className='mb-0' key={index}>{text}</p>
-          ))}
+          {body.map((text, index) => {
+            // If "text" is a JSON string, return it as a formatted code block
+            // Otherwise, return it as a regular string
+            const isJSONParsable = () => {
+              try {
+                JSON.parse(text)
+                return true
+              } catch (error) {
+                return false
+              }
+            }
+            const isJavascriptObject = isJSONParsable(text)
+
+            return (
+              <>
+                {isJavascriptObject ? (
+                  <pre className='mb-0' key={index}>{text}</pre>
+                ) : (
+                  <p className='mb-0' key={index}>{text}</p>
+                )}
+              </>
+            )
+          })}
           {withBackButton && (
             <>
               <hr />
