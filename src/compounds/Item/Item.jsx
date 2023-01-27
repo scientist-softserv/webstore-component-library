@@ -90,12 +90,12 @@ Item.propTypes = {
   isLoading: PropTypes.bool,
   item: PropTypes.shape({
     description: PropTypes.string,
-    id: PropTypes.number.isRequired,
+    id: PropTypes.number,
     img: PropTypes.shape({
-      src: PropTypes.string.isRequired,
+      src: PropTypes.string,
       alt: PropTypes.string,
-    }).isRequired,
-    name: PropTypes.string.isRequired,
+    }),
+    name: PropTypes.string,
     slug: PropTypes.string,
   }),
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
@@ -115,6 +115,13 @@ Item.defaultProps = {
   isLoading: false,
   item: {
     description: '',
+    id: null,
+    img: {
+      src: '',
+      alt: '',
+    },
+    name: '',
+    slug: '',
   },
   orientation: 'vertical',
   titleLink: '',
