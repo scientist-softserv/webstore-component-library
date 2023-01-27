@@ -6,7 +6,8 @@ import { Alert, Button, Container } from 'react-bootstrap'
 const Notice = ({ alert, buttonProps, dismissible, withBackButton }) => {
   const [show, setShow] = useState(true)
   const { title, body, variant } = alert
-  let onClick, text
+  let onClick
+  let text
   if (withBackButton) ({ onClick, text } = buttonProps)
 
   return (
@@ -16,27 +17,25 @@ const Notice = ({ alert, buttonProps, dismissible, withBackButton }) => {
           {title && (
             <Alert.Heading>{title}</Alert.Heading>
           )}
-          {body.map((text, index) => {
-            // If "text" is a JSON string, return it as a formatted code block
+          {body.map((message, index) => {
+            // If "message" is a JSON string, return it as a formatted code block
             // Otherwise, return it as a regular string
             const isJSONParsable = () => {
               try {
-                JSON.parse(text)
+                JSON.parse(message)
                 return true
               } catch (error) {
                 return false
               }
             }
-            const isJavascriptObject = isJSONParsable(text)
+            const isJavascriptObject = isJSONParsable(message)
 
             return (
-              <>
-                {isJavascriptObject ? (
-                  <pre className='mb-0' key={index}>{text}</pre>
-                ) : (
-                  <p className='mb-0' key={index}>{text}</p>
-                )}
-              </>
+              isJavascriptObject ? (
+                <pre className='mb-0' key={index}>{message}</pre>
+              ) : (
+                <p className='mb-0' key={index}>{message}</p>
+              )
             )
           })}
           {withBackButton && (

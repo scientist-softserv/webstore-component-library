@@ -13,7 +13,7 @@ Default.args = {
   alert: {
     title: '',
     body: ['A standard alert.'],
-    variant: 'warning'
+    variant: 'warning',
   },
   buttonProps: {},
   dismissible: true,
@@ -26,7 +26,7 @@ Error.args = {
     title: "We're sorry, something went wrong.",
     body: [
       JSON.stringify({
-        message: 'This is how an error would present in dev. There are instances where there may be several api errors on a single page. We would render them all.',
+        message: 'There are instances where there may be several api errors on a single page. We would render them all.',
         name: 'First',
         status: 422,
       }, null, 2),
@@ -41,11 +41,11 @@ Error.args = {
         status: 422,
       }, null, 2),
     ],
-    variant: 'warning'
+    variant: 'warning',
   },
   buttonProps: {
     onClick: () => console.log('click me!'),
-    text: 'Click to return to the previous page.'
+    text: 'Click to return to the previous page.',
   },
   dismissible: false,
   withBackButton: true,
@@ -56,7 +56,7 @@ UnauthorizedUser.args = {
   alert: {
     title: 'Unauthorized',
     body: ['Please sign in to access this page.'],
-    variant: 'info'
+    variant: 'info',
   },
   buttonProps: {},
   dismissible: false,
