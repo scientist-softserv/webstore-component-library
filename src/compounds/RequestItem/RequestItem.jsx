@@ -24,7 +24,7 @@ const RequestItem = React.forwardRef(({ createdAt, description, href, img, index
           <TextBox text={description} />
         </div>
       </div>
-      <div className='status bg-light-3 p-2 rounded'>
+      <div className='status bg-light-3 p-2 rounded mt-4 mt-md-0'>
         <Badge
           backgroundColor={backgroundColor}
           text={text}
