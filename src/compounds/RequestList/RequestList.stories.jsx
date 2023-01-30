@@ -26,7 +26,8 @@ Default.args = {
     },
     {
       createdAt: 'November 15, 2022',
-      description: 'this is a test.',
+      // eslint-disable-next-line max-len
+      description: 'General Information When do you plan to work with this supplier? Urgently Name of supplier: Alisha Supplier web address: http://scientist.com Is this new supplier onboarding request related to any of the following areas: Research area: In Vivo Contact Information Supplier contact name: Alisha Evans Supplier email a...',
       href: '/request/706D8F',
       id: 2,
       img: defaultImage,
