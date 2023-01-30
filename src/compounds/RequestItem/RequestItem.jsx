@@ -41,7 +41,6 @@ const RequestItem = React.forwardRef(({ createdAt, description, href, img, index
 RequestItem.propTypes = {
   createdAt: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
   index: PropTypes.number,
   img: PropTypes.shape(Image.propTypes).isRequired,
   status: PropTypes.shape(Badge.propTypes).isRequired,
