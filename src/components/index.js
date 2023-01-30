@@ -7,10 +7,10 @@ import AdditionalInfo from './AdditionalInfo/AdditionalInfo'
 import BlankRequestForm from './BlankRequestForm/BlankRequestForm'
 import Button from './Button/Button'
 import CollapsibleSection from './CollapsibleSection/CollapsibleSection'
-import Error from './Error/Error'
 import Image from './Image/Image'
 import Link from './Link/Link'
 import Loading from './Loading/Loading'
+import Notice from './Notice/Notice'
 import SearchBar from './SearchBar/SearchBar'
 import ShippingDetails from './ShippingDetails/ShippingDetails'
 import SocialIcon from './SocialIcon/SocialIcon'
@@ -23,10 +23,10 @@ export {
   BlankRequestForm,
   Button,
   CollapsibleSection,
-  Error,
   Image,
   Link,
   Loading,
+  Notice,
   SearchBar,
   ShippingDetails,
   SocialIcon,

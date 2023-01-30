@@ -12,7 +12,7 @@ const MessageCardBody = ({ message, isLatestMessage }) => {
         <div>
           <Card.Title>{name}</Card.Title>
           <Card.Text>
-            {body}
+            <span dangerouslySetInnerHTML={{ __html: body }} />
           </Card.Text>
           {(attachments.length > 0) && (attachments.map((attachment) => {
             const { contentLength, filename, uuid, href } = attachment
