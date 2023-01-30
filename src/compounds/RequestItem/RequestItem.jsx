@@ -42,7 +42,6 @@ RequestItem.propTypes = {
   createdAt: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   href: PropTypes.string,
-  id: PropTypes.number,
   index: PropTypes.number.isRequired,
   img: PropTypes.shape(Image.propTypes).isRequired,
   status: PropTypes.shape(Badge.propTypes).isRequired,
@@ -52,7 +51,6 @@ RequestItem.propTypes = {
 
 RequestItem.defaultProps = {
   href: '',
-  id: null,
 }
 
 RequestItem.displayName = 'Request Item'
