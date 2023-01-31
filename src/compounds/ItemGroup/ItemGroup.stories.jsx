@@ -15,6 +15,7 @@ Default.args = {
     backgroundColor: '#A9A9A9',
     label: 'Request this item',
   },
+  isLoading: false,
   items: items.slice(0, 3),
   orientation: 'vertical',
 }
@@ -25,6 +26,7 @@ Horizontal.args = {
     backgroundColor: '#A9A9A9',
     label: 'Request this item',
   },
+  isLoading: false,
   items: items.slice(0, 3),
   orientation: 'horizontal',
 }
@@ -37,6 +39,7 @@ isLoading.args = {
 
 export const withTitleLink = Template.bind({})
 withTitleLink.args = {
+  isLoading: false,
   items: items.slice(0, 6),
   withTitleLink: true,
 }
@@ -47,6 +50,7 @@ withButtonLink.args = {
     backgroundColor: '#A9A9A9',
     label: 'Request this item',
   },
+  isLoading: false,
   items: items.slice(0, 6),
   withButtonLink: true,
 }

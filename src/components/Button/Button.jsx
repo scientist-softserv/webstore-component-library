@@ -26,7 +26,7 @@ export const buttonPropTypes = {
   type: PropTypes.string,
 }
 
-Button.propTypes =  { ...buttonPropTypes }
+Button.propTypes = { ...buttonPropTypes }
 
 Button.defaultProps = {
   addClass: '',

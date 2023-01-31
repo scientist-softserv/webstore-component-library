@@ -73,6 +73,17 @@ const Item = ({ buttonLink, buttonProps, href, isLoading, item, orientation, tit
   )
 }
 
+export const itemPropTypes = {
+  description: PropTypes.string,
+  id: PropTypes.number.isRequired,
+  img: PropTypes.shape({
+    src: PropTypes.string.isRequired,
+    alt: PropTypes.string,
+  }).isRequired,
+  name: PropTypes.string.isRequired,
+  slug: PropTypes.string,
+}
+
 Item.propTypes = {
   buttonLink: PropTypes.string,
   // currently overriding the label on a button from being required in this component,
@@ -88,16 +99,7 @@ Item.propTypes = {
     PropTypes.shape({}),
   ]),
   isLoading: PropTypes.bool,
-  item: PropTypes.shape({
-    description: PropTypes.string,
-    id: PropTypes.number.isRequired,
-    img: PropTypes.shape({
-      src: PropTypes.string.isRequired,
-      alt: PropTypes.string,
-    }).isRequired,
-    name: PropTypes.string.isRequired,
-    slug: PropTypes.string,
-  }),
+  item: PropTypes.shape({ ...itemPropTypes }).isRequired,
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
   titleLink: PropTypes.string,
   withButtonLink: PropTypes.bool,
