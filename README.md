@@ -30,6 +30,7 @@ Use NPM version `v8.19.2` and please do not mix it with Yarn.
 - If you see the following when starting the app: 
   - `Error: error:0308010C:digital envelope routines::unsupported`
   - set the following env variable in your local shell: `export NODE_OPTIONS=--openssl-legacy-provider`
+
 ## Contributing
 <!-- State if you are open to contributions and what your requirements are for accepting them.
  -->
