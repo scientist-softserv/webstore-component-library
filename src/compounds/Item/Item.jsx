@@ -90,7 +90,7 @@ Item.propTypes = {
   isLoading: PropTypes.bool,
   item: PropTypes.shape({
     description: PropTypes.string,
-    id: PropTypes.number,
+    id: PropTypes.number.isRequired,
     img: PropTypes.shape({
       src: PropTypes.string,
       alt: PropTypes.string,
