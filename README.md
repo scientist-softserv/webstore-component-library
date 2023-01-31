@@ -25,6 +25,11 @@ Use NPM version `v8.19.2` and please do not mix it with Yarn.
   npm run storybook # starts the storybook app so that we can view/test the components in a UI
   ```
 - A new browser tab will automatically open to "http://localhost:6006/"
+
+#### Troubleshooting
+- If you see the following when starting the app: 
+  - `Error: error:0308010C:digital envelope routines::unsupported`
+  - set the following env variable in your local shell: `export NODE_OPTIONS=--openssl-legacy-provider`
 ## Contributing
 <!-- State if you are open to contributions and what your requirements are for accepting them.
  -->
