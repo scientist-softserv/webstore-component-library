@@ -10,15 +10,7 @@ const RequestList = ({ requests }) => (
     <div className='rounded overflow-hidden'>
       {requests.map((req, index) => (
         <Link key={req.id} href={`${req.href}`} passHref legacyBehavior>
-          <RequestItem
-            createdAt={req.createdAt}
-            description={req.description}
-            img={req.img}
-            title={req.title}
-            status={req.status}
-            updatedAt={req.updatedAt}
-            index={index}
-          />
+          <RequestItem request={req} index={index} />
         </Link>
       ))}
     </div>
