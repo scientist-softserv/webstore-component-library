@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
-import Button from '../../components/Button/Button'
 import './linked-button.css'
 
 /**
@@ -28,6 +27,7 @@ const ButtonLinkWrapper = React.forwardRef(({ addClass, buttonProps, href }, ref
 ))
 
 const { onClick, ...remainingPropTypes } = Button.propTypes
+
 LinkedButton.propTypes = {
   buttonProps: PropTypes.shape(remainingPropTypes).isRequired,
   addClass: PropTypes.string,
@@ -40,5 +40,17 @@ LinkedButton.propTypes = {
 LinkedButton.defaultProps = {
   addClass: '',
 }
+
+ButtonLinkWrapper.propTypes = {
+  addClass: PropTypes.string,
+  buttonProps: PropTypes.shape(remainingPropTypes).isRequired,
+  href: PropTypes.string.isRequired,
+}
+
+ButtonLinkWrapper.defaultProps = {
+  addClass: '',
+}
+
+ButtonLinkWrapper.displayName = 'Button Link Wrapper'
 
 export default LinkedButton
