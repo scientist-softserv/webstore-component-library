@@ -12,7 +12,7 @@ const RequestItem = React.forwardRef(({ createdAt, description, href, img, index
 
   return (
     <article
-      className={`request-item p-3 d-flex flex-column flex-md-row justify-content-between gap-3 bg-light 
+      className={`request-item p-3 d-flex flex-column flex-md-row justify-content-between gap-3 bg-light
       ${index % 2 === 0 ? ' bg-light' : ' bg-light-2'}`}
     >
       <div className='d-flex flex-column flex-sm-row gap-3 request-item-details'>
