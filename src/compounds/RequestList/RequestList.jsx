@@ -7,18 +7,13 @@ import RequestItem from '../RequestItem/RequestItem'
 const RequestList = ({ requests }) => (
   <>
     <Title title='My Requests' size='medium' />
-    {requests.map((req) => (
-      <Link key={req.id} href={`${req.href}`} passHref legacyBehavior>
-        <RequestItem
-          createdAt={req.createdAt}
-          description={req.description}
-          img={req.img}
-          title={req.title}
-          status={req.status}
-          updatedAt={req.updatedAt}
-        />
-      </Link>
-    ))}
+    <div className='rounded overflow-hidden'>
+      {requests.map((req, index) => (
+        <Link key={req.id} href={`${req.href}`} passHref legacyBehavior>
+          <RequestItem request={req} index={index} />
+        </Link>
+      ))}
+    </div>
   </>
 )
 
