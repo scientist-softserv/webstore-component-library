@@ -39,17 +39,19 @@ const RequestItem = React.forwardRef(({ index, request }, ref) => {
   )
 })
 
+export const requestPropTypes = {
+  createdAt: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
+  img: PropTypes.shape(Image.propTypes).isRequired,
+  status: PropTypes.shape(Badge.propTypes).isRequired,
+  title: PropTypes.string.isRequired,
+  updatedAt: PropTypes.string.isRequired,
+}
+
 RequestItem.propTypes = {
   index: PropTypes.number,
-  request: PropTypes.shape({
-    createdAt: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    href: PropTypes.string.isRequired,
-    img: PropTypes.shape(Image.propTypes).isRequired,
-    status: PropTypes.shape(Badge.propTypes).isRequired,
-    title: PropTypes.string.isRequired,
-    updatedAt: PropTypes.string.isRequired,
-  }).isRequired,
+  request: PropTypes.shape(requestPropTypes).isRequired,
 }
 
 RequestItem.defaultProps = {

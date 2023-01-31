@@ -101,14 +101,14 @@ Document.propTypes = {
     lineItems: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
     requestIdentifier: PropTypes.string.isRequired,
     shippingPrice: PropTypes.string.isRequired,
-    shipTo: {
+    shipTo: PropTypes.shape({
       organizationName: PropTypes.string,
       text: PropTypes.string,
-    }.isRequired,
-    shipFrom: {
+    }).isRequired,
+    shipFrom: PropTypes.shape({
       organizationName: PropTypes.string,
       text: PropTypes.string,
-    }.isRequired,
+    }).isRequired,
     subtotalPrice: PropTypes.string.isRequired,
     taxAmount: PropTypes.string.isRequired,
     terms: PropTypes.string.isRequired,

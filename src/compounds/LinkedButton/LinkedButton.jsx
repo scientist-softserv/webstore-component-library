@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
-import Button from '../../components/Button/Button'
+import Button, { buttonPropTypes } from '../../components/Button/Button'
 import './linked-button.css'
 
 /**
@@ -16,18 +16,23 @@ const LinkedButton = ({ addClass, buttonProps, path }) => (
     <ButtonLinkWrapper
       addClass={addClass}
       buttonProps={buttonProps}
-      href={path}
     />
   </Link>
 )
 
-const ButtonLinkWrapper = React.forwardRef(({ addClass, buttonProps, href }, ref) => (
-  <a href={href} ref={ref} className={addClass}>
-    <Button {...buttonProps} />
-  </a>
-))
+const ButtonLinkWrapper = React.forwardRef(({ ...props }, ref) => {
+  // eslint-disable-next-line react/prop-types
+  const { addClass, buttonProps, href } = props
 
-const { onClick, ...remainingPropTypes } = Button.propTypes
+  return (
+    <a href={href} ref={ref} className={addClass}>
+      <Button {...buttonProps} />
+    </a>
+  )
+})
+
+const { onClick, ...remainingPropTypes } = buttonPropTypes
+
 LinkedButton.propTypes = {
   buttonProps: PropTypes.shape(remainingPropTypes).isRequired,
   addClass: PropTypes.string,
@@ -40,5 +45,16 @@ LinkedButton.propTypes = {
 LinkedButton.defaultProps = {
   addClass: '',
 }
+
+ButtonLinkWrapper.propTypes = {
+  addClass: PropTypes.string,
+  buttonProps: PropTypes.shape(remainingPropTypes).isRequired,
+}
+
+ButtonLinkWrapper.defaultProps = {
+  addClass: '',
+}
+
+ButtonLinkWrapper.displayName = 'Button Link Wrapper'
 
 export default LinkedButton

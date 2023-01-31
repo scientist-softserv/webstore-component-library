@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import { Card } from 'react-bootstrap'
 import Link from '../../components/Link/Link'
 
-const MessageCardBody = ({ message, isLatestMessage }) => {
+const MessageCardBody = ({ message }) => {
   const { avatar, body, id, name, attachments, timeSince } = message
   return (
-    <Card key={id} className={`${isLatestMessage ? '' : 'pb-4'} pt-4 flex-row border-0 border-top`}>
+    <Card key={id} className='pb-4 pt-4 flex-row border-0 border-top'>
       <Card.Img variant='left' src={avatar} className='h-25' />
       <Card.Body className='pt-0 pe-0 d-flex flex-column flex-md-row'>
         <div>
@@ -52,7 +52,6 @@ MessageCardBody.propTypes = {
       }),
     ),
   }).isRequired,
-  isLatestMessage: PropTypes.bool.isRequired,
 }
 
 export default MessageCardBody

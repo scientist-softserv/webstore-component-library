@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Col, Row } from 'react-bootstrap'
 import Title from '../../components/Title/Title'
-import Item from '../Item/Item'
+import Item, { itemPropTypes } from '../Item/Item'
 import ItemLoading from '../Item/ItemLoading'
 import './item-group.scss'
 
@@ -53,10 +53,10 @@ ItemGroup.propTypes = {
     label: PropTypes.string,
   }),
   items: PropTypes.arrayOf(PropTypes.shape({
-    ...Item.propTypes,
+    ...itemPropTypes,
     imgProps: PropTypes.shape({}),
     style: PropTypes.shape({}),
-  })).isRequired,
+  })),
   isLoading: PropTypes.bool.isRequired,
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
   withButtonLink: PropTypes.bool,

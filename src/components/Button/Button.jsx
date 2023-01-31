@@ -16,7 +16,7 @@ const Button = ({ addClass, backgroundColor, size, label, textColor, type, ...pr
   </button>
 )
 
-Button.propTypes = {
+export const buttonPropTypes = {
   addClass: PropTypes.string,
   backgroundColor: PropTypes.string,
   label: PropTypes.string.isRequired,
@@ -25,6 +25,8 @@ Button.propTypes = {
   textColor: PropTypes.string,
   type: PropTypes.string,
 }
+
+Button.propTypes = { ...buttonPropTypes }
 
 Button.defaultProps = {
   addClass: '',

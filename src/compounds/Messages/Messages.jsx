@@ -13,7 +13,7 @@ const Messages = ({ addClass, messages }) => {
       <Title title='Messages' size='small' />
       {messages.length ? (messages.map((message, idx) => (
         ((messages.length > 3) && (idx < messages.length - 3)) ? (
-          <>
+          <div key={idx}>
             <Collapse in={open}>
               <div id='collapse-card'>
                 <MessageCardBody messages={messages} message={message} idx={idx} />
@@ -40,9 +40,9 @@ const Messages = ({ addClass, messages }) => {
                 )}
               </button>
             )}
-          </>
+          </div>
         ) : (
-          <MessageCardBody message={message} isLatestMessage={idx === (messages.length - 1)} />
+          <MessageCardBody message={message} key={idx} />
         )
       ))) : (
         <TextBox
