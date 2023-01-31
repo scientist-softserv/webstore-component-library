@@ -10,6 +10,7 @@ import Footer2 from './Footer/Footer2'
 import Header from './Header/Header'
 import Item from './Item/Item'
 import ItemGroup from './ItemGroup/ItemGroup'
+import ItemLoading from './Item/ItemLoading'
 import ItemPage from './ItemPage/ItemPage'
 import LinkGroup from './LinkGroup/LinkGroup'
 import LinkedButton from './LinkedButton/LinkedButton'
@@ -28,6 +29,7 @@ export {
   Header,
   Item,
   ItemGroup,
+  ItemLoading,
   ItemPage,
   LinkGroup,
   LinkedButton,
