@@ -1,0 +1,10 @@
+.request-item-details {
+  flex: 2;
+}
+
+.status {
+  max-height: 175px;
+  @media (min-width: 768px) {
+    width: 260px;
+  }
+}
