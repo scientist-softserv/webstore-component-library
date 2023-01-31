@@ -6,7 +6,8 @@ import TextBox from '../../components/TextBox/TextBox'
 import Title from '../../components/Title/Title'
 import './request-item.css'
 
-const RequestItem = React.forwardRef(({ createdAt, description, href, img, title, status, updatedAt }, ref) => {
+const RequestItem = React.forwardRef(({ index, request }, ref) => {
+  const { createdAt, description, href, img, title, status, updatedAt } = request
   const { backgroundColor, text, textColor } = status
   const image = { ...img, height: 70, width: 70 }
 
@@ -33,13 +34,16 @@ const RequestItem = React.forwardRef(({ createdAt, description, href, img, title
 })
 
 RequestItem.propTypes = {
-  createdAt: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  id: PropTypes.number,
-  img: PropTypes.shape(Image.propTypes).isRequired,
-  status: PropTypes.shape(Badge.propTypes).isRequired,
-  title: PropTypes.string.isRequired,
-  updatedAt: PropTypes.string.isRequired,
+  index: PropTypes.number,
+  request: PropTypes.shape({
+    createdAt: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    href: PropTypes.string.isRequired,
+    img: PropTypes.shape(Image.propTypes).isRequired,
+    status: PropTypes.shape(Badge.propTypes).isRequired,
+    title: PropTypes.string.isRequired,
+    updatedAt: PropTypes.string.isRequired,
+  }).isRequired,
 }
 
 export default RequestItem
