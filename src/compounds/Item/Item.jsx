@@ -99,7 +99,7 @@ Item.propTypes = {
     PropTypes.shape({}),
   ]),
   isLoading: PropTypes.bool,
-  item: PropTypes.shape({ ...itemPropTypes }).isRequired,
+  item: PropTypes.shape(itemPropTypes).isRequired,
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
   titleLink: PropTypes.string,
   withButtonLink: PropTypes.bool,
@@ -115,14 +115,6 @@ Item.defaultProps = {
   buttonProps: LinkedButton.defaultProps,
   href: '',
   isLoading: false,
-  item: {
-    description: '',
-    id: null,
-    img: {
-      alt: '',
-    },
-    slug: '',
-  },
   orientation: 'vertical',
   titleLink: '',
   withButtonLink: false,
