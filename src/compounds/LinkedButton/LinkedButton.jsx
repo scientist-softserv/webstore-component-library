@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
+import Button from '../../components/Button/Button'
 import './linked-button.css'
 
 /**
