@@ -116,10 +116,6 @@ Item.defaultProps = {
   item: {
     description: '',
     id: null,
-    img: {
-      src: '',
-      alt: '',
-    },
     name: '',
     slug: '',
   },
