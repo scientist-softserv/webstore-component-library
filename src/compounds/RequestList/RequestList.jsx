@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 import Title from '../../components/Title/Title'
-import RequestItem from '../RequestItem/RequestItem'
+import RequestItem, { requestPropTypes } from '../RequestItem/RequestItem'
 
 const RequestList = ({ requests }) => (
   <>
@@ -18,7 +18,7 @@ const RequestList = ({ requests }) => (
 )
 
 RequestList.propTypes = {
-  requests: PropTypes.arrayOf(PropTypes.shape(RequestItem.propTypes)).isRequired,
+  requests: PropTypes.arrayOf(PropTypes.shape(requestPropTypes)).isRequired,
 }
 
 export default RequestList
