@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Col, Row } from 'react-bootstrap'
 import Title from '../../components/Title/Title'
-import Item, { itemPropTypes} from '../Item/Item'
+import Item, { itemPropTypes } from '../Item/Item'
 import ItemLoading from '../Item/ItemLoading'
 import './item-group.scss'
 
