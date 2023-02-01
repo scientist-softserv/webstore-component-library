@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import Offcanvas from 'react-bootstrap/Offcanvas'
-import Dropdown from 'react-bootstrap/Dropdown'
+import { Dropdown, Offcanvas } from 'react-bootstrap'
 import LineItemsTable from '../../components/LineItemsTable/LineItemsTable'
 import './document.scss'
 

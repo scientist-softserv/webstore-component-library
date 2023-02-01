@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Card from 'react-bootstrap/card'
+import { Card } from 'react-bootstrap'
 import Image from '../../components/Image/Image'
 import CardBody from './CardBody'
 import LinkedButton from '../LinkedButton/LinkedButton'
