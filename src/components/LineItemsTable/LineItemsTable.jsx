@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Table from 'react-bootstrap/Table'
+import { Table } from 'react-bootstrap'
 
 const LineItemsTable = (props) => {
   const { addClass, lineItems, shippingPrice, subtotalPrice, taxAmount, totalPrice } = props
