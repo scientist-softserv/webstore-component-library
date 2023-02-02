@@ -7,7 +7,6 @@ import ViewFiles from './actions/ViewFiles'
 import './actions-group.scss'
 
 const ActionsGroup = ({ files, handleSendingMessages }) => {
-  console.log(files)
   const [show, setShow] = useState(false)
   const [action, setAction] = useState(null)
 
@@ -20,7 +19,6 @@ const ActionsGroup = ({ files, handleSendingMessages }) => {
     setAction(null)
     setShow(false)
   }
-
   return (
     <>
       <ListGroup className='actions-group'>
