@@ -1,45 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Table } from 'react-bootstrap'
+import { Button, Table } from 'react-bootstrap'
 
-const FilesTable = ({addClass, files}) => {
-  let headers = [{
-    name: 'File Name',
-    key: 'file-name'
-  },
-  {
-    name: 'Uploaded By',
-    key: 'uploaded-by'
-  },
-  {
-    name: 'Size',
-    key:  'size'
-  },
-  {
-    name: 'Created At',
-    key: 'created-at'
-  },
-  {
-    name: '',
-    key: 'buttons'
-  }]
 
+const FilesTable = ({addClass, files, handleDeleteFile}) => {
   if (files.length === 0) {
     return (
-      <h6>You don't have any of these documents yet.</h6>
+      <h6 className='mt-3'>You do not have this type of document yet.</h6>
     )
   } else {
     return (
       <Table striped bordered hover size='sm' className={`${addClass}`}>
         <thead>
           <tr>
-            {headers.map((header) => {
-              return (
-                <th key={header.key}>
-                  {header.name}
-                </th>
-              )
-            })}
+            <th>File Name</th>
+            <th>Uploaded By</th>
+            <th>Size</th>
+            <th>Created At</th>
+            <th> </th>
           </tr>
         </thead>
         <tbody>
@@ -51,7 +29,14 @@ const FilesTable = ({addClass, files}) => {
                   <td>{uploadedBy}</td>
                   <td>{contentLength}</td>
                   <td>{createdAt}</td>
-                  <td><button></button></td>
+                  <td>
+                    {/* TODO: add an X icon here instead of close button, make sure the handleDeleteFile is working */}
+                    <Button 
+                      primary
+                      onClick={handleDeleteFile}>
+                        Remove
+                    </Button>
+                  </td>
               </tr>
             )
           })}

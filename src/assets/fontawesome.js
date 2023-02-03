@@ -7,6 +7,7 @@ import {
   faListCheck,
   faPaperclip,
   faSquareCheck,
+  faUpload,
   faVial,
   faVialCircleCheck,
 } from '@fortawesome/free-solid-svg-icons'
@@ -22,9 +23,10 @@ library.add(
   faFileLines,
   faListCheck,
   faMinusSquare,
+  faPaperclip,
   faPlusSquare,
   faSquareCheck,
-  faPaperclip,
+  faUpload,
   faVial,
   faVialCircleCheck,
 )
