@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { ListGroup } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import SendMessage from './actions/SendMessage'
+// import SendMessage from './actions/SendMessage'
 import ViewFiles from './actions/ViewFiles'
 import './actions-group.scss'
 
-const ActionsGroup = ({ initialFiles, handleSendingMessagesOrFiles }) => {
+// TODO: add back handleSendingMessagesOrFiles into the props. see below TODO.
+const ActionsGroup = ({ initialFiles }) => {
+  console.log('initialfiles', initialFiles)
   const [show, setShow] = useState(false)
   const [action, setAction] = useState(null)
 
@@ -23,8 +25,7 @@ const ActionsGroup = ({ initialFiles, handleSendingMessagesOrFiles }) => {
     <>
       <ListGroup className='actions-group'>
         {/* TODO(@summercook): return the this and the below commented code
-        once the direction of https://github.com/scientist-softserv/webstore/issues/156
-        has been decided */}
+        once we are able to refactor posting messages & attachments */}
         {/* <ListGroup.Item action variant='primary' onClick={() => handleShow('SendMessage')}>
           <FontAwesomeIcon icon='fa-envelope' />
           Send Message
@@ -52,15 +53,16 @@ const ActionsGroup = ({ initialFiles, handleSendingMessagesOrFiles }) => {
             show={show}
             handleClose={handleClose}
             initialFiles={initialFiles}
-            //onSubmit={handleSendingMessagesOrFiles}
+            // onSubmit={handleSendingMessagesOrFiles}
           />
         )}
     </>
   )
 }
 
-// ActionsGroup.propTypes = {
-  //handleSendingMessages: PropTypes.func.isRequired,
-// }
+ActionsGroup.propTypes = {
+  // handleSendingMessagesOrFiles: PropTypes.func.isRequired,
+  initialFiles: PropTypes.shapeOf(['']).isRequired,
+}
 
 export default ActionsGroup

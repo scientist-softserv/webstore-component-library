@@ -1,6 +1,8 @@
-import React, { useState, useRef } from 'react'
+import React
+  // { useState, useRef } TODO comment back in
+  from 'react'
 import PropTypes from 'prop-types'
-import { 
+import {
   // Button,
   // CloseButton,
   // Form,
@@ -8,13 +10,14 @@ import {
   // ListGroup,
   Offcanvas,
   Tab,
-  Tabs } from 'react-bootstrap'
+  Tabs,
+} from 'react-bootstrap'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import FilesTable from '../../../components/FilesTable/FilesTable'
 // import { apiV2CompatibleStrings, convertToBase64 } from '../../../resources/utilityFunctions'
 
 const ViewFiles = ({ initialFiles, handleClose, show }) => {
-  // TODO(summercook): 
+  // TODO(summercook):
   // - comment back in the following 2 lines & above imports once posting messages/attachments is working
   // const fileRef = useRef(null)
   // const [files, setFiles] = useState([])
@@ -22,22 +25,22 @@ const ViewFiles = ({ initialFiles, handleClose, show }) => {
     {
       eventKey: 'files',
       title: 'Attachments',
-      status: 'Other File'
+      status: 'Other File',
     },
     {
       eventKey: 'status-updates',
       title: 'Status Updates',
-      status: 'Status Update'
+      status: 'Status Update',
     },
     {
       eventKey: 'payment-status-files',
       title: 'Payment Status Files',
       // TODO(@summer-cook): fill this in when Sherman adds a file of this type
-      status: 'TODO:FILL THIS IN'
+      status: 'TODO:FILL THIS IN',
     },
   ]
 
-  // TODO(summercook): 
+  // TODO(summercook):
   // - comment back in the following 3 methods once posting messages/attachments is working
   // may need to use the handleSendingMessagesOrFiles to post
   // const handleSubmit = (event) => {
@@ -60,20 +63,19 @@ const ViewFiles = ({ initialFiles, handleClose, show }) => {
   //     throw new Error(error)
   //   }
   // }
-  
+
   // const handleDeleteFile = (file) => {
   //   const remainingFiles = files.filter((obj) => obj !== file)
   //   setFiles(remainingFiles)
   // }
-
   return (
-      <Offcanvas show={show} onHide={handleClose} placement='end' scroll='true'>
-        <Offcanvas.Header className='d-flex border-bottom px-3 py-2 bg-light' closeButton>
-          <Offcanvas.Title>Documents</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body className='border rounded p-2 m-3'>
-          {/* TODO(summercook): see above comment */}
-          {/* <Form>
+    <Offcanvas show={show} onHide={handleClose} placement='end' scroll='true'>
+      <Offcanvas.Header className='d-flex border-bottom px-3 py-2 bg-light' closeButton>
+        <Offcanvas.Title>Documents</Offcanvas.Title>
+      </Offcanvas.Header>
+      <Offcanvas.Body className='border rounded p-2 m-3'>
+        {/* TODO(summercook): see above comment */}
+        {/* <Form>
             <h6 className='mt-3'>Upload Additional Documents</h6>
             <InputGroup controlId='attachments' className='mb-3'>
               <Form.Control
@@ -82,7 +84,7 @@ const ViewFiles = ({ initialFiles, handleClose, show }) => {
                 onChange={handleAddFile}
                 ref={fileRef}
               />
-              <Button 
+              <Button
                 variant='outline-primary'
                 onClick={handleSubmit}
                 type='submit'
@@ -103,33 +105,36 @@ const ViewFiles = ({ initialFiles, handleClose, show }) => {
               )
             })}
           </ListGroup> */}
-          <Tabs defaultActiveKey="files" id="document-tabs">
-            {documentTabs && documentTabs.map(tab => {
-              const { eventKey, title, status } = tab
-              let filteredFiles = initialFiles.filter(f => (status === f.status) || (status === 'Other File' && f.status === null))
-              return (
-                <Tab eventKey={eventKey} title={title} className='p-2'>
-                  <FilesTable
-                    files={filteredFiles}
-                    status={status}
-                    // TODO(summercook): see above comment
-                    // handleDeleteFile={handleDeleteFile}
-                  />
-                </Tab>
-              )
-            })}
-          </Tabs>
-        </Offcanvas.Body>
-      </Offcanvas>
+        <Tabs defaultActiveKey='files' id='document-tabs'>
+          {documentTabs && documentTabs.map((tab) => {
+            const { eventKey, title, status } = tab
+            const filteredFiles = initialFiles.filter((f) => (status === f.status) || (status === 'Other File' && f.status === null))
+            return (
+              <Tab
+                eventKey={eventKey}
+                title={title}
+                className='p-2'
+                key={eventKey}
+              >
+                <FilesTable
+                  files={filteredFiles}
+                  status={status}
+                  // TODO(summercook): see above comment
+                  // handleDeleteFile={handleDeleteFile}
+                />
+              </Tab>
+            )
+          })}
+        </Tabs>
+      </Offcanvas.Body>
+    </Offcanvas>
   )
 }
 
 ViewFiles.propTypes = {
-  addClass: PropTypes.string,
-}
-
-ViewFiles.defaultProps = {
-  addClass: '',
+  initialFiles: PropTypes.shapeOf(['']).isRequired,
+  handleClose: PropTypes.func.isRequired,
+  show: PropTypes.bool.isRequired,
 }
 
 export default ViewFiles
