@@ -62,7 +62,19 @@ const ActionsGroup = ({ initialFiles }) => {
 
 ActionsGroup.propTypes = {
   // handleSendingMessagesOrFiles: PropTypes.func.isRequired,
-  initialFiles: PropTypes.shapeOf(['']).isRequired,
+  initialFiles: PropTypes.shape([{
+    contentLength: PropTypes.string.isRequired,
+    content_length: PropTypes.number.isRequired,
+    content_type: PropTypes.string.isRequired,
+    createdAt: PropTypes.string.isRequired,
+    created_at: PropTypes.string.isRequired,
+    download: PropTypes.string.isRequired,
+    filename: PropTypes.string.isRequired,
+    href: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired,
+    uploadedBy: PropTypes.string.isRequired,
+    uuid: PropTypes.string.isRequired,
+  }]).isRequired,
 }
 
 export default ActionsGroup
