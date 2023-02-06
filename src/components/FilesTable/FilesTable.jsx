@@ -17,7 +17,9 @@ const FilesTable = ({addClass, files, handleDeleteFile}) => {
             <th>Uploaded By</th>
             <th>Size</th>
             <th>Created At</th>
-            <th> </th>
+            {/* TODO(summer-cook): 
+            - comment this back in once posting attachments/messages is working/during the work for this ticket: https://github.com/scientist-softserv/webstore-component-library/issues/152*/}
+            {/* <th> </th> */}
           </tr>
         </thead>
         <tbody>
@@ -29,14 +31,16 @@ const FilesTable = ({addClass, files, handleDeleteFile}) => {
                   <td>{uploadedBy}</td>
                   <td>{contentLength}</td>
                   <td>{createdAt}</td>
-                  <td>
-                    {/* TODO: add an X icon here instead of close button, make sure the handleDeleteFile is working */}
+                  {/* TODO(summer-cook):
+                  - comment this back in (see above comment)
+                  - add an X icon here instead of remove text, make sure the handleDeleteFile is working */}
+                  {/* <td>
                     <Button 
                       primary
                       onClick={handleDeleteFile}>
                         Remove
                     </Button>
-                  </td>
+                  </td> */}
               </tr>
             )
           })}
