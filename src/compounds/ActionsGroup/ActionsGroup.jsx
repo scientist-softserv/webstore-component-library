@@ -49,7 +49,6 @@ const ActionsGroup = ({ initialFiles }) => {
       {(action === 'ViewFiles' && show)
         && (
           <ViewFiles
-            show={show}
             handleClose={handleClose}
             initialFiles={initialFiles}
             // onSubmit={handleSendingMessagesOrFiles}

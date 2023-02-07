@@ -64,7 +64,7 @@ const ViewFiles = ({ initialFiles, handleClose, show }) => {
   //   setFiles(remainingFiles)
   // }
   return (
-    <Offcanvas show={show} onHide={handleClose} placement='end' scroll='true'>
+    <Offcanvas show onHide={handleClose} placement='end' scroll='true'>
       <Offcanvas.Header className='d-flex border-bottom px-3 py-2 bg-light' closeButton>
         <Offcanvas.Title>Documents</Offcanvas.Title>
       </Offcanvas.Header>
