@@ -23,7 +23,7 @@ const ActionsGroup = ({ initialFiles }) => {
   return (
     <>
       <ListGroup className='actions-group'>
-        {/* TODO(@summercook): return the this and the below commented code
+        {/* TODO(@summercook): return this and the below commented code
         once we are able to refactor posting messages & attachments */}
         {/* <ListGroup.Item action variant='primary' onClick={() => handleShow('SendMessage')}>
           <FontAwesomeIcon icon='fa-envelope' />
