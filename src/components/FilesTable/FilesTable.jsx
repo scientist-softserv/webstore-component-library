@@ -14,6 +14,7 @@ const FilesTable = ({ addClass, files }) => {
       <h6 className='mt-3'>You do not have this type of document yet.</h6>
     )
   }
+
   return (
     <Table striped bordered hover size='sm' className={`${addClass}`}>
       <thead>
