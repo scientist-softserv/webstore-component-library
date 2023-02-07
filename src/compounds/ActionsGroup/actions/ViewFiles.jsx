@@ -21,6 +21,7 @@ const ViewFiles = ({ initialFiles, handleClose, show }) => {
   // - comment back in the following 2 lines & above imports once posting messages/attachments is working
   // const fileRef = useRef(null)
   // const [files, setFiles] = useState([])
+
   const documentTabs = [
     {
       eventKey: 'files',
@@ -31,12 +32,6 @@ const ViewFiles = ({ initialFiles, handleClose, show }) => {
       eventKey: 'status-updates',
       title: 'Status Updates',
       status: 'Status Update',
-    },
-    {
-      eventKey: 'payment-status-files',
-      title: 'Payment Status Files',
-      // TODO(@summer-cook): fill this in when Sherman adds a file of this type
-      status: 'TODO:FILL THIS IN',
     },
   ]
 
@@ -78,33 +73,33 @@ const ViewFiles = ({ initialFiles, handleClose, show }) => {
         {/* <Form>
             <h6 className='mt-3'>Upload Additional Documents</h6>
             <InputGroup controlId='attachments' className='mb-3'>
-              <Form.Control
-                multiple
-                type='file'
-                onChange={handleAddFile}
-                ref={fileRef}
-              />
-              <Button
-                variant='outline-primary'
-                onClick={handleSubmit}
-                type='submit'
-              >
-                <FontAwesomeIcon icon='fa-upload' />
-              </Button>
+            <Form.Control
+            multiple
+            type='file'
+            onChange={handleAddFile}
+            ref={fileRef}
+            />
+            <Button
+            variant='outline-primary'
+            onClick={handleSubmit}
+            type='submit'
+            >
+            <FontAwesomeIcon icon='fa-upload' />
+            </Button>
             </InputGroup>
-          </Form>
-          <ListGroup variant='flush'>
+            </Form>
+            <ListGroup variant='flush'>
             {files.map((file) => {
               const fileName = Object.keys(file)[0]
 
               return (
                 <ListGroup.Item key={fileName} className='d-flex align-items-center'>
-                  <span>{fileName}</span>
-                  <CloseButton onClick={() => handleDeleteFile(file)} className='ms-auto' />
+                <span>{fileName}</span>
+                <CloseButton onClick={() => handleDeleteFile(file)} className='ms-auto' />
                 </ListGroup.Item>
-              )
-            })}
-          </ListGroup> */}
+                )
+              })}
+            </ListGroup> */}
         <Tabs defaultActiveKey='files' id='document-tabs'>
           {documentTabs && documentTabs.map((tab) => {
             const { eventKey, title, status } = tab
