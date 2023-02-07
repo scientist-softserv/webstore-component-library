@@ -17,7 +17,6 @@ import FilesTable from '../../../components/FilesTable/FilesTable'
 // import { apiV2CompatibleStrings, convertToBase64 } from '../../../resources/utilityFunctions'
 
 const ViewFiles = ({ initialFiles, handleClose, show }) => {
-  console.log('initialfiles form viewfiles', initialFiles)
   // TODO(summercook):
   // - comment back in the following 2 lines & above imports once posting messages/attachments is working
   // const fileRef = useRef(null)
@@ -136,12 +135,10 @@ ViewFiles.propTypes = {
   initialFiles: PropTypes.arrayOf(
     PropTypes.shape({
       contentLength: PropTypes.string.isRequired,
-      content_length: PropTypes.number.isRequired,
-      content_type: PropTypes.string.isRequired,
+      contentType: PropTypes.string.isRequired,
       createdAt: PropTypes.string.isRequired,
-      created_at: PropTypes.string.isRequired,
       download: PropTypes.string.isRequired,
-      filename: PropTypes.string.isRequired,
+      fileName: PropTypes.string.isRequired,
       href: PropTypes.string.isRequired,
       status: PropTypes.string.isRequired,
       uploadedBy: PropTypes.string.isRequired,

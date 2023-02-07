@@ -9,7 +9,6 @@ import {
 // add back handleDeleteFile to props once posting attachments/messages is working/during the work for this ticket:
 // https://github.com/scientist-softserv/webstore-component-library/issues/152*/
 const FilesTable = ({ addClass, files }) => {
-  console.log('files from filestable', files)
   if (files.length === 0) {
     return (
       <h6 className='mt-3'>You do not have this type of document yet.</h6>
@@ -30,10 +29,10 @@ const FilesTable = ({ addClass, files }) => {
       </thead>
       <tbody>
         {files.map((file) => {
-          const { uuid, filename, uploadedBy, contentLength, createdAt } = file
+          const { uuid, fileName, uploadedBy, contentLength, createdAt } = file
           return (
             <tr key={uuid} className='small'>
-              <td>{filename}</td>
+              <td>{fileName}</td>
               <td>{uploadedBy}</td>
               <td>{contentLength}</td>
               <td>{createdAt}</td>
@@ -60,12 +59,10 @@ FilesTable.propTypes = {
   files: PropTypes.arrayOf(
     PropTypes.shape({
       contentLength: PropTypes.string.isRequired,
-      content_length: PropTypes.number.isRequired,
-      content_type: PropTypes.string.isRequired,
+      contentType: PropTypes.string.isRequired,
       createdAt: PropTypes.string.isRequired,
-      created_at: PropTypes.string.isRequired,
       download: PropTypes.string.isRequired,
-      filename: PropTypes.string.isRequired,
+      fileName: PropTypes.string.isRequired,
       href: PropTypes.string.isRequired,
       status: PropTypes.string.isRequired,
       uploadedBy: PropTypes.string.isRequired,
