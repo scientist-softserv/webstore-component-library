@@ -69,11 +69,17 @@ ActionsGroup.propTypes = {
       download: PropTypes.string.isRequired,
       fileName: PropTypes.string.isRequired,
       href: PropTypes.string.isRequired,
-      status: PropTypes.string.isRequired,
+      status: PropTypes.string,
       uploadedBy: PropTypes.string.isRequired,
       uuid: PropTypes.string.isRequired,
     }),
   ).isRequired,
+}
+
+ActionsGroup.defaultProps = {
+  initialFiles: [{
+    status: null
+  }]
 }
 
 export default ActionsGroup

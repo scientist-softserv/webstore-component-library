@@ -100,7 +100,7 @@ const ViewFiles = ({ initialFiles, handleClose, show }) => {
                 )
               })}
             </ListGroup> */}
-        <Tabs defaultActiveKey='files' id='document-tabs'>
+        <Tabs defaultActiveKey='files' id='document-tabs' justify fill>
           {documentTabs && documentTabs.map((tab) => {
             const { eventKey, title, status } = tab
             const filteredFiles = initialFiles.filter((f) => (status === f.status) || (status === 'Other File' && f.status === null))
@@ -135,13 +135,19 @@ ViewFiles.propTypes = {
       download: PropTypes.string.isRequired,
       fileName: PropTypes.string.isRequired,
       href: PropTypes.string.isRequired,
-      status: PropTypes.string.isRequired,
+      status: PropTypes.string,
       uploadedBy: PropTypes.string.isRequired,
       uuid: PropTypes.string.isRequired,
     }),
   ).isRequired,
   handleClose: PropTypes.func.isRequired,
   show: PropTypes.bool.isRequired,
+}
+
+ViewFiles.defaultProps = {
+  initialFiles: [{
+    status: null
+  }]
 }
 
 export default ViewFiles
