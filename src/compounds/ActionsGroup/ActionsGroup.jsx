@@ -7,8 +7,8 @@ import ViewFiles from './actions/ViewFiles'
 import { allowNull } from '../../resources/utilityFunctions'
 import './actions-group.scss'
 
-// TODO: add back handleSendingMessagesOrFiles into the props. see below TODO.
-const ActionsGroup = ({ initialFiles, handleSendingMessagesOrFiles }) => {
+// TODO: add back handleSendingMessagesOrFiles into the props, removing for now to avoid console error. see below TODO.
+const ActionsGroup = ({ initialFiles }) => {
   const [show, setShow] = useState(false)
   const [action, setAction] = useState(null)
 
