@@ -4,6 +4,7 @@ import { ListGroup } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import SendMessage from './actions/SendMessage'
 import ViewFiles from './actions/ViewFiles'
+import { allowNull } from '../../../resources/utilityFunctions'
 import './actions-group.scss'
 
 // TODO: add back handleSendingMessagesOrFiles into the props. see below TODO.
@@ -68,17 +69,11 @@ ActionsGroup.propTypes = {
       download: PropTypes.string.isRequired,
       fileName: PropTypes.string.isRequired,
       href: PropTypes.string.isRequired,
-      status: PropTypes.string,
+      status: allowNull(PropTypes.string.isRequired),
       uploadedBy: PropTypes.string.isRequired,
       uuid: PropTypes.string.isRequired,
     }),
   ).isRequired,
-}
-
-ActionsGroup.defaultProps = {
-  initialFiles: [{
-    status: null
-  }]
 }
 
 export default ActionsGroup

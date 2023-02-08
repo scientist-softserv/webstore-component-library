@@ -4,6 +4,7 @@ import {
   // Button,
   Table,
 } from 'react-bootstrap'
+import { allowNull } from '../../resources/utilityFunctions'
 
 // TODO(summer-cook):
 // add back handleDeleteFile to props once posting attachments/messages is working/during the work for this ticket:
@@ -65,7 +66,7 @@ FilesTable.propTypes = {
       download: PropTypes.string.isRequired,
       fileName: PropTypes.string.isRequired,
       href: PropTypes.string.isRequired,
-      status: PropTypes.string,
+      status: allowNull(PropTypes.string.isRequired),
       uploadedBy: PropTypes.string.isRequired,
       uuid: PropTypes.string.isRequired,
     }),
@@ -76,9 +77,6 @@ FilesTable.propTypes = {
 
 FilesTable.defaultProps = {
   addClass: '',
-  files: [{
-    status: null
-  }]
 }
 
 export default FilesTable

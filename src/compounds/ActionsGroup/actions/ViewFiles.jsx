@@ -15,8 +15,9 @@ import {
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import FilesTable from '../../../components/FilesTable/FilesTable'
 // import { apiV2CompatibleStrings, convertToBase64 } from '../../../resources/utilityFunctions'
+import { allowNull } from '../../../resources/utilityFunctions'
 
-const ViewFiles = ({ initialFiles, handleClose, show }) => {
+const ViewFiles = ({ initialFiles, handleClose }) => {
   // TODO(summercook):
   // - comment back in the following 2 lines & above imports once posting messages/attachments is working
   // const fileRef = useRef(null)
@@ -135,19 +136,12 @@ ViewFiles.propTypes = {
       download: PropTypes.string.isRequired,
       fileName: PropTypes.string.isRequired,
       href: PropTypes.string.isRequired,
-      status: PropTypes.string,
+      status: allowNull(PropTypes.string.isRequired),
       uploadedBy: PropTypes.string.isRequired,
       uuid: PropTypes.string.isRequired,
     }),
   ).isRequired,
   handleClose: PropTypes.func.isRequired,
-  show: PropTypes.bool.isRequired,
-}
-
-ViewFiles.defaultProps = {
-  initialFiles: [{
-    status: null
-  }]
 }
 
 export default ViewFiles
