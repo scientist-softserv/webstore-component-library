@@ -4,7 +4,7 @@ import { ListGroup } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import SendMessage from './actions/SendMessage'
 import ViewFiles from './actions/ViewFiles'
-import { allowNull } from '../../../resources/utilityFunctions'
+import { allowNull } from '../../resources/utilityFunctions'
 import './actions-group.scss'
 
 // TODO: add back handleSendingMessagesOrFiles into the props. see below TODO.
