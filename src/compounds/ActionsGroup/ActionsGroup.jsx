@@ -8,7 +8,7 @@ import { allowNull } from '../../resources/utilityFunctions'
 import './actions-group.scss'
 
 // TODO: add back handleSendingMessagesOrFiles into the props. see below TODO.
-const ActionsGroup = ({ initialFiles }) => {
+const ActionsGroup = ({ initialFiles, handleSendingMessagesOrFiles }) => {
   const [show, setShow] = useState(false)
   const [action, setAction] = useState(null)
 
@@ -60,7 +60,7 @@ const ActionsGroup = ({ initialFiles }) => {
 }
 
 ActionsGroup.propTypes = {
-  // handleSendingMessagesOrFiles: PropTypes.func.isRequired,
+  handleSendingMessagesOrFiles: PropTypes.func.isRequired,
   initialFiles: PropTypes.arrayOf(
     PropTypes.shape({
       contentLength: PropTypes.string.isRequired,

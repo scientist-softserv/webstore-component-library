@@ -6,9 +6,6 @@ import {
 } from 'react-bootstrap'
 import { allowNull } from '../../resources/utilityFunctions'
 
-// TODO(summer-cook):
-// add back handleDeleteFile to props once posting attachments/messages is working/during the work for this ticket:
-// https://github.com/scientist-softserv/webstore-component-library/issues/152*/
 const FilesTable = ({ addClass, files }) => {
   if (files.length === 0) {
     return (
@@ -24,9 +21,6 @@ const FilesTable = ({ addClass, files }) => {
           <th>Uploaded By</th>
           <th>Size</th>
           <th>Created At</th>
-          {/* TODO(summer-cook):
-            - comment this back in, see comment above */}
-          {/* <th> </th> */}
         </tr>
       </thead>
       <tbody>
@@ -38,16 +32,6 @@ const FilesTable = ({ addClass, files }) => {
               <td>{uploadedBy}</td>
               <td>{contentLength}</td>
               <td>{createdAt}</td>
-              {/* TODO(summer-cook):
-                  - comment this back in (see above comment)
-                  - add an X icon here instead of remove text, make sure the handleDeleteFile is working */}
-              {/* <td>
-                    <Button
-                      primary
-                      onClick={handleDeleteFile}>
-                        Remove
-                    </Button>
-                  </td> */}
             </tr>
           )
         })}
@@ -71,8 +55,6 @@ FilesTable.propTypes = {
       uuid: PropTypes.string.isRequired,
     }),
   ).isRequired,
-  // TODO(summer-cook): add this back in. see comment above.
-  // handleDeleteFile: PropTypes.func.isRequired,
 }
 
 FilesTable.defaultProps = {
