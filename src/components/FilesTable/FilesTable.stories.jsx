@@ -1,21 +1,16 @@
 import React from 'react'
-import ActionsGroup from './ActionsGroup'
+import FilesTable from './FilesTable'
 
 export default {
-  title: 'Compounds/ActionsGroup',
-  component: ActionsGroup,
+  title: 'Components/FilesTable',
+  component: FilesTable,
 }
 
-const Template = (args) => <ActionsGroup {...args} />
+const Template = (args) => <FilesTable {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  // TODO(alishaevn): figure out why the story actions aren't working *shakes fist*
-  handleSendingMessages: ({ message, files }) => {
-    console.log('the message is:', message)
-    console.log(`attached file(s): ${files.map((file) => file.split('name=')[1])}`)
-  },
-  initialFiles: [{
+  files: [{
     contentLength: '938.57 KB',
     contentType: 'image/png',
     createdAt: ' Dec 22 2022 at 12:56:48 PM',

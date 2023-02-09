@@ -2,10 +2,13 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { ListGroup } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import SendMessage from './actions/SendMessage'
+// import SendMessage from './actions/SendMessage'
+import ViewFiles from './actions/ViewFiles'
+import { allowNull } from '../../resources/utilityFunctions'
 import './actions-group.scss'
 
-const ActionsGroup = ({ handleSendingMessages }) => {
+// TODO: add back handleSendingMessagesOrFiles into the props, removing for now to avoid console error. see below TODO.
+const ActionsGroup = ({ initialFiles }) => {
   const [show, setShow] = useState(false)
   const [action, setAction] = useState(null)
 
@@ -18,20 +21,38 @@ const ActionsGroup = ({ handleSendingMessages }) => {
     setAction(null)
     setShow(false)
   }
-
   return (
     <>
       <ListGroup className='actions-group'>
-        <ListGroup.Item action variant='primary' onClick={() => handleShow('SendMessage')}>
+        {/* TODO(@summercook): return this and the below commented code
+        once we are able to refactor posting messages & attachments */}
+        {/* <ListGroup.Item action variant='primary' onClick={() => handleShow('SendMessage')}>
           <FontAwesomeIcon icon='fa-envelope' />
           Send Message
+        </ListGroup.Item> */}
+        <ListGroup.Item
+          action
+          variant='primary'
+          onClick={() => handleShow('ViewFiles')}
+          role='presentation'
+        >
+          <FontAwesomeIcon icon='fa-file-lines' />
+          View Files
         </ListGroup.Item>
       </ListGroup>
-      {(action === 'SendMessage' && show)
+      {/* {(action === 'SendMessage' && show)
         && (
           <SendMessage
             handleClose={handleClose}
-            onSubmit={handleSendingMessages}
+            onSubmit={handleSendingMessagesOrFiles}
+          />
+        )} */}
+      {(action === 'ViewFiles' && show)
+        && (
+          <ViewFiles
+            handleClose={handleClose}
+            initialFiles={initialFiles}
+            // onSubmit={handleSendingMessagesOrFiles}
           />
         )}
     </>
@@ -39,7 +60,20 @@ const ActionsGroup = ({ handleSendingMessages }) => {
 }
 
 ActionsGroup.propTypes = {
-  handleSendingMessages: PropTypes.func.isRequired,
+  handleSendingMessagesOrFiles: PropTypes.func.isRequired,
+  initialFiles: PropTypes.arrayOf(
+    PropTypes.shape({
+      contentLength: PropTypes.string.isRequired,
+      contentType: PropTypes.string.isRequired,
+      createdAt: PropTypes.string.isRequired,
+      download: PropTypes.string.isRequired,
+      fileName: PropTypes.string.isRequired,
+      href: PropTypes.string.isRequired,
+      status: allowNull(PropTypes.string.isRequired),
+      uploadedBy: PropTypes.string.isRequired,
+      uuid: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 }
 
 export default ActionsGroup
