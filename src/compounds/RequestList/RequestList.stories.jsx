@@ -41,3 +41,8 @@ Default.args = {
     },
   ],
 }
+
+export const Alternate = Template.bind({})
+Alternate.args = {
+  requests: [],
+}
