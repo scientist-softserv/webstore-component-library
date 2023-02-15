@@ -7,7 +7,7 @@ import RequestItem, { requestPropTypes } from '../RequestItem/RequestItem'
 const RequestList = ({ requests }) => (
   <>
     <Title title='My Requests' size='medium' />
-    <div className='rounded overflow-hidden'>
+    <div className='rounded overflow-hidden mb-4'>
       {requests.map((req, index) => (
         <Link key={req.id} href={`${req.href}`} passHref legacyBehavior>
           <RequestItem request={req} index={index} />
