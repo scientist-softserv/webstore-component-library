@@ -9,7 +9,7 @@ const RequestList = ({ requests }) => (
     <Title title='My Requests' size='medium' />
     <div className='rounded overflow-hidden'>
       {requests.length === 0 ? (
-        <p className='mt-2'>
+        <p className='mt-2 no-requests'>
           You do not have any requests yet.
           <br />
           <a href='/browse'>Browse our available services</a> to create a request,
