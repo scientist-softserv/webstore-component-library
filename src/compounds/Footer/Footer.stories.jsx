@@ -14,6 +14,7 @@ const Template = (args) => <Footer {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
+  color: 'dark',
   companyName: 'Company A',
   sections: [],
   socials: [],
@@ -21,6 +22,7 @@ Default.args = {
 
 export const Alternate = Template.bind({})
 Alternate.args = {
+  color: 'white',
   companyName: 'Company B',
   sections,
   socials,
