@@ -19,7 +19,6 @@ const StatusBar = ({ backgroundColor, statusArray, apiRequestStatus, addClass })
       <div className='row border'>
         {statusArray.map((statusObject, index) => {
           const { statusLabel, statusIcon } = statusObject
-          // --bs-border-color: #dee2e6;
           const border = index !== statusArray.length - 1 ? 'border-end' : ''
 
           console.log({ activeIndex, index, label: labelBgColor(index)})
