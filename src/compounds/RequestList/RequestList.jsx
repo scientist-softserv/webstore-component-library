@@ -9,6 +9,7 @@ const RequestList = ({ requests }) => (
     <Title title='My Requests' size='medium' />
     <div className='rounded overflow-hidden'>
       {requests.length === 0 ? (
+        // the no-requests class is for testing purposes in the webstore - do not remove
         <p className='mt-2 no-requests'>
           You do not have any requests yet.
           <br />
