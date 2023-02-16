@@ -43,7 +43,7 @@ const StatusBar = ({ backgroundColor, statusArray, apiRequestStatus, addClass })
 StatusBar.propTypes = {
   addClass: PropTypes.string,
   apiRequestStatus: PropTypes.string.isRequired,
-  // the webstore is currently configured to only accept 'light' or 'secondary' as the backgroundColor options.
+  // the webstore is currently configured to only accept 'light' or 'secondary' as the backgroundColor options because of the $custom-colors variable.
   // we are not limiting the prop type to only those two strings because the webstore options may expand in the future.
   backgroundColor: PropTypes.string,
   statusArray: PropTypes.arrayOf(PropTypes.shape({})).isRequired,

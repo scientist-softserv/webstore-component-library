@@ -10,7 +10,7 @@ const RequestItem = React.forwardRef(({ backgroundColor, index, request }, ref) 
   const { createdAt, description, href, img, title, status, updatedAt } = request
   const { text, textColor } = status
   const image = { ...img, height: 70, width: 70 }
-  const bg = index % 2 === 0 ? `bg-${backgroundColor}` : `bg-${backgroundColor}-2`
+  const bg = index % 2 === 0 ? `bg-${backgroundColor}` : `bg-${backgroundColor}-1`
 
   return (
     <article
