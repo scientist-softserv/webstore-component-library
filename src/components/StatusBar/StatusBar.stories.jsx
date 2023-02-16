@@ -13,22 +13,26 @@ export const SupplierReview = Template.bind({})
 SupplierReview.args = {
   statusArray,
   apiRequestStatus: 'Supplier Review',
+  backgroundColor: 'light',
 }
 
 export const SOWSelection = Template.bind({})
 SOWSelection.args = {
   statusArray,
   apiRequestStatus: 'SOW Selection',
+  backgroundColor: 'light',
 }
 
 export const WorkStarted = Template.bind({})
 WorkStarted.args = {
   statusArray,
   apiRequestStatus: 'Work Started',
+  backgroundColor: 'light',
 }
 
 export const WorkCompleted = Template.bind({})
 WorkCompleted.args = {
   statusArray,
   apiRequestStatus: 'Work Completed',
+  backgroundColor: 'light',
 }

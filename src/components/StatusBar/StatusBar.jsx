@@ -1,37 +1,57 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import './status-bar.scss'
 
-const StatusBar = ({ statusArray, apiRequestStatus, addClass }) => (
-  <div className={`container ${addClass}`}>
-    <div className='row border bg-light'>
-      {statusArray.map((statusObject, index) => {
-        const { statusLabel, statusIcon } = statusObject
-        return (
-          <div
-            className={`status-bar-column col-3 py-2 gap-2 d-flex justify-content-center align-items-center
-              ${index !== statusArray.length - 1 ? 'border-end' : ''}
-              ${statusLabel === apiRequestStatus ? 'active' : ''}`}
-            key={statusLabel}
-          >
-            <FontAwesomeIcon icon={statusIcon} />
-            {statusLabel}
-          </div>
-        )
-      })}
+const StatusBar = ({ backgroundColor, statusArray, apiRequestStatus, addClass }) => {
+  const activeIndex = statusArray.findIndex(obj => obj.statusLabel === apiRequestStatus)
+  const labelBgColor = (index) => {
+    if ((index < activeIndex) || (activeIndex === statusArray.length -1)) {
+      return `bg-${backgroundColor}-3`
+    } else if (index === activeIndex) {
+      return `bg-${backgroundColor}`
+    } else {
+      return `bg-${backgroundColor}-7`
+    }
+  }
+
+  return (
+    <div className={`container ${addClass}`}>
+      <div className='row border'>
+        {statusArray.map((statusObject, index) => {
+          const { statusLabel, statusIcon } = statusObject
+          // --bs-border-color: #dee2e6;
+          const border = index !== statusArray.length - 1 ? 'border-end' : ''
+
+          console.log({ activeIndex, index, label: labelBgColor(index)})
+
+          return (
+            <div
+              className={`status-bar-column col-3 py-2 gap-2 d-flex justify-content-center align-items-center
+              ${border} ${labelBgColor(index)}`}
+              key={statusLabel}
+            >
+              <FontAwesomeIcon icon={statusIcon} />
+              {statusLabel}
+            </div>
+          )
+        })}
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 StatusBar.propTypes = {
-  statusArray: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-  apiRequestStatus: PropTypes.string.isRequired,
   addClass: PropTypes.string,
+  apiRequestStatus: PropTypes.string.isRequired,
+  // the webstore is currently configured to only accept 'light' or 'secondary' as the backgroundColor options.
+  // we are not limiting the prop type to only those two strings because the webstore options may expand in the future.
+  backgroundColor: PropTypes.string,
+  statusArray: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 }
 
 StatusBar.defaultProps = {
   addClass: '',
+  backgroundColor: 'light',
 }
 
 export default StatusBar
