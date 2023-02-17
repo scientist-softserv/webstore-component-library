@@ -35,6 +35,7 @@ LoggedOut.args = {
     signIn: () => console.log('I am signing in!'),
     signOut: () => console.log('I am signing out!'),
   },
+  linkColor: 'light',
   logo: {
     src: logoFull,
     alt: 'The company logo',

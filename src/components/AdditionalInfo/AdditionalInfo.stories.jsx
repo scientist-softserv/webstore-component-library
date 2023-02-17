@@ -10,5 +10,6 @@ const Template = (args) => <AdditionalInfo {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
+  backgroundColor: 'light',
   updateRequestForm: (requestForm) => console.log({ requestForm }),
 }

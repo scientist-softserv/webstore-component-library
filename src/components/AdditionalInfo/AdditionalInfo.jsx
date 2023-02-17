@@ -5,7 +5,7 @@ import {
 } from 'react-bootstrap'
 import { addDays, apiV2CompatibleStrings, convertToBase64 } from '../../resources/utilityFunctions'
 
-const AdditionalInfo = ({ defaultRequiredDate, updateRequestForm }) => {
+const AdditionalInfo = ({ backgroundColor, defaultRequiredDate, updateRequestForm }) => {
   const [showProposalDate, setShowProposalDate] = useState(true)
   const [files, setFiles] = useState([])
   const fileRef = useRef(null)
@@ -40,7 +40,7 @@ const AdditionalInfo = ({ defaultRequiredDate, updateRequestForm }) => {
 
   return (
     <Card className='mb-4'>
-      <Card.Header className='h3'>Additional Information</Card.Header>
+      <Card.Header className={`h3 bg-${backgroundColor}`}>Additional Information</Card.Header>
       <Card.Body>
         {showProposalDate
           && (
@@ -108,7 +108,12 @@ const AdditionalInfo = ({ defaultRequiredDate, updateRequestForm }) => {
 }
 
 AdditionalInfo.propTypes = {
+  backgroundColor: PropTypes.string,
   updateRequestForm: PropTypes.func.isRequired,
+}
+
+AdditionalInfo.defaultProps = {
+  backgroundColor: 'light',
 }
 
 export default AdditionalInfo

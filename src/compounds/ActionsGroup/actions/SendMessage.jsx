@@ -11,7 +11,7 @@ import {
 import { apiV2CompatibleStrings, convertToBase64 } from '../../../resources/utilityFunctions'
 import './styles.scss'
 
-const SendMessage = ({ onSubmit, handleClose }) => {
+const SendMessage = ({ backgroundColor, onSubmit, handleClose }) => {
   const messageRef = useRef(null)
   const fileRef = useRef(null)
   const [files, setFiles] = useState([])
@@ -45,7 +45,7 @@ const SendMessage = ({ onSubmit, handleClose }) => {
 
   return (
     <Modal show onHide={handleClose}>
-      <Modal.Header closeButton>
+      <Modal.Header closeButton className={`bg-${backgroundColor}-8`}>
         <Modal.Title>Send a Message</Modal.Title>
       </Modal.Header>
       <Form>
@@ -88,8 +88,13 @@ const SendMessage = ({ onSubmit, handleClose }) => {
 }
 
 SendMessage.propTypes = {
+  backgroundColor: PropTypes.string,
   onSubmit: PropTypes.func.isRequired,
   handleClose: PropTypes.func.isRequired,
+}
+
+SendMessage.defaultProps = {
+  backgroundColor: 'secondary'
 }
 
 export default SendMessage

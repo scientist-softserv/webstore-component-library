@@ -10,6 +10,7 @@ const Template = (args) => <ActionsGroup {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
+  backgroundColor: 'secondary',
   // TODO(alishaevn): figure out why the story actions aren't working *shakes fist*
   handleSendingMessages: ({ message, files }) => {
     console.log('the message is:', message)

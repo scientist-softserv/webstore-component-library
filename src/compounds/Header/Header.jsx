@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import Logo from '../Logo/Logo'
 
-const Header = ({ auth, logo, navLinks, userSession }) => {
+const Header = ({ auth, linkColor, logo, navLinks, userSession }) => {
   const { src, alt } = logo
 
   return (
-    <Navbar bg='secondary' expand='lg'>
+    <Navbar bg='primary' expand='lg'>
       <Container>
         <Navbar.Brand className='w-50'>
           <Logo src={src} alt={alt} height={45} />
@@ -17,7 +17,7 @@ const Header = ({ auth, logo, navLinks, userSession }) => {
           <Nav className='ms-auto'>
             {navLinks.map((nav) => (
               <Nav.Link
-                className='link-dark'
+                className={`link-${linkColor}`}
                 href={nav.path}
                 key={`${nav.label}-nav-link`}
                 onClick={nav.onClick}
@@ -26,9 +26,9 @@ const Header = ({ auth, logo, navLinks, userSession }) => {
               </Nav.Link>
             ))}
             {userSession ? (
-              <Nav.Link className='link-dark' onClick={auth.signOut}>Sign Out</Nav.Link>
+              <Nav.Link className={`link-${linkColor}`} onClick={auth.signOut}>Sign Out</Nav.Link>
             ) : (
-              <Nav.Link className='link-dark' onClick={auth.signIn}>Sign In</Nav.Link>
+              <Nav.Link className={`link-${linkColor}`} onClick={auth.signIn}>Sign In</Nav.Link>
             )}
           </Nav>
         </Navbar.Collapse>
@@ -42,6 +42,7 @@ Header.propTypes = {
     signIn: PropTypes.func.isRequired,
     signOut: PropTypes.func.isRequired,
   }).isRequired,
+  linkColor: PropTypes.string,
   logo: PropTypes.shape({
     src: PropTypes.string.isRequired,
     alt: PropTypes.string,
@@ -55,6 +56,7 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
+  linkColor: 'dark',
   userSession: null,
 }
 

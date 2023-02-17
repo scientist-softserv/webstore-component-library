@@ -10,6 +10,7 @@ const Template = (args) => <ShippingDetails {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
+  backgroundColor: 'light',
   billingCountry: 'USA',
   shippingCountry: 'USA',
   updateRequestForm: (requestForm) => console.log({ requestForm }),

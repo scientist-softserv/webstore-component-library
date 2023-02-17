@@ -7,7 +7,7 @@ import ViewFiles from './actions/ViewFiles'
 import { allowNull } from '../../resources/utilityFunctions'
 import './actions-group.scss'
 
-const ActionsGroup = ({ handleSendingMessagesOrFiles, initialFiles }) => {
+const ActionsGroup = ({ backgroundColor, handleSendingMessagesOrFiles, initialFiles }) => {
   const [show, setShow] = useState(false)
   const [action, setAction] = useState(null)
 
@@ -20,12 +20,14 @@ const ActionsGroup = ({ handleSendingMessagesOrFiles, initialFiles }) => {
     setAction(null)
     setShow(false)
   }
+
   return (
     <>
       <ListGroup className='actions-group'>
         <ListGroup.Item
           action
           onClick={() => handleShow('SendMessage')}
+          bsPrefix={`bg-${backgroundColor}-8 list-group-item`}
         >
           <FontAwesomeIcon icon='fa-envelope' />
           Send Message
@@ -34,6 +36,7 @@ const ActionsGroup = ({ handleSendingMessagesOrFiles, initialFiles }) => {
           action
           onClick={() => handleShow('ViewFiles')}
           role='presentation'
+          bsPrefix={`bg-${backgroundColor}-6 list-group-item`}
         >
           <FontAwesomeIcon icon='fa-file-lines' />
           View Files
@@ -42,6 +45,7 @@ const ActionsGroup = ({ handleSendingMessagesOrFiles, initialFiles }) => {
       {(action === 'SendMessage' && show)
         && (
           <SendMessage
+            backgroundColor={backgroundColor}
             handleClose={handleClose}
             onSubmit={handleSendingMessagesOrFiles}
           />
@@ -49,6 +53,7 @@ const ActionsGroup = ({ handleSendingMessagesOrFiles, initialFiles }) => {
       {(action === 'ViewFiles' && show)
         && (
           <ViewFiles
+            backgroundColor={backgroundColor}
             handleClose={handleClose}
             initialFiles={initialFiles}
             onSubmit={handleSendingMessagesOrFiles}
@@ -59,6 +64,7 @@ const ActionsGroup = ({ handleSendingMessagesOrFiles, initialFiles }) => {
 }
 
 ActionsGroup.propTypes = {
+  backgroundColor: PropTypes.string,
   handleSendingMessagesOrFiles: PropTypes.func.isRequired,
   initialFiles: PropTypes.arrayOf(
     PropTypes.shape({
@@ -73,6 +79,10 @@ ActionsGroup.propTypes = {
       uuid: PropTypes.string.isRequired,
     }),
   ).isRequired,
+}
+
+ActionsGroup.defaultProps = {
+  backgroundColor: 'secondary'
 }
 
 export default ActionsGroup

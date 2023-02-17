@@ -6,15 +6,15 @@ import TextBox from '../../components/TextBox/TextBox'
 import Title from '../../components/Title/Title'
 import './request-item.scss'
 
-const RequestItem = React.forwardRef(({ index, request }, ref) => {
+const RequestItem = React.forwardRef(({ backgroundColor, index, request }, ref) => {
   const { createdAt, description, href, img, title, status, updatedAt } = request
-  const { backgroundColor, text, textColor } = status
+  const { text, textColor } = status
   const image = { ...img, height: 70, width: 70 }
+  const bg = index % 2 === 0 ? `bg-${backgroundColor}` : `bg-${backgroundColor}-1`
 
   return (
     <article
-      className={`request-item p-3 d-flex flex-column flex-md-row justify-content-between gap-3 bg-light
-      ${index % 2 === 0 ? ' bg-light' : ' bg-light-2'}`}
+      className={`request-item p-3 d-flex flex-column flex-md-row justify-content-between gap-3 ${bg}`}
     >
       <div className='d-flex flex-column flex-sm-row gap-3 request-item-details'>
         <Image {...image} addClass='align-self-md-center' />
@@ -25,9 +25,9 @@ const RequestItem = React.forwardRef(({ index, request }, ref) => {
           <TextBox text={description} />
         </div>
       </div>
-      <div className='status bg-light-3 p-2 rounded mt-4 mt-md-0'>
+      <div className={`status bg-${backgroundColor}-3 p-2 rounded mt-4 mt-md-0`}>
         <Badge
-          backgroundColor={backgroundColor}
+          backgroundColor={status.backgroundColor}
           text={text}
           textColor={textColor}
           addClass='mb-2'
@@ -50,11 +50,13 @@ export const requestPropTypes = {
 }
 
 RequestItem.propTypes = {
+  backgroundColor: PropTypes.string,
   index: PropTypes.number,
   request: PropTypes.shape(requestPropTypes).isRequired,
 }
 
 RequestItem.defaultProps = {
+  backgroundColor: 'light',
   index: null,
 }
 

@@ -118,12 +118,12 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
   )
 }
 
-const ShippingDetails = ({ billingCountry, shippingCountry, updateRequestForm }) => {
+const ShippingDetails = ({ backgroundColor, billingCountry, shippingCountry, updateRequestForm }) => {
   const [showBilling, setShowBilling] = useState(true)
 
   return (
     <Card className='mb-4'>
-      <Card.Header className='h3'>Shipping Details</Card.Header>
+      <Card.Header className={`h3 bg-${backgroundColor}`}>Shipping Details</Card.Header>
       <AddressForm
         addressType='shipping'
         billingCountry={billingCountry}
@@ -154,9 +154,14 @@ AddressForm.propTypes = {
 }
 
 ShippingDetails.propTypes = {
+  backgroundColor: PropTypes.string,
   billingCountry: PropTypes.string.isRequired,
   shippingCountry: PropTypes.string.isRequired,
   updateRequestForm: PropTypes.func.isRequired,
+}
+
+ShippingDetails.defaultProps = {
+  backgroundColor: 'light',
 }
 
 AddressForm.defaultProps = {
