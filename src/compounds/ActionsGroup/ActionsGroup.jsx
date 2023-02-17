@@ -23,7 +23,11 @@ const ActionsGroup = ({ handleSendingMessagesOrFiles, initialFiles }) => {
   return (
     <>
       <ListGroup className='actions-group'>
-        <ListGroup.Item action variant='primary' onClick={() => handleShow('SendMessage')}>
+        <ListGroup.Item
+          action
+          variant='primary'
+          onClick={() => handleShow('SendMessage')}
+        >
           <FontAwesomeIcon icon='fa-envelope' />
           Send Message
         </ListGroup.Item>
