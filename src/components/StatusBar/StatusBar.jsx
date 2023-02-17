@@ -21,8 +21,6 @@ const StatusBar = ({ backgroundColor, statusArray, apiRequestStatus, addClass })
           const { statusLabel, statusIcon } = statusObject
           const border = index !== statusArray.length - 1 ? 'border-end' : ''
 
-          console.log({ activeIndex, index, label: labelBgColor(index)})
-
           return (
             <div
               className={`status-bar-column col-3 py-2 gap-2 d-flex justify-content-center align-items-center
