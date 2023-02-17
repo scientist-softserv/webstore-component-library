@@ -2,13 +2,12 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { ListGroup } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import SendMessage from './actions/SendMessage'
+import SendMessage from './actions/SendMessage'
 import ViewFiles from './actions/ViewFiles'
 import { allowNull } from '../../resources/utilityFunctions'
 import './actions-group.scss'
 
-// TODO: add back handleSendingMessagesOrFiles into the props, removing for now to avoid console error. see below TODO.
-const ActionsGroup = ({ initialFiles }) => {
+const ActionsGroup = ({ handleSendingMessagesOrFiles, initialFiles }) => {
   const [show, setShow] = useState(false)
   const [action, setAction] = useState(null)
 
@@ -24,15 +23,15 @@ const ActionsGroup = ({ initialFiles }) => {
   return (
     <>
       <ListGroup className='actions-group'>
-        {/* TODO(@summercook): return this and the below commented code
-        once we are able to refactor posting messages & attachments */}
-        {/* <ListGroup.Item action variant='primary' onClick={() => handleShow('SendMessage')}>
-          <FontAwesomeIcon icon='fa-envelope' />
-          Send Message
-        </ListGroup.Item> */}
         <ListGroup.Item
           action
-          variant='primary'
+          onClick={() => handleShow('SendMessage')}
+        >
+          <FontAwesomeIcon icon='fa-envelope' />
+          Send Message
+        </ListGroup.Item>
+        <ListGroup.Item
+          action
           onClick={() => handleShow('ViewFiles')}
           role='presentation'
         >
@@ -40,19 +39,19 @@ const ActionsGroup = ({ initialFiles }) => {
           View Files
         </ListGroup.Item>
       </ListGroup>
-      {/* {(action === 'SendMessage' && show)
+      {(action === 'SendMessage' && show)
         && (
           <SendMessage
             handleClose={handleClose}
             onSubmit={handleSendingMessagesOrFiles}
           />
-        )} */}
+        )}
       {(action === 'ViewFiles' && show)
         && (
           <ViewFiles
             handleClose={handleClose}
             initialFiles={initialFiles}
-            // onSubmit={handleSendingMessagesOrFiles}
+            onSubmit={handleSendingMessagesOrFiles}
           />
         )}
     </>
