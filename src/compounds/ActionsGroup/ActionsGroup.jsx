@@ -25,7 +25,6 @@ const ActionsGroup = ({ handleSendingMessagesOrFiles, initialFiles }) => {
       <ListGroup className='actions-group'>
         <ListGroup.Item
           action
-          variant='primary'
           onClick={() => handleShow('SendMessage')}
         >
           <FontAwesomeIcon icon='fa-envelope' />
@@ -33,7 +32,6 @@ const ActionsGroup = ({ handleSendingMessagesOrFiles, initialFiles }) => {
         </ListGroup.Item>
         <ListGroup.Item
           action
-          variant='primary'
           onClick={() => handleShow('ViewFiles')}
           role='presentation'
         >
