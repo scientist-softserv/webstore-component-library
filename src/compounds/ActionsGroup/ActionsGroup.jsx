@@ -35,6 +35,7 @@ const ActionsGroup = ({ initialFiles }) => {
           variant='primary'
           onClick={() => handleShow('ViewFiles')}
           role='presentation'
+          bsPrefix='bg-secondary-8 list-group-item'
         >
           <FontAwesomeIcon icon='fa-file-lines' />
           View Files

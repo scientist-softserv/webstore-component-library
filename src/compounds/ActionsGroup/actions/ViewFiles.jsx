@@ -25,7 +25,7 @@ const ViewFiles = ({ initialFiles, handleClose }) => {
 
   return (
     <Offcanvas show onHide={handleClose} placement='end' scroll='true'>
-      <Offcanvas.Header className='d-flex border-bottom px-3 py-2 bg-light' closeButton>
+      <Offcanvas.Header className='d-flex border-bottom px-3 py-2 bg-secondary-8' closeButton>
         <Offcanvas.Title>Documents</Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body className='border rounded p-2 m-3'>
