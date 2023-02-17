@@ -75,3 +75,8 @@ Alternate.args = {
     },
   ],
 }
+
+export const NoRequests = Template.bind({})
+NoRequests.args = {
+  requests: [],
+}
