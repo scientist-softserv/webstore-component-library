@@ -45,6 +45,7 @@ const ActionsGroup = ({ backgroundColor, handleSendingMessagesOrFiles, initialFi
       {(action === 'SendMessage' && show)
         && (
           <SendMessage
+            backgroundColor={backgroundColor}
             handleClose={handleClose}
             onSubmit={handleSendingMessagesOrFiles}
           />
@@ -52,6 +53,7 @@ const ActionsGroup = ({ backgroundColor, handleSendingMessagesOrFiles, initialFi
       {(action === 'ViewFiles' && show)
         && (
           <ViewFiles
+            backgroundColor={backgroundColor}
             handleClose={handleClose}
             initialFiles={initialFiles}
             onSubmit={handleSendingMessagesOrFiles}

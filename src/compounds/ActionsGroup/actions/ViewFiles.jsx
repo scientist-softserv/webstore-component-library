@@ -9,7 +9,7 @@ import {
 import FilesTable from '../../../components/FilesTable/FilesTable'
 import { allowNull } from '../../../resources/utilityFunctions'
 
-const ViewFiles = ({ initialFiles, handleClose }) => {
+const ViewFiles = ({ backgroundColor, initialFiles, handleClose }) => {
   const documentTabs = [
     {
       eventKey: 'files',
@@ -25,7 +25,7 @@ const ViewFiles = ({ initialFiles, handleClose }) => {
 
   return (
     <Offcanvas show onHide={handleClose} placement='end' scroll='true'>
-      <Offcanvas.Header className='d-flex border-bottom px-3 py-2 bg-secondary-8' closeButton>
+      <Offcanvas.Header className={`d-flex border-bottom px-3 py-2 bg-${backgroundColor}-8`} closeButton>
         <Offcanvas.Title>Documents</Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body className='border rounded p-2 m-3'>
@@ -54,6 +54,7 @@ const ViewFiles = ({ initialFiles, handleClose }) => {
 }
 
 ViewFiles.propTypes = {
+  backgroundColor: PropTypes.string,
   initialFiles: PropTypes.arrayOf(
     PropTypes.shape({
       contentLength: PropTypes.string.isRequired,
@@ -68,6 +69,10 @@ ViewFiles.propTypes = {
     }),
   ).isRequired,
   handleClose: PropTypes.func.isRequired,
+}
+
+ViewFiles.defaultProps = {
+  backgroundColor: 'secondary'
 }
 
 export default ViewFiles
