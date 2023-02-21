@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
+  Alert,
   Button,
   CloseButton,
   Form,
@@ -18,6 +19,8 @@ const ViewFiles = ({ backgroundColor, initialFiles, handleClose, onSubmit }) => 
   const fileRef = useRef(null)
   const [files, setFiles] = useState(initialFiles)
   const [tempFiles, setTempFiles] = useState([])
+  const [showSuccessAlert, setShowSuccessAlert] = useState(false)
+  //let newlyAddedFiles = []
   const documentTabs = [
     {
       eventKey: 'files',
@@ -44,19 +47,22 @@ const ViewFiles = ({ backgroundColor, initialFiles, handleClose, onSubmit }) => 
       const newBase64Files = await Promise.all(convertToBase64(fileArray))
       const newFiles = fileArray.map((file, index) => ({ [file.name]: newBase64Files[index] }))
       setTempFiles([...tempFiles, ...newFiles])
-      console.log(tempFiles, 'tempFilesAfterAdd')
+      if (showSuccessAlert) {
+        setShowSuccessAlert(false)
+      }
       fileRef.current.value = ''
     } catch (error) {
       throw new Error(error)
     }
   }
   
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
-    onSubmit({ files: apiV2CompatibleStrings([...tempFiles]) })
-    console.log(files, 'filesBeforeSubmit')
-    //setFiles([...files, ...apiCompatibleTempFiles])
-    setTempFiles([])
+    await onSubmit({ files: apiV2CompatibleStrings([...tempFiles]) })
+    if (tempFiles.length > 0) { 
+      setShowSuccessAlert(true)
+      setTempFiles([])
+    }
   }
 
   const handleDeleteTempFile = (file) => {
@@ -98,11 +104,16 @@ const ViewFiles = ({ backgroundColor, initialFiles, handleClose, onSubmit }) => 
               </ListGroup.Item>
             )
           })}
+          {showSuccessAlert && 
+            <Alert variant='success' onClose={() => setShowSuccessAlert(false)} dismissible >
+              Your files have been uploaded successfully. It may take some time for them to appear below. 
+            </Alert>
+          }
         </ListGroup>
         <Tabs defaultActiveKey='files' id='document-tabs' justify fill>
           {documentTabs && documentTabs.map((tab) => {
             const { eventKey, title, status } = tab
-            const filteredFiles = files.filter((f) => (status === f.status) || (status === 'Other File' && f.status === null))
+            const filteredFiles = initialFiles.filter((f) => (status === f.status) || (status === 'Other File' && f.status === null))
             return (
               <Tab
                 eventKey={eventKey}
