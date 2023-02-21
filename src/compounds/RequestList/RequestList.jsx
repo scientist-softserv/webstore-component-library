@@ -17,7 +17,7 @@ const RequestList = ({ backgroundColor, requests }) => (
           or start a new general request by clicking the <b>"Initiate a Request"</b> button above.
         </p>
       ) : (requests.map((req, index) => (
-        <Link key={req.id} href={`${req.href}`} passHref legacyBehavior>
+        <Link key={req.uuid} href={req.href} passHref>
           <RequestItem request={req} index={index} backgroundColor={backgroundColor} />
         </Link>
       )))}
