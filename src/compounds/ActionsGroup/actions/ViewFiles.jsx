@@ -108,7 +108,7 @@ const ViewFiles = ({ backgroundColor, files, handleClose, onSubmit }) => {
         <Tabs defaultActiveKey='files' id='document-tabs' justify fill>
           {documentTabs && documentTabs.map((tab) => {
             const { eventKey, title, status } = tab
-            const filteredFiles = files.filter((f) => (status === f.status) || (status === 'Other File' && f.status === null))
+            const filteredFiles = files ? (files.filter((f) => (status === f.status) || (status === 'Other File' && f.status === null))) : ([])
             return (
               <Tab
                 eventKey={eventKey}
