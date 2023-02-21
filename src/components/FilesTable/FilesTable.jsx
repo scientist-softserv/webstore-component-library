@@ -1,9 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  // Button,
-  Table,
-} from 'react-bootstrap'
+import { Table } from 'react-bootstrap'
+import Link from '../Link/Link'
 import { allowNull } from '../../resources/utilityFunctions'
 
 const FilesTable = ({ addClass, files }) => {
@@ -21,17 +19,25 @@ const FilesTable = ({ addClass, files }) => {
           <th>Uploaded By</th>
           <th>Size</th>
           <th>Created At</th>
+          <th aria-label='actions' />
         </tr>
       </thead>
       <tbody>
         {files.map((file) => {
-          const { uuid, fileName, uploadedBy, contentLength, createdAt } = file
+          const { contentLength, createdAt, fileName, href, uploadedBy, uuid } = file
           return (
             <tr key={uuid} className='small'>
               <td>{fileName}</td>
               <td>{uploadedBy}</td>
               <td>{contentLength}</td>
               <td>{createdAt}</td>
+              <td className='text-center'>
+                <Link
+                  icon='fa-download'
+                  href={href}
+                  aria-label='download'
+                />
+              </td>
             </tr>
           )
         })}
