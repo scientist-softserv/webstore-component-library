@@ -219,7 +219,10 @@ export const requests = [
   {
     createdAt: 'September 9, 2022',
     description: 'Does the Company offer services related to Flow Cytometry?',
-    href: '/request/F575C4',
+    href: {
+      pathname: '/request/ui18-8ahr-38na-89as',
+      query: {},
+    },
     id: 1,
     img,
     status: {
@@ -232,7 +235,10 @@ export const requests = [
     createdAt: 'November 15, 2022',
     // eslint-disable-next-line max-len
     description: 'General Information When do you plan to work with this supplier? Urgently Name of supplier: Alisha Supplier web address: http://scientist.com Is this new supplier onboarding request related to any of the following areas: Research area: In Vivo Contact Information Supplier contact name: Alisha Evans Supplier email a...',
-    href: '/request/706D8F',
+    href: {
+      pathname: '/request/89as-ui18-8ahr-38na',
+      query: {},
+    },
     id: 2,
     img,
     status: {
