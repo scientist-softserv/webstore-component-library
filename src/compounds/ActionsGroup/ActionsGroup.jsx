@@ -7,7 +7,7 @@ import ViewFiles from './actions/ViewFiles'
 import { allowNull } from '../../resources/utilityFunctions'
 import './actions-group.scss'
 
-const ActionsGroup = ({ backgroundColor, handleSendingMessagesOrFiles, initialFiles }) => {
+const ActionsGroup = ({ backgroundColor, handleSendingMessagesOrFiles, files }) => {
   const [show, setShow] = useState(false)
   const [action, setAction] = useState(null)
 
@@ -55,7 +55,7 @@ const ActionsGroup = ({ backgroundColor, handleSendingMessagesOrFiles, initialFi
           <ViewFiles
             backgroundColor={backgroundColor}
             handleClose={handleClose}
-            initialFiles={initialFiles}
+            files={files}
             onSubmit={handleSendingMessagesOrFiles}
           />
         )}
@@ -66,7 +66,7 @@ const ActionsGroup = ({ backgroundColor, handleSendingMessagesOrFiles, initialFi
 ActionsGroup.propTypes = {
   backgroundColor: PropTypes.string,
   handleSendingMessagesOrFiles: PropTypes.func.isRequired,
-  initialFiles: PropTypes.arrayOf(
+  files: PropTypes.arrayOf(
     PropTypes.shape({
       contentLength: PropTypes.string.isRequired,
       contentType: PropTypes.string.isRequired,

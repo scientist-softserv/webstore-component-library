@@ -15,12 +15,10 @@ import {
 import FilesTable from '../../../components/FilesTable/FilesTable'
 import { allowNull, apiV2CompatibleStrings, convertToBase64 } from '../../../resources/utilityFunctions'
 
-const ViewFiles = ({ backgroundColor, initialFiles, handleClose, onSubmit }) => {
+const ViewFiles = ({ backgroundColor, files, handleClose, onSubmit }) => {
   const fileRef = useRef(null)
-  const [files, setFiles] = useState(initialFiles)
   const [tempFiles, setTempFiles] = useState([])
   const [showSuccessAlert, setShowSuccessAlert] = useState(false)
-  //let newlyAddedFiles = []
   const documentTabs = [
     {
       eventKey: 'files',
@@ -34,10 +32,6 @@ const ViewFiles = ({ backgroundColor, initialFiles, handleClose, onSubmit }) => 
     },
   ]
 
-    // TODO(summercook):
-  // - comment back in the following 3 methods once posting messages/attachments is working
-  // may need to use the handleSendingMessagesOrFiles to post
-  
   const handleAddFile = async (event) => {
     event.preventDefault()
     try {
@@ -113,7 +107,7 @@ const ViewFiles = ({ backgroundColor, initialFiles, handleClose, onSubmit }) => 
         <Tabs defaultActiveKey='files' id='document-tabs' justify fill>
           {documentTabs && documentTabs.map((tab) => {
             const { eventKey, title, status } = tab
-            const filteredFiles = initialFiles.filter((f) => (status === f.status) || (status === 'Other File' && f.status === null))
+            const filteredFiles = files.filter((f) => (status === f.status) || (status === 'Other File' && f.status === null))
             return (
               <Tab
                 eventKey={eventKey}
@@ -137,7 +131,7 @@ const ViewFiles = ({ backgroundColor, initialFiles, handleClose, onSubmit }) => 
 
 ViewFiles.propTypes = {
   backgroundColor: PropTypes.string,
-  initialFiles: PropTypes.arrayOf(
+  files: PropTypes.arrayOf(
     PropTypes.shape({
       contentLength: PropTypes.string.isRequired,
       contentType: PropTypes.string.isRequired,
