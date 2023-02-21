@@ -31,7 +31,7 @@ const FilesTable = ({ addClass, files }) => {
               <td>{uploadedBy}</td>
               <td>{contentLength}</td>
               <td>{createdAt}</td>
-              <td>
+              <td className='text-center'>
                 <Link
                   icon='fa-download'
                   href={href}
