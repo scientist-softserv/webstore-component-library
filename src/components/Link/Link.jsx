@@ -11,7 +11,7 @@ const Link = ({ addClass, href, icon, label, style, ...props }) => (
     {...props}
   >
     {icon && (
-      <FontAwesomeIcon icon={icon} className='me-2 small' />
+      <FontAwesomeIcon icon={icon} className={`small ${label.length > 0 && 'me-2'}`} />
     )}
     {label}
   </a>
