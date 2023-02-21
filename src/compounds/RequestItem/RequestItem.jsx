@@ -6,8 +6,8 @@ import TextBox from '../../components/TextBox/TextBox'
 import Title from '../../components/Title/Title'
 import './request-item.scss'
 
-const RequestItem = React.forwardRef(({ backgroundColor, index, request }, ref) => {
-  const { createdAt, description, href, img, title, status, updatedAt } = request
+const RequestItem = React.forwardRef(({ backgroundColor, href, index, request }, ref) => {
+  const { createdAt, description, img, title, status, updatedAt } = request
   const { text, textColor } = status
   const image = { ...img, height: 70, width: 70 }
   const bg = index % 2 === 0 ? `bg-${backgroundColor}` : `bg-${backgroundColor}-1`
@@ -42,7 +42,10 @@ const RequestItem = React.forwardRef(({ backgroundColor, index, request }, ref) 
 export const requestPropTypes = {
   createdAt: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
+  href: PropTypes.exact({
+    pathname: PropTypes.string.isRequired,
+    query: PropTypes.shape({}),
+  }).isRequired,
   img: PropTypes.shape(Image.propTypes).isRequired,
   status: PropTypes.shape(Badge.propTypes).isRequired,
   title: PropTypes.string.isRequired,
