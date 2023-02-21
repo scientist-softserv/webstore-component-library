@@ -21,13 +21,14 @@ Link.propTypes = {
   addClass: PropTypes.string,
   href: PropTypes.string.isRequired,
   icon: PropTypes.string,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   style: PropTypes.shape({}),
 }
 
 Link.defaultProps = {
   addClass: '',
   icon: '',
+  label: '',
   style: {},
 }
 
