@@ -49,11 +49,11 @@ const ViewFiles = ({ backgroundColor, files, handleClose, onSubmit }) => {
       throw new Error(error)
     }
   }
-  
+
   const handleSubmit = async (event) => {
     event.preventDefault()
     await onSubmit({ files: apiV2CompatibleStrings([...tempFiles]) })
-    if (tempFiles.length > 0) { 
+    if (tempFiles.length > 0) {
       setShowSuccessAlert(true)
       setTempFiles([])
     }
@@ -74,15 +74,15 @@ const ViewFiles = ({ backgroundColor, files, handleClose, onSubmit }) => {
           <h6 className='mt-3'>Upload Additional Documents</h6>
           <InputGroup controlId='attachments' className='mb-3'>
             <Form.Control
-            multiple
-            type='file'
-            onChange={handleAddFile}
-            ref={fileRef}
+              multiple
+              type='file'
+              onChange={handleAddFile}
+              ref={fileRef}
             />
             <Button
-            variant='outline-primary'
-            onClick={handleSubmit}
-            type='submit'
+              variant='outline-primary'
+              onClick={handleSubmit}
+              type='submit'
             >
               <FontAwesomeIcon icon='fa-upload' />
             </Button>
@@ -93,16 +93,17 @@ const ViewFiles = ({ backgroundColor, files, handleClose, onSubmit }) => {
             const fileName = Object.keys(file)[0]
             return (
               <ListGroup.Item key={fileName} className='d-flex align-items-center'>
-              <span>{fileName}</span>
-              <CloseButton onClick={() => handleDeleteTempFile(file)} className='ms-auto' />
+                <span>{fileName}</span>
+                <CloseButton onClick={() => handleDeleteTempFile(file)} className='ms-auto' />
               </ListGroup.Item>
             )
           })}
-          {showSuccessAlert && 
-            <Alert variant='success' onClose={() => setShowSuccessAlert(false)} dismissible >
-              Your files have been uploaded successfully. It may take some time for them to appear below. 
-            </Alert>
-          }
+          {showSuccessAlert
+            && (
+              <Alert variant='success' onClose={() => setShowSuccessAlert(false)} dismissible>
+                Your files have been uploaded successfully. It may take some time for them to appear below.
+              </Alert>
+            )}
         </ListGroup>
         <Tabs defaultActiveKey='files' id='document-tabs' justify fill>
           {documentTabs && documentTabs.map((tab) => {
@@ -145,10 +146,11 @@ ViewFiles.propTypes = {
     }),
   ).isRequired,
   handleClose: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 }
 
 ViewFiles.defaultProps = {
-  backgroundColor: 'secondary'
+  backgroundColor: 'secondary',
 }
 
 export default ViewFiles

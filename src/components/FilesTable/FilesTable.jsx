@@ -19,12 +19,12 @@ const FilesTable = ({ addClass, files }) => {
           <th>Uploaded By</th>
           <th>Size</th>
           <th>Created At</th>
-          <th></th>
+          <th aria-label='actions' />
         </tr>
       </thead>
       <tbody>
         {files.map((file) => {
-          const { contentLength, createdAt, fileName, href, uploadedBy, uuid  } = file
+          const { contentLength, createdAt, fileName, href, uploadedBy, uuid } = file
           return (
             <tr key={uuid} className='small'>
               <td>{fileName}</td>
@@ -35,6 +35,7 @@ const FilesTable = ({ addClass, files }) => {
                 <Link
                   icon='fa-download'
                   href={href}
+                  aria-label='download'
                 />
               </td>
             </tr>
