@@ -4,7 +4,7 @@ import { Dropdown, Offcanvas } from 'react-bootstrap'
 import LineItemsTable from '../../components/LineItemsTable/LineItemsTable'
 import './document.scss'
 
-const Document = ({ document, addClass }) => {
+const Document = ({ accessToken, addClass, acceptSOW, document, request }) => {
   const { identifier, date, documentStatusColor, documentType,
     documentTypeColor, documentStatus, lineItems, requestIdentifier,
     shippingPrice, shipTo, shipFrom, subtotalPrice,
@@ -42,9 +42,13 @@ const Document = ({ document, addClass }) => {
                 Next Actions
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                {/* TODO: @summer-cook Update this menu item so it submits this document for approval &
-                add more dropdown items depending on what actions we need here. */}
-                <Dropdown.Item href='#/action-1'>Submit for Approval</Dropdown.Item>
+                {/* TODO: @summer-cook SOW should have submit for approval. It should also ONLY show the submit for approval when the SOW has not yet been submitted. Need to figure out a way to tell if it has been submitted or not. . */}
+                <Dropdown.Item
+                  href='#/action-1'
+                  onClick={() => {acceptSOW({data: request, sowID: identifier, accessToken: accessToken})}}
+                >
+                  Submit for Approval
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </div>
@@ -90,6 +94,8 @@ const Document = ({ document, addClass }) => {
 
 Document.propTypes = {
   addClass: PropTypes.string,
+  accessToken: PropTypes.string.isRequired,
+  acceptSOW: PropTypes.func.isRequired,
   document: PropTypes.shape({
     identifier: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
