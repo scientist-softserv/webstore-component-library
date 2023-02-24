@@ -21,10 +21,21 @@ Default.args = {
 export const Alternate = Template.bind({})
 Alternate.args = {
   href: '',
+  icon: 'fa-envelope',
   label: 'No underline!',
   style: {
     textDecoration: 'none',
     color: '#AB1289',
   },
-  icon: 'fa-envelope',
+}
+
+export const NoLabel = Template.bind({})
+NoLabel.args = {
+  href: '',
+  icon: 'fa-download',
+  label: '',
+  style: {
+    textDecoration: 'none',
+    color: '#AS8908',
+  },
 }
