@@ -34,6 +34,7 @@ const FilesTable = ({ addClass, files }) => {
               <td className='text-center'>
                 <Link
                   icon='fa-download'
+                  label=''
                   href={href}
                   aria-label='download'
                 />

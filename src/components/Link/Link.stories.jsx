@@ -13,18 +13,26 @@ const Template = (args) => <Link {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  href: '',
+  href: '/',
   label: 'I am a link',
   style: {},
 }
 
 export const Alternate = Template.bind({})
 Alternate.args = {
-  href: '',
+  href: '/',
+  icon: 'fa-envelope',
   label: 'No underline!',
   style: {
     textDecoration: 'none',
     color: '#AB1289',
   },
-  icon: 'fa-envelope',
+}
+
+export const NoLabel = Template.bind({})
+NoLabel.args = {
+  href: '/',
+  icon: 'fa-download',
+  label: '',
+  style: {},
 }
