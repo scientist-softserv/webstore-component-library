@@ -16,7 +16,7 @@ const StatusBar = ({ backgroundColor, statusArray, apiRequestStatus, addClass })
 
   return (
     <div className={`container ${addClass}`}>
-      <div className='row border'>
+      <div className='row border' data-cy='status-bar'>
         {statusArray.map((statusObject, index) => {
           const { statusLabel, statusIcon } = statusObject
           const border = index !== statusArray.length - 1 ? 'border-end' : ''
