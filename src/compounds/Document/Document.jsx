@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Dropdown, Offcanvas } from 'react-bootstrap'
 import LineItemsTable from '../../components/LineItemsTable/LineItemsTable'
 import './document.scss'
+import { allowNull } from '../../resources/utilityFunctions'
 
 const Document = ({ document, addClass }) => {
   const { adPO, date, documentStatusColor, documentType,
@@ -28,7 +29,7 @@ const Document = ({ document, addClass }) => {
           </small>
         </div>
         <div className='ms-auto p-2'>
-          <div className='badge p-2' style={{backgroundColor: documentStatusColor}}>
+          <div className='badge p-2' style={{ backgroundColor: documentStatusColor }}>
             {documentStatus}
           </div>
         </div>
@@ -55,10 +56,9 @@ const Document = ({ document, addClass }) => {
               <h5>Details:</h5>
               {poNumber && <><b>PO:</b> {poNumber}<br /></>}
               {adPO && <><b>AD PO:</b> {identifier}<br /></>}
-              {documentType === 'SOW' ? 
-                <><b>Proposal:</b> {identifier}</> :
-                <><b>Related SOW:</b> {relatedSOWIdentifier}</>
-              }<br />
+              {documentType === 'SOW'
+                ? <><b>Proposal:</b> {identifier}</>
+                : <><b>Related SOW:</b> {relatedSOWIdentifier}</>}<br />
               <b>Amount:</b> {subtotalPrice}<br />
               <b>Request:</b> {requestIdentifier} <br />
               <b>Date:</b> {date}<br />
@@ -86,7 +86,7 @@ const Document = ({ document, addClass }) => {
               totalPrice={totalPrice}
             />
           )}
-          {turnaroundTime && <><h5><b>Turnaround Time:</b> {turnaroundTime}</h5></>}
+          {turnaroundTime && <h5><b>Turnaround Time:</b> {turnaroundTime}</h5>}
         </Offcanvas.Body>
       </Offcanvas>
     </>
@@ -97,6 +97,7 @@ const Document = ({ document, addClass }) => {
 Document.propTypes = {
   addClass: PropTypes.string,
   document: PropTypes.shape({
+    adPO: allowNull(PropTypes.string.isRequired),
     identifier: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     documentStatus: PropTypes.string.isRequired,
@@ -104,6 +105,8 @@ Document.propTypes = {
     documentType: PropTypes.string.isRequired,
     documentTypeColor: PropTypes.string,
     lineItems: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+    poNumber: allowNull(PropTypes.string.isRequired),
+    relatedSOWIdentifier: allowNull(PropTypes.string.isRequired),
     requestIdentifier: PropTypes.string.isRequired,
     shippingPrice: PropTypes.string.isRequired,
     shipTo: PropTypes.shape({
@@ -118,6 +121,7 @@ Document.propTypes = {
     taxAmount: PropTypes.string.isRequired,
     terms: PropTypes.string.isRequired,
     totalPrice: PropTypes.string.isRequired,
+    turnaroundTime: allowNull(PropTypes.string.isRequired),
   }),
 }
 
