@@ -12,5 +12,8 @@ export const Default = Template.bind({})
 Default.args = {
   text: 'Text Here',
   addClass: '',
-  path: '/',
+  path: {
+    pathname: '/test',
+    query: {},
+  },
 }
