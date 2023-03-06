@@ -78,6 +78,15 @@ const SendMessage = ({ backgroundColor, onSubmit, handleClose }) => {
           </ListGroup>
         </Modal.Body>
         <Modal.Footer>
+          <p className='fw-light fst-italic disclaimer'>
+            Please note that Supplier pricing and other information marked confidential by Supplier must be treated as such.
+          </p>
+
+          <p className='fw-light fst-italic disclaimer'>
+            Do not include any Sensitive Personal Data (e.g. data consisting of racial or ethnic origin, political opinions, religious or
+            philosophical beliefs, or trade union membership, genetic data, biometric data, data concerning health or data concerning a
+            natural person's sex life or sexual orientation) or potentially regulated information in messages or attachments.
+          </p>
           <Button variant='primary' onClick={handleSubmit} type='submit'>
             Send
           </Button>
