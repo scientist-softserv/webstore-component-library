@@ -5,10 +5,10 @@ import LineItemsTable from '../../components/LineItemsTable/LineItemsTable'
 import './document.scss'
 
 const Document = ({ document, addClass }) => {
-  const { identifier, date, documentStatusColor, documentType,
-    documentTypeColor, documentStatus, lineItems, requestIdentifier,
+  const { adPO, date, documentStatusColor, documentType,
+    documentTypeColor, documentStatus, identifier, lineItems, poNumber, relatedSOWIdentifier, requestIdentifier,
     shippingPrice, shipTo, shipFrom, subtotalPrice,
-    taxAmount, terms, totalPrice } = document
+    taxAmount, terms, totalPrice, turnaroundTime } = document
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
@@ -52,8 +52,13 @@ const Document = ({ document, addClass }) => {
         <Offcanvas.Body>
           <div className='d-block d-md-flex justify-content-between'>
             <div className='details'>
-              <h6>Details:</h6>
-              <b>Proposal:</b> {identifier}<br />
+              <h5>Details:</h5>
+              {poNumber && <><b>PO:</b> {poNumber}<br /></>}
+              {adPO && <><b>AD PO:</b> {identifier}<br /></>}
+              {documentType === 'SOW' ? 
+                <><b>Proposal:</b> {identifier}</> :
+                <><b>Related SOW:</b> {relatedSOWIdentifier}</>
+              }<br />
               <b>Amount:</b> {subtotalPrice}<br />
               <b>Request:</b> {requestIdentifier} <br />
               <b>Date:</b> {date}<br />
@@ -81,6 +86,7 @@ const Document = ({ document, addClass }) => {
               totalPrice={totalPrice}
             />
           )}
+          {turnaroundTime && <><h5><b>Turnaround Time:</b> {turnaroundTime}</h5></>}
         </Offcanvas.Body>
       </Offcanvas>
     </>
