@@ -21,7 +21,7 @@ const Document = ({ document, addClass }) => {
             {documentType}
           </div>
           <div className='border-end p-2'>
-            <b>{identifier}:</b> {subtotalPrice}
+            <b>{(documentType === 'SOW') ? identifier : poNumber}:</b> {subtotalPrice}
           </div>
           <small className='text-muted fw-light p-2'>
             {date}
