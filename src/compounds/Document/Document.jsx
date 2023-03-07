@@ -7,7 +7,7 @@ import './document.scss'
 const Document = ({ accessToken, addClass, acceptSOW, document, request }) => {
   const { identifier, date, documentStatusColor, documentType,
     documentTypeColor, documentStatus, lineItems, requestIdentifier,
-    shippingPrice, shipTo, shipFrom, subtotalPrice,
+    shippingPrice, shipTo, shipFrom, sowID, subtotalPrice,
     taxAmount, terms, totalPrice } = document
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false)
@@ -45,7 +45,11 @@ const Document = ({ accessToken, addClass, acceptSOW, document, request }) => {
                 {/* TODO: @summer-cook SOW should have submit for approval. It should also ONLY show the submit for approval when the SOW has not yet been submitted. Need to figure out a way to tell if it has been submitted or not. . */}
                 <Dropdown.Item
                   href='#/action-1'
-                  onClick={() => {acceptSOW({request: request, sowID: identifier, accessToken: accessToken})}}
+                  onClick={() => {acceptSOW({
+                    request: request,
+                    sowID: sowID,
+                    accessToken: accessToken,
+                  })}}
                 >
                   Submit for Approval
                 </Dropdown.Item>
