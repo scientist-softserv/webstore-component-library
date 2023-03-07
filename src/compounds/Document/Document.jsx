@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Dropdown, Offcanvas, Row } from 'react-bootstrap'
 import LineItemsTable from '../../components/LineItemsTable/LineItemsTable'
 import Notice from '../../components/Notice/Notice'
+import { allowNull } from '../../resources/utilityFunctions'
 import './document.scss'
 
 const Document = ({ accessToken, addClass, acceptSOW, backgroundColor, document, request }) => {
@@ -30,7 +31,7 @@ const Document = ({ accessToken, addClass, acceptSOW, backgroundColor, document,
           </small>
         </div>
         <div className='ms-auto p-2'>
-          <div className='badge p-2' style={{backgroundColor: documentStatusColor}}>
+          <div className='badge p-2' style={{ backgroundColor: documentStatusColor }}>
             {documentStatus}
           </div>
         </div>
@@ -38,45 +39,46 @@ const Document = ({ accessToken, addClass, acceptSOW, backgroundColor, document,
       <Offcanvas show={show} onHide={handleClose} placement='end' scroll='true'>
         <Offcanvas.Header className={`d-flex border-bottom px-3 py-2 bg-${backgroundColor}-8`} closeButton>
           <Offcanvas.Title> {documentType}: #{identifier}</Offcanvas.Title>
-          {documentType === 'SOW' &&
-            <div className='ms-auto me-2'>
-              <Dropdown>
-                <Dropdown.Toggle id='next-actions-dropdown' size='small' className='btn-outline-dark' variant={`btn-${backgroundColor}`}>
-                  Next Actions
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  {/* TODO: @summer-cook SOW should have submit for approval. It should also ONLY show the submit for approval when the SOW has not yet been submitted. Need to figure out a way to tell if it has been submitted or not. . */}
-                  <Dropdown.Item
-                    href='#/action-1'
-                    onClick={() => {
-                      acceptSOW({
-                        request: request,
-                        sowID: sowID,
-                        accessToken: accessToken,
-                      })
-                      setSowAccepted(true)
-                    }}
-                  >
-                    Submit for Approval
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </div>
-          }
+          {documentType === 'SOW'
+            && (
+              <div className='ms-auto me-2'>
+                <Dropdown>
+                  <Dropdown.Toggle id='next-actions-dropdown' size='small' className='btn-outline-dark' variant={`btn-${backgroundColor}`}>
+                    Next Actions
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item
+                      href='#/action-1'
+                      onClick={() => {
+                        acceptSOW({
+                          request,
+                          sowID,
+                          accessToken,
+                        })
+                        setSowAccepted(true)
+                      }}
+                    >
+                      Submit for Approval
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </div>
+            )}
         </Offcanvas.Header>
         <Offcanvas.Body>
-          {sowAccepted && 
-            <Row>
-              <Notice
-                addClass='my-3'
-                alert={{
-                  body: [`SOW ${identifier} has been accepted successfully. Now awaiting purchase order.`],
-                  variant: 'success',
-                  onClose: () => setSowAccepted(false)
-                }}
-              />
-            </Row>
-          }
+          {sowAccepted
+            && (
+              <Row>
+                <Notice
+                  addClass='my-3'
+                  alert={{
+                    body: [`SOW ${identifier} has been accepted successfully. Now awaiting purchase order.`],
+                    variant: 'success',
+                    onClose: () => setSowAccepted(false),
+                  }}
+                />
+              </Row>
+            )}
           <div className='d-block d-md-flex justify-content-between'>
             <div className='details'>
               <h6>Details:</h6>
@@ -138,11 +140,13 @@ Document.propTypes = {
       organizationName: PropTypes.string,
       text: PropTypes.string,
     }).isRequired,
+    sowID: allowNull(PropTypes.string),
     subtotalPrice: PropTypes.string.isRequired,
     taxAmount: PropTypes.string.isRequired,
     terms: PropTypes.string.isRequired,
     totalPrice: PropTypes.string.isRequired,
   }),
+  request: PropTypes.string.isRequired,
 }
 
 Document.defaultProps = {
