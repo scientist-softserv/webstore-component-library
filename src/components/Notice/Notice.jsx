@@ -77,9 +77,6 @@ Notice.propTypes = {
 
 Notice.defaultProps = {
   addClass: '',
-  alert: {
-    onClose: () => {}
-  },
   buttonProps: {},
   dismissible: true,
   withBackButton: false,
