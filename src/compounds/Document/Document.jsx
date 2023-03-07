@@ -76,13 +76,15 @@ const Document = ({ document, addClass }) => {
               <div className='address'>{shipFrom.text}</div>
             </div>
           </div>
-          <LineItemsTable
-            lineItems={lineItems}
-            subtotalPrice={subtotalPrice}
-            taxAmount={taxAmount}
-            shippingPrice={shippingPrice}
-            totalPrice={totalPrice}
-          />
+          {lineItems && (
+            <LineItemsTable
+              lineItems={lineItems}
+              subtotalPrice={subtotalPrice}
+              taxAmount={taxAmount}
+              shippingPrice={shippingPrice}
+              totalPrice={totalPrice}
+            />
+          )}
           {turnaroundTime && <h5><b>Turnaround Time:</b> {turnaroundTime}</h5>}
         </Offcanvas.Body>
       </Offcanvas>
