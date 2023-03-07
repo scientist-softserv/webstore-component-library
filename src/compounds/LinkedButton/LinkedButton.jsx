@@ -25,7 +25,7 @@ const ButtonLinkWrapper = React.forwardRef(({ ...props }, ref) => {
   const { addClass, buttonProps, href } = props
 
   return (
-    <a href={href} ref={ref} className={addClass}>
+    <a href={href} ref={ref} className={addClass} data-cy='linked-button'>
       <Button {...buttonProps} />
     </a>
   )
