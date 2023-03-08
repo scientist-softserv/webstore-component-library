@@ -50,7 +50,7 @@ const Document = ({ acceptSOW, addClass, backgroundColor, document }) => {
                     <Dropdown.Item
                       href='#/action-1'
                       onClick={() => {
-                        onClick('Accept SOW')
+                        acceptSOW
                         setShowNotice(true)
                       }}
                     >
