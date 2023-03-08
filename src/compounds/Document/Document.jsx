@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 import { Dropdown, Offcanvas } from 'react-bootstrap'
 import LineItemsTable from '../../components/LineItemsTable/LineItemsTable'
 import './document.scss'
-import { allowNull } from '../../resources/utilityFunctions'
 
 const Document = ({ document, addClass }) => {
-  const { adPO, date, documentStatusColor, documentType,
-    documentTypeColor, documentStatus, identifier, lineItems, poNumber, relatedSOWIdentifier, requestIdentifier,
-    shippingPrice, shipTo, shipFrom, subtotalPrice,
-    taxAmount, terms, totalPrice, turnaroundTime } = document
+  const {
+    adPO, date, documentStatusColor, documentType, documentTypeColor, documentStatus, identifier, lineItems, poNumber,
+    relatedSOWIdentifier, requestIdentifier, shippingPrice, shipTo, shipFrom, subtotalPrice, taxAmount, terms, totalPrice,
+    turnaroundTime,
+  } = document
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
@@ -76,8 +76,7 @@ const Document = ({ document, addClass }) => {
               <div className='address'>{shipFrom.text}</div>
             </div>
           </div>
-          {lineItems
-          && (
+          {lineItems && (
             <LineItemsTable
               lineItems={lineItems}
               subtotalPrice={subtotalPrice}
@@ -97,7 +96,7 @@ const Document = ({ document, addClass }) => {
 Document.propTypes = {
   addClass: PropTypes.string,
   document: PropTypes.shape({
-    adPO: allowNull(PropTypes.string.isRequired),
+    adPO: PropTypes.string,
     identifier: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     documentStatus: PropTypes.string.isRequired,
@@ -105,8 +104,8 @@ Document.propTypes = {
     documentType: PropTypes.string.isRequired,
     documentTypeColor: PropTypes.string,
     lineItems: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-    poNumber: allowNull(PropTypes.string.isRequired),
-    relatedSOWIdentifier: allowNull(PropTypes.string.isRequired),
+    poNumber: PropTypes.string,
+    relatedSOWIdentifier: PropTypes.string,
     requestIdentifier: PropTypes.string.isRequired,
     shippingPrice: PropTypes.string.isRequired,
     shipTo: PropTypes.shape({
@@ -121,7 +120,7 @@ Document.propTypes = {
     taxAmount: PropTypes.string.isRequired,
     terms: PropTypes.string.isRequired,
     totalPrice: PropTypes.string.isRequired,
-    turnaroundTime: allowNull(PropTypes.string.isRequired),
+    turnaroundTime: PropTypes.string,
   }),
 }
 
