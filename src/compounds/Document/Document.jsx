@@ -16,6 +16,7 @@ const Document = ({ acceptSOW, addClass, backgroundColor, document }) => {
   const [showNotice, setShowNotice] = useState(false)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
+
   return (
     <>
       <div className={`d-flex border rounded mb-2 bg-light document-wrapper ${addClass}`} onClick={handleShow} role='presentation'>
