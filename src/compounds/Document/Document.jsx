@@ -48,7 +48,7 @@ const Document = ({ acceptSOW, addClass, backgroundColor, document }) => {
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Dropdown.Item
-                      href='#/action-1'
+                      href='#/accept-sow'
                       onClick={() => {
                         acceptSOW
                         setShowNotice(true)
