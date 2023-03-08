@@ -6,7 +6,7 @@ import Notice from '../../components/Notice/Notice'
 import { allowNull } from '../../resources/utilityFunctions'
 import './document.scss'
 
-const Document = ({ document, addClass }) => {
+const Document = ({ acceptSOW, addClass, backgroundColor, document }) => {
   const {
     adPO, date, documentStatusColor, documentType, documentTypeColor, documentStatus, identifier, lineItems, poNumber,
     relatedSOWIdentifier, requestIdentifier, shippingPrice, shipTo, shipFrom, subtotalPrice, taxAmount, terms, totalPrice,
@@ -67,7 +67,7 @@ const Document = ({ document, addClass }) => {
               <Notice
                 addClass='my-3'
                 alert={{
-                  body: [alertBody],
+                  body: [`SOW ${identifier} has been accepted successfully. Now awaiting purchase order.`],
                   variant: 'success',
                   onClose: () => setShowNotice(false),
                 }}
@@ -118,7 +118,6 @@ const Document = ({ document, addClass }) => {
 
 Document.propTypes = {
   addClass: PropTypes.string,
-  alertBody: PropTypes.string,
   backgroundColor: PropTypes.string,
   acceptSOW: PropTypes.func.isRequired,
   document: PropTypes.shape({
