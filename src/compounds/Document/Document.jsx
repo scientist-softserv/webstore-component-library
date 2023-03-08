@@ -6,16 +6,15 @@ import Notice from '../../components/Notice/Notice'
 import { allowNull } from '../../resources/utilityFunctions'
 import './document.scss'
 
-const Document = ({ accessToken, addClass, acceptSOW, backgroundColor, document, request }) => {
+const Document = ({ addClass, acceptSOW, backgroundColor, document }) => {
   const { identifier, date, documentStatusColor, documentType,
     documentTypeColor, documentStatus, lineItems, requestIdentifier,
     shippingPrice, shipTo, shipFrom, sowID, subtotalPrice,
     taxAmount, terms, totalPrice } = document
   const [show, setShow] = useState(false)
-  const [sowAccepted, setSowAccepted] = useState(false)
+  const [showNotice, setShowNotice] = useState(false)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
-
   return (
     <>
       <div className={`d-flex border rounded mb-2 bg-light document-wrapper ${addClass}`} onClick={handleShow} role='presentation'>
@@ -50,12 +49,8 @@ const Document = ({ accessToken, addClass, acceptSOW, backgroundColor, document,
                     <Dropdown.Item
                       href='#/action-1'
                       onClick={() => {
-                        acceptSOW({
-                          request,
-                          sowID,
-                          accessToken,
-                        })
-                        setSowAccepted(true)
+                        acceptSOW
+                        setShowNotice(true)
                       }}
                     >
                       Submit for Approval
@@ -66,19 +61,18 @@ const Document = ({ accessToken, addClass, acceptSOW, backgroundColor, document,
             )}
         </Offcanvas.Header>
         <Offcanvas.Body>
-          {sowAccepted
-            && (
-              <Row>
-                <Notice
-                  addClass='my-3'
-                  alert={{
-                    body: [`SOW ${identifier} has been accepted successfully. Now awaiting purchase order.`],
-                    variant: 'success',
-                    onClose: () => setSowAccepted(false),
-                  }}
-                />
-              </Row>
-            )}
+          {showNotice && (
+            <Row>
+              <Notice
+                addClass='my-3'
+                alert={{
+                  body: [alertBody],
+                  variant: 'success',
+                  onClose: () => setShowNotice(false),
+                }}
+              />
+            </Row>
+          )}
           <div className='d-block d-md-flex justify-content-between'>
             <div className='details'>
               <h6>Details:</h6>
@@ -100,8 +94,7 @@ const Document = ({ accessToken, addClass, acceptSOW, backgroundColor, document,
               <div className='address'>{shipFrom.text}</div>
             </div>
           </div>
-          {lineItems
-          && (
+          {lineItems && (
             <LineItemsTable
               lineItems={lineItems}
               subtotalPrice={subtotalPrice}
@@ -119,8 +112,8 @@ const Document = ({ accessToken, addClass, acceptSOW, backgroundColor, document,
 
 Document.propTypes = {
   addClass: PropTypes.string,
+  alertBody: PropTypes.string,
   backgroundColor: PropTypes.string,
-  accessToken: PropTypes.string.isRequired,
   acceptSOW: PropTypes.func.isRequired,
   document: PropTypes.shape({
     identifier: PropTypes.string.isRequired,
@@ -146,7 +139,6 @@ Document.propTypes = {
     terms: PropTypes.string.isRequired,
     totalPrice: PropTypes.string.isRequired,
   }),
-  request: PropTypes.string.isRequired,
 }
 
 Document.defaultProps = {
