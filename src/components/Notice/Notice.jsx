@@ -3,17 +3,22 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Alert, Button, Container } from 'react-bootstrap'
 
-const Notice = ({ alert, buttonProps, dismissible, withBackButton }) => {
+const Notice = ({ addClass, alert, buttonProps, dismissible, withBackButton }) => {
   const [show, setShow] = useState(true)
-  const { title, body, variant } = alert
+  const { title, body, variant, onClose } = alert
   let onClick
   let text
   if (withBackButton) ({ onClick, text } = buttonProps)
 
   return (
     show && (
-      <Container>
-        <Alert className='my-5 text-break' variant={variant} onClose={() => setShow(false)} dismissible={dismissible}>
+      <Container className={addClass}>
+        <Alert
+          className='text-break'
+          variant={variant}
+          onClose={onClose || (() => setShow(false))}
+          dismissible={dismissible}
+        >
           {title && (
             <Alert.Heading>{title}</Alert.Heading>
           )}
@@ -55,8 +60,10 @@ const Notice = ({ alert, buttonProps, dismissible, withBackButton }) => {
 }
 
 Notice.propTypes = {
+  addClass: PropTypes.string,
   alert: PropTypes.shape({
     body: PropTypes.arrayOf(PropTypes.string).isRequired,
+    onClose: PropTypes.func,
     title: PropTypes.string,
     variant: PropTypes.string.isRequired,
   }).isRequired,
@@ -69,6 +76,7 @@ Notice.propTypes = {
 }
 
 Notice.defaultProps = {
+  addClass: '',
   buttonProps: {},
   dismissible: true,
   withBackButton: false,
