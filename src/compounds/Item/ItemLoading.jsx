@@ -4,7 +4,7 @@ import { Card, Placeholder } from 'react-bootstrap'
 import './item.scss'
 
 const CardBodyLoading = ({ withButtonLink }) => (
-  <Card.Body className={withButtonLink && 'd-flex flex-column'}>
+  <Card.Body className={withButtonLink && 'd-flex flex-column'} data-cy='item-loading'>
     <Placeholder as={Card.Title} animation='glow'>
       <Placeholder xs={6} />
     </Placeholder>
