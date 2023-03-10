@@ -11,7 +11,9 @@
     "test-storybook": "test-storybook",
     "build-lib": "rollup -c",
     "watch-lib": "rollup -c --watch",
-    "release": "release-it"
+    "release": "release-it",
+    "release:beta": "release-it --preRelease=beta",
+    "release:dry": "release-it --dry-run --no-npm"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,8 @@
   "keywords": [
     "webstore",
     "component",
-    "library"
+    "library",
+    "scientist"
   ],
   "author": "Alisha Evans",
   "license": "MIT",
@@ -90,9 +93,36 @@
       "react-dom": "^18.2.0"
     }
   },
+  "contributors": [
+    "Alisha Evans (https://github.com/alishaevn)",
+    "Summer Cook (https://github.com/summer-cook)"
+  ],
   "publishConfig": {
+    "access": "public",
     "ignore": [
       ".eslintrc"
     ]
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release v${version}",
+      "push": true,
+      "commit": true,
+      "tag": true,
+      "requireCommits": false,
+      "requireCleanWorkingDir": true
+    },
+    "npm": {
+      "publish": true,
+      "ignoreVersion": false,
+      "allowSameVersion": false
+    },
+    "hooks": {
+      "before:init": "npx eslint './**'",
+      "after:release": "echo Successfully released ${name} v${version}."
+    }
+  },
+  "npm": {
+    "publishPath": "dist"
   }
 }
