@@ -122,17 +122,24 @@ npm run watch-lib # use when you want to build the library for local use; it wil
 ```
 
 ## Cutting a New Release
-A git tag should exist for every release. We use `release-it` to automate the coordination of package.json and git tag.
+A git tag should exist for every semver release. We use `release-it` to automate the coordination of package.json and git tag.
 
-If you want to release a new semver release run `npm run release`. You'll be entered into an interactive session with the following prompts:
-  ``` bash
-  ? Select increment (You will be prompted to select a release type, e.g. patch)
-  ? Publish @scientist-softserv/webstore-component-library to npm? (Yes)
-  ? Please enter OTP for npm: (This is stored in 1password)
-  ? Commit (chore: release vX.X.X)? (Yes)
-  ? Tag (X.X.X)? (Yes)
-  ? Push? (Yes)
-  ```
+1. run `npm run release`. You'll be entered into an interactive session with the following prompts:
+    ``` bash
+    ? Select increment # You will be prompted to select a release type, e.g. patch
+    ? Publish @scientist-softserv/webstore-component-library to npm? # Yes
+    ? Please enter OTP for npm: # This is stored in 1password
+    ? Commit (chore: release vX.X.X)? # Yes
+    ? Tag (X.X.X)? # Yes
+    ? Push? # Yes
+    ```
+
+2. When the above completes, [create the release notes](https://github.com/scientist-softserv/webstore-component-library/releases/new).
+    - Choose the tag that was just released
+    - Set the title of the release to be the newly released version
+      - e.g. "0.1.16"
+    - Click the "Generate release notes" button above the text field
+    - Click the "Publish release" button beneath the text field
 
 ## Authors and acknowledgment
 Alisha Evans
