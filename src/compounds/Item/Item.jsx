@@ -29,7 +29,7 @@ const Item = ({ buttonLink, buttonProps, href, isLoading, item, orientation, tit
   if (withTitleLink || withButtonLink) link = titleLink || buttonLink || href
 
   return (
-    <Card key={id} style={{ width: `${width}` }} className={`h-100${orientation === 'horizontal' ? ' mb-4' : ''}`}>
+    <Card key={id} style={{ width: `${width}` }} className={`h-100${orientation === 'horizontal' ? ' mb-4' : ''}`} data-cy='item-card'>
       {orientation === 'horizontal' ? (
         <div className='row g-0 h-100'>
           <div className='col-3'>
