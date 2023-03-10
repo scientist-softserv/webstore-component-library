@@ -14,7 +14,7 @@ const SearchBar = ({ addClass, initialValue, onSubmit, placeholder }) => {
 
   return (
     <div className={`search-bar-container ${addClass}`}>
-      <form className='search-bar-form' method='get' onSubmit={handleSubmit}>
+      <form className='search-bar-form' method='get' onSubmit={handleSubmit} data-cy='search-bar'>
         <label>
           <span className='visually-hidden'>Search all services</span>
         </label>
