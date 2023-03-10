@@ -3,6 +3,7 @@ A React component library intended for use with WebStore applications.
 
 ## Table of Contents
 
+- [How To Install This Library](#how-to-install-this-library)
 - [Getting started](#getting-started)
   - [NPM version](#npm-version)
   - [Running the app](#running-the-app)
@@ -12,8 +13,17 @@ A React component library intended for use with WebStore applications.
   - [Linting](#linting)
   - [Using Icons](#using-icons)
 - [Building the library](#building-the-library)
+- [Cutting a New Release](#cutting-a-new-release)
 
 ---
+
+## How To Install This Library
+  ``` bash
+  yarn add @scientist-softserv/webstore-component-library
+  # OR
+  npm install @scientist-softserv/webstore-component-library
+  ```
+
 ## Getting started
 ### NPM version
 Use NPM version `v8.19.2` and please do not mix it with Yarn.
@@ -27,7 +37,7 @@ Use NPM version `v8.19.2` and please do not mix it with Yarn.
 - A new browser tab will automatically open to "http://localhost:6006/"
 
 #### Troubleshooting
-- If you see the following when starting the app: 
+- If you see the following when starting the app:
   - `Error: error:0308010C:digital envelope routines::unsupported`
   - set the following env variable in your local shell: `export NODE_OPTIONS=--openssl-legacy-provider`
 
@@ -102,7 +112,7 @@ This project uses [fontawesome's free solid icons](https://fontawesome.com/searc
     ```
 
 #### Troubleshooting Icons
-- If the expected icon doesn't show up, use the link provided above to search for it again. Click on the icon and confirm that the string in the example matches the camelcase variable that was imported and the string that was used with the "icon" prop.
+- If the expected icon doesn't show up, use the link provided above to search for it again. Click on the icon and confirm that the string in the example matches the camel cased variable that was imported and the string that was used with the "icon" prop.
 
 ## Building the library
 We are using Rollup JS to build and publish the library. The scripts will build based on the contents of "src/index.js" so make sure that any newly created components are referenced in the appropriate "components/index" or "compounds/index" files.
@@ -114,16 +124,15 @@ npm run watch-lib # use when you want to build the library for local use; it wil
 ## Cutting a New Release
 A git tag should exist for every release. We use `release-it` to automate the coordination of package.json and git tag.
 
-If you want to release a new semver release run:
-
-  npm run release
-  (You will be prompted to select a release type, e.g. patch)
-
-And be sure to say yes to all the prompts, you want a commit, you want a tag, and you want to push up to github.
-
-## Teaching Yarn How To Install This Library
-
-    yarn add @scientist-softserv/webstore-component-library@https://github.com/scientist-softserv/webstore-component-library
+If you want to release a new semver release run `npm run release`. You'll be entered into an interactive session with the following prompts:
+  ``` bash
+  ? Select increment (You will be prompted to select a release type, e.g. patch)
+  ? Publish @scientist-softserv/webstore-component-library to npm? (Yes)
+  ? Please enter OTP for npm: (This is stored in 1password)
+  ? Commit (chore: release vX.X.X)? (Yes)
+  ? Tag (X.X.X)? (Yes)
+  ? Push? (Yes)
+  ```
 
 ## Authors and acknowledgment
 Alisha Evans
