@@ -118,7 +118,6 @@
       "allowSameVersion": false
     },
     "hooks": {
-      "before:init": "npx eslint './**'",
       "after:release": "echo Successfully released ${name} v${version}."
     }
   },
