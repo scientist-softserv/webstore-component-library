@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { Dropdown, Offcanvas, Row } from 'react-bootstrap'
+import { Dropdown, Offcanvas } from 'react-bootstrap'
 import LineItemsTable from '../../components/LineItemsTable/LineItemsTable'
-import Notice from '../../components/Notice/Notice'
 import { allowNull } from '../../resources/utilityFunctions'
 import './document.scss'
 
@@ -13,7 +12,6 @@ const Document = ({ acceptSOW, addClass, backgroundColor, document }) => {
     turnaroundTime,
   } = document
   const [show, setShow] = useState(false)
-  const [showNotice, setShowNotice] = useState(false)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
 
@@ -51,11 +49,11 @@ const Document = ({ acceptSOW, addClass, backgroundColor, document }) => {
                     <Dropdown.Item
                       href='#/accept-sow'
                       onClick={() => {
-                        acceptSOW
-                        setShowNotice(true)
+                        acceptSOW()
+                        handleClose()
                       }}
                     >
-                      Submit for Approval
+                      Accept SOW
                     </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
@@ -63,18 +61,6 @@ const Document = ({ acceptSOW, addClass, backgroundColor, document }) => {
             )}
         </Offcanvas.Header>
         <Offcanvas.Body>
-          {showNotice && (
-            <Row>
-              <Notice
-                addClass='my-3'
-                alert={{
-                  body: [`SOW ${identifier} has been accepted successfully. Now awaiting purchase order.`],
-                  variant: 'success',
-                  onClose: () => setShowNotice(false),
-                }}
-              />
-            </Row>
-          )}
           <div className='d-block d-md-flex justify-content-between'>
             <div className='details'>
               <h5>Details:</h5>
