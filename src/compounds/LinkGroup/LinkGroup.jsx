@@ -6,7 +6,7 @@ import './link-group.css'
 const LinkGroup = ({ header, headerStyle, links, linkStyle }) => (
   <div className='link-group-container'>
     <p className='link-group-header mb-2' style={headerStyle}>{header}</p>
-    {links.map(({ name, url }) => <Link href={url} key={name} label={name} addClass='link-group-links' style={linkStyle} />)}
+    {links.map(({ name, url }) => <Link href={url} key={name} label={name} addClass='link-group-links text-decoration-none mb-1 d-block' style={linkStyle} />)}
   </div>
 )
 

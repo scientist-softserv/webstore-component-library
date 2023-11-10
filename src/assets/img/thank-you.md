@@ -11,3 +11,4 @@ Our icons were sourced from the following:
 * [Twitter social badge icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/twitter-social-badge)
 * [Vimeo icons created by Md Tanvirul Haque - Flaticon](https://www.flaticon.com/free-icons/vimeo)
 * [Youtube icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/youtube)
+* [Linkedin icons created by IconScout](https://iconscout.com/free-icon/linkedin-48)

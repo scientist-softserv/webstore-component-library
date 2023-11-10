@@ -18,7 +18,7 @@ const iconsList = {
   twitter: (height, color) => <Twitter height={height} fill={color} />,
   vimeo: (height, color) => <Vimeo height={height} fill={color} />,
   youtube: (height, color) => <YouTube height={height} fill={color} />,
-  linkedin: (height, color) => <Linkedin height={height} fill={color} />,
+  linkedin: (height, color) => <Linkedin height={height} fill={color}/>,
 }
 
 const SocialIcon = ({ addClass, color, height, icon, url }) => (
