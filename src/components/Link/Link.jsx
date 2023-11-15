@@ -3,12 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
 import './link.css'
 
-const Link = ({ addClass, href, icon, label, style, ...props }) => {
+const Link = ({ addClass, href, icon, label, style, target, ...props }) => {
   return (
     <a
       href={href}
       className={`link ${addClass}`}
       style={style}
+      target={target}
       {...props}
     >
       {icon && (
@@ -31,12 +32,14 @@ Link.propTypes = {
   icon: PropTypes.string,
   label: PropTypes.string.isRequired,
   style: PropTypes.shape({}),
+  target: PropTypes.string,
 }
 
 Link.defaultProps = {
   addClass: '',
   icon: '',
   style: {},
+  target: ''
 }
 
 export default Link
