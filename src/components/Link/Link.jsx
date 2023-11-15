@@ -39,7 +39,7 @@ Link.defaultProps = {
   addClass: '',
   icon: '',
   style: {},
-  target: ''
+  target: '_self'
 }
 
 export default Link
