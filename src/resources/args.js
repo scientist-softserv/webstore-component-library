@@ -110,6 +110,10 @@ export const socials = [
     icon: 'facebook',
     url: 'www.facebook.com',
   },
+  {
+    icon: 'linkedin',
+    url: 'www.linkedin.com',
+  },
 ]
 
 export const shipTo = {

@@ -12,7 +12,7 @@ const LinkGroup = ({ header, headerStyle, links, linkStyle }) => (
         key={name}
         label={name}
         target={target}
-        addClass='link-group-links'
+        addClass='link-group-links text-decoration-none mb-1 d-block'
         style={linkStyle}
       />
     )}
