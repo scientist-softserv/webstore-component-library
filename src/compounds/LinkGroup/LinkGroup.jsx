@@ -6,7 +6,16 @@ import './link-group.css'
 const LinkGroup = ({ header, headerStyle, links, linkStyle }) => (
   <div className='link-group-container'>
     <p className='link-group-header mb-2' style={headerStyle}>{header}</p>
-    {links.map(({ name, url }) => <Link href={url} key={name} label={name} addClass='link-group-links text-decoration-none mb-1 d-block' style={linkStyle} />)}
+    {links.map(({ name, url, target }) =>
+      <Link
+        href={url}
+        key={name}
+        label={name}
+        target={target}
+        addClass='link-group-links text-decoration-none mb-1 d-block'
+        style={linkStyle}
+      />
+    )}
   </div>
 )
 
@@ -16,6 +25,7 @@ LinkGroup.propTypes = {
   links: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
+    target: PropTypes.string,
   })).isRequired,
   linkStyle: PropTypes.shape({}),
 }
