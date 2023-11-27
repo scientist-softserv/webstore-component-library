@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 import { useState } from 'react'
 
 const CookiePreferencesCheck = ({ cookieConsent, disableCookies, enableCookies }) => {
-  console.log('CookiePreferencesCheck', { cookieConsent, disableCookies, enableCookies })
+  // NOTE: the enable/disable cookies functions change the actual value.
+  // the variable below is so the radio buttons update after being clicked.
   const [allowed, setAllowed] = useState(cookieConsent)
 
   const handleEnablingCookies = () => {

@@ -9,7 +9,6 @@ const CookiePreferencesModal = ({ cookieConsent, disableCookies, enableCookies }
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
-  console.log('CookiePreferencesModal', { cookieConsent })
 
   const handleEnablingCookies = () => {
     enableCookies()
