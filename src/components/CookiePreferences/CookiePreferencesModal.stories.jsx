@@ -10,7 +10,7 @@ const Template = (args) => <CookiePreferencesModal {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  cookieConsent: undefined,
+  getCookieConsent: true,
   disableCookies: () => console.log('disable cookies'),
   enableCookies: () => console.log('enable cookies'),
 }

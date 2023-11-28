@@ -5,8 +5,8 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import { useState } from 'react'
 
-const CookiePreferencesModal = ({ cookieConsent, disableCookies, enableCookies }) => {
-  const [show, setShow] = useState(false)
+const CookiePreferencesModal = ({ getCookieConsent, disableCookies, enableCookies }) => {
+  const [show, setShow] = useState(getCookieConsent)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
 
@@ -19,8 +19,6 @@ const CookiePreferencesModal = ({ cookieConsent, disableCookies, enableCookies }
     disableCookies()
     handleClose()
   }
-
-  if (!show && (cookieConsent === undefined)) return handleShow()
 
   return (
     <Modal
@@ -49,7 +47,7 @@ const CookiePreferencesModal = ({ cookieConsent, disableCookies, enableCookies }
 }
 
 CookiePreferencesModal.propTypes = {
-  cookieConsent: PropTypes.string.isRequired,
+  getCookieConsent: PropTypes.bool.isRequired,
   disableCookies: PropTypes.func.isRequired,
   enableCookies: PropTypes.func.isRequired,
 }

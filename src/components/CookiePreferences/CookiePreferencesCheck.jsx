@@ -3,19 +3,19 @@ import Form from 'react-bootstrap/Form'
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 
-const CookiePreferencesCheck = ({ cookieConsent, disableCookies, enableCookies }) => {
+const CookiePreferencesCheck = ({ cookieConsentValue, disableCookies, enableCookies }) => {
   // NOTE: the enable/disable cookies functions change the actual value.
   // the variable below is so the radio buttons update after being clicked.
-  const [allowed, setAllowed] = useState(cookieConsent)
+  const [allowed, setAllowed] = useState(cookieConsentValue)
 
   const handleEnablingCookies = () => {
     enableCookies()
-    setAllowed('true')
+    setAllowed(true)
   }
 
   const handleDisablingCookies = () => {
     disableCookies()
-    setAllowed('false')
+    setAllowed(false)
   }
 
   return (
@@ -26,7 +26,7 @@ const CookiePreferencesCheck = ({ cookieConsent, disableCookies, enableCookies }
         name='Allow Cookies'
         type='radio'
         id='allow-cookies'
-        checked={allowed === 'true'}
+        checked={allowed}
         onChange={() => handleEnablingCookies()}
       />
       <Form.Check
@@ -35,7 +35,7 @@ const CookiePreferencesCheck = ({ cookieConsent, disableCookies, enableCookies }
         name='Disable Cookies'
         type='radio'
         id='disable-cookies'
-        checked={allowed === 'false'}
+        checked={!allowed}
         onChange={() => handleDisablingCookies()}
       />
     </Form>
@@ -43,7 +43,7 @@ const CookiePreferencesCheck = ({ cookieConsent, disableCookies, enableCookies }
 }
 
 CookiePreferencesCheck.propTypes = {
-  cookieConsent: PropTypes.string.isRequired,
+  cookieConsentValue: PropTypes.bool.isRequired,
   disableCookies: PropTypes.func.isRequired,
   enableCookies: PropTypes.func.isRequired,
 }
