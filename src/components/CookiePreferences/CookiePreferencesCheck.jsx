@@ -5,8 +5,10 @@ import { useState } from 'react'
 
 const CookiePreferencesCheck = ({ cookieConsentValue, disableCookies, enableCookies }) => {
   // NOTE: the enable/disable cookies functions change the actual value.
-  // the variable below is so the radio buttons update after being clicked.
-  const [allowed, setAllowed] = useState(cookieConsentValue)
+  // the state variable below is so the radio buttons update after being clicked.
+  // NOTE: cookie values are strings. we are parsing it in state so we don't have to
+  // do strict evaluations (===) with strings in the code below.
+  const [allowed, setAllowed] = useState(JSON.parse(cookieConsentValue))
 
   const handleEnablingCookies = () => {
     enableCookies()
@@ -43,7 +45,7 @@ const CookiePreferencesCheck = ({ cookieConsentValue, disableCookies, enableCook
 }
 
 CookiePreferencesCheck.propTypes = {
-  cookieConsentValue: PropTypes.bool.isRequired,
+  cookieConsentValue: PropTypes.string.isRequired,
   disableCookies: PropTypes.func.isRequired,
   enableCookies: PropTypes.func.isRequired,
 }

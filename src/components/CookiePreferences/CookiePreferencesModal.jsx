@@ -8,7 +8,6 @@ import { useState } from 'react'
 const CookiePreferencesModal = ({ getCookieConsent, disableCookies, enableCookies }) => {
   const [show, setShow] = useState(getCookieConsent)
   const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
 
   const handleEnablingCookies = () => {
     enableCookies()
