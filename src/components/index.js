@@ -7,6 +7,8 @@ import AdditionalInfo from './AdditionalInfo/AdditionalInfo'
 import BlankRequestForm from './BlankRequestForm/BlankRequestForm'
 import Button from './Button/Button'
 import CollapsibleSection from './CollapsibleSection/CollapsibleSection'
+import CookiePreferencesCheck from './CookiePreferences/CookiePreferencesCheck'
+import CookiePreferencesModal from './CookiePreferences/CookiePreferencesModal'
 import Image from './Image/Image'
 import Link from './Link/Link'
 import Loading from './Loading/Loading'
@@ -23,6 +25,8 @@ export {
   BlankRequestForm,
   Button,
   CollapsibleSection,
+  CookiePreferencesCheck,
+  CookiePreferencesModal,
   Image,
   Link,
   Loading,
