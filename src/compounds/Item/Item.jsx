@@ -5,6 +5,7 @@ import Image from '../../components/Image/Image'
 import CardBody from './CardBody'
 import LinkedButton from '../LinkedButton/LinkedButton'
 import ItemLoading from './ItemLoading'
+import NextLink from '../../components/NextLink/NextLink'
 import './item.scss'
 
 const Item = ({ buttonLink, buttonProps, href, isLoading, item, orientation, titleLink, withButtonLink,
@@ -52,8 +53,10 @@ const Item = ({ buttonLink, buttonProps, href, isLoading, item, orientation, tit
           </div>
         </div>
       ) : (
-        <>
-          <Image
+        <NextLink
+        text={(
+          <>
+             <Image
             className={`cover ${orientation === 'horizontal' ? 'img-fluid h-100 rounded-start' : 'card-img-top'}`}
             src={src}
             alt={alt}
@@ -67,7 +70,11 @@ const Item = ({ buttonLink, buttonProps, href, isLoading, item, orientation, tit
             withButtonLink={withButtonLink}
             withTitleLink={withTitleLink}
           />
-        </>
+          </>
+        )}
+        path={{ pathname: item.href, query: { id }}}
+        addClass="text-decoration-none link-hover"
+        />
       )}
     </Card>
   )
