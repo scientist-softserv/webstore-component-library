@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Card } from "react-bootstrap";
-import NextLink from "../../components/NextLink/NextLink";
-import LinkedButton from "../LinkedButton/LinkedButton";
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card } from 'react-bootstrap'
+import NextLink from '../../components/NextLink/NextLink'
+import LinkedButton from '../LinkedButton/LinkedButton'
 
 const CardBody = ({
   buttonLink,
@@ -27,11 +27,11 @@ const CardBody = ({
           <div className={orientation === "horizontal" ? "me-2" : ""}>
             <Card.Title >
             {(withTitleLink) && (
-               <NextLink
-               text={name}
-               path={{ pathname: titleLink, query: { id } }}
-               addClass="text-decoration-none link-hover"
-             />)}
+              <NextLink
+              text={name}
+              path={{ pathname: titleLink, query: { id } }}
+              addClass="text-decoration-none link-hover"
+            />)}
               {(!withTitleLink) && (
                 name
             )}
@@ -79,20 +79,20 @@ CardBody.propTypes = {
     name: PropTypes.string.isRequired,
     slug: PropTypes.string,
   }),
-  orientation: PropTypes.oneOf(["horizontal", "vertical"]),
+  orientation: PropTypes.oneOf(['horizontal', 'vertical']),
   titleLink: PropTypes.string,
   withButtonLink: PropTypes.bool,
   withTitleLink: PropTypes.bool,
 };
 
 CardBody.defaultProps = {
-  buttonLink: "",
+  buttonLink: '',
   buttonProps: LinkedButton.defaultProps,
   item: {
-    description: "",
+    description: '',
   },
-  orientation: "vertical",
-  titleLink: "",
+  orientation: 'vertical',
+  titleLink: '',
   withButtonLink: false,
   withTitleLink: false,
 };
