@@ -41,9 +41,11 @@ const CardBody = ({ buttonLink, buttonProps, item,
                   <div className='fw-light'>{description.slice(cutOffIndex).trimStart()}</div>
                 </Collapse>
               </div>
-              <Button variant="link" onClick={() => setOpen(!open)} className="p-0 mt-3">
-                {open ? ' Show less' : ' Read more'}
-              </Button>
+              { description.length > 300 && (
+                <Button variant="link" onClick={() => setOpen(!open)} className="p-0 mt-3">
+                  {open ? ' Show less' : ' Read more'}
+                </Button>
+              )}
             </>
           )}
         </div>
