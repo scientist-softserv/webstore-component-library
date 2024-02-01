@@ -54,26 +54,26 @@ const Item = ({ buttonLink, buttonProps, href, isLoading, item, orientation, tit
         </div>
       ) : (
         <NextLink
-        text={(
-          <>
-            <Image
-            className={`cover ${orientation === 'horizontal' ? 'img-fluid h-100 rounded-start' : 'card-img-top'}`}
-            src={src}
-            alt={alt}
-          />
-          <CardBody
-            buttonLink={link}
-            buttonProps={buttonProps}
-            item={item}
-            orientation={orientation}
-            titleLink={link}
-            withButtonLink={withButtonLink}
-            // withTitleLink={withTitleLink}
-          />
-          </>
-        )}
-        path={{ pathname: item.href, query: { id }}}
-        addClass="text-decoration-none link-hover"
+          children={(
+            <>
+              <Image
+              className={`cover ${orientation === 'horizontal' ? 'img-fluid h-100 rounded-start' : 'card-img-top'}`}
+              src={src}
+              alt={alt}
+              />
+              <CardBody
+                buttonLink={link}
+                buttonProps={buttonProps}
+                item={item}
+                orientation={orientation}
+                titleLink={link}
+                withButtonLink={withButtonLink}
+                withTitleLink={withTitleLink}
+              />
+            </>
+          )}
+          path={{ pathname: item.href, query: { id }}}
+          addClass="text-decoration-none link-hover"
         />
       )}
     </Card>

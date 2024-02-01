@@ -2,24 +2,27 @@ import React from 'react'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 
-const NextLink = ({ addClass, text, path }) => (
+const NextLink = ({ addClass, children, path }) => (
   <Link href={path} passHref>
     <NextLinkWrapper
       addClass={addClass}
       href={path}
-      text={text}
+      children={children}
     />
   </Link>
 )
 
-const NextLinkWrapper = React.forwardRef(({ addClass, text, href }, ref) => (
+const NextLinkWrapper = React.forwardRef(({ addClass, children, href }, ref) => (
   <a href={href} ref={ref} className={addClass}>
-    {text}
+    {children}
   </a>
 ))
 
 NextLink.propTypes = {
-  // text: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.elementType,
+  ]).isRequired,
   addClass: PropTypes.string,
   path: PropTypes.exact({
     pathname: PropTypes.string.isRequired,

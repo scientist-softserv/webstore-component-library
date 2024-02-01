@@ -10,7 +10,7 @@ const Template = (args) => <NextLink {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  text: 'Text Here',
+  children: 'Text Here',
   addClass: '',
   path: {
     pathname: '/test',
