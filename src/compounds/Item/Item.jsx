@@ -56,7 +56,7 @@ const Item = ({ buttonLink, buttonProps, href, isLoading, item, orientation, tit
         <NextLink
         text={(
           <>
-             <Image
+            <Image
             className={`cover ${orientation === 'horizontal' ? 'img-fluid h-100 rounded-start' : 'card-img-top'}`}
             src={src}
             alt={alt}
@@ -68,7 +68,7 @@ const Item = ({ buttonLink, buttonProps, href, isLoading, item, orientation, tit
             orientation={orientation}
             titleLink={link}
             withButtonLink={withButtonLink}
-            withTitleLink={withTitleLink}
+            // withTitleLink={withTitleLink}
           />
           </>
         )}
