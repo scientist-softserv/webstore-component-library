@@ -1,13 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { Card } from 'react-bootstrap'
+import { Button, Card, Collapse } from 'react-bootstrap'
 import NextLink from '../../components/NextLink/NextLink'
 import LinkedButton from '../LinkedButton/LinkedButton'
 
 const CardBody = ({ buttonLink, buttonProps, item,
   orientation, titleLink, withButtonLink, withTitleLink }) => {
-  const { id, description, name } = item
+  const { id, description = '', name } = item
+  const [open, setOpen] = useState(false)
 
+  const truncateDescription = (desc, maxLength, isOpen) => {
+    if (desc.length <= maxLength || isOpen) return { truncated: desc, cutOffIndex: desc.length };
+    const lastSpaceIndex = desc.substring(0, maxLength).lastIndexOf(' ');
+    const ellipsis = isOpen ? '' : '...';
+    return { truncated: desc.slice(0, lastSpaceIndex) + ellipsis, cutOffIndex: lastSpaceIndex };
+  }
+
+  const { truncated, cutOffIndex } = truncateDescription(description, 300, open)
   return (
     <Card.Body className={withButtonLink && 'd-flex flex-column'}>
       <div className={orientation === 'horizontal' ? 'd-block d-md-flex align-items-center justify-content-between' : ''}>
@@ -25,9 +34,19 @@ const CardBody = ({ buttonLink, buttonProps, item,
             )}
           </Card.Title>
           {description && (
-            <Card.Text className='fw-light'>
-              {description}
-            </Card.Text>
+            <>
+              <div className='fw-light mh-300 overflow-auto mt-3'>
+                {truncated}
+                <Collapse in={open}>
+                  <div className='fw-light'>{description.slice(cutOffIndex).trimStart()}</div>
+                </Collapse>
+              </div>
+              {description.length > 300 && (
+                <Button variant="link" onClick={() => setOpen(!open)} className="p-0 mt-3">
+                  {open ? ' Show less' : ' Read more'}
+                </Button>
+              )}
+            </>
           )}
         </div>
         {(withButtonLink) && (
