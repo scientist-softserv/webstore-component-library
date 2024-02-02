@@ -4,19 +4,10 @@ import { Button, Card, Collapse } from 'react-bootstrap'
 import NextLink from '../../components/NextLink/NextLink'
 import LinkedButton from '../LinkedButton/LinkedButton'
 
-const CardBody = ({ buttonLink, buttonProps, item,
-  orientation, titleLink, withButtonLink, withTitleLink }) => {
-  const { id, description = '', name } = item
+const CardBody = ({ buttonLink, buttonProps, item, markdownDescriptionTruncated, markdownDescriptionExtended, orientation, titleLink, withButtonLink, withTitleLink }) => {
+  const { id, description, name, snippet } = item
   const [open, setOpen] = useState(false)
 
-  const truncateDescription = (desc, maxLength, isOpen) => {
-    if (desc.length <= maxLength || isOpen) return { truncated: desc, cutOffIndex: desc.length };
-    const lastSpaceIndex = desc.substring(0, maxLength).lastIndexOf(' ');
-    const ellipsis = isOpen ? '' : '...';
-    return { truncated: desc.slice(0, lastSpaceIndex) + ellipsis, cutOffIndex: lastSpaceIndex };
-  }
-
-  const { truncated, cutOffIndex } = truncateDescription(description, 300, open)
   return (
     <Card.Body className={withButtonLink && 'd-flex flex-column'}>
       <div className={orientation === 'horizontal' ? 'd-block d-md-flex align-items-center justify-content-between' : ''}>
@@ -33,21 +24,25 @@ const CardBody = ({ buttonLink, buttonProps, item,
               name
             )}
           </Card.Title>
-          {description && (
-            <>
-              <div className='fw-light mh-300 overflow-auto mt-3'>
-                {truncated}
-                <Collapse in={open}>
-                  <div className='fw-light'>{description.slice(cutOffIndex).trimStart()}</div>
-                </Collapse>
-              </div>
-              {description.length > 300 && (
-                <Button variant="link" onClick={() => setOpen(!open)} className="p-0 mt-3">
-                  {open ? ' Show less' : ' Read more'}
-                </Button>
+            {orientation === 'horizontal' ? (
+              <>
+                <div className='fw-light mh-300 overflow-auto mt-3'>
+                {markdownDescriptionTruncated}
+                  <Collapse in={open}>
+                    <div className='fw-light'>{markdownDescriptionExtended}</div>
+                  </Collapse>
+                </div>
+                {description?.length > 300 && (
+                  <Button variant="link" onClick={() => setOpen(!open)} className="p-0 mt-3">
+                    {open ? ' Show less' : ' Read more'}
+                  </Button>
+                )}
+              </>
+              ) : (
+                <div className='fw-light'>
+                  {snippet}
+                </div>
               )}
-            </>
-          )}
         </div>
         {(withButtonLink) && (
           <div className={orientation === 'horizontal' ? 'mt-3 mt-md-0' : 'mt-3'}>
@@ -83,6 +78,14 @@ CardBody.propTypes = {
     name: PropTypes.string.isRequired,
     slug: PropTypes.string,
   }),
+  markdownDescriptionTruncated: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.elementType,
+  ]),
+  markdownDescriptionExtended: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.elementType,
+  ]),
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
   titleLink: PropTypes.string,
   withButtonLink: PropTypes.bool,
@@ -95,6 +98,8 @@ CardBody.defaultProps = {
   item: {
     description: '',
   },
+  markdownDescriptionTruncated: '',
+  markdownDescriptionExtended: '',
   orientation: 'vertical',
   titleLink: '',
   withButtonLink: false,
