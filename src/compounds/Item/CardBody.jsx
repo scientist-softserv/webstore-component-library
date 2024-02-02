@@ -78,6 +78,14 @@ CardBody.propTypes = {
     name: PropTypes.string.isRequired,
     slug: PropTypes.string,
   }),
+  markdownDescriptionTruncated: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.elementType,
+  ]),
+  markdownDescriptionExtended: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.elementType,
+  ]),
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
   titleLink: PropTypes.string,
   withButtonLink: PropTypes.bool,
@@ -90,6 +98,8 @@ CardBody.defaultProps = {
   item: {
     description: '',
   },
+  markdownDescriptionTruncated: '',
+  markdownDescriptionExtended: '',
   orientation: 'vertical',
   titleLink: '',
   withButtonLink: false,
