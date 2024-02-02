@@ -8,7 +8,7 @@ import ItemLoading from './ItemLoading'
 import NextLink from '../../components/NextLink/NextLink'
 import './item.scss'
 
-const Item = ({ buttonLink, buttonProps, href, isLoading, item, orientation, titleLink, withButtonLink,
+const Item = ({ buttonLink, buttonProps, markdownDescriptionTruncated, markdownDescriptionExtended, href, isLoading, item, orientation, titleLink, withButtonLink,
   withTitleLink, width }) => {
   if (isLoading) {
     return (
@@ -45,6 +45,8 @@ const Item = ({ buttonLink, buttonProps, href, isLoading, item, orientation, tit
               buttonLink={link}
               buttonProps={buttonProps}
               item={item}
+              markdownDescriptionTruncated={markdownDescriptionTruncated}
+              markdownDescriptionExtended={markdownDescriptionExtended}
               orientation={orientation}
               titleLink={link}
               withButtonLink={withButtonLink}
@@ -65,6 +67,8 @@ const Item = ({ buttonLink, buttonProps, href, isLoading, item, orientation, tit
                 buttonLink={link}
                 buttonProps={buttonProps}
                 item={item}
+                markdownDescriptionTruncated={markdownDescriptionTruncated}
+                markdownDescriptionExtended={markdownDescriptionExtended}
                 orientation={orientation}
                 titleLink={link}
                 withButtonLink={withButtonLink}
