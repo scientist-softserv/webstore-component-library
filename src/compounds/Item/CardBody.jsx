@@ -24,7 +24,7 @@ const CardBody = ({ buttonLink, buttonProps, item,
           <Card.Title>
             {(withTitleLink) && (
               <NextLink
-                text={name}
+                children={name}
                 path={{ pathname: titleLink, query: { id } }}
                 addClass='text-decoration-none link-hover'
               />
