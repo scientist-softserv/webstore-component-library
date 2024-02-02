@@ -57,9 +57,9 @@ const Item = ({ buttonLink, buttonProps, href, isLoading, item, orientation, tit
           children={(
             <>
               <Image
-              className={`cover ${orientation === 'horizontal' ? 'img-fluid h-100 rounded-start' : 'card-img-top'}`}
-              src={src}
-              alt={alt}
+                className={`cover ${orientation === 'horizontal' ? 'img-fluid h-100 rounded-start' : 'card-img-top'}`}
+                src={src}
+                alt={alt}
               />
               <CardBody
                 buttonLink={link}
