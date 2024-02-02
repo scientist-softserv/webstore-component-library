@@ -1,7 +1,6 @@
-import '../src/assets/theme/global.scss'
-import '../src/assets/theme/bootstrap-preview.scss'
-import '../src/assets/fontawesome'
-import { RouterContext } from 'next/dist/shared/lib/router-context'
+// import '../src/assets/theme/global.scss'
+// import '../src/assets/theme/bootstrap-preview.scss'
+// import '../src/assets/fontawesome'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -10,8 +9,5 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
-  },
-  nextRouter: {
-    Provider: RouterContext.Provider,
-  },
+  }
 }

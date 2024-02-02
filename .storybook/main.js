@@ -3,12 +3,20 @@ module.exports = {
     "../src/**/*.stories.mdx",
     "../src/**/*.stories.@(js|jsx|ts|tsx)"
   ],
+
   "addons": [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "storybook-addon-next-router",
-    '@storybook/preset-scss'
+    "@storybook/preset-scss"
   ],
-  "framework": "@storybook/react"
+
+  "framework": {
+    name: "@storybook/nextjs",
+    options: {}
+  },
+
+  docs: {
+    autodocs: true
+  }
 }
