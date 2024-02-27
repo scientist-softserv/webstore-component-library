@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import Logo from '../Logo/Logo'
+import './styles.scss'
 
 const Header = ({ auth, linkColor, logo, navLinks, userSession }) => {
   const { src, alt } = logo
@@ -9,8 +10,8 @@ const Header = ({ auth, linkColor, logo, navLinks, userSession }) => {
   return (
     <Navbar bg='primary' expand='lg'>
       <Container>
-        <Navbar.Brand className='w-50'>
-          <Logo src={src} alt={alt} height={45} />
+        <Navbar.Brand className='w-75 custom-navbar-brand'>
+          <Logo src={src} alt={alt} height='auto' addClass='mw-100 mh-100' />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
