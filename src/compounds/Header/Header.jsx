@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Container, Nav, Navbar } from 'react-bootstrap'
+import ToggleIcon from '../../assets/svg/ToggleIcon'
 import Logo from '../Logo/Logo'
 
 const Header = ({ auth, linkColor, logo, navLinks, userSession }) => {
@@ -12,7 +13,9 @@ const Header = ({ auth, linkColor, logo, navLinks, userSession }) => {
         <Navbar.Brand className='w-50'>
           <Logo src={src} alt={alt} height={45} />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls='basic-navbar-nav' />
+        <Navbar.Toggle aria-controls='basic-navbar-nav'>
+          <ToggleIcon linkColor={linkColor} />
+        </Navbar.Toggle>
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='ms-auto'>
             {navLinks.map((nav) => (
