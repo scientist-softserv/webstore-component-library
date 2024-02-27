@@ -9,7 +9,7 @@ import './item-group.scss'
 const ItemGroup = ({ buttonProps, items, isLoading, orientation, withButtonLink, withTitleLink }) => (
   <>
     <Title addClass='mb-2' size='large' title='Featured Services' />
-    <Row xs={1} sm={2} className={`g-5 mb-5 ${orientation === 'vertical' && 'row-cols-md-3'}`} data-cy='item-group'>
+    <Row xs={1} sm={2} className={`gy-5 mb-5 ${orientation === 'vertical' && 'row-cols-md-3'}`} data-cy='item-group'>
       {isLoading
         ? (
           <>
