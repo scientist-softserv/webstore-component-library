@@ -8,7 +8,7 @@ const Header = ({ auth, linkColor, logo, navLinks, userSession }) => {
   const { src, alt } = logo
 
   return (
-    <Navbar bg='primary' expand='lg'>
+    <Navbar bg='primary' expand='md'>
       <Container>
         <Navbar.Brand className='w-50'>
           <Logo src={src} alt={alt} height={45} />
@@ -20,6 +20,8 @@ const Header = ({ auth, linkColor, logo, navLinks, userSession }) => {
           <Nav className='ms-auto'>
             {navLinks.map((nav) => (
               <Nav.Link
+              // ref https://github.com/twbs/bootstrap/blob/v5.2.3/scss/helpers/_colored-links.scss
+              // for how this className works
                 className={`link-${linkColor}`}
                 href={nav.path}
                 key={`${nav.label}-nav-link`}
