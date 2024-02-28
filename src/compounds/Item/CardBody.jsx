@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { Card } from 'react-bootstrap'
+import { Button, Card, Collapse } from 'react-bootstrap'
 import NextLink from '../../components/NextLink/NextLink'
 import LinkedButton from '../LinkedButton/LinkedButton'
 
-const CardBody = ({ buttonLink, buttonProps, item,
-  orientation, titleLink, withButtonLink, withTitleLink }) => {
-  const { id, description, name } = item
+const CardBody = ({ buttonLink, buttonProps, item, markdownDescriptionTruncated, markdownDescriptionExtended, orientation, titleLink, withButtonLink, withTitleLink }) => {
+  const { id, description, name, snippet } = item
+  const [open, setOpen] = useState(false)
 
   return (
     <Card.Body className={withButtonLink && 'd-flex flex-column'}>
@@ -15,7 +15,7 @@ const CardBody = ({ buttonLink, buttonProps, item,
           <Card.Title>
             {(withTitleLink) && (
               <NextLink
-                text={name}
+                children={name}
                 path={{ pathname: titleLink, query: { id } }}
                 addClass='text-decoration-none link-hover'
               />
@@ -24,11 +24,25 @@ const CardBody = ({ buttonLink, buttonProps, item,
               name
             )}
           </Card.Title>
-          {description && (
-            <Card.Text className='fw-light'>
-              {description}
-            </Card.Text>
-          )}
+            {orientation === 'horizontal' ? (
+              <>
+                <div className='fw-light mh-300 overflow-auto mt-3'>
+                {markdownDescriptionTruncated}
+                  <Collapse in={open}>
+                    <div className='fw-light'>{markdownDescriptionExtended}</div>
+                  </Collapse>
+                </div>
+                {description?.length > 300 && (
+                  <Button variant="link" onClick={() => setOpen(!open)} className="p-0 mt-3">
+                    {open ? ' Show less' : ' Read more'}
+                  </Button>
+                )}
+              </>
+              ) : (
+                <div className='fw-light'>
+                  {snippet}
+                </div>
+              )}
         </div>
         {(withButtonLink) && (
           <div className={orientation === 'horizontal' ? 'mt-3 mt-md-0' : 'mt-3'}>
@@ -64,6 +78,14 @@ CardBody.propTypes = {
     name: PropTypes.string.isRequired,
     slug: PropTypes.string,
   }),
+  markdownDescriptionTruncated: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.elementType,
+  ]),
+  markdownDescriptionExtended: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.elementType,
+  ]),
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
   titleLink: PropTypes.string,
   withButtonLink: PropTypes.bool,
@@ -76,6 +98,8 @@ CardBody.defaultProps = {
   item: {
     description: '',
   },
+  markdownDescriptionTruncated: '',
+  markdownDescriptionExtended: '',
   orientation: 'vertical',
   titleLink: '',
   withButtonLink: false,

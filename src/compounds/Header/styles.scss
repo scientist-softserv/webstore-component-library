@@ -1,0 +1,11 @@
+.custom-navbar-brand {
+  height: 45px;
+}
+
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  // overriding the below to lessen the spread radius
+  // I would like to make it the same color as the icon, but that isn't possible dynamically with scss
+  box-shadow: 0 0 0 1px;
+}

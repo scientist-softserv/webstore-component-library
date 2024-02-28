@@ -5,9 +5,10 @@ import Image from '../../components/Image/Image'
 import CardBody from './CardBody'
 import LinkedButton from '../LinkedButton/LinkedButton'
 import ItemLoading from './ItemLoading'
+import NextLink from '../../components/NextLink/NextLink'
 import './item.scss'
 
-const Item = ({ buttonLink, buttonProps, href, isLoading, item, orientation, titleLink, withButtonLink,
+const Item = ({ buttonLink, buttonProps, markdownDescriptionTruncated, markdownDescriptionExtended, href, isLoading, item, orientation, titleLink, withButtonLink,
   withTitleLink, width }) => {
   if (isLoading) {
     return (
@@ -44,6 +45,8 @@ const Item = ({ buttonLink, buttonProps, href, isLoading, item, orientation, tit
               buttonLink={link}
               buttonProps={buttonProps}
               item={item}
+              markdownDescriptionTruncated={markdownDescriptionTruncated}
+              markdownDescriptionExtended={markdownDescriptionExtended}
               orientation={orientation}
               titleLink={link}
               withButtonLink={withButtonLink}
@@ -52,22 +55,30 @@ const Item = ({ buttonLink, buttonProps, href, isLoading, item, orientation, tit
           </div>
         </div>
       ) : (
-        <>
-          <Image
-            className={`cover ${orientation === 'horizontal' ? 'img-fluid h-100 rounded-start' : 'card-img-top'}`}
-            src={src}
-            alt={alt}
-          />
-          <CardBody
-            buttonLink={link}
-            buttonProps={buttonProps}
-            item={item}
-            orientation={orientation}
-            titleLink={link}
-            withButtonLink={withButtonLink}
-            withTitleLink={withTitleLink}
-          />
-        </>
+        <NextLink
+          children={(
+            <>
+              <Image
+                className={`cover ${orientation === 'horizontal' ? 'img-fluid h-100 rounded-start' : 'card-img-top'}`}
+                src={src}
+                alt={alt}
+              />
+              <CardBody
+                buttonLink={link}
+                buttonProps={buttonProps}
+                item={item}
+                markdownDescriptionTruncated={markdownDescriptionTruncated}
+                markdownDescriptionExtended={markdownDescriptionExtended}
+                orientation={orientation}
+                titleLink={link}
+                withButtonLink={withButtonLink}
+                withTitleLink={withTitleLink}
+              />
+            </>
+          )}
+          path={{ pathname: item.href, query: { id }}}
+          addClass="text-decoration-none link-hover"
+        />
       )}
     </Card>
   )

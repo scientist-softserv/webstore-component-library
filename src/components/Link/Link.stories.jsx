@@ -36,3 +36,11 @@ NoLabel.args = {
   label: '',
   style: {},
 }
+
+export const ExternalLinkInNewTab = Template.bind({})
+ExternalLinkInNewTab.args = {
+  href: 'https://www.google.com',
+  label: 'I should open in a new tab',
+  style: {},
+  target: '_blank'
+}

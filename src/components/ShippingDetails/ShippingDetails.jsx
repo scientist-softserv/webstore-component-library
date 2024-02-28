@@ -8,7 +8,7 @@ import {
 import { CountryDropdown } from 'react-country-region-selector'
 import PropTypes from 'prop-types'
 
-const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBilling,
+const AddressForm = ({ addressType, billingCountry, disabled, shippingCountry, setShowBilling,
   showBilling, updateRequestForm }) => {
   const handleChange = (value) => {
     updateRequestForm(value, 'billingSameAsShipping')
@@ -31,6 +31,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
           name='address1'
           type='text'
           className='prevent-validation-styles'
+          disabled={disabled}
           required
         />
         <Form.Control.Feedback type='invalid'>
@@ -43,6 +44,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
           placeholder='Address Line 2 (optional)'
           onChange={(e) => updateRequestForm(e.target.value, `${addressType}.street2`)}
           className='prevent-validation-styles'
+          disabled={disabled}
         />
       </Form.Group>
 
@@ -53,6 +55,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
           type='text'
           required
           className='prevent-validation-styles'
+          disabled={disabled}
         />
         <Form.Control.Feedback type='invalid'>
           Please enter your city or region.
@@ -67,6 +70,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
             type='text'
             required
             className='prevent-validation-styles'
+            disabled={disabled}
           />
           <Form.Control.Feedback type='invalid'>
             Please enter your state or province.
@@ -80,6 +84,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
             type='text'
             required
             className='prevent-validation-styles'
+            disabled={disabled}
           />
           <Form.Control.Feedback type='invalid'>
             Please enter your zip or postal code.
@@ -94,6 +99,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
         onChange={(e) => updateRequestForm(e, `${addressType}.country`)}
         className='form-select mb-3 form-control prevent-validation-styles'
         id={`country-${addressType}`}
+        disabled={disabled}
         required
       />
       <Form.Control.Feedback type='invalid'>
@@ -106,6 +112,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
             className='prevent-validation-styles'
             type='checkbox'
             label='My shipping address is the same as my billing address.'
+            disabled={disabled}
             onChange={() => {
               setShowBilling(!showBilling)
               if (showBilling) handleChange(true)
@@ -118,7 +125,7 @@ const AddressForm = ({ addressType, billingCountry, shippingCountry, setShowBill
   )
 }
 
-const ShippingDetails = ({ backgroundColor, billingCountry, shippingCountry, updateRequestForm }) => {
+const ShippingDetails = ({ backgroundColor, billingCountry, disabled, shippingCountry, updateRequestForm }) => {
   const [showBilling, setShowBilling] = useState(true)
 
   return (
@@ -131,6 +138,7 @@ const ShippingDetails = ({ backgroundColor, billingCountry, shippingCountry, upd
         showBilling={showBilling}
         setShowBilling={setShowBilling}
         updateRequestForm={updateRequestForm}
+        disabled={disabled}
       />
       {showBilling && (
         <AddressForm
@@ -138,6 +146,7 @@ const ShippingDetails = ({ backgroundColor, billingCountry, shippingCountry, upd
           billingCountry={billingCountry}
           shippingCountry={shippingCountry}
           updateRequestForm={updateRequestForm}
+          disabled={disabled}
         />
       )}
     </Card>
@@ -147,6 +156,7 @@ const ShippingDetails = ({ backgroundColor, billingCountry, shippingCountry, upd
 AddressForm.propTypes = {
   addressType: PropTypes.string.isRequired,
   billingCountry: PropTypes.string.isRequired,
+  disabled: PropTypes.bool.isRequired,
   showBilling: PropTypes.bool,
   setShowBilling: PropTypes.func,
   shippingCountry: PropTypes.string.isRequired,
@@ -156,6 +166,7 @@ AddressForm.propTypes = {
 ShippingDetails.propTypes = {
   backgroundColor: PropTypes.string,
   billingCountry: PropTypes.string.isRequired,
+  disabled: PropTypes.bool.isRequired,
   shippingCountry: PropTypes.string.isRequired,
   updateRequestForm: PropTypes.func.isRequired,
 }

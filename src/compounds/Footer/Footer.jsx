@@ -1,14 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import LinkGroup from '../LinkGroup/LinkGroup'
+import Link from '../../components/Link/Link'
 import SocialIcon from '../../components/SocialIcon/SocialIcon'
 
 const Footer = ({ companyName, sections, socials, color, ...props }) => (
-  <footer id='footer' className={`container-fluid bg-primary py-4 text-${color}`}>
+  <footer id='footer' className={`container-fluid bg-primary py-3 text-${color}`}>
     <div className='container'>
       <div className='row'>
         <div className='col-12 col-md-3 text-center text-md-start'>
-          <h5>© {companyName} {new Date().getFullYear()}</h5>
+          <h6>© {companyName} {new Date().getFullYear()}</h6>
+          <Link label='Legal Notices' href='/legal-notices' className={`text-${color} link-group-links text-decoration-none`}/>
         </div>
         <div
           className='col-12 col-md-7 d-flex flex-column flex-sm-row

@@ -1,0 +1,28 @@
+/**
+ * This file contains the color variables for the theme. Matching those in each webstore instance's "theme.module.scss" file.
+ *
+ * They exist in a "module.scss" file so that they can be imported into our ".scss" AND ".jsx" files.
+ */
+$primary: #614570;
+$secondary: #936AAA;
+$light: #F2F2F2;
+$dark: #070818;
+$success: #B0E298;
+$info: #8eb3fc;
+$warning: #E9DF00;
+$danger: #D20000;
+$black: #000000;
+$white: #FFFFFF;
+
+:export {
+  primary: $primary;
+  secondary: $secondary;
+  success: $success;
+  info: $info;
+  warning: $warning;
+  danger: $danger;
+  light: $light;
+  dark: $dark;
+  black: $black;
+  white: $white;
+}
