@@ -75,6 +75,11 @@ export const links = [
     name: 'Services',
     url: '/services',
   },
+  {
+    name: 'External tab link',
+    url: 'http://www.google.com',
+    target: '_blank',
+  },
 ]
 
 export const sections = [
@@ -104,6 +109,10 @@ export const socials = [
   {
     icon: 'facebook',
     url: 'www.facebook.com',
+  },
+  {
+    icon: 'linkedin',
+    url: 'www.linkedin.com',
   },
 ]
 

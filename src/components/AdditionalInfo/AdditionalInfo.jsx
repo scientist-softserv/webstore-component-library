@@ -5,7 +5,7 @@ import {
 } from 'react-bootstrap'
 import { addDays, apiV2CompatibleStrings, convertToBase64 } from '../../resources/utilityFunctions'
 
-const AdditionalInfo = ({ backgroundColor, defaultRequiredDate, updateRequestForm }) => {
+const AdditionalInfo = ({ backgroundColor, defaultRequiredDate, disabled, updateRequestForm, }) => {
   const [showProposalDate, setShowProposalDate] = useState(true)
   const [files, setFiles] = useState([])
   const fileRef = useRef(null)
@@ -55,7 +55,7 @@ const AdditionalInfo = ({ backgroundColor, defaultRequiredDate, updateRequestFor
                 min={oneDayFromNow}
                 defaultValue={defaultRequiredDate}
                 placeholder='Proposals Required By'
-                disabled={showProposalDate === false}
+                disabled={(showProposalDate === false) || disabled}
                 onChange={showProposalDate && ((e) => handleChange(e.target.value))}
                 required
               />
@@ -70,6 +70,7 @@ const AdditionalInfo = ({ backgroundColor, defaultRequiredDate, updateRequestFor
         >
           <Form.Check
             className='prevent-validation-styles'
+            disabled={disabled}
             type='checkbox'
             label='Proposals can be submitted at any time.'
             onChange={() => {
@@ -84,6 +85,7 @@ const AdditionalInfo = ({ backgroundColor, defaultRequiredDate, updateRequestFor
           <Form.Label>Attachments:</Form.Label>
           <Form.Control
             className='prevent-validation-styles'
+            disabled={disabled}
             multiple
             type='file'
             onChange={handleAddFile}
@@ -110,6 +112,7 @@ const AdditionalInfo = ({ backgroundColor, defaultRequiredDate, updateRequestFor
 AdditionalInfo.propTypes = {
   backgroundColor: PropTypes.string,
   updateRequestForm: PropTypes.func.isRequired,
+  disabled: PropTypes.bool.isRequired,
 }
 
 AdditionalInfo.defaultProps = {

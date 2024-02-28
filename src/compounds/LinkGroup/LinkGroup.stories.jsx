@@ -18,7 +18,7 @@ Default.args = {
 export const Alternate = Template.bind({})
 Alternate.args = {
   header: 'Header',
-  headerStyle: { fontSize: 20, color: '#EC88EE' },
+  headerStyle: { fontSize: 13, color: '#EC88EE' },
   links,
-  linkStyle: { fontSize: 14, color: '#5E5CCF' },
+  linkStyle: { fontSize: 13, color: '#5E5CCF' },
 }
