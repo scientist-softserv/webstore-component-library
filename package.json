@@ -60,7 +60,7 @@
     "@storybook/builder-webpack4": "^6.5.12",
     "@storybook/manager-webpack4": "^6.5.12",
     "@storybook/preset-scss": "^1.0.3",
-    "@storybook/react": "^6.5.12",
+    "@storybook/react": "^7.0.2",
     "@storybook/test-runner": "^0.7.2",
     "babel-loader": "^8.2.5",
     "css-loader": "^5.2.7",
