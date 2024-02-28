@@ -11,7 +11,7 @@ const Header = ({ auth, linkColor, logo, navLinks, userSession }) => {
   return (
     <Navbar bg='primary' expand='md'>
       <Container>
-        <Navbar.Brand className='w-75 custom-navbar-brand'>
+        <Navbar.Brand className='w-50 custom-navbar-brand'>
           <Logo src={src} alt={alt} height='auto' addClass='mw-100 mh-100' />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav'>
