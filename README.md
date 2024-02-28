@@ -128,7 +128,7 @@ A git tag should exist for every semver release. We use `release-it` to automate
     ``` bash
     ? Select increment # You will be prompted to select a release type, e.g. patch
     ? Publish @scientist-softserv/webstore-component-library to npm? # Yes
-    ? Please enter OTP for npm: # This is stored in 1password
+    ? Please enter OTP for npm: # This is stored in 1password under "npmjs"
     ? Commit (chore: release vX.X.X)? # Yes
     ? Tag (X.X.X)? # Yes
     ? Push? # Yes
