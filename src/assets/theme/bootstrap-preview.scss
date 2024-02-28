@@ -1,17 +1,5 @@
-// these colors and variables match what is in the webstore's theme.module.scss file. this file enables us to see the preview of what these overrides will look like without actually importing these from here into the webstore project. In order to see a preview in storybook of how components will look with custom colors, these values must be updated.
-
-$primary: #333333;
-$secondary: #CCCCCC;
-$success: #666666;
-$info: #999999;
-$warning: #2A2A2A;
-$danger: #606060;
-$light: #F8F9FA;
-$dark: #212529;
-$white: #FFFFFF;
-$black: #000000;
-
-// these imports must be AFTER the theme color overrides above in order to properly override bootstrap's colors, but before the theme maps.
+@import './default-colors.module.scss';
+// these imports must be AFTER the theme colors override import above in order to properly override bootstrap's colors, but before the theme maps.
 @import '../../../node_modules/bootstrap/scss/functions';
 @import '../../../node_modules/bootstrap/scss/variables';
 @import '../../../node_modules/bootstrap/scss/mixins';
