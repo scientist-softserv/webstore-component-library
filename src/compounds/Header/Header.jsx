@@ -48,7 +48,9 @@ Header.propTypes = {
     signIn: PropTypes.func.isRequired,
     signOut: PropTypes.func.isRequired,
   }).isRequired,
-  linkColor: PropTypes.string,
+  linkColor: PropTypes.oneOf([
+    'primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark', 'black', 'white'
+  ]),
   logo: PropTypes.shape({
     src: PropTypes.string.isRequired,
     alt: PropTypes.string,
